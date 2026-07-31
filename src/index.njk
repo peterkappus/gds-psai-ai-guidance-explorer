@@ -1,0 +1,76 @@
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% set title = "Common questions about AI adoption" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+      <p class="govuk-body-l">
+        Browse common questions about adopting AI in government. Each answer includes a snippet from the
+        <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>
+        and a deep link to the relevant section.
+      </p>
+      <p class="govuk-body">
+        This explorer currently covers one source. More public sector AI guidance will be added over time.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Categories</h2>
+      <nav class="govuk-!-margin-bottom-6" aria-label="FAQ categories">
+        <ul class="govuk-list">
+          {% for category in faq.categories %}
+            <li>
+              <a class="govuk-link" href="#{{ category.id }}">{{ category.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      {% for category in faq.categories %}
+        <section class="app-category" id="{{ category.id }}">
+          <h2 class="govuk-heading-l">{{ category.title }}</h2>
+
+          {% for item in category.questions %}
+            {% set citationUrl = item | textFragmentUrl %}
+            {% set answerHtml %}
+              <p class="govuk-body">{{ item.answer }}</p>
+
+              <h3 class="govuk-heading-s">From the guidance</h3>
+              {{ govukInsetText({
+                classes: "app-snippet",
+                text: item.snippet
+              }) }}
+
+              <div class="app-citation">
+                <p class="govuk-body-s">
+                  <strong class="govuk-!-font-weight-bold">Source:</strong>
+                  {{ faq.source.title }}<br>
+                  <strong class="govuk-!-font-weight-bold">Section:</strong>
+                  {{ item.section }}
+                </p>
+                <p class="govuk-body">
+                  <a class="govuk-link" href="{{ citationUrl }}" rel="noreferrer noopener" target="_blank">
+                    Read this in the AI Playbook (opens in new tab)
+                  </a>
+                </p>
+              </div>
+            {% endset %}
+
+            {{ govukDetails({
+              summaryText: item.question,
+              html: answerHtml
+            }) }}
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

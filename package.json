@@ -1,0 +1,31 @@
+{
+  "name": "gds-psai-ai-guidance-explorer",
+  "version": "1.0.0",
+  "description": "A catalogue of public sector AI guidance.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss/main.scss src/assets/css/main.css --load-path=node_modules/govuk-frontend/dist",
+    "sass:watch": "npm run sass -- --watch",
+    "build": "npm run sass && eleventy",
+    "start": "npm run sass && eleventy --serve --port=8080",
+    "dev": "npm run sass && eleventy --serve --port=8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterkappus/gds-psai-ai-guidance-explorer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/peterkappus/gds-psai-ai-guidance-explorer/issues"
+  },
+  "homepage": "https://github.com/peterkappus/gds-psai-ai-guidance-explorer#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "govuk-frontend": "^6.4.0",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.99.0"
+  }
+}

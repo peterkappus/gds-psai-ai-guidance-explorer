@@ -1,0 +1,68 @@
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+{% from "govuk/components/generic-header/macro.njk" import govukGenericHeader %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }} – {% endif %}{{ site.serviceName }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="theme-color" content="#0b0c0c">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body class="govuk-template__body">
+    <script>
+      document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
+    </script>
+
+    {{ govukSkipLink({
+      text: "Skip to main content",
+      href: "#main-content"
+    }) }}
+
+    {{ govukGenericHeader({
+      logoText: site.serviceName,
+      url: "/"
+    }) }}
+
+    {% set phaseHtml %}
+      This is a prototype. Answers are cited from the
+      <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>.
+    {% endset %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: site.phase
+      },
+      html: phaseHtml
+    }) }}
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content" role="main">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+
+    {% set footerHtml %}
+      <p class="govuk-body-s">
+        Prototype catalogue of UK public sector AI guidance. Not an official GOV.UK service.
+        Guidance excerpts © Crown copyright, used under the
+        <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
+      </p>
+    {% endset %}
+    {{ govukFooter({
+      meta: {
+        visuallyHiddenTitle: "About this page",
+        html: footerHtml
+      }
+    }) }}
+
+    <script type="module" src="/assets/govuk-frontend.min.js"></script>
+    <script type="module">
+      import { initAll } from '/assets/govuk-frontend.min.js'
+      initAll()
+    </script>
+  </body>
+</html>

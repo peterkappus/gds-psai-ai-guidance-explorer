@@ -1,0 +1,29 @@
+// Non-GOV.UK hosting: no GDS Transport font, no crown crest.
+@use "govuk/index" as * with (
+  $govuk-assets-path: "/assets/",
+  $govuk-font-family: (arial, sans-serif),
+  $govuk-global-styles: true
+);
+
+.app-snippet {
+  margin-top: govuk-spacing(4);
+  margin-bottom: govuk-spacing(4);
+}
+
+.app-citation {
+  margin-top: govuk-spacing(4);
+  padding-top: govuk-spacing(3);
+  border-top: 1px solid $govuk-border-colour;
+}
+
+.app-category {
+  margin-top: govuk-spacing(8);
+}
+
+.app-category:first-of-type {
+  margin-top: govuk-spacing(6);
+}
+
+.govuk-generic-header__homepage-link {
+  font-weight: 700;
+}
