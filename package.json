@@ -22,7 +22,10 @@
     "url": "https://github.com/peterkappus/gds-psai-ai-guidance-explorer/issues"
   },
   "homepage": "https://github.com/peterkappus/gds-psai-ai-guidance-explorer#readme",
-  "devDependencies": {
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "govuk-frontend": "^6.4.0",
     "nunjucks": "^3.2.4",
