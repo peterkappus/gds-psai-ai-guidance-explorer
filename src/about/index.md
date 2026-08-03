@@ -10,7 +10,9 @@ back:
 
 # About this explorer
 
+<p class="govuk-body-l">
 This is a prototype catalogue of UK public sector AI guidance. It helps people browse common questions about adopting AI in government and see answers with citations back to official guidance.
+</p>
 
 It is **not** an official GOV.UK service and does not replace organisational legal, security, commercial or data protection advice.
 

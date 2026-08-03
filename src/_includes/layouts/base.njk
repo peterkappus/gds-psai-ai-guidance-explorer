@@ -1,5 +1,6 @@
 {% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
 {% from "govuk/components/generic-header/macro.njk" import govukGenericHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
@@ -26,6 +27,22 @@
     {{ govukGenericHeader({
       logoText: site.serviceName,
       url: "/"
+    }) }}
+
+    {% set aboutIsCurrent = page.url.indexOf('/about/') === 0 %}
+    {{ govukServiceNavigation({
+      navigation: [
+        {
+          href: "/",
+          text: "Questions",
+          current: page.url === "/"
+        },
+        {
+          href: "/about/",
+          text: "About",
+          current: aboutIsCurrent
+        }
+      ]
     }) }}
 
     {% set phaseHtml %}
