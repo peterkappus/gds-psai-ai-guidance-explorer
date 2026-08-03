@@ -1,0 +1,19 @@
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if back %}
+        {{ govukBackLink({
+          text: back.text,
+          href: back.href
+        }) }}
+      {% endif %}
+
+      <div class="app-prose">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

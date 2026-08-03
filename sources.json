@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "title": "UK public sector AI guidance sources",
+    "description": "Candidate sources to incorporate into the AI Guidance Explorer. Each entry is structured for humans and LLMs to scan, filter, and cite.",
+    "updated": "2026-08-03",
+    "jurisdiction": "United Kingdom",
+    "already_incorporated": [
+      {
+        "id": "ai-playbook-uk-government",
+        "title": "Artificial Intelligence Playbook for the UK Government",
+        "url": "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html",
+        "organisation": "Department for Science, Innovation and Technology (DSIT)",
+        "notes": "Currently powers the FAQ answers and citations on the explorer."
+      }
+    ],
+    "fields": {
+      "id": "Stable slug for linking and imports",
+      "title": "Official document or collection title",
+      "url": "Canonical public URL",
+      "organisation": "Publishing or owning body",
+      "type": "guidance | standard | framework | code_of_practice | action_plan | regulator_guidance",
+      "status": "candidate | incorporated | superseded",
+      "audience": "Who it is mainly for",
+      "themes": "Topic tags for browse/filter",
+      "summary": "Short plain-English description",
+      "why_include": "Why this source matters for the explorer",
+      "related_faq_themes": "Existing FAQ categories it would help answer"
+    }
+  },
+  "sources": [
+    {
+      "id": "atrs-hub",
+      "title": "Algorithmic Transparency Recording Standard (ATRS) Hub",
+      "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "standard",
+      "status": "candidate",
+      "audience": [
+        "central government departments",
+        "in-scope arm’s-length bodies",
+        "transparency / data teams"
+      ],
+      "themes": [
+        "transparency",
+        "accountability",
+        "algorithmic tools",
+        "public disclosure"
+      ],
+      "summary": "Hub for the ATRS template, completion guidance, scope/exemptions policy, and published records of algorithmic tools used in public-sector decision making.",
+      "why_include": "Mandatory transparency requirement referenced throughout the AI Playbook; answers questions about when and how to publish algorithmic tool records.",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "delivery-assurance",
+        "collaboration"
+      ],
+      "formats": ["HTML collection", "Excel/Google Sheets template"],
+      "priority": 1
+    },
+    {
+      "id": "ico-ai-data-protection",
+      "title": "Guidance on AI and data protection",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+      "organisation": "Information Commissioner’s Office (ICO)",
+      "type": "regulator_guidance",
+      "status": "candidate",
+      "audience": [
+        "data protection officers",
+        "legal / compliance",
+        "product and data teams"
+      ],
+      "themes": [
+        "data-protection",
+        "uk-gdpr",
+        "fairness",
+        "automated-decision-making",
+        "privacy"
+      ],
+      "summary": "ICO guidance on applying UK data protection law to AI systems that process personal data, including fairness, bias, security, and Article 22 considerations.",
+      "why_include": "Primary regulator view for personal-data FAQs (DPIAs, lawful basis, automated decisions, fairness).",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "security-tools"
+      ],
+      "formats": ["HTML"],
+      "priority": 1
+    },
+    {
+      "id": "ncsc-secure-ai-system-development",
+      "title": "Guidelines for secure AI system development",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+      "organisation": "National Cyber Security Centre (NCSC)",
+      "type": "guidance",
+      "status": "candidate",
+      "audience": [
+        "security teams",
+        "AI / ML engineers",
+        "risk owners"
+      ],
+      "themes": [
+        "security",
+        "secure-by-design",
+        "threat-modelling",
+        "operations"
+      ],
+      "summary": "Practical security guidelines across secure design, development, deployment, and operation/maintenance of AI systems.",
+      "why_include": "Deepens playbook security answers (poisoning, leakage, prompt injection, secure deployment patterns).",
+      "related_faq_themes": [
+        "security-tools",
+        "buying-building",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML collection", "PDF"],
+      "priority": 1
+    },
+    {
+      "id": "guidelines-ai-procurement",
+      "title": "Guidelines for AI procurement",
+      "url": "https://www.gov.uk/data-ethics-guidance/guidelines-for-ai-procurement",
+      "organisation": "Government Digital Service (GDS) / historically Office for AI and DCMS/DSIT",
+      "type": "guidance",
+      "status": "candidate",
+      "audience": [
+        "commercial / procurement",
+        "SROs",
+        "digital delivery teams"
+      ],
+      "themes": [
+        "procurement",
+        "buying-ai",
+        "vendor-management",
+        "ethics"
+      ],
+      "summary": "Best-practice guidance for public-sector buyers on preparing, specifying, evaluating, awarding and managing AI procurements.",
+      "why_include": "Core source for buy-vs-build, requirements, lock-in, and ethics-in-procurement FAQs.",
+      "related_faq_themes": [
+        "buying-building"
+      ],
+      "formats": ["HTML"],
+      "priority": 1
+    },
+    {
+      "id": "data-and-ai-ethics-framework",
+      "title": "Data and AI Ethics Framework",
+      "url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
+      "organisation": "Government Digital Service (GDS) / DSIT ecosystem",
+      "type": "framework",
+      "status": "candidate",
+      "audience": [
+        "policy and delivery teams",
+        "ethics leads",
+        "project SROs"
+      ],
+      "themes": [
+        "ethics",
+        "transparency",
+        "accountability",
+        "fairness",
+        "responsible-use"
+      ],
+      "summary": "Principles and practical activities for responsible development, procurement and use of data and AI in the public sector, with an accompanying self-assessment tool.",
+      "why_include": "Bridges high-level ethics principles to project actions; complements ATRS and procurement guidance.",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "getting-started",
+        "buying-building"
+      ],
+      "formats": ["HTML", "self-assessment tool"],
+      "priority": 2
+    },
+    {
+      "id": "ethics-transparency-accountability-adm",
+      "title": "Ethics, Transparency and Accountability Framework for Automated Decision-Making",
+      "url": "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making",
+      "organisation": "Cabinet Office / DSIT / Office for AI (as published)",
+      "type": "framework",
+      "status": "candidate",
+      "audience": [
+        "senior process owners",
+        "operational leaders",
+        "digital / data / policy roles"
+      ],
+      "themes": [
+        "automated-decision-making",
+        "human-oversight",
+        "accountability",
+        "fairness",
+        "transparency"
+      ],
+      "summary": "Seven-point framework for safe, sustainable and ethical use of solely automated and AI-assisted decision-making in government, plus a risk potential assessment form.",
+      "why_include": "Directly answers FAQs on automated decisions, responsibility, contestability and lawful operation of ADM.",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML", "assessment form"],
+      "priority": 2
+    },
+    {
+      "id": "ai-cyber-security-code-of-practice",
+      "title": "Code of Practice for the Cyber Security of AI",
+      "url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
+      "organisation": "Department for Science, Innovation and Technology (DSIT)",
+      "type": "code_of_practice",
+      "status": "candidate",
+      "audience": [
+        "AI developers and operators",
+        "security practitioners",
+        "suppliers to government"
+      ],
+      "themes": [
+        "security",
+        "secure-design",
+        "lifecycle",
+        "standards"
+      ],
+      "summary": "Voluntary code setting baseline cyber security requirements across AI design, development, deployment, maintenance and end of life; intended to inform emerging standards.",
+      "why_include": "Complements NCSC guidelines with a lifecycle code of practice useful for supplier and assurance questions.",
+      "related_faq_themes": [
+        "security-tools",
+        "buying-building",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML"],
+      "priority": 2
+    },
+    {
+      "id": "introduction-to-ai-assurance",
+      "title": "Introduction to AI assurance",
+      "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) – Responsible Technology Adoption Unit",
+      "type": "guidance",
+      "status": "candidate",
+      "audience": [
+        "assurance / risk teams",
+        "product owners",
+        "regulators and industry partners"
+      ],
+      "themes": [
+        "assurance",
+        "trustworthiness",
+        "governance",
+        "evaluation"
+      ],
+      "summary": "Accessible introduction to AI assurance concepts, techniques (impact assessment, audit, testing) and how to embed assurance in organisational practice.",
+      "why_include": "Supports FAQs on quality assurance, monitoring, evidence of fitness-for-purpose and governance boards.",
+      "related_faq_themes": [
+        "delivery-assurance",
+        "getting-started"
+      ],
+      "formats": ["HTML landing page", "PDF"],
+      "priority": 2
+    },
+    {
+      "id": "ai-opportunities-action-plan",
+      "title": "AI Opportunities Action Plan",
+      "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan-government-response",
+      "organisation": "Department for Science, Innovation and Technology (DSIT)",
+      "type": "action_plan",
+      "status": "candidate",
+      "audience": [
+        "senior leaders",
+        "policy teams",
+        "commercial / digital transformation"
+      ],
+      "themes": [
+        "adoption",
+        "procurement-reform",
+        "productivity",
+        "strategy"
+      ],
+      "summary": "Government roadmap and response on accelerating beneficial AI adoption, including scan/pilot/scale approaches and smarter public-sector procurement.",
+      "why_include": "Strategic context for why government is adopting AI and how procurement and scaling may change; useful for leadership FAQs.",
+      "related_faq_themes": [
+        "getting-started",
+        "buying-building",
+        "collaboration"
+      ],
+      "formats": ["HTML", "PDF (plan)"],
+      "related_urls": [
+        "https://assets.publishing.service.gov.uk/media/67851771f0528401055d2329/ai_opportunities_action_plan.pdf"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "lga-responsibly-buying-ai",
+      "title": "Responsibly buying AI: a guide for councils in England",
+      "url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
+      "organisation": "Local Government Association (LGA), with LOTI, EHRC and ICO",
+      "type": "guidance",
+      "status": "candidate",
+      "audience": [
+        "local authority commissioners",
+        "procurement officers",
+        "contract owners"
+      ],
+      "themes": [
+        "procurement",
+        "equality",
+        "data-protection",
+        "local-government"
+      ],
+      "summary": "Role-based prompts for English councils to embed Public Sector Equality Duty and data protection into AI commissioning, procurement and contract management.",
+      "why_include": "Extends coverage beyond central government to local public sector buyers; strong equality + DP angle.",
+      "related_faq_themes": [
+        "buying-building",
+        "lawful-ethical"
+      ],
+      "formats": ["HTML"],
+      "priority": 3
+    }
+  ]
+}

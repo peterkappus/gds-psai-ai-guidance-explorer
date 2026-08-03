@@ -1,5 +1,7 @@
 const path = require("path");
 const nunjucks = require("nunjucks");
+const markdownIt = require("markdown-it");
+const markdownItGovuk = require("markdown-it-govuk");
 
 module.exports = function (eleventyConfig) {
   const njkEnv = new nunjucks.Environment(
@@ -9,6 +11,15 @@ module.exports = function (eleventyConfig) {
     ])
   );
   eleventyConfig.setLibrary("njk", njkEnv);
+
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true,
+    }).use(markdownItGovuk)
+  );
 
   eleventyConfig.addPassthroughCopy({
     "node_modules/govuk-frontend/dist/govuk/assets": "assets",

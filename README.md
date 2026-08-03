@@ -39,3 +39,4 @@ No Amplify backend or environment variables are required for this prototype.
 - Built with Eleventy and GOV.UK Frontend
 - No crown crest or GDS Transport font (not hosted on GOV.UK)
 - FAQ answers cite playbook snippets and deep-link with Chrome text fragments (`:~:text=`)
+- About pages live at `/about/` and `/about/process/` (content from `src/about/*.md`)

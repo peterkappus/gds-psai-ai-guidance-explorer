@@ -28,6 +28,8 @@
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "govuk-frontend": "^6.4.0",
+    "markdown-it": "^15.0.0",
+    "markdown-it-govuk": "^0.4.0",
     "nunjucks": "^3.2.4",
     "sass": "^1.99.0"
   }

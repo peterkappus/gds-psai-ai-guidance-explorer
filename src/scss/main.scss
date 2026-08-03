@@ -27,3 +27,40 @@
 .govuk-generic-header__homepage-link {
   font-weight: 700;
 }
+
+// Markdown pages: markdown-it-govuk supplies most component classes.
+// These rules cover fenced code and wide tables on long process docs.
+.app-prose {
+  > h1:first-child {
+    margin-top: 0;
+  }
+
+  pre {
+    @include govuk-responsive-margin(4, "bottom");
+    padding: govuk-spacing(3);
+    overflow-x: auto;
+    background-color: govuk-colour("black", $variant: "tint-95");
+    border: 1px solid $govuk-border-colour;
+  }
+
+  code {
+    @include govuk-font($size: 16, $tabular: true);
+  }
+
+  :not(pre) > code {
+    padding: 1px 3px;
+    background-color: govuk-colour("black", $variant: "tint-95");
+  }
+
+  .govuk-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  hr {
+    @include govuk-responsive-margin(6, "top");
+    @include govuk-responsive-margin(6, "bottom");
+    border: 0;
+    border-top: 1px solid $govuk-border-colour;
+  }
+}

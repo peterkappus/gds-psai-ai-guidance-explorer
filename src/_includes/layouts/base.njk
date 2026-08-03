@@ -53,6 +53,15 @@
       </p>
     {% endset %}
     {{ govukFooter({
+      navigation: [
+        {
+          title: "About",
+          items: [
+            { href: "/about/", text: "About this explorer" },
+            { href: "/about/process/", text: "Guidance lifecycle process" }
+          ]
+        }
+      ],
       meta: {
         visuallyHiddenTitle: "About this page",
         html: footerHtml
