@@ -1,0 +1,119 @@
+---
+permalink: /sources/
+---
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+
+{% set title = "Sources" %}
+{% set description = "Browse UK public sector AI guidance sources in this explorer catalogue." %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Sources</h1>
+      <p class="govuk-body-l">
+        Guidance, standards and hubs tracked for this explorer. Open a source for full metadata. Learn <a href="/about/process">how we manage sources</a>.
+      </p>
+      <p class="govuk-body">
+        Catalogue updated {{ sourcesCatalog.meta.updated }}. Currently {{ sourcesCatalog.items | length }} sources.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <div class="app-filter" data-module="app-source-filters">
+        <h2 class="govuk-heading-m">Filter</h2>
+        <p class="govuk-body-s" id="app-filter-count" aria-live="polite"></p>
+
+        <form id="source-filters" method="get" action="/sources/">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                {% for status in sourcesCatalog.statuses %}
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-{{ status }}" name="status" type="checkbox" value="{{ status }}" data-filter="status">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-{{ status }}">{{ status | humanizeToken }}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Type</legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                {% for type in sourcesCatalog.types %}
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="type-{{ type }}" name="type" type="checkbox" value="{{ type }}" data-filter="type">
+                    <label class="govuk-label govuk-checkboxes__label" for="type-{{ type }}">{{ type | humanizeToken }}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Themes</legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small app-filter__themes" data-module="govuk-checkboxes">
+                {% for theme in sourcesCatalog.themes %}
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="theme-{{ theme }}" name="theme" type="checkbox" value="{{ theme }}" data-filter="theme">
+                    <label class="govuk-label govuk-checkboxes__label" for="theme-{{ theme }}">{{ theme | humanizeToken }}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="button" class="govuk-button govuk-button--secondary" data-filter-reset>Clear filters</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <div class="app-source-cards" id="source-cards">
+        {% for source in sourcesCatalog.items %}
+          <article
+            class="app-source-card"
+            data-source-card
+            data-status="{{ source.status }}"
+            data-type="{{ source.type }}"
+            data-themes="{{ source.themes | join(' ') }}"
+          >
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+              <a class="govuk-link" href="/sources/{{ source.id }}/">{{ source.title }}</a>
+            </h2>
+            <p class="govuk-body">{{ source.summary }}</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-2">
+              <strong class="govuk-!-font-weight-bold">Organisation:</strong> {{ source.organisation }}
+            </p>
+            <ul class="app-source-card__meta govuk-list govuk-!-margin-bottom-0">
+              <li>
+                {{ govukTag({
+                  text: source.status | humanizeToken,
+                  classes: source.status | statusTagClass
+                }) }}
+              </li>
+              <li>
+                {{ govukTag({
+                  text: source.type | humanizeToken,
+                  classes: "govuk-tag--grey"
+                }) }}
+              </li>
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+
+      <p class="govuk-body govuk-!-margin-top-4" id="no-source-results" hidden>
+        No sources match the selected filters.
+      </p>
+    </div>
+  </div>
+
+  <script src="/assets/js/source-filters.js"></script>
+{% endblock %}

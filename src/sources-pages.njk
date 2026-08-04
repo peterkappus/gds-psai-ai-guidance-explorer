@@ -1,0 +1,173 @@
+---
+pagination:
+  data: sourcesCatalog.items
+  size: 1
+  alias: source
+permalink: "/sources/{{ source.id }}/"
+eleventyComputed:
+  title: "{{ source.title }}"
+  description: "{{ source.summary }}"
+---
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Sources",
+    href: "/sources/"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ source.title }}</h1>
+
+      <p class="govuk-body">
+        {{ govukTag({
+          text: source.status | humanizeToken,
+          classes: source.status | statusTagClass
+        }) }}
+        {{ govukTag({
+          text: source.type | humanizeToken,
+          classes: "govuk-tag--grey"
+        }) }}
+      </p>
+
+      <p class="govuk-body-l">{{ source.summary }}</p>
+
+      {% if source.why_include %}
+        <h2 class="govuk-heading-m">Why this source matters</h2>
+        {{ govukInsetText({
+          text: source.why_include
+        }) }}
+      {% endif %}
+
+      {{ govukButton({
+        text: "View original source (opens in new tab)",
+        href: source.url,
+        attributes: {
+          target: "_blank",
+          rel: "noreferrer noopener"
+        }
+      }) }}
+
+      <h2 class="govuk-heading-m">Source details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">ID</dt>
+          <dd class="govuk-summary-list__value"><code>{{ source.id }}</code></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Organisation</dt>
+          <dd class="govuk-summary-list__value">{{ source.organisation }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Type</dt>
+          <dd class="govuk-summary-list__value">{{ source.type | humanizeToken }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Status</dt>
+          <dd class="govuk-summary-list__value">{{ source.status | humanizeToken }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Priority</dt>
+          <dd class="govuk-summary-list__value">{{ source.priority if source.priority else "Not set" }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">URL</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="{{ source.url }}" rel="noreferrer noopener" target="_blank">{{ source.url }}</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Audience</dt>
+          <dd class="govuk-summary-list__value">
+            {% if source.audience and source.audience.length %}
+              <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                {% for item in source.audience %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              Not specified
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Themes</dt>
+          <dd class="govuk-summary-list__value">
+            {% if source.themes and source.themes.length %}
+              <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                {% for item in source.themes %}
+                  <li>{{ item | humanizeToken }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              Not specified
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Related FAQ themes</dt>
+          <dd class="govuk-summary-list__value">
+            {% if source.related_faq_themes and source.related_faq_themes.length %}
+              <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                {% for item in source.related_faq_themes %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              Not specified
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Formats</dt>
+          <dd class="govuk-summary-list__value">
+            {% if source.formats and source.formats.length %}
+              {{ source.formats | join(", ") }}
+            {% else %}
+              Not specified
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Discovered via</dt>
+          <dd class="govuk-summary-list__value">{{ source.discovered_via if source.discovered_via else "Not specified" }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Discovered on</dt>
+          <dd class="govuk-summary-list__value">{{ source.discovered_on if source.discovered_on else "Not specified" }}</dd>
+        </div>
+      </dl>
+
+      {% if source.notes %}
+        <h2 class="govuk-heading-m">Notes</h2>
+        <p class="govuk-body">{{ source.notes }}</p>
+      {% endif %}
+
+      {% if source.related_urls and source.related_urls.length %}
+        <h2 class="govuk-heading-m">Related URLs</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for relatedUrl in source.related_urls %}
+            <li>
+              <a class="govuk-link" href="{{ relatedUrl }}" rel="noreferrer noopener" target="_blank">{{ relatedUrl }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if source.aliases_from_potential_list and source.aliases_from_potential_list.length %}
+        <h2 class="govuk-heading-m">Listed as</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for alias in source.aliases_from_potential_list %}
+            <li>{{ alias }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

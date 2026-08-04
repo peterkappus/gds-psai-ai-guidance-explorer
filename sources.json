@@ -1,16 +1,20 @@
 {
   "meta": {
     "title": "UK public sector AI guidance sources",
-    "description": "Candidate sources to incorporate into the AI Guidance Explorer. Each entry is structured for humans and LLMs to scan, filter, and cite.",
-    "updated": "2026-08-03",
+    "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
+    "updated": "2026-08-04",
     "jurisdiction": "United Kingdom",
+    "source_lists": [
+      "Original explorer backlog (Aug 2026)",
+      "potential_external_sources.md"
+    ],
     "already_incorporated": [
       {
         "id": "ai-playbook-uk-government",
         "title": "Artificial Intelligence Playbook for the UK Government",
         "url": "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html",
-        "organisation": "Department for Science, Innovation and Technology (DSIT)",
-        "notes": "Currently powers the FAQ answers and citations on the explorer."
+        "organisation": "Department for Science, Innovation and Technology (DSIT) / Government Digital Service (GDS)",
+        "notes": "Currently powers the FAQ answers and citations on the explorer. Listed again in potential_external_sources.md — treated as incorporated, not re-added as a candidate."
       }
     ],
     "fields": {
@@ -18,13 +22,16 @@
       "title": "Official document or collection title",
       "url": "Canonical public URL",
       "organisation": "Publishing or owning body",
-      "type": "guidance | standard | framework | code_of_practice | action_plan | regulator_guidance",
-      "status": "candidate | incorporated | superseded",
+      "type": "guidance | standard | framework | code_of_practice | action_plan | regulator_guidance | hub | community | organisation",
+      "status": "candidate | incorporated | superseded | watch",
       "audience": "Who it is mainly for",
       "themes": "Topic tags for browse/filter",
       "summary": "Short plain-English description",
       "why_include": "Why this source matters for the explorer",
-      "related_faq_themes": "Existing FAQ categories it would help answer"
+      "related_faq_themes": "Existing FAQ categories it would help answer",
+      "discovered_via": "How we found it",
+      "discovered_on": "ISO date",
+      "priority": "1 = next, 2 = soon, 3 = later, 4 = context/community only"
     }
   },
   "sources": [
@@ -54,7 +61,12 @@
         "collaboration"
       ],
       "formats": ["HTML collection", "Excel/Google Sheets template"],
-      "priority": 1
+      "priority": 1,
+      "discovered_via": "original-backlog|potential_external_sources",
+      "discovered_on": "2026-08-03",
+      "aliases_from_potential_list": [
+        "GOV.UK - Algorithmic Transparency Recording Standard + repository"
+      ]
     },
     {
       "id": "ico-ai-data-protection",
@@ -82,7 +94,9 @@
         "security-tools"
       ],
       "formats": ["HTML"],
-      "priority": 1
+      "priority": 1,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
     },
     {
       "id": "ncsc-secure-ai-system-development",
@@ -110,7 +124,12 @@
         "delivery-assurance"
       ],
       "formats": ["HTML collection", "PDF"],
-      "priority": 1
+      "priority": 1,
+      "discovered_via": "original-backlog|potential_external_sources",
+      "discovered_on": "2026-08-03",
+      "aliases_from_potential_list": [
+        "NCSC - Guidelines for Secure AI System Development and AI guidance"
+      ]
     },
     {
       "id": "guidelines-ai-procurement",
@@ -136,7 +155,142 @@
         "buying-building"
       ],
       "formats": ["HTML"],
-      "priority": 1
+      "priority": 1,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
+    },
+    {
+      "id": "ai-insights",
+      "title": "AI Insights",
+      "url": "https://www.gov.uk/government/publications/ai-insights",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "guidance",
+      "status": "accept",
+      "audience": [
+        "digital and data professionals",
+        "technologists implementing AI",
+        "technical advisers"
+      ],
+      "themes": [
+        "implementation",
+        "machine-learning",
+        "technical-practice",
+        "building-ai"
+      ],
+      "summary": "Series of technical articles on implementing AI safely and effectively in the public sector. Complements the AI Playbook with deeper implementation topics the playbook deliberately defers.",
+      "why_include": "Playbook update notes moved build/training depth into AI Insights; high value for filling technical FAQ gaps with citable articles.",
+      "related_faq_themes": [
+        "getting-started",
+        "buying-building",
+        "delivery-assurance",
+        "security-tools"
+      ],
+      "formats": ["HTML publication series"],
+      "priority": 1,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GOV.UK - AI Insights articles"
+      ]
+    },
+    {
+      "id": "ai-knowledge-hub",
+      "title": "AI Knowledge Hub",
+      "url": "https://ai.gov.uk/knowledge-hub/",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI) / GDS ecosystem",
+      "type": "hub",
+      "status": "candidate",
+      "audience": [
+        "public sector delivery teams",
+        "practitioners sharing tools and prompts",
+        "AI adoption leads"
+      ],
+      "themes": [
+        "adoption",
+        "reuse",
+        "case-studies",
+        "tools",
+        "collaboration"
+      ],
+      "summary": "Central public-sector hub to find AI tools, approaches and shared practice. Positions itself as practical adoption support and links to official guidance rather than being a comprehensive policy source.",
+      "why_include": "Roadmap for modern digital government points teams here; useful for collaboration/reuse FAQs and discovering further citable sources. Needs careful citation rules (practice vs policy).",
+      "related_faq_themes": [
+        "collaboration",
+        "getting-started",
+        "buying-building"
+      ],
+      "formats": ["HTML hub"],
+      "priority": 1,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "AI Knowledge Hub - public (ai.gov.uk/knowledge-hub)"
+      ],
+      "notes": "About page states it is not a comprehensive policy source; prefer citing underlying official guidance where answers assert requirements."
+    },
+    {
+      "id": "secure-by-design",
+      "title": "Secure by Design",
+      "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/",
+      "organisation": "Government Cyber Unit / DSIT (security.gov.uk)",
+      "type": "framework",
+      "status": "candidate",
+      "audience": [
+        "delivery teams",
+        "security professionals",
+        "commercial / procurement"
+      ],
+      "themes": [
+        "security",
+        "secure-by-design",
+        "assurance",
+        "procurement"
+      ],
+      "summary": "Mandatory cross-government approach for embedding cyber security in digital delivery, including policy, 10 principles, activities and implementation guidance.",
+      "why_include": "Explicitly required by the AI Playbook for AI services; answers security and spend-control related FAQs with primary security policy.",
+      "related_faq_themes": [
+        "security-tools",
+        "buying-building",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML collection"],
+      "priority": 1,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GOV.UK - Secure by Design"
+      ]
+    },
+    {
+      "id": "security-govuk-ai",
+      "title": "Artificial Intelligence (security.gov.uk policy and guidance)",
+      "url": "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/",
+      "organisation": "Government Cyber Unit / Government AI Security Team",
+      "type": "hub",
+      "status": "candidate",
+      "audience": [
+        "security practitioners",
+        "AI delivery teams",
+        "risk owners"
+      ],
+      "themes": [
+        "security",
+        "governance",
+        "generative-ai"
+      ],
+      "summary": "Government security landing page for AI: points to Secure by Design, the AI cyber security code of practice, the AI Playbook, NCSC guidance, and notes the Government AI Security Team / generative AI security community.",
+      "why_include": "Useful index for security FAQs and discovering authoritative security sources; may also yield community/process answers.",
+      "related_faq_themes": [
+        "security-tools",
+        "collaboration"
+      ],
+      "formats": ["HTML"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "security.gov.uk - AI policy and guidance"
+      ]
     },
     {
       "id": "data-and-ai-ethics-framework",
@@ -165,7 +319,12 @@
         "buying-building"
       ],
       "formats": ["HTML", "self-assessment tool"],
-      "priority": 2
+      "priority": 2,
+      "discovered_via": "original-backlog|potential_external_sources",
+      "discovered_on": "2026-08-03",
+      "aliases_from_potential_list": [
+        "GOV.UK - Data (and AI) Ethics Framework"
+      ]
     },
     {
       "id": "ethics-transparency-accountability-adm",
@@ -193,7 +352,9 @@
         "delivery-assurance"
       ],
       "formats": ["HTML", "assessment form"],
-      "priority": 2
+      "priority": 2,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
     },
     {
       "id": "ai-cyber-security-code-of-practice",
@@ -213,7 +374,7 @@
         "lifecycle",
         "standards"
       ],
-      "summary": "Voluntary code setting baseline cyber security requirements across AI design, development, deployment, maintenance and end of life; intended to inform emerging standards.",
+      "summary": "Voluntary code setting baseline cyber security requirements across AI design, development, deployment, maintenance and end of life; intended to inform emerging standards including ETSI work.",
       "why_include": "Complements NCSC guidelines with a lifecycle code of practice useful for supplier and assurance questions.",
       "related_faq_themes": [
         "security-tools",
@@ -221,7 +382,16 @@
         "delivery-assurance"
       ],
       "formats": ["HTML"],
-      "priority": 2
+      "priority": 2,
+      "discovered_via": "original-backlog|potential_external_sources",
+      "discovered_on": "2026-08-03",
+      "related_urls": [
+        "https://www.etsi.org/ (ETSI TS 104 223 — emerging standard informed by this code; confirm exact public URL before citing)"
+      ],
+      "aliases_from_potential_list": [
+        "DSIT AI Cyber Security Code of Practice / ETSI TS 104 223"
+      ],
+      "notes": "Treat ETSI TS 104 223 as related standards work, not a substitute citation, until a stable public text/URL is verified."
     },
     {
       "id": "introduction-to-ai-assurance",
@@ -248,7 +418,139 @@
         "getting-started"
       ],
       "formats": ["HTML landing page", "PDF"],
-      "priority": 2
+      "priority": 2,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
+    },
+    {
+      "id": "service-standard",
+      "title": "Service Standard",
+      "url": "https://www.gov.uk/service-manual/service-standard",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "standard",
+      "status": "candidate",
+      "audience": [
+        "service teams",
+        "SROs",
+        "assessors"
+      ],
+      "themes": [
+        "service-design",
+        "delivery",
+        "assurance",
+        "user-needs"
+      ],
+      "summary": "Mandatory standard for government services. The AI Playbook states that if you develop a service you must use the Service Standard.",
+      "why_include": "Foundational delivery requirement for AI services that are public-facing or meet service criteria; backs FAQ on Service Standard applicability.",
+      "related_faq_themes": [
+        "delivery-assurance",
+        "getting-started"
+      ],
+      "formats": ["HTML"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GOV.UK - Service Standard"
+      ]
+    },
+    {
+      "id": "service-manual",
+      "title": "Service Manual",
+      "url": "https://www.gov.uk/service-manual",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "guidance",
+      "status": "candidate",
+      "audience": [
+        "service teams",
+        "user researchers",
+        "delivery managers"
+      ],
+      "themes": [
+        "service-design",
+        "user-research",
+        "agile-delivery",
+        "security"
+      ],
+      "summary": "How-to guidance for meeting the Service Standard, including team setup, user research, security and privacy practices relevant to AI-enabled services.",
+      "why_include": "Playbook repeatedly points here for team setup and user research for AI; good supporting citations for delivery FAQs.",
+      "related_faq_themes": [
+        "getting-started",
+        "delivery-assurance",
+        "security-tools"
+      ],
+      "formats": ["HTML"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GOV.UK - Service Manual"
+      ]
+    },
+    {
+      "id": "technology-code-of-practice",
+      "title": "Technology Code of Practice",
+      "url": "https://www.gov.uk/guidance/the-technology-code-of-practice",
+      "organisation": "Cabinet Office / Government Digital Service (GDS)",
+      "type": "standard",
+      "status": "candidate",
+      "audience": [
+        "technology leaders",
+        "commercial teams",
+        "programme SROs"
+      ],
+      "themes": [
+        "technology-strategy",
+        "security",
+        "spend-controls",
+        "lifecycle"
+      ],
+      "summary": "Cross-government criteria for designing, building and buying technology; used in spend control and referenced by the AI Playbook for lifecycle understanding.",
+      "why_include": "Supports FAQs on spend controls, secure technology choices and meeting wider digital standards alongside AI-specific guidance.",
+      "related_faq_themes": [
+        "buying-building",
+        "delivery-assurance",
+        "security-tools"
+      ],
+      "formats": ["HTML"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GOV.UK - Technology Code of Practice"
+      ]
+    },
+    {
+      "id": "roadmap-modern-digital-government-ai-guidance",
+      "title": "Creating practical guidance for responsible AI adoption (Roadmap for modern digital government)",
+      "url": "https://roadmap-for-modern-digital-government.campaign.gov.uk/ai/guidance-for-ai-adoption/",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "action_plan",
+      "status": "candidate",
+      "audience": [
+        "senior leaders",
+        "responsible AI / data teams",
+        "programme owners"
+      ],
+      "themes": [
+        "strategy",
+        "ethics",
+        "adoption",
+        "roadmap"
+      ],
+      "summary": "Roadmap initiative page describing GDS work on responsible AI adoption guidance, progress (Playbook, Knowledge Hub, ethics framework, advisory panel) and next steps.",
+      "why_include": "Useful orientation for what central guidance exists and where GDS is heading; less suited as a primary citation for normative requirements.",
+      "related_faq_themes": [
+        "getting-started",
+        "collaboration"
+      ],
+      "formats": ["HTML"],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "Roadmap for Modern Digital Government - AI adoption guidance"
+      ]
     },
     {
       "id": "ai-opportunities-action-plan",
@@ -279,7 +581,9 @@
       "related_urls": [
         "https://assets.publishing.service.gov.uk/media/67851771f0528401055d2329/ai_opportunities_action_plan.pdf"
       ],
-      "priority": 3
+      "priority": 3,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
     },
     {
       "id": "lga-responsibly-buying-ai",
@@ -306,7 +610,292 @@
         "lawful-ethical"
       ],
       "formats": ["HTML"],
-      "priority": 3
+      "priority": 3,
+      "discovered_via": "original-backlog",
+      "discovered_on": "2026-08-03"
+    },
+    {
+      "id": "lga-ai-hub-and-network",
+      "title": "LGA Artificial Intelligence Hub and AI Network",
+      "url": "https://www.local.gov.uk/our-support/cyber-digital-and-technology/artificial-intelligence-hub",
+      "organisation": "Local Government Association (LGA)",
+      "type": "hub",
+      "status": "candidate",
+      "audience": [
+        "council officers",
+        "local government digital / data leads"
+      ],
+      "themes": [
+        "local-government",
+        "community",
+        "adoption",
+        "procurement"
+      ],
+      "summary": "LGA hub for council AI resources, plus peer AI Network (and practitioners network) for risks, rewards and readiness discussions.",
+      "why_include": "Discovery and collaboration channel for local government; cite published guides (e.g. responsibly buying AI) rather than private network discussions.",
+      "related_faq_themes": [
+        "collaboration",
+        "buying-building"
+      ],
+      "formats": ["HTML hub", "peer network"],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "related_urls": [
+        "https://www.local.gov.uk/our-support/cyber-digital-and-technology/cyber-digital-and-technology-network-groups/ai-network"
+      ],
+      "aliases_from_potential_list": [
+        "Local Government AI network"
+      ]
+    },
+    {
+      "id": "nhs-ai-knowledge-repository",
+      "title": "NHS AI knowledge repository",
+      "url": "https://digital.nhs.uk/services/ai-knowledge-repository",
+      "organisation": "NHS England Digital",
+      "type": "hub",
+      "status": "candidate",
+      "audience": [
+        "health and care professionals",
+        "NHS digital / clinical AI teams"
+      ],
+      "themes": [
+        "health",
+        "patient-safety",
+        "ethics",
+        "adoption"
+      ],
+      "summary": "NHS repository and community resources for responsible AI adoption in health and care, including the AI Ambassador Network.",
+      "why_include": "Sector-specific guidance for health FAQs; may conflict with or specialise central-government general advice — flag scope carefully.",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "delivery-assurance",
+        "collaboration"
+      ],
+      "formats": ["HTML hub"],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "NHS Digital AI knowledge repository"
+      ]
+    },
+    {
+      "id": "moj-justice-ai",
+      "title": "Justice AI Unit",
+      "url": "https://ai.justice.gov.uk/",
+      "organisation": "Ministry of Justice",
+      "type": "organisation",
+      "status": "candidate",
+      "audience": [
+        "justice system delivery teams",
+        "MoJ digital / operational staff"
+      ],
+      "themes": [
+        "justice",
+        "adoption",
+        "scan-pilot-scale"
+      ],
+      "summary": "MoJ Justice AI Unit site describing responsible AI embedding across justice services using a scan/pilot/scale model.",
+      "why_include": "Departmental practice and case context; verify which pages are citable guidance vs programme marketing before FAQ use.",
+      "related_faq_themes": [
+        "getting-started",
+        "collaboration"
+      ],
+      "formats": ["HTML"],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "MoJ Justice AI (ai.justice.gov.uk)"
+      ]
+    },
+    {
+      "id": "defence-ai-centre",
+      "title": "Defence Artificial Intelligence Centre (DAIC)",
+      "url": "https://www.gov.uk/government/groups/defence-artificial-intelligence-centre",
+      "organisation": "Ministry of Defence",
+      "type": "organisation",
+      "status": "watch",
+      "audience": [
+        "defence AI practitioners",
+        "industry / academia partners"
+      ],
+      "themes": [
+        "defence",
+        "innovation",
+        "capability"
+      ],
+      "summary": "MoD centre that champions, enables and innovates AI across UK Defence.",
+      "why_include": "Likely limited public normative guidance; keep on watch for published defence AI policy/guidance suitable for citation.",
+      "related_faq_themes": [
+        "collaboration"
+      ],
+      "formats": ["HTML organisation page"],
+      "priority": 4,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "Defence AI Centre"
+      ],
+      "notes": "Status watch: organisation presence confirmed; insufficient public guidance pages identified for FAQ citation yet."
+    },
+    {
+      "id": "government-analysis-function-ai-hub",
+      "title": "Government Analysis Function AI Hub",
+      "url": "https://analysisfunction.civilservice.gov.uk/ai-hub/",
+      "organisation": "Government Analysis Function",
+      "type": "hub",
+      "status": "candidate",
+      "audience": [
+        "government analysts",
+        "statistics / data science professions"
+      ],
+      "themes": [
+        "analysis",
+        "standards",
+        "learning",
+        "responsible-use"
+      ],
+      "summary": "Single entry point for analysts to approved AI-related guidance, learning materials and standards aligned to the Analysis Function strategy.",
+      "why_include": "Profession-specific layer on top of cross-government AI guidance; good for analyst-oriented FAQs and discovering approved resources.",
+      "related_faq_themes": [
+        "getting-started",
+        "delivery-assurance",
+        "collaboration"
+      ],
+      "formats": ["HTML hub"],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "Government Analysis Function AI hub"
+      ]
+    },
+    {
+      "id": "iai-incubator",
+      "title": "Incubator for Artificial Intelligence (i.AI)",
+      "url": "https://ai.gov.uk/",
+      "organisation": "Government Digital Service / DSIT (i.AI merged into GDS Jan 2025)",
+      "type": "organisation",
+      "status": "candidate",
+      "audience": [
+        "public sector innovators",
+        "product teams exploring AI"
+      ],
+      "themes": [
+        "innovation",
+        "products",
+        "adoption"
+      ],
+      "summary": "i.AI pioneers transformative AI applications for public good; public site also surfaces the AI Knowledge Hub. Organisational pages on GOV.UK note merger into GDS.",
+      "why_include": "Context and product/case discovery; prefer citing Knowledge Hub content or published guidance over org homepage alone.",
+      "related_faq_themes": [
+        "collaboration",
+        "getting-started"
+      ],
+      "formats": ["HTML"],
+      "related_urls": [
+        "https://www.gov.uk/government/organisations/incubator-for-artificial-intelligence"
+      ],
+      "priority": 3,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "i.AI site"
+      ]
+    },
+    {
+      "id": "ai-security-institute",
+      "title": "AI Security Institute (formerly AI Safety Institute)",
+      "url": "https://www.gov.uk/government/organisations/ai-safety-institute",
+      "organisation": "Department for Science, Innovation and Technology (DSIT)",
+      "type": "organisation",
+      "status": "watch",
+      "audience": [
+        "AI safety / security researchers",
+        "policy makers",
+        "frontier model evaluators"
+      ],
+      "themes": [
+        "ai-safety",
+        "evaluation",
+        "frontier-models"
+      ],
+      "summary": "DSIT institute focused on understanding and reducing risks from advanced AI. GOV.UK notes the rename from AI Safety Institute to AI Security Institute.",
+      "why_include": "Important for frontier-model safety context; less directly actionable for typical departmental adoption FAQs unless citing specific evaluation/guidance publications.",
+      "related_faq_themes": [
+        "security-tools",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML organisation hub", "reports"],
+      "priority": 4,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "AI Safety Institute website"
+      ],
+      "notes": "Cite specific published reports/guidance, not the org homepage. Confirm current public brand URL if aisi.gov.uk supersedes GOV.UK org page."
+    },
+    {
+      "id": "wales-automation-ai-cop",
+      "title": "Automation and AI Community of Practice (Wales)",
+      "url": "https://digitalpublicservices.gov.wales/courses-and-events/communities-practice/automation-and-ai",
+      "organisation": "Digital Public Services Wales / Welsh Government",
+      "type": "community",
+      "status": "candidate",
+      "audience": [
+        "Welsh public sector AI / automation practitioners"
+      ],
+      "themes": [
+        "devolved",
+        "community",
+        "adoption",
+        "wales"
+      ],
+      "summary": "Monthly community of practice for people implementing automation and AI across the Welsh public sector, facilitated via Digital Public Services Wales.",
+      "why_include": "Devolved collaboration channel; useful for Wales-scoped FAQs and discovering Wales-specific standards/guidance. Not itself a normative guidance document.",
+      "related_faq_themes": [
+        "collaboration"
+      ],
+      "formats": ["community page"],
+      "priority": 4,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "Automation and AI Community of Practice (Wales)"
+      ]
+    },
+    {
+      "id": "gds-responsible-ai-advisory-panel",
+      "title": "GDS Responsible AI Advisory Panel",
+      "url": "https://www.gov.uk/government/groups/gds-responsible-ai-advisory-panel",
+      "organisation": "Government Digital Service (GDS)",
+      "type": "organisation",
+      "status": "watch",
+      "audience": [
+        "GDS responsible data and AI team",
+        "external ethics / policy advisers"
+      ],
+      "themes": [
+        "ethics",
+        "advisory",
+        "governance"
+      ],
+      "summary": "Advisory panel convened to advise on responsible AI use across government; referenced from the Roadmap for modern digital government AI adoption page.",
+      "why_include": "Watch for published advice or outputs that become citable; panel itself is not end-user guidance.",
+      "related_faq_themes": [
+        "lawful-ethical",
+        "collaboration"
+      ],
+      "formats": ["HTML group page"],
+      "priority": 4,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "aliases_from_potential_list": [
+        "GDS Responsible AI Advisory Panel"
+      ],
+      "notes": "Verify page contents and any published outputs before elevating beyond watch."
     }
   ]
 }

@@ -28,6 +28,34 @@
   font-weight: 700;
 }
 
+.app-filter {
+  margin-bottom: govuk-spacing(6);
+  padding: govuk-spacing(4);
+  background-color: govuk-colour("black", $variant: "tint-95");
+}
+
+.app-filter__themes {
+  max-height: 18rem;
+  overflow-y: auto;
+  padding-right: govuk-spacing(2);
+}
+
+.app-source-card {
+  margin-bottom: govuk-spacing(4);
+  padding: govuk-spacing(4);
+  border: 1px solid $govuk-border-colour;
+}
+
+.app-source-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: govuk-spacing(2);
+}
+
+.app-source-card__meta .govuk-tag {
+  margin-right: 0;
+}
+
 // Markdown pages: markdown-it-govuk supplies most component classes.
 // These rules cover fenced code and wide tables on long process docs.
 .app-prose {

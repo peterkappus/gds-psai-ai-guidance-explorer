@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
     "node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js":
       "assets/govuk-frontend.min.js",
     "src/assets/css": "assets/css",
+    "src/assets/js": "assets/js",
   });
 
   eleventyConfig.addFilter("textFragmentUrl", function (item) {
@@ -42,6 +43,30 @@ module.exports = function (eleventyConfig) {
       fragment += `,${encode(item.textEnd)}`;
     }
     return `${base}#${fragment}`;
+  });
+
+  eleventyConfig.addFilter("humanizeToken", function (value) {
+    if (!value) return "";
+    return String(value)
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+  });
+
+  eleventyConfig.addFilter("statusTagClass", function (status) {
+    switch (status) {
+      case "incorporated":
+        return "govuk-tag--green";
+      case "candidate":
+        return "govuk-tag--blue";
+      case "watch":
+        return "govuk-tag--yellow";
+      case "superseded":
+        return "govuk-tag--grey";
+      case "rejected":
+        return "govuk-tag--red";
+      default:
+        return "";
+    }
   });
 
   return {

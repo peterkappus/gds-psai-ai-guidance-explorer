@@ -30,12 +30,18 @@
     }) }}
 
     {% set aboutIsCurrent = page.url.indexOf('/about/') === 0 %}
+    {% set sourcesIsCurrent = page.url.indexOf('/sources/') === 0 %}
     {{ govukServiceNavigation({
       navigation: [
         {
           href: "/",
           text: "Questions",
           current: page.url === "/"
+        },
+        {
+          href: "/sources/",
+          text: "Sources",
+          current: sourcesIsCurrent
         },
         {
           href: "/about/",
@@ -71,6 +77,13 @@
     {% endset %}
     {{ govukFooter({
       navigation: [
+        {
+          title: "Explore",
+          items: [
+            { href: "/", text: "Questions" },
+            { href: "/sources/", text: "Sources" }
+          ]
+        },
         {
           title: "About",
           items: [
