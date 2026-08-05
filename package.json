@@ -1,6 +1,6 @@
 {
   "name": "gds-psai-ai-guidance-explorer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A catalogue of public sector AI guidance.",
   "main": "index.js",
   "scripts": {

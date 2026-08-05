@@ -1,0 +1,219 @@
+{
+  "source_id": "ai-insights",
+  "series_url": "https://www.gov.uk/government/publications/ai-insights",
+  "extracted_on": "2026-08-04",
+  "incorporated_articles": [
+    {
+      "article_id": "ai-insights-generative-ai",
+      "title": "AI Insights: Generative AI",
+      "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-generative-ai-html"
+    },
+    {
+      "article_id": "ai-insights-prompt-risks",
+      "title": "AI Insights: Prompt Risks",
+      "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-prompt-risks-html"
+    },
+    {
+      "article_id": "ai-insights-llms-bias",
+      "title": "AI Insights: Large language models (LLMs) Bias",
+      "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-large-language-models-llms-bias-html"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ai-insights-generative-ai--probabilistic-not-sentient",
+      "article_id": "ai-insights-generative-ai",
+      "section": "How generative AI works",
+      "claim_type": "definition",
+      "text": "While this process enables LLMs to produce responses to requests, these models do not understand the content or meaning of the words beyond how an input set of numbers may most likely translate into an output set of numbers, and subsequently into streams of words. This means that there are limitations on what these models can reasonably do. You must consider that these are probabilistic models, and, despite producing human-like output, they are not at all sentient.",
+      "is_quotation": true,
+      "text_start": "these models do not understand the content or meaning of the words",
+      "text_end": "they are not at all sentient",
+      "themes": ["generative-ai", "limitations"],
+      "related_faq_ids": ["what-is-ai-limitations", "hallucinations"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--public-apps-org-policy",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Public generative AI applications and web endpoints",
+      "claim_type": "requirement",
+      "text": "you must make sure you’re acting in line with the policies of your organisation",
+      "is_quotation": true,
+      "text_start": "you must make sure you’re acting in line with the policies",
+      "text_end": "policies of your organisation",
+      "themes": ["public-tools", "policy"],
+      "related_faq_ids": ["chatgpt-official-info"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--provider-may-use-data",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Public generative AI applications and web endpoints",
+      "claim_type": "warning",
+      "text": "while the use of these services may be free of charge, you should be aware that any information provided to these services may be used by the provider",
+      "is_quotation": true,
+      "text_start": "any information provided to these services may be used by the provider",
+      "text_end": null,
+      "themes": ["public-tools", "data-leakage"],
+      "related_faq_ids": ["chatgpt-official-info"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--responsible-for-output",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Public generative AI applications and web endpoints",
+      "claim_type": "requirement",
+      "text": "generative AI services and applications are vulnerable to bias in their training data, as for any model. You’re responsible for checking and controlling their output",
+      "is_quotation": true,
+      "text_start": "You’re responsible for checking and controlling their output",
+      "text_end": null,
+      "themes": ["bias", "assurance"],
+      "related_faq_ids": ["bias-fairness", "hallucinations"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--integrated-data-visibility",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Integrated generative AI applications",
+      "claim_type": "requirement",
+      "text": "Before enabling a service, you must understand what data is visible to integrated AI services, and how that data is consumed, processed, and potentially transmitted or communicated externally.",
+      "is_quotation": true,
+      "text_start": "you must understand what data is visible to integrated AI services",
+      "text_end": "transmitted or communicated externally",
+      "themes": ["embedded-ai", "security"],
+      "related_faq_ids": ["embedded-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--hitl",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Getting reliable results",
+      "claim_type": "recommendation",
+      "text": "HITL systems involve people to review, correct and approve system output. They’re a vital aspect of delivering critical services, especially where the cost of failure may be high",
+      "is_quotation": true,
+      "text_start": "They’re a vital aspect of delivering critical services",
+      "text_end": "where the cost of failure may be high",
+      "themes": ["assurance", "human-oversight"],
+      "related_faq_ids": ["hallucinations", "prompt-injection"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-generative-ai--correctness-not-guaranteed",
+      "article_id": "ai-insights-generative-ai",
+      "section": "Testing generative AI solutions",
+      "claim_type": "warning",
+      "text": "Generative AI systems are fallible and the correctness of their responses is not guaranteed. These systems are probabilistic models which predict the likeliest outputs for given inputs. They generate responses that have a high measure of plausibility based on the data that they have processed. This means that they can, and do, make errors.",
+      "is_quotation": true,
+      "text_start": "the correctness of their responses is not guaranteed",
+      "text_end": "they can, and do, make errors",
+      "themes": ["hallucinations", "testing"],
+      "related_faq_ids": ["hallucinations"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-prompt-risks--prompt-injection-def",
+      "article_id": "ai-insights-prompt-risks",
+      "section": "Prompt injection",
+      "claim_type": "definition",
+      "text": "This is a mechanism which manipulates LLM inputs to return unintended responses by crafting specific prompts that exploit the language model’s response mechanisms. It is an attempt to gain unauthorised access to data or behaviour, either returning information to which the user is not entitled or invoking methods or instructions that the user is not authorised to execute.",
+      "is_quotation": true,
+      "text_start": "manipulates LLM inputs to return unintended responses",
+      "text_end": "the user is not authorised to execute",
+      "themes": ["prompt-injection", "security"],
+      "related_faq_ids": ["prompt-injection", "prompt-injection-vs-jailbreaking"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-prompt-risks--vendor-resilience",
+      "article_id": "ai-insights-prompt-risks",
+      "section": "Prompt injection",
+      "claim_type": "recommendation",
+      "text": "Most vendor solutions are quite resilient to these vulnerabilities, but it is our responsibility to ensure that we are safe and protected.",
+      "is_quotation": true,
+      "text_start": "Most vendor solutions are quite resilient to these vulnerabilities",
+      "text_end": "our responsibility to ensure that we are safe and protected",
+      "themes": ["prompt-injection", "security"],
+      "related_faq_ids": ["prompt-injection"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-prompt-risks--no-secret-prompt-position",
+      "article_id": "ai-insights-prompt-risks",
+      "section": "Prompt injection",
+      "claim_type": "requirement",
+      "text": "Our defences should not rely on secret knowledge. For example, the position of the user input in a prompt. Whether it is located above or below other system instructions.",
+      "is_quotation": true,
+      "text_start": "Our defences should not rely on secret knowledge",
+      "text_end": "above or below other system instructions",
+      "themes": ["prompt-injection", "security"],
+      "related_faq_ids": ["prompt-injection"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-prompt-risks--jailbreak-vs-injection",
+      "article_id": "ai-insights-prompt-risks",
+      "section": "Jailbreaking",
+      "claim_type": "definition",
+      "text": "While both jailbreaking and prompt injection can be used to manipulate LLMs, they operate at different levels and have distinct goals: jailbreaking is focused on gaining access to the model’s internal workings; whereas prompt injection is focused on manipulating the model’s output through cleverly designed input prompts.",
+      "is_quotation": true,
+      "text_start": "jailbreaking is focused on gaining access to the model’s internal workings",
+      "text_end": "cleverly designed input prompts",
+      "themes": ["prompt-injection", "jailbreaking"],
+      "related_faq_ids": ["prompt-injection-vs-jailbreaking"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-prompt-risks--continuous-vigilance",
+      "article_id": "ai-insights-prompt-risks",
+      "section": "Vigilance",
+      "claim_type": "warning",
+      "text": "The price of peace of mind in generative AI-based systems is continuous vigilance. Systems are rarely impenetrable.",
+      "is_quotation": true,
+      "text_start": "The price of peace of mind in generative AI-based systems is continuous vigilance",
+      "text_end": "Systems are rarely impenetrable",
+      "themes": ["security", "assurance"],
+      "related_faq_ids": ["prompt-injection", "main-security-risks"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-llms-bias--unavoidable",
+      "article_id": "ai-insights-llms-bias",
+      "section": "Sources of bias in LLMs",
+      "claim_type": "warning",
+      "text": "Bias in LLMs is fundamentally unavoidable because they learn from human-written text which contains centuries of accumulated societal biases.",
+      "is_quotation": true,
+      "text_start": "Bias in LLMs is fundamentally unavoidable",
+      "text_end": "centuries of accumulated societal biases",
+      "themes": ["bias", "fairness"],
+      "related_faq_ids": ["bias-fairness"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-llms-bias--continuous-mlops",
+      "article_id": "ai-insights-llms-bias",
+      "section": "Reducing bias in LLMs",
+      "claim_type": "recommendation",
+      "text": "effective bias management requires continuous integration into MLOps workflows, with evaluation running at every stage from development through production monitoring.",
+      "is_quotation": true,
+      "text_start": "effective bias management requires continuous integration into MLOps workflows",
+      "text_end": "development through production monitoring",
+      "themes": ["bias", "mlops"],
+      "related_faq_ids": ["bias-fairness"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-insights-llms-bias--mandatory-gate",
+      "article_id": "ai-insights-llms-bias",
+      "section": "MLOps Integration",
+      "claim_type": "requirement",
+      "text": "The continuous integration pipeline should incorporate automated bias evaluation as a mandatory gate, and block deployments that exceed predefined thresholds regardless of improvements in other metrics.",
+      "is_quotation": true,
+      "text_start": "automated bias evaluation as a mandatory gate",
+      "text_end": "regardless of improvements in other metrics",
+      "themes": ["bias", "mlops", "assurance"],
+      "related_faq_ids": ["bias-fairness"],
+      "confidence": "high"
+    }
+  ]
+}

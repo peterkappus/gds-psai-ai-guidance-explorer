@@ -1,6 +1,8 @@
 {% extends "layouts/base.njk" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {% set title = "Common questions about AI adoption" %}
 
@@ -9,12 +11,16 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ title }}</h1>
       <p class="govuk-body-l">
-        Browse common questions about adopting AI in government. Each answer includes a snippet from the
-        <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>
-        and a deep link to the relevant section.
+        Browse common questions about adopting AI in government. Answers synthesise
+        incorporated guidance and show cited snippets with deep links to the source.
       </p>
       <p class="govuk-body">
-        This explorer currently covers one source. More public sector AI guidance will be added over time. <a href="/about">Learn more about the AI Guidance Explorer.</a>
+        Sources currently cited include the
+        <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>
+        and selected
+        <a class="govuk-link" href="https://www.gov.uk/government/publications/ai-insights">AI Insights</a>
+        articles. Where guidance differs, both positions are shown.
+        <a href="/about">Learn more about the AI Guidance Explorer.</a>
       </p>
     </div>
   </div>
@@ -39,29 +45,67 @@
           <h2 class="govuk-heading-l">{{ category.title }}</h2>
 
           {% for item in category.questions %}
-            {% set citationUrl = item | textFragmentUrl %}
             {% set answerHtml %}
+              <p class="govuk-body">
+                {{ govukTag({
+                  text: item.status | humanizeToken,
+                  classes: item.status | faqStatusTagClass
+                }) }}
+              </p>
+
               <p class="govuk-body">{{ item.answer }}</p>
 
-              <h3 class="govuk-heading-s">From the guidance</h3>
-              {{ govukInsetText({
-                classes: "app-snippet",
-                text: item.snippet
-              }) }}
+              {% if item.conflict %}
+                <div class="app-conflict">
+                  {{ govukWarningText({
+                    text: "Conflicting or tensioned advice across sources",
+                    iconFallbackText: "Warning"
+                  }) }}
+                  <p class="govuk-body">{{ item.conflict.summary }}</p>
+                  {% if item.conflict.user_guidance %}
+                    <p class="govuk-body">
+                      <strong class="govuk-!-font-weight-bold">How to navigate this:</strong>
+                      {{ item.conflict.user_guidance }}
+                    </p>
+                  {% endif %}
+                </div>
+              {% endif %}
 
-              <div class="app-citation">
-                <p class="govuk-body-s">
-                  <strong class="govuk-!-font-weight-bold">Source:</strong>
-                  {{ faq.source.title }}<br>
-                  <strong class="govuk-!-font-weight-bold">Section:</strong>
-                  {{ item.section }}
-                </p>
-                <p class="govuk-body">
-                  <a class="govuk-link" href="{{ citationUrl }}" rel="noreferrer noopener" target="_blank">
-                    Read this in the AI Playbook (opens in new tab)
-                  </a>
-                </p>
-              </div>
+              <h3 class="govuk-heading-s">From the guidance</h3>
+
+              {% for citation in item.citations %}
+                {% set citationUrl = citation | textFragmentUrl %}
+                <div class="app-citation-block{% if citation.role == 'contrasting' %} app-citation-block--contrasting{% endif %}">
+                  <p class="govuk-body-s govuk-!-margin-bottom-2">
+                    {{ govukTag({
+                      text: citation.role | humanizeToken,
+                      classes: citation.role | citationRoleTagClass
+                    }) }}
+                    <strong class="govuk-!-font-weight-bold">{{ citation.source_title }}</strong>
+                    {% if citation.stance %}
+                      <br>
+                      <span class="govuk-!-font-weight-bold">Position:</span> {{ citation.stance }}
+                    {% endif %}
+                  </p>
+
+                  {{ govukInsetText({
+                    classes: "app-snippet",
+                    text: citation.snippet
+                  }) }}
+
+                  <div class="app-citation">
+                    <p class="govuk-body-s">
+                      <strong class="govuk-!-font-weight-bold">Section:</strong>
+                      {{ citation.section }}
+                    </p>
+                    <p class="govuk-body">
+                      <a class="govuk-link" href="{{ citationUrl }}" rel="noreferrer noopener" target="_blank">
+                        Read this in {{ citation.source_title }} (opens in new tab)
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              {% endfor %}
             {% endset %}
 
             {{ govukDetails({

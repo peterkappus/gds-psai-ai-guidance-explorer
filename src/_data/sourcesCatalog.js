@@ -16,6 +16,7 @@ function normalizeSource(source) {
     formats: source.formats || [],
     related_urls: source.related_urls || [],
     aliases_from_potential_list: source.aliases_from_potential_list || [],
+    incorporated_articles: source.incorporated_articles || [],
   };
 }
 

@@ -1,18 +1,55 @@
 const PLAYBOOK_URL =
   "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html";
 
+const PLAYBOOK = {
+  id: "ai-playbook-uk-government",
+  title: "AI Playbook for the UK Government",
+  organisation:
+    "Department for Science, Innovation and Technology (DSIT) / Government Digital Service (GDS)",
+  url: PLAYBOOK_URL,
+};
+
+const INSIGHTS_GENERATIVE_AI = {
+  id: "ai-insights",
+  article_id: "ai-insights-generative-ai",
+  title: "AI Insights: Generative AI",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/ai-insights/ai-insights-generative-ai-html",
+};
+
+const INSIGHTS_PROMPT_RISKS = {
+  id: "ai-insights",
+  article_id: "ai-insights-prompt-risks",
+  title: "AI Insights: Prompt Risks",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/ai-insights/ai-insights-prompt-risks-html",
+};
+
+const INSIGHTS_LLM_BIAS = {
+  id: "ai-insights",
+  article_id: "ai-insights-llms-bias",
+  title: "AI Insights: Large language models (LLMs) Bias",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/ai-insights/ai-insights-large-language-models-llms-bias-html",
+};
+
+function cite(source, fields) {
+  return {
+    source_id: source.id,
+    article_id: source.article_id || null,
+    source_title: source.title,
+    organisation: source.organisation,
+    documentUrl: source.url,
+    ...fields,
+  };
+}
+
 /**
- * FAQ entries derived from the AI Playbook for the UK Government.
- * `snippet` should be close to the playbook wording; `textStart`/`textEnd`
- * are used for Chrome text-fragment deep links (:~:text=...).
+ * FAQ entries cited from incorporated UK public sector AI guidance.
+ * Prefer `citations[]` (multi-source). Legacy single-snippet fields are
+ * normalised to a Playbook citation on export.
  */
-module.exports = {
-  source: {
-    title: "AI Playbook for the UK Government",
-    organisation: "Department for Science, Innovation and Technology (DSIT)",
-    url: PLAYBOOK_URL,
-  },
-  categories: [
+const categories = [
     {
       id: "getting-started",
       title: "Getting started",
@@ -21,14 +58,31 @@ module.exports = {
           id: "what-is-ai-limitations",
           question:
             "What is AI, and what are its main limitations in a government context?",
+          status: "answered",
+          last_reviewed: "2026-08-04",
           answer:
-            "You should learn what AI can and cannot do before using it. AI systems currently lack reasoning and contextual awareness, are not guaranteed to be accurate, and have limitations that vary by tool and context.",
-          snippet:
-            "AI systems currently lack reasoning and contextual awareness and their limitations vary depending on the tools you use and the context in which they operate. AI systems are also not guaranteed to be accurate.",
-          section: "Principle 1: You know what AI is and what its limitations are",
-          textStart:
-            "AI systems currently lack reasoning and contextual awareness",
-          textEnd: "AI systems are also not guaranteed to be accurate",
+            "Learn what AI can and cannot do before using it. Systems currently lack reasoning and contextual awareness, are not guaranteed to be accurate, and — for generative models — produce probabilistic, human-like output without understanding meaning.",
+          citations: [
+            cite(PLAYBOOK, {
+              role: "primary",
+              section:
+                "Principle 1: You know what AI is and what its limitations are",
+              snippet:
+                "AI systems currently lack reasoning and contextual awareness and their limitations vary depending on the tools you use and the context in which they operate. AI systems are also not guaranteed to be accurate.",
+              textStart:
+                "AI systems currently lack reasoning and contextual awareness",
+              textEnd: "AI systems are also not guaranteed to be accurate",
+            }),
+            cite(INSIGHTS_GENERATIVE_AI, {
+              role: "supporting",
+              section: "How generative AI works",
+              snippet:
+                "these models do not understand the content or meaning of the words beyond how an input set of numbers may most likely translate into an output set of numbers, and subsequently into streams of words. This means that there are limitations on what these models can reasonably do. You must consider that these are probabilistic models, and, despite producing human-like output, they are not at all sentient.",
+              textStart:
+                "these models do not understand the content or meaning of the words",
+              textEnd: "they are not at all sentient",
+            }),
+          ],
         },
         {
           id: "right-tool-for-the-job",
@@ -204,14 +258,51 @@ module.exports = {
         {
           id: "bias-fairness",
           question: "How do I manage bias and fairness in an AI system?",
+          status: "conflicted",
+          last_reviewed: "2026-08-04",
+          conflict_id: "conflict-bias-unavoidable-vs-manageable",
           answer:
-            "AI can reproduce bias from training data and produce unfair outputs. Consider all potential sources of bias across the life cycle, including unrepresentative datasets and unfair deployment impacts.",
-          snippet:
-            "AI models are trained on data which may include biased or harmful materials. As a result, AI systems may display biases and produce harmful outputs, such as unfair, prejudicial or derogatory representations of groups or individuals. You should consider all potential sources of bias throughout the development life cycle, including unrepresentative data sets and deployment scenarios that have unfair or undesirable impacts.",
-          section: "Principle 2: You use AI lawfully, ethically and responsibly",
-          textStart:
-            "AI models are trained on data which may include biased or harmful materials",
-          textEnd: "unfair or undesirable impacts",
+            "Treat bias as an expected property of systems trained on human text, and manage it continuously across the lifecycle — including MLOps gates — rather than as a one-off clean-up.",
+          conflict: {
+            summary:
+              "AI Insights says bias in LLMs is fundamentally unavoidable. The Playbook tells you to consider and manage all sources of bias across the lifecycle, without stating that bias cannot be eliminated.",
+            likely_cause: "different-audience",
+            user_guidance:
+              "Read together: expect inherited bias, and still run continuous mitigation and evaluation.",
+          },
+          citations: [
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance:
+                "Consider all potential sources of bias throughout the development life cycle.",
+              section:
+                "Principle 2: You use AI lawfully, ethically and responsibly",
+              snippet:
+                "AI models are trained on data which may include biased or harmful materials. As a result, AI systems may display biases and produce harmful outputs, such as unfair, prejudicial or derogatory representations of groups or individuals. You should consider all potential sources of bias throughout the development life cycle, including unrepresentative data sets and deployment scenarios that have unfair or undesirable impacts.",
+              textStart:
+                "AI models are trained on data which may include biased or harmful materials",
+              textEnd: "unfair or undesirable impacts",
+            }),
+            cite(INSIGHTS_LLM_BIAS, {
+              role: "contrasting",
+              stance:
+                "Bias in LLMs is fundamentally unavoidable because they learn from human-written text.",
+              section: "Sources of bias in LLMs",
+              snippet:
+                "Bias in LLMs is fundamentally unavoidable because they learn from human-written text which contains centuries of accumulated societal biases. Rather than random errors that can be filtered out, these represent systematic patterns reflecting how different groups perceive and describe the world.",
+              textStart: "Bias in LLMs is fundamentally unavoidable",
+              textEnd: "centuries of accumulated societal biases",
+            }),
+            cite(INSIGHTS_LLM_BIAS, {
+              role: "supporting",
+              section: "Reducing bias in LLMs",
+              snippet:
+                "effective bias management requires continuous integration into MLOps workflows, with evaluation running at every stage from development through production monitoring.",
+              textStart:
+                "effective bias management requires continuous integration into MLOps workflows",
+              textEnd: "development through production monitoring",
+            }),
+          ],
         },
         {
           id: "equality-human-rights",
@@ -248,27 +339,72 @@ module.exports = {
           id: "chatgpt-official-info",
           question:
             "Can I put official or unpublished information into public tools like ChatGPT?",
+          status: "conflicted",
+          last_reviewed: "2026-08-04",
+          conflict_id: "conflict-public-ai-data-rules",
           answer:
-            "No. When using public AI applications you must not enter official information unless it has been published or is cleared for publication.",
-          snippet:
-            "When using public AI applications, you must not enter official information unless it has been published or is cleared for publication.",
-          section: "Public AI applications and web services",
-          textStart:
-            "you must not enter official information unless it has been published",
-          textEnd: "cleared for publication",
+            "Do not put unpublished official information into public AI tools. The Playbook states this as a categorical rule; AI Insights adds that you must follow organisation policy and that providers may use information you submit.",
+          conflict: {
+            summary:
+              "The Playbook gives an absolute ban on unpublished official information in public AI apps. AI Insights emphasises organisation policy and provider reuse of data, without restating the same absolute ban.",
+            likely_cause: "different-scope",
+            user_guidance:
+              "Treat the Playbook rule as the baseline. Organisation policy can be stricter, not weaker. Insights explains why the risk exists.",
+          },
+          citations: [
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance:
+                "Must not enter official information into public AI applications unless published or cleared for publication.",
+              section: "Public AI applications and web services",
+              snippet:
+                "When using public AI applications, you must not enter official information unless it has been published or is cleared for publication.",
+              textStart:
+                "you must not enter official information unless it has been published",
+              textEnd: "cleared for publication",
+            }),
+            cite(INSIGHTS_GENERATIVE_AI, {
+              role: "contrasting",
+              stance:
+                "Act in line with organisation policies; information provided to free services may be used by the provider.",
+              section:
+                "Public generative AI applications and web endpoints",
+              snippet:
+                "you must make sure you’re acting in line with the policies of your organisation … while the use of these services may be free of charge, you should be aware that any information provided to these services may be used by the provider",
+              textStart:
+                "you must make sure you’re acting in line with the policies",
+              textEnd: "may be used by the provider",
+            }),
+          ],
         },
         {
           id: "embedded-ai",
           question:
             "Can I use Microsoft Copilot, Slack GPT, or similar embedded AI features at work?",
+          status: "answered",
+          last_reviewed: "2026-08-04",
           answer:
-            "Only after understanding the product architecture and vendor mitigations, and after speaking with your security team. Embedded AI features bring their own security concerns.",
-          snippet:
-            "Before adopting any of these products it’s important to understand the underlying architecture of the solution, and what mitigations the vendor has put in place for the inherent risks associated with AI.",
-          section: "Embedded AI applications",
-          textStart:
-            "Before adopting any of these products it’s important to understand the underlying architecture",
-          textEnd: "inherent risks associated with AI",
+            "Only after you understand architecture, vendor mitigations, and — for integrated tools — what organisational data the service can see and how it is processed or transmitted. Speak with your security team first.",
+          citations: [
+            cite(PLAYBOOK, {
+              role: "primary",
+              section: "Embedded AI applications",
+              snippet:
+                "Before adopting any of these products it’s important to understand the underlying architecture of the solution, and what mitigations the vendor has put in place for the inherent risks associated with AI.",
+              textStart:
+                "Before adopting any of these products it’s important to understand the underlying architecture",
+              textEnd: "inherent risks associated with AI",
+            }),
+            cite(INSIGHTS_GENERATIVE_AI, {
+              role: "supporting",
+              section: "Integrated generative AI applications",
+              snippet:
+                "Before enabling a service, you must understand what data is visible to integrated AI services, and how that data is consumed, processed, and potentially transmitted or communicated externally.",
+              textStart:
+                "you must understand what data is visible to integrated AI services",
+              textEnd: "transmitted or communicated externally",
+            }),
+          ],
         },
         {
           id: "transcription-tools",
@@ -326,27 +462,119 @@ module.exports = {
           id: "prompt-injection",
           question:
             "How should I handle prompt injection and other generative AI-specific threats?",
+          status: "conflicted",
+          last_reviewed: "2026-08-04",
+          conflict_id: "conflict-prompt-injection-vendor-resilience",
           answer:
-            "Assume prompts can subvert system instructions. Use filtering, logging and audit, and keep a human in the loop before automated actions are carried out.",
-          snippet:
-            "Fundamentally, a generative AI model cannot distinguish between the user prompt and these system instructions because both are just seen as input to the model. A hacker can exploit this flaw by crafting special prompts that circumvent the system instructions, causing the model to respond in an unintended way.",
-          section: "Prompt injection",
-          textStart:
-            "a generative AI model cannot distinguish between the user prompt and these system instructions",
-          textEnd: "respond in an unintended way",
+            "Assume prompts can subvert system instructions. Do not rely on secret prompt structure or vendor resilience alone — add filtering, logging, human oversight, and continuous re-testing as models change.",
+          conflict: {
+            summary:
+              "The Playbook describes an architectural inability to distinguish user prompts from system instructions. AI Insights says most vendor solutions are quite resilient to related vulnerabilities, while still requiring continuous vigilance and non-secret defences.",
+            likely_cause: "ambiguity",
+            user_guidance:
+              "Treat vendor resilience as helpful, not sufficient. Retain Playbook assumptions about prompt subversion.",
+          },
+          citations: [
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance:
+                "A generative AI model cannot distinguish user prompts from system instructions; attackers can circumvent instructions.",
+              section: "Prompt injection",
+              snippet:
+                "Fundamentally, a generative AI model cannot distinguish between the user prompt and these system instructions because both are just seen as input to the model. A hacker can exploit this flaw by crafting special prompts that circumvent the system instructions, causing the model to respond in an unintended way.",
+              textStart:
+                "a generative AI model cannot distinguish between the user prompt and these system instructions",
+              textEnd: "respond in an unintended way",
+            }),
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "contrasting",
+              stance:
+                "Most vendor solutions are quite resilient, but organisations remain responsible for protection.",
+              section: "Prompt injection",
+              snippet:
+                "Most vendor solutions are quite resilient to these vulnerabilities, but it is our responsibility to ensure that we are safe and protected. Our defences should not rely on secret knowledge. For example, the position of the user input in a prompt.",
+              textStart:
+                "Most vendor solutions are quite resilient to these vulnerabilities",
+              textEnd: "Our defences should not rely on secret knowledge",
+            }),
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "supporting",
+              section: "Vigilance",
+              snippet:
+                "The price of peace of mind in generative AI-based systems is continuous vigilance. Systems are rarely impenetrable.",
+              textStart:
+                "The price of peace of mind in generative AI-based systems is continuous vigilance",
+              textEnd: "Systems are rarely impenetrable",
+            }),
+          ],
+        },
+        {
+          id: "prompt-injection-vs-jailbreaking",
+          question:
+            "What is the difference between prompt injection and jailbreaking?",
+          status: "answered",
+          last_reviewed: "2026-08-04",
+          answer:
+            "Both manipulate LLMs, but at different levels: jailbreaking aims at the model’s internal safety constraints; prompt injection aims at unauthorised data or behaviour via crafted inputs.",
+          citations: [
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "primary",
+              section: "Jailbreaking",
+              snippet:
+                "While both jailbreaking and prompt injection can be used to manipulate LLMs, they operate at different levels and have distinct goals: jailbreaking is focused on gaining access to the model’s internal workings; whereas prompt injection is focused on manipulating the model’s output through cleverly designed input prompts.",
+              textStart:
+                "jailbreaking is focused on gaining access to the model’s internal workings",
+              textEnd: "cleverly designed input prompts",
+            }),
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "supporting",
+              section: "Prompt injection",
+              snippet:
+                "This is a mechanism which manipulates LLM inputs to return unintended responses by crafting specific prompts that exploit the language model’s response mechanisms. It is an attempt to gain unauthorised access to data or behaviour, either returning information to which the user is not entitled or invoking methods or instructions that the user is not authorised to execute.",
+              textStart:
+                "manipulates LLM inputs to return unintended responses",
+              textEnd: "the user is not authorised to execute",
+            }),
+          ],
         },
         {
           id: "hallucinations",
           question:
             "Can I trust generative AI outputs, or do they hallucinate?",
+          status: "answered",
+          last_reviewed: "2026-08-04",
           answer:
-            "Do not trust generative AI to produce factual content uncritically. Models can generate plausible but false information; train users not to rely exclusively on these outputs.",
-          snippet:
-            "Fundamentally, generative AI models cannot be trusted to produce factual content. Any generative AI services that output generated content directly to the public – for example, an LLM-powered chatbot giving advice on a government website – would be prone to hallucination and could lead to someone being misled about a government service, policy or point of law.",
-          section: "Hallucinations",
-          textStart:
-            "generative AI models cannot be trusted to produce factual content",
-          textEnd: "misled about a government service, policy or point of law",
+            "Do not trust generative AI to produce factual content uncritically. Models generate plausible but fallible outputs; correctness is not guaranteed, so evaluate outputs and keep humans in the loop for high-cost failures.",
+          citations: [
+            cite(PLAYBOOK, {
+              role: "primary",
+              section: "Hallucinations",
+              snippet:
+                "Fundamentally, generative AI models cannot be trusted to produce factual content. Any generative AI services that output generated content directly to the public – for example, an LLM-powered chatbot giving advice on a government website – would be prone to hallucination and could lead to someone being misled about a government service, policy or point of law.",
+              textStart:
+                "generative AI models cannot be trusted to produce factual content",
+              textEnd:
+                "misled about a government service, policy or point of law",
+            }),
+            cite(INSIGHTS_GENERATIVE_AI, {
+              role: "supporting",
+              section: "Testing generative AI solutions",
+              snippet:
+                "Generative AI systems are fallible and the correctness of their responses is not guaranteed. These systems are probabilistic models which predict the likeliest outputs for given inputs. They generate responses that have a high measure of plausibility based on the data that they have processed. This means that they can, and do, make errors.",
+              textStart:
+                "the correctness of their responses is not guaranteed",
+              textEnd: "they can, and do, make errors",
+            }),
+            cite(INSIGHTS_GENERATIVE_AI, {
+              role: "supporting",
+              section: "Getting reliable results",
+              snippet:
+                "HITL systems involve people to review, correct and approve system output. They’re a vital aspect of delivering critical services, especially where the cost of failure may be high",
+              textStart:
+                "They’re a vital aspect of delivering critical services",
+              textEnd: "where the cost of failure may be high",
+            }),
+          ],
         },
       ],
     },
@@ -573,5 +801,56 @@ module.exports = {
         },
       ],
     },
+  ];
+
+function normalizeQuestion(question) {
+  const citations =
+    question.citations && question.citations.length
+      ? question.citations
+      : [
+          cite(PLAYBOOK, {
+            role: "primary",
+            section: question.section,
+            snippet: question.snippet,
+            textStart: question.textStart,
+            textEnd: question.textEnd,
+          }),
+        ];
+
+  const primary = citations[0];
+
+  return {
+    id: question.id,
+    question: question.question,
+    answer: question.answer,
+    status:
+      question.status ||
+      (question.conflict ? "conflicted" : "answered"),
+    last_reviewed: question.last_reviewed || null,
+    conflict_id: question.conflict_id || null,
+    conflict: question.conflict || null,
+    citations,
+    snippet: question.snippet || primary.snippet,
+    section: question.section || primary.section,
+    textStart: question.textStart || primary.textStart,
+    textEnd: question.textEnd || primary.textEnd,
+  };
+}
+
+module.exports = {
+  source: {
+    title: PLAYBOOK.title,
+    organisation: PLAYBOOK.organisation,
+    url: PLAYBOOK.url,
+  },
+  sources: [
+    PLAYBOOK,
+    INSIGHTS_GENERATIVE_AI,
+    INSIGHTS_PROMPT_RISKS,
+    INSIGHTS_LLM_BIAS,
   ],
+  categories: categories.map((category) => ({
+    ...category,
+    questions: category.questions.map(normalizeQuestion),
+  })),
 };

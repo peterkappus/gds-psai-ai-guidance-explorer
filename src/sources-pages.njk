@@ -149,6 +149,17 @@ eleventyComputed:
         <p class="govuk-body">{{ source.notes }}</p>
       {% endif %}
 
+      {% if source.incorporated_articles and source.incorporated_articles.length %}
+        <h2 class="govuk-heading-m">Incorporated articles</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for article in source.incorporated_articles %}
+            <li>
+              <a class="govuk-link" href="{{ article.url }}" rel="noreferrer noopener" target="_blank">{{ article.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
       {% if source.related_urls and source.related_urls.length %}
         <h2 class="govuk-heading-m">Related URLs</h2>
         <ul class="govuk-list govuk-list--bullet">

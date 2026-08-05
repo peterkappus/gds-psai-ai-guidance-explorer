@@ -14,7 +14,14 @@
         "title": "Artificial Intelligence Playbook for the UK Government",
         "url": "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html",
         "organisation": "Department for Science, Innovation and Technology (DSIT) / Government Digital Service (GDS)",
-        "notes": "Currently powers the FAQ answers and citations on the explorer. Listed again in potential_external_sources.md — treated as incorporated, not re-added as a candidate."
+        "notes": "Primary cross-government playbook. Still powers most FAQ citations; several answers now also cite AI Insights."
+      },
+      {
+        "id": "ai-insights",
+        "title": "AI Insights",
+        "url": "https://www.gov.uk/government/publications/ai-insights",
+        "organisation": "Government Digital Service (GDS)",
+        "notes": "Incorporated via three articles (Generative AI; Prompt Risks; LLMs Bias). Claim units in content/units/ai-insights.json; multi-source FAQ citations and conflict records added 2026-08-04."
       }
     ],
     "fields": {
@@ -165,7 +172,7 @@
       "url": "https://www.gov.uk/government/publications/ai-insights",
       "organisation": "Government Digital Service (GDS)",
       "type": "guidance",
-      "status": "accept",
+      "status": "incorporated",
       "audience": [
         "digital and data professionals",
         "technologists implementing AI",
@@ -175,7 +182,9 @@
         "implementation",
         "machine-learning",
         "technical-practice",
-        "building-ai"
+        "building-ai",
+        "security",
+        "bias"
       ],
       "summary": "Series of technical articles on implementing AI safely and effectively in the public sector. Complements the AI Playbook with deeper implementation topics the playbook deliberately defers.",
       "why_include": "Playbook update notes moved build/training depth into AI Insights; high value for filling technical FAQ gaps with citable articles.",
@@ -183,12 +192,30 @@
         "getting-started",
         "buying-building",
         "delivery-assurance",
-        "security-tools"
+        "security-tools",
+        "lawful-ethical"
       ],
       "formats": ["HTML publication series"],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
+      "incorporated_on": "2026-08-04",
+      "incorporated_articles": [
+        {
+          "title": "AI Insights: Generative AI",
+          "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-generative-ai-html"
+        },
+        {
+          "title": "AI Insights: Prompt Risks",
+          "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-prompt-risks-html"
+        },
+        {
+          "title": "AI Insights: Large language models (LLMs) Bias",
+          "url": "https://www.gov.uk/government/publications/ai-insights/ai-insights-large-language-models-llms-bias-html"
+        }
+      ],
+      "claim_units_path": "content/units/ai-insights.json",
+      "notes": "First multi-source ingest. 15 claim units extracted from three articles; FAQ multi-citations and three open conflict records added.",
       "aliases_from_potential_list": [
         "GOV.UK - AI Insights articles"
       ]

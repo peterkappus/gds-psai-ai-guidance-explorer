@@ -1,0 +1,74 @@
+{
+  "updated": "2026-08-04",
+  "conflicts": [
+    {
+      "conflict_id": "conflict-public-ai-data-rules",
+      "title": "Public generative AI: absolute ban vs organisation policy framing",
+      "status": "open",
+      "summary": "The Playbook states a categorical rule not to enter unpublished official information into public AI applications. AI Insights: Generative AI emphasises acting in line with organisation policies and warns that providers may use submitted information, without restating the same absolute ban.",
+      "positions": [
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Public AI applications and web services",
+          "stance": "You must not enter official information into public AI applications unless it has been published or is cleared for publication."
+        },
+        {
+          "source_id": "ai-insights",
+          "article_id": "ai-insights-generative-ai",
+          "section": "Public generative AI applications and web endpoints",
+          "stance": "You must follow your organisation’s policies; free services may use information you provide."
+        }
+      ],
+      "likely_cause": "different-scope",
+      "user_guidance": "Treat the Playbook rule as the baseline cross-government constraint. Use AI Insights for the underlying risks (provider reuse of data, jurisdiction, output conditions). Organisation policy can be stricter, not weaker.",
+      "related_faq_ids": ["chatgpt-official-info"],
+      "opened_on": "2026-08-04"
+    },
+    {
+      "conflict_id": "conflict-bias-unavoidable-vs-manageable",
+      "title": "LLM bias: fundamentally unavoidable vs lifecycle management framing",
+      "status": "open",
+      "summary": "AI Insights: LLMs Bias states bias in LLMs is fundamentally unavoidable. The Playbook describes bias risks and tells practitioners to consider all sources of bias across the lifecycle, without saying bias cannot be eliminated.",
+      "positions": [
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Principle 2: You use AI lawfully, ethically and responsibly",
+          "stance": "Consider all potential sources of bias throughout the development life cycle, including unrepresentative datasets and unfair deployment impacts."
+        },
+        {
+          "source_id": "ai-insights",
+          "article_id": "ai-insights-llms-bias",
+          "section": "Sources of bias in LLMs",
+          "stance": "Bias in LLMs is fundamentally unavoidable because models learn from human-written text that embeds societal biases."
+        }
+      ],
+      "likely_cause": "different-audience",
+      "user_guidance": "Read together: treat inherited bias as expected, not as a one-off filterable defect, and still run continuous bias management across the lifecycle (Playbook) with MLOps gates (Insights).",
+      "related_faq_ids": ["bias-fairness"],
+      "opened_on": "2026-08-04"
+    },
+    {
+      "conflict_id": "conflict-prompt-injection-vendor-resilience",
+      "title": "Prompt injection: architectural inability vs vendor resilience",
+      "status": "open",
+      "summary": "The Playbook says generative models fundamentally cannot distinguish user prompts from system instructions. AI Insights: Prompt Risks notes most vendor solutions are quite resilient to prompt-leaking style vulnerabilities, while also requiring continuous vigilance and defences that do not rely on secret prompt structure.",
+      "positions": [
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Prompt injection",
+          "stance": "A generative AI model cannot distinguish between the user prompt and system instructions; attackers can craft prompts that circumvent instructions."
+        },
+        {
+          "source_id": "ai-insights",
+          "article_id": "ai-insights-prompt-risks",
+          "section": "Prompt injection",
+          "stance": "Most vendor solutions are quite resilient to these vulnerabilities, but organisations remain responsible for protection and must not rely on secret prompt positioning."
+        }
+      ],
+      "likely_cause": "ambiguity",
+      "user_guidance": "Do not treat vendor resilience as removing the architectural risk. Assume prompts can subvert instructions, add filtering/logging/HITL, and re-test as models and pipelines change.",
+      "related_faq_ids": ["prompt-injection"],
+      "opened_on": "2026-08-04"
+    }
+  ]
+}

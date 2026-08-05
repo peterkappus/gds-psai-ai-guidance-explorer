@@ -69,6 +69,34 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("faqStatusTagClass", function (status) {
+    switch (status) {
+      case "answered":
+        return "govuk-tag--green";
+      case "partial":
+        return "govuk-tag--blue";
+      case "gap":
+        return "govuk-tag--yellow";
+      case "conflicted":
+        return "govuk-tag--orange";
+      default:
+        return "govuk-tag--grey";
+    }
+  });
+
+  eleventyConfig.addFilter("citationRoleTagClass", function (role) {
+    switch (role) {
+      case "primary":
+        return "govuk-tag--blue";
+      case "supporting":
+        return "govuk-tag--green";
+      case "contrasting":
+        return "govuk-tag--orange";
+      default:
+        return "govuk-tag--grey";
+    }
+  });
+
   return {
     dir: {
       input: "src",
