@@ -1,0 +1,26 @@
+---
+pagination:
+  data: faq.items
+  size: 1
+  alias: item
+permalink: "/faq/{{ item.slug }}/"
+eleventyComputed:
+  title: "{{ item.question }}"
+  description: "{{ item.answer }}"
+---
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "All questions",
+    href: "/#{{ item.category_id }}"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ item.question }}</h1>
+      {% include "partials/faq-answer-body.njk" %}
+    </div>
+  </div>
+{% endblock %}

@@ -31,12 +31,13 @@
 
     {% set aboutIsCurrent = page.url.indexOf('/about/') === 0 %}
     {% set sourcesIsCurrent = page.url.indexOf('/sources/') === 0 %}
+    {% set questionsIsCurrent = page.url === "/" or page.url.indexOf('/faq/') === 0 %}
     {{ govukServiceNavigation({
       navigation: [
         {
           href: "/",
           text: "Questions",
-          current: page.url === "/"
+          current: questionsIsCurrent
         },
         {
           href: "/sources/",
@@ -52,7 +53,7 @@
     }) }}
 
     {% set phaseHtml %}
-      This is a prototype. Answers are cited from the
+      This is a prototype. Answers cite incorporated UK public sector AI guidance, starting with the
       <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>.
     {% endset %}
     {{ govukPhaseBanner({

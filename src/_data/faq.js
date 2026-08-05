@@ -803,7 +803,20 @@ const categories = [
     },
   ];
 
-function normalizeQuestion(question) {
+/**
+ * Entire question → kebab-case slug with punctuation stripped.
+ * Example: "Can I use Microsoft Copilot…?" → "can-i-use-microsoft-copilot-or-similar-embedded-ai-features-at-work"
+ */
+function slugifyQuestion(question) {
+  return String(question)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeQuestion(question, category) {
   const citations =
     question.citations && question.citations.length
       ? question.citations
@@ -818,11 +831,16 @@ function normalizeQuestion(question) {
         ];
 
   const primary = citations[0];
+  const slug = slugifyQuestion(question.question);
 
   return {
     id: question.id,
     question: question.question,
     answer: question.answer,
+    slug,
+    url: `/faq/${slug}/`,
+    category_id: category.id,
+    category_title: category.title,
     status:
       question.status ||
       (question.conflict ? "conflicted" : "answered"),
@@ -837,6 +855,28 @@ function normalizeQuestion(question) {
   };
 }
 
+const normalizedCategories = categories.map((category) => ({
+  ...category,
+  questions: category.questions.map((question) =>
+    normalizeQuestion(question, category)
+  ),
+}));
+
+const items = normalizedCategories.flatMap((category) => category.questions);
+
+const slugCounts = items.reduce((counts, item) => {
+  counts[item.slug] = (counts[item.slug] || 0) + 1;
+  return counts;
+}, {});
+const duplicateSlugs = Object.entries(slugCounts)
+  .filter(([, count]) => count > 1)
+  .map(([slug]) => slug);
+if (duplicateSlugs.length) {
+  throw new Error(
+    `Duplicate FAQ slugs (adjust question wording): ${duplicateSlugs.join(", ")}`
+  );
+}
+
 module.exports = {
   source: {
     title: PLAYBOOK.title,
@@ -849,8 +889,7 @@ module.exports = {
     INSIGHTS_PROMPT_RISKS,
     INSIGHTS_LLM_BIAS,
   ],
-  categories: categories.map((category) => ({
-    ...category,
-    questions: category.questions.map(normalizeQuestion),
-  })),
+  categories: normalizedCategories,
+  items,
+  slugifyQuestion,
 };
