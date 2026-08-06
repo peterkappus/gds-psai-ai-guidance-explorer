@@ -48,10 +48,12 @@
                   <a class="govuk-link govuk-!-font-weight-bold" href="{{ item.url }}">{{ item.question }}</a>
                 </p>
                 <p class="govuk-body-s govuk-!-margin-bottom-0">
+                  {% if item.status != "answered" %}
                   {{ govukTag({
                     text: item.status | humanizeToken,
                     classes: item.status | faqStatusTagClass
                   }) }}
+                  {% endif %}
                   {% if item.citations.length > 1 %}
                     <span class="govuk-!-margin-left-1">{{ item.citations.length }} sources</span>
                   {% endif %}

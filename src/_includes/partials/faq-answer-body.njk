@@ -40,8 +40,9 @@
       }) }}
       <strong class="govuk-!-font-weight-bold">{{ citation.source_title }}</strong>
       {% if citation.stance %}
-        <br>
+        <div class="govuk-body govuk-!-margin-top-5">
         <span class="govuk-!-font-weight-bold">Position:</span> {{ citation.stance }}
+        </div>
       {% endif %}
     </p>
 
