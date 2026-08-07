@@ -278,14 +278,17 @@ Produce trustworthy answers that synthesise guidance and show evidence.
 1. Start with a **direct answer** in plain English.
 2. Follow with **what the guidance says**, using short snippets.
 3. Cite **all material sources** used — not only the friendliest one.
-4. Prefer this citation order when sources agree:
+4. Assign citation roles by question type (not by document prestige alone):
+   - **`primary`** — the source that most clearly explains **how** to do the thing (steps, methods, frameworks, operational practice). Prefer Knowledge Hub how-tos and similar practical guidance when they exist.
+   - **`supporting`** (secondary) — sources that mainly explain **if** something can, must, should, or should **not** be done (normative constraints). Playbook principles and regulator “must/should not” statements usually sit here when a how-to already covers method.
+   - **`contrasting`** — material disagreement or tension; show both positions.
+5. When sources agree on obligations but one is more practical, still prefer this order for **authority on legal/security claims**:
    - statute / regulator (e.g. ICO) for legal/data protection claims
    - NCSC / security code for security claims
    - mandatory standards (e.g. ATRS) for transparency obligations
-   - cross-government playbooks/frameworks for practical “how to”
-   - departmental or local guides for context-specific application
-5. If sources only partially cover the question, mark status `partial` and say what is missing.
-6. Never present the explorer’s synthesis as law or as a replacement for organisational advice.
+   - then playbooks / how-tos for operational framing
+6. If sources only partially cover the question, mark status `partial` and say what is missing.
+7. Never present the explorer’s synthesis as law or as a replacement for organisational advice.
 
 ### Multi-source synthesis pattern
 

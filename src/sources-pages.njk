@@ -155,9 +155,30 @@ eleventyComputed:
           {% for article in source.incorporated_articles %}
             <li>
               <a class="govuk-link" href="{{ article.url }}" rel="noreferrer noopener" target="_blank">{{ article.title }}</a>
+              {% if article.status %}
+                <span class="govuk-body-s">({{ article.status }})</span>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
+      {% endif %}
+
+      {% if source.child_source_ids and source.child_source_ids.length %}
+        <h2 class="govuk-heading-m">Sub-sources in this catalogue</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for childId in source.child_source_ids %}
+            <li>
+              <a class="govuk-link" href="/sources/{{ childId }}/"><code>{{ childId }}</code></a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if source.parent_source_id %}
+        <h2 class="govuk-heading-m">Parent hub</h2>
+        <p class="govuk-body">
+          <a class="govuk-link" href="/sources/{{ source.parent_source_id }}/"><code>{{ source.parent_source_id }}</code></a>
+        </p>
       {% endif %}
 
       {% if source.related_urls and source.related_urls.length %}

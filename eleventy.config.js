@@ -97,6 +97,19 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("citationRoleLabel", function (role) {
+    switch (role) {
+      case "primary":
+        return "Primary (how)";
+      case "supporting":
+        return "Secondary (normative)";
+      case "contrasting":
+        return "Contrasting";
+      default:
+        return String(role || "");
+    }
+  });
+
   return {
     dir: {
       input: "src",

@@ -1,11 +1,11 @@
 {
-  "updated": "2026-08-04",
+  "updated": "2026-08-07",
   "conflicts": [
     {
       "conflict_id": "conflict-public-ai-data-rules",
       "title": "Public generative AI: absolute ban vs organisation policy framing",
       "status": "open",
-      "summary": "The Playbook states a categorical rule not to enter unpublished official information into public AI applications. AI Insights: Generative AI emphasises acting in line with organisation policies and warns that providers may use submitted information, without restating the same absolute ban.",
+      "summary": "The Playbook states a categorical rule not to enter unpublished official information into public AI applications. AI Insights emphasises organisation policies and provider reuse of data. Knowledge Hub how-tos add that department policy must be followed, personal/identifiable content should not go into tools, and paid enterprise tools may handle sensitive data under DPAs — creating scope tension across public vs assured tools.",
       "positions": [
         {
           "source_id": "ai-playbook-uk-government",
@@ -17,12 +17,19 @@
           "article_id": "ai-insights-generative-ai",
           "section": "Public generative AI applications and web endpoints",
           "stance": "You must follow your organisation’s policies; free services may use information you provide."
+        },
+        {
+          "source_id": "ai-knowledge-hub-how-tos",
+          "article_id": "how-to-use-ai-at-work",
+          "section": "Using AI in government",
+          "stance": "Paid enterprise tools with data protection agreements can often handle personal and sensitive information safely — check departmental guidance."
         }
       ],
       "likely_cause": "different-scope",
-      "user_guidance": "Treat the Playbook rule as the baseline cross-government constraint. Use AI Insights for the underlying risks (provider reuse of data, jurisdiction, output conditions). Organisation policy can be stricter, not weaker.",
+      "user_guidance": "Treat the Playbook ban as the baseline for public/unassured tools. For assured departmental tools, follow department guidance and DPAs. Do not assume a public chatbot is covered by enterprise advice.",
       "related_faq_ids": ["chatgpt-official-info"],
-      "opened_on": "2026-08-04"
+      "opened_on": "2026-08-04",
+      "updated_on": "2026-08-07"
     },
     {
       "conflict_id": "conflict-bias-unavoidable-vs-manageable",
@@ -69,6 +76,29 @@
       "user_guidance": "Do not treat vendor resilience as removing the architectural risk. Assume prompts can subvert instructions, add filtering/logging/HITL, and re-test as models and pipelines change.",
       "related_faq_ids": ["prompt-injection"],
       "opened_on": "2026-08-04"
+    },
+    {
+      "conflict_id": "conflict-meeting-transcription",
+      "title": "Meeting transcription: ban third-party tools vs ask for consent",
+      "status": "open",
+      "summary": "The Playbook tells organisers to state that third-party meeting transcription tools are not allowed, citing data-leakage risk. Knowledge Hub Using AI at work says ask for consent before using AI to transcribe, summarise, or process a discussion — without restating a categorical ban.",
+      "positions": [
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Embedded AI applications",
+          "stance": "Organisers should verify attendees and state up front that third-party meeting transcription tools are not allowed."
+        },
+        {
+          "source_id": "ai-knowledge-hub-how-tos",
+          "article_id": "how-to-use-ai-at-work",
+          "section": "AI content and Freedom of Information",
+          "stance": "Ask for consent from participants before using AI to transcribe, summarise, or process the discussion."
+        }
+      ],
+      "likely_cause": "different-scope",
+      "user_guidance": "Treat the Playbook ban on unassured third-party joiners as the default for risk. Consent is additional, not a substitute. Prefer department-approved transcription where available, and still get participant consent.",
+      "related_faq_ids": ["transcription-tools"],
+      "opened_on": "2026-08-07"
     }
   ]
 }

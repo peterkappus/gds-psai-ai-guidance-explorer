@@ -2,7 +2,7 @@
   "meta": {
     "title": "UK public sector AI guidance sources",
     "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
-    "updated": "2026-08-04",
+    "updated": "2026-08-07",
     "jurisdiction": "United Kingdom",
     "source_lists": [
       "Original explorer backlog (Aug 2026)",
@@ -14,14 +14,21 @@
         "title": "Artificial Intelligence Playbook for the UK Government",
         "url": "https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html",
         "organisation": "Department for Science, Innovation and Technology (DSIT) / Government Digital Service (GDS)",
-        "notes": "Primary cross-government playbook. Still powers most FAQ citations; several answers now also cite AI Insights."
+        "notes": "Cross-government playbook. Often cited as secondary (normative) when Knowledge Hub how-tos explain how to act."
       },
       {
         "id": "ai-insights",
         "title": "AI Insights",
         "url": "https://www.gov.uk/government/publications/ai-insights",
         "organisation": "Government Digital Service (GDS)",
-        "notes": "Incorporated via three articles (Generative AI; Prompt Risks; LLMs Bias). Claim units in content/units/ai-insights.json; multi-source FAQ citations and conflict records added 2026-08-04."
+        "notes": "Incorporated via three articles (Generative AI; Prompt Risks; LLMs Bias). Claim units in content/units/ai-insights.json."
+      },
+      {
+        "id": "ai-knowledge-hub-how-tos",
+        "title": "AI Knowledge Hub — How-tos and resources",
+        "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
+        "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+        "notes": "Incorporated 2026-08-07. Practical how-to guidance; preferred as primary citation when explaining how to do something. Claim units in content/units/ai-knowledge-hub-how-tos.json."
       }
     ],
     "fields": {
@@ -226,7 +233,7 @@
       "url": "https://ai.gov.uk/knowledge-hub/",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI) / GDS ecosystem",
       "type": "hub",
-      "status": "candidate",
+      "status": "watch",
       "audience": [
         "public sector delivery teams",
         "practitioners sharing tools and prompts",
@@ -239,21 +246,189 @@
         "tools",
         "collaboration"
       ],
-      "summary": "Central public-sector hub to find AI tools, approaches and shared practice. Positions itself as practical adoption support and links to official guidance rather than being a comprehensive policy source.",
-      "why_include": "Roadmap for modern digital government points teams here; useful for collaboration/reuse FAQs and discovering further citable sources. Needs careful citation rules (practice vs policy).",
+      "summary": "Umbrella hub on ai.gov.uk for public-sector AI practice. Split in this catalogue into three citable sub-sources: how-tos, prompt library, and tool library.",
+      "why_include": "Parent entry for discoverability. Prefer citing the specific sub-source rather than this hub page.",
       "related_faq_themes": [
         "collaboration",
         "getting-started",
         "buying-building"
       ],
       "formats": ["HTML hub"],
-      "priority": 1,
+      "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
+      "child_source_ids": [
+        "ai-knowledge-hub-how-tos",
+        "ai-knowledge-hub-prompts",
+        "ai-knowledge-hub-tools"
+      ],
       "aliases_from_potential_list": [
         "AI Knowledge Hub - public (ai.gov.uk/knowledge-hub)"
       ],
-      "notes": "About page states it is not a comprehensive policy source; prefer citing underlying official guidance where answers assert requirements."
+      "notes": "Not a comprehensive policy source. Cite child sources. How-tos are incorporated; prompts and tools remain candidates for practice/reuse FAQs."
+    },
+    {
+      "id": "ai-knowledge-hub-how-tos",
+      "title": "AI Knowledge Hub — How-tos and resources",
+      "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+      "type": "guidance",
+      "status": "incorporated",
+      "parent_source_id": "ai-knowledge-hub",
+      "audience": [
+        "civil servants using AI at work",
+        "delivery and product teams",
+        "commercial and governance leads"
+      ],
+      "themes": [
+        "adoption",
+        "prompting",
+        "ethics",
+        "security",
+        "procurement",
+        "assurance",
+        "sustainability",
+        "data-readiness"
+      ],
+      "summary": "Practical how-to articles complementing and updating the AI Playbook: using AI at work, prompting, ethics/sustainability, procurement routes, measuring impact, data readiness, governance, legal and security.",
+      "why_include": "Preferred primary citation when an FAQ needs practical how-to steps. Explicitly positions itself as complementary to the February 2025 Playbook, not legal advice.",
+      "related_faq_themes": [
+        "getting-started",
+        "lawful-ethical",
+        "security-tools",
+        "buying-building",
+        "delivery-assurance"
+      ],
+      "formats": ["HTML how-to collection"],
+      "priority": 1,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-04",
+      "incorporated_on": "2026-08-07",
+      "incorporated_articles": [
+        {
+          "title": "10 principles for using AI",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/principles",
+          "status": "published"
+        },
+        {
+          "title": "Using AI at work",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/how-to-use-ai-at-work",
+          "status": "published"
+        },
+        {
+          "title": "Experimenting with prompts",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/experiment-with-prompts",
+          "status": "published"
+        },
+        {
+          "title": "Building AI sustainably",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/ethics-building-ai",
+          "status": "published"
+        },
+        {
+          "title": "Making data ready for AI",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/Making-data-ready-for-AI",
+          "status": "published"
+        },
+        {
+          "title": "Using AI ethically and sustainably",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/ethics",
+          "status": "draft"
+        },
+        {
+          "title": "Procuring AI",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/procurement",
+          "status": "draft"
+        },
+        {
+          "title": "Measuring the impact of AI solutions",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/measure-impact",
+          "status": "draft"
+        },
+        {
+          "title": "Understand AI",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/understanding-ai",
+          "status": "draft-from-playbook"
+        },
+        {
+          "title": "AI governance",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/governance",
+          "status": "draft-from-playbook"
+        },
+        {
+          "title": "Legal concerns",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/legal",
+          "status": "draft-from-playbook"
+        },
+        {
+          "title": "Security and risks",
+          "url": "https://ai.gov.uk/knowledge-hub/how-to/security",
+          "status": "draft-from-playbook"
+        }
+      ],
+      "claim_units_path": "content/units/ai-knowledge-hub-how-tos.json",
+      "notes": "Disclaimer on each page: not comprehensive legal advice. Prefer published articles over draft/draft-from-playbook when both cover a claim; still extract draft units with lower confidence."
+    },
+    {
+      "id": "ai-knowledge-hub-prompts",
+      "title": "AI Knowledge Hub — Prompt library",
+      "url": "https://ai.gov.uk/knowledge-hub/prompts",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+      "type": "hub",
+      "status": "candidate",
+      "parent_source_id": "ai-knowledge-hub",
+      "audience": [
+        "civil servants",
+        "policy and delivery practitioners"
+      ],
+      "themes": [
+        "prompts",
+        "reuse",
+        "productivity",
+        "collaboration"
+      ],
+      "summary": "User-submitted library of AI prompts for government work. Verified prompts have been reviewed by subject professionals; unverified prompts should be used with caution.",
+      "why_include": "Useful for reuse/collaboration FAQs and examples of task-level prompting. Not policy; still requires checking outputs for accuracy.",
+      "related_faq_themes": [
+        "getting-started",
+        "collaboration"
+      ],
+      "formats": ["HTML library"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-07",
+      "notes": "Community practice source. Cite how-to prompting guidance for method; cite individual prompts only as examples."
+    },
+    {
+      "id": "ai-knowledge-hub-tools",
+      "title": "AI Knowledge Hub — Tool library",
+      "url": "https://ai.gov.uk/knowledge-hub/tools",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+      "type": "hub",
+      "status": "candidate",
+      "parent_source_id": "ai-knowledge-hub",
+      "audience": [
+        "public sector delivery teams",
+        "product and innovation leads"
+      ],
+      "themes": [
+        "tools",
+        "reuse",
+        "case-studies",
+        "adoption"
+      ],
+      "summary": "Catalogue of AI tools created or bought to support public-sector delivery, tagged by agile life-cycle phase. Information is time-bound; third-party tools are not endorsements.",
+      "why_include": "Answers “what are others already using?” style questions. Practice catalogue rather than requirements guidance.",
+      "related_faq_themes": [
+        "collaboration",
+        "buying-building",
+        "getting-started"
+      ],
+      "formats": ["HTML library"],
+      "priority": 2,
+      "discovered_via": "potential_external_sources",
+      "discovered_on": "2026-08-07",
+      "notes": "Carry out own due diligence before use. Prefer official security/procurement guidance for must/should claims."
     },
     {
       "id": "secure-by-design",

@@ -35,7 +35,7 @@
   <div class="app-citation-block{% if citation.role == 'contrasting' %} app-citation-block--contrasting{% endif %}">
     <p class="govuk-body-s govuk-!-margin-bottom-2">
       {{ govukTag({
-        text: citation.role | humanizeToken,
+        text: citation.role | citationRoleLabel,
         classes: citation.role | citationRoleTagClass
       }) }}
       <strong class="govuk-!-font-weight-bold">{{ citation.source_title }}</strong>

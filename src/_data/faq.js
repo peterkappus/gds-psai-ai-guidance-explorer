@@ -33,6 +33,70 @@ const INSIGHTS_LLM_BIAS = {
   url: "https://www.gov.uk/government/publications/ai-insights/ai-insights-large-language-models-llms-bias-html",
 };
 
+const HOW_TO_PRINCIPLES = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-principles",
+  title: "AI Knowledge Hub: 10 principles for using AI",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/principles",
+};
+
+const HOW_TO_USE_AT_WORK = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-use-ai-at-work",
+  title: "AI Knowledge Hub: Using AI at work",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/how-to-use-ai-at-work",
+};
+
+const HOW_TO_PROMPTS = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-experiment-with-prompts",
+  title: "AI Knowledge Hub: Experimenting with prompts",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/experiment-with-prompts",
+};
+
+const HOW_TO_ETHICS = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-ethics",
+  title: "AI Knowledge Hub: Using AI ethically and sustainably",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/ethics",
+};
+
+const HOW_TO_BUILD_SUSTAINABLY = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-ethics-building-ai",
+  title: "AI Knowledge Hub: Building AI sustainably",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/ethics-building-ai",
+};
+
+const HOW_TO_DATA_READY = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-making-data-ready",
+  title: "AI Knowledge Hub: Making data ready for AI",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/Making-data-ready-for-AI",
+};
+
+const HOW_TO_PROCUREMENT = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-procurement",
+  title: "AI Knowledge Hub: Procuring AI",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/procurement",
+};
+
+const HOW_TO_MEASURE_IMPACT = {
+  id: "ai-knowledge-hub-how-tos",
+  article_id: "how-to-measure-impact",
+  title: "AI Knowledge Hub: Measuring the impact of AI solutions",
+  organisation: "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/how-to/measure-impact",
+};
+
 function cite(source, fields) {
   return {
     source_id: source.id,
@@ -88,14 +152,175 @@ const categories = [
           id: "right-tool-for-the-job",
           question:
             "When is AI the right tool for the job, and when should I use something else?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
           answer:
-            "Choose the most appropriate technology for the need. Be open to AI where it helps, but also open to concluding that established technologies are a better fit.",
-          snippet:
-            "However, you should also be open to the conclusion that, sometimes, AI is not the best solution for your problem: it may be more easily solved with more established technologies.",
-          section: "Principle 6: You use the right tool for the job",
-          textStart:
-            "sometimes, AI is not the best solution for your problem",
-          textEnd: "more easily solved with more established technologies",
+            "Decide using judgement: AI helps with summarising, themes, drafting support and idea generation, but struggles with high-accuracy or context-heavy decisions. Prefer augmentation over replacing judgement, and use a simpler non-AI tool when it would work just as well.",
+          citations: [
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "primary",
+              section: "When to use AI",
+              snippet:
+                "AI is good at: summarising long documents; finding common themes across multiple documents; suggesting improvements to drafts you've written; restructuring or reformatting existing content; generating initial ideas or options to consider. AI struggles with: tasks that need high accuracy; understanding your specific context or organisational priorities; making decisions that need professional judgement; providing current information unless you give it the latest sources.",
+              textStart: "AI is good at:",
+              textEnd: "unless you give it the latest sources",
+            }),
+            cite(HOW_TO_PRINCIPLES, {
+              role: "supporting",
+              section: "Use the right tool for the job",
+              snippet:
+                "Choose the most appropriate technology for your needs. Be open to AI solutions, but always consider if the problem could be solved more easily with traditional or simpler technologies.",
+              textStart:
+                "always consider if the problem could be solved more easily",
+              textEnd: "traditional or simpler technologies",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Principle 6: You use the right tool for the job",
+              snippet:
+                "However, you should also be open to the conclusion that, sometimes, AI is not the best solution for your problem: it may be more easily solved with more established technologies.",
+              textStart:
+                "sometimes, AI is not the best solution for your problem",
+              textEnd: "more easily solved with more established technologies",
+            }),
+          ],
+        },
+        {
+          id: "write-effective-prompts",
+          question: "How do I write effective prompts for AI assistants?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Treat prompting as a conversation. For everyday tasks, be specific about what you want, who it is for, format and background. For complex work, use frameworks such as RACE, GCSE, CRIT or PICSE, and chain multi-step tasks with human review between steps. Always check outputs for accuracy.",
+          citations: [
+            cite(HOW_TO_PROMPTS, {
+              role: "primary",
+              section: "Write simple prompts for everyday tasks",
+              snippet:
+                "To write a good prompt: be specific about what you want - use direct language and action words like 'write', 'analyse', 'create' or 'list'; be specific about who it's for - describe your audience and their background so the AI uses the right tone and level of detail; be specific about the format - word count, structure (email, bullet points, table) and tone; give relevant background - include details the AI needs to give you a useful answer.",
+              textStart: "be specific about what you want",
+              textEnd: "give you a useful answer",
+            }),
+            cite(HOW_TO_PROMPTS, {
+              role: "primary",
+              section: "Write detailed prompts for complex tasks",
+              snippet:
+                "You can structure detailed prompts using frameworks to help you remember what information to include. Use the RACE framework for focused tasks. Use the GCSE framework when you have source documents. Use the CRIT framework for strategic or creative tasks. Use the PICSE framework for iterative workflows.",
+              textStart: "structure detailed prompts using frameworks",
+              textEnd: "PICSE framework for iterative workflows",
+            }),
+            cite(HOW_TO_PROMPTS, {
+              role: "supporting",
+              section: "Experimenting with prompts",
+              snippet:
+                "Always check AI output for accuracy, as it can give false information, outdated details or biased outputs.",
+              textStart: "Always check AI output for accuracy",
+              textEnd: "false information, outdated details or biased outputs",
+            }),
+          ],
+        },
+        {
+          id: "augment-vs-automate",
+          question:
+            "Should AI augment my work or automate tasks independently?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Prefer augmentation — AI supports you while you stay in control — for work needing judgement, creativity or context. Use automation for well-defined repetitive tasks, and still review outputs. AI cannot replace professional judgement or responsibility.",
+          citations: [
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "primary",
+              section: "How AI should support your work",
+              snippet:
+                "AI can support your work in two ways: support and enhance your work while you stay in control (augmentation); complete tasks independently while you review output (automation). Augmentation is the most common and valuable use of AI for professional work.",
+              textStart:
+                "support and enhance your work while you stay in control (augmentation)",
+              textEnd:
+                "Augmentation is the most common and valuable use of AI for professional work",
+            }),
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "supporting",
+              section: "Using AI at work",
+              snippet:
+                "AI cannot replace your professional judgement or responsibility. Use it to support your work, not make decisions.",
+              textStart:
+                "AI cannot replace your professional judgement or responsibility",
+              textEnd: "not make decisions",
+            }),
+          ],
+        },
+        {
+          id: "verify-ai-outputs",
+          question: "How should I check and verify AI outputs before I use them?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Match checking effort to risk: sense-check against your expertise, source-check citations, verify numbers, and get expert review for important or public-facing content. For official content you must review for correctness and quality — you remain responsible as if you wrote it.",
+          citations: [
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "primary",
+              section: "How to check outputs",
+              snippet:
+                "You might need to: sense check - does this align with your knowledge and experience? Does the logic make sense?; source check - verify (cross-reference) any cited sources, references, or legislation; check the numbers - verify statistics, dates, and figures against original sources or datasets; check with experts - ask colleagues or subject matter experts to review important or public-facing content.",
+              textStart:
+                "sense check - does this align with your knowledge and experience",
+              textEnd: "review important or public-facing content",
+            }),
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "supporting",
+              section: "Review and approve AI content",
+              snippet:
+                "If you use AI to create or change official content, you must: review the content for correctness and quality; make sure it meets required standards before publishing or sharing. You're responsible for AI-generated content as if you created it yourself.",
+              textStart:
+                "review the content for correctness and quality",
+              textEnd: "as if you created it yourself",
+            }),
+            cite(HOW_TO_PRINCIPLES, {
+              role: "supporting",
+              section: "Understand AI and its limits",
+              snippet:
+                "AI outputs are not always accurate, you must verify them and manage potential harm.",
+              textStart:
+                "AI outputs are not always accurate, you must verify them",
+              textEnd: "manage potential harm",
+            }),
+          ],
+        },
+        {
+          id: "use-ai-ethically-day-to-day",
+          question: "How do I use AI ethically and sustainably day to day?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Follow your department’s AI policies, review outputs for accuracy/fairness/accessibility, avoid putting personal or identifiable information into unsuitable tools, be transparent about AI use, and prefer the smallest adequate model with short, necessary prompts.",
+          citations: [
+            cite(HOW_TO_ETHICS, {
+              role: "primary",
+              section: "Use AI responsibly",
+              snippet:
+                "You must check and follow your department’s AI policies, as there may be specific tools or approaches you should use. When using AI you must review all content and check: the information is correct; users or groups are treated fairly and equally; outputs follow accessibility rules.",
+              textStart:
+                "You must check and follow your department’s AI policies",
+              textEnd: "outputs follow accessibility rules",
+            }),
+            cite(HOW_TO_ETHICS, {
+              role: "primary",
+              section: "Protect sensitive information",
+              snippet:
+                "Use systems provided by your department for government work, and do not include any content with personal or identifiable information.",
+              textStart:
+                "do not include any content with personal or identifiable information",
+              textEnd: null,
+            }),
+            cite(HOW_TO_ETHICS, {
+              role: "supporting",
+              section: "Use AI sustainably",
+              snippet:
+                "If you do need AI, if your model allows it, pick the smallest one which will do what you need. Keep your prompts short, clear and direct; use as few prompts as possible; only use AI when needed.",
+              textStart: "pick the smallest one which will do what you need",
+              textEnd: "only use AI when needed",
+            }),
+          ],
         },
         {
           id: "good-use-cases",
@@ -271,6 +496,15 @@ const categories = [
               "Read together: expect inherited bias, and still run continuous mitigation and evaluation.",
           },
           citations: [
+            cite(INSIGHTS_LLM_BIAS, {
+              role: "primary",
+              section: "Reducing bias in LLMs",
+              snippet:
+                "effective bias management requires continuous integration into MLOps workflows, with evaluation running at every stage from development through production monitoring.",
+              textStart:
+                "effective bias management requires continuous integration into MLOps workflows",
+              textEnd: "development through production monitoring",
+            }),
             cite(PLAYBOOK, {
               role: "contrasting",
               stance:
@@ -292,15 +526,6 @@ const categories = [
                 "Bias in LLMs is fundamentally unavoidable because they learn from human-written text which contains centuries of accumulated societal biases. Rather than random errors that can be filtered out, these represent systematic patterns reflecting how different groups perceive and describe the world.",
               textStart: "Bias in LLMs is fundamentally unavoidable",
               textEnd: "centuries of accumulated societal biases",
-            }),
-            cite(INSIGHTS_LLM_BIAS, {
-              role: "supporting",
-              section: "Reducing bias in LLMs",
-              snippet:
-                "effective bias management requires continuous integration into MLOps workflows, with evaluation running at every stage from development through production monitoring.",
-              textStart:
-                "effective bias management requires continuous integration into MLOps workflows",
-              textEnd: "development through production monitoring",
             }),
           ],
         },
@@ -340,18 +565,27 @@ const categories = [
           question:
             "Can I put official or unpublished information into public tools like ChatGPT?",
           status: "conflicted",
-          last_reviewed: "2026-08-04",
+          last_reviewed: "2026-08-07",
           conflict_id: "conflict-public-ai-data-rules",
           answer:
-            "Do not put unpublished official information into public AI tools. The Playbook states this as a categorical rule; AI Insights adds that you must follow organisation policy and that providers may use information you submit.",
+            "Do not put unpublished official information into public AI tools. Follow department policy. Free/public services may reuse what you submit; paid enterprise tools with DPAs may handle sensitive data — but that is not a green light for public ChatGPT-style tools. Prefer departmental systems and never put personal/identifiable content into unsuitable tools.",
           conflict: {
             summary:
-              "The Playbook gives an absolute ban on unpublished official information in public AI apps. AI Insights emphasises organisation policy and provider reuse of data, without restating the same absolute ban.",
+              "Playbook bans unpublished official info in public AI apps. Insights emphasises org policy and provider reuse. Knowledge Hub how-tos say follow department policy, avoid personal/identifiable content, and note that paid enterprise tools with DPAs can often handle sensitive information — creating scope tension across public vs assured tools.",
             likely_cause: "different-scope",
             user_guidance:
-              "Treat the Playbook rule as the baseline. Organisation policy can be stricter, not weaker. Insights explains why the risk exists.",
+              "Playbook ban for public/unassured tools; department guidance for assured enterprise tools; do not conflate the two.",
           },
           citations: [
+            cite(HOW_TO_ETHICS, {
+              role: "primary",
+              section: "Protect sensitive information",
+              snippet:
+                "Use systems provided by your department for government work, and do not include any content with personal or identifiable information.",
+              textStart:
+                "do not include any content with personal or identifiable information",
+              textEnd: null,
+            }),
             cite(PLAYBOOK, {
               role: "contrasting",
               stance:
@@ -375,6 +609,18 @@ const categories = [
                 "you must make sure you’re acting in line with the policies",
               textEnd: "may be used by the provider",
             }),
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "contrasting",
+              stance:
+                "Paid enterprise tools with DPAs can often handle personal and sensitive information safely — check departmental guidance.",
+              section: "Using AI in government",
+              snippet:
+                "paid versions of tools (such as, Copilot Enterprise, or Gemini Pro) have data protection agreements. This means they can often handle personal and sensitive information safely. Check your department's guidance to understand what each tool can handle.",
+              textStart:
+                "paid versions of tools (such as, Copilot Enterprise, or Gemini Pro) have data protection agreements",
+              textEnd:
+                "Check your department's guidance to understand what each tool can handle",
+            }),
           ],
         },
         {
@@ -382,21 +628,12 @@ const categories = [
           question:
             "Can I use Microsoft Copilot, Slack GPT, or similar embedded AI features at work?",
           status: "answered",
-          last_reviewed: "2026-08-04",
+          last_reviewed: "2026-08-07",
           answer:
-            "Only after you understand architecture, vendor mitigations, and — for integrated tools — what organisational data the service can see and how it is processed or transmitted. Speak with your security team first.",
+            "Only after you understand architecture, vendor mitigations, and what organisational data the service can see and how it is processed or transmitted. Check departmental guidance for what each tool can handle; speak with your security team first.",
           citations: [
-            cite(PLAYBOOK, {
-              role: "primary",
-              section: "Embedded AI applications",
-              snippet:
-                "Before adopting any of these products it’s important to understand the underlying architecture of the solution, and what mitigations the vendor has put in place for the inherent risks associated with AI.",
-              textStart:
-                "Before adopting any of these products it’s important to understand the underlying architecture",
-              textEnd: "inherent risks associated with AI",
-            }),
             cite(INSIGHTS_GENERATIVE_AI, {
-              role: "supporting",
+              role: "primary",
               section: "Integrated generative AI applications",
               snippet:
                 "Before enabling a service, you must understand what data is visible to integrated AI services, and how that data is consumed, processed, and potentially transmitted or communicated externally.",
@@ -404,20 +641,66 @@ const categories = [
                 "you must understand what data is visible to integrated AI services",
               textEnd: "transmitted or communicated externally",
             }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Embedded AI applications",
+              snippet:
+                "Before adopting any of these products it’s important to understand the underlying architecture of the solution, and what mitigations the vendor has put in place for the inherent risks associated with AI.",
+              textStart:
+                "Before adopting any of these products it’s important to understand the underlying architecture",
+              textEnd: "inherent risks associated with AI",
+            }),
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "supporting",
+              section: "Using AI in government",
+              snippet:
+                "paid versions of tools (such as, Copilot Enterprise, or Gemini Pro) have data protection agreements. This means they can often handle personal and sensitive information safely. Check your department's guidance to understand what each tool can handle.",
+              textStart:
+                "paid versions of tools (such as, Copilot Enterprise, or Gemini Pro) have data protection agreements",
+              textEnd:
+                "Check your department's guidance to understand what each tool can handle",
+            }),
           ],
         },
         {
           id: "transcription-tools",
           question: "Are AI meeting transcription tools allowed?",
+          status: "conflicted",
+          last_reviewed: "2026-08-07",
+          conflict_id: "conflict-meeting-transcription",
           answer:
-            "Treat them as a serious data-leakage risk. Meeting organisers should verify attendees and state that third-party transcription tools are not allowed.",
-          snippet:
-            "There has also been a proliferation of AI transcription tools that are capable of joining virtual meetings and transcribing meeting notes. These present a serious risk of data leakage as they silently upload meeting recordings to an AI service for transcription and analysis. When hosting virtual meetings, organisers should verify the identity of all attendees and state up front that the use of third-party meeting transcription tools is not allowed.",
-          section: "Embedded AI applications",
-          textStart:
-            "These present a serious risk of data leakage",
-          textEnd:
-            "third-party meeting transcription tools is not allowed",
+            "Treat third-party transcription joiners as a serious data-leakage risk. The Playbook says organisers should ban third-party tools up front; Knowledge Hub how-tos say obtain participant consent before AI transcription or summarisation. Prefer approved tools, get consent, and do not treat consent as a substitute for the ban on unassured third-party joiners.",
+          conflict: {
+            summary:
+              "Playbook: state that third-party meeting transcription tools are not allowed. Knowledge Hub Using AI at work: ask for consent before using AI to transcribe, summarise, or process the discussion.",
+            likely_cause: "different-scope",
+            user_guidance:
+              "Default to the Playbook ban for unassured third-party tools; consent is additional, not a replacement.",
+          },
+          citations: [
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance:
+                "Organisers should state up front that third-party meeting transcription tools are not allowed.",
+              section: "Embedded AI applications",
+              snippet:
+                "These present a serious risk of data leakage as they silently upload meeting recordings to an AI service for transcription and analysis. When hosting virtual meetings, organisers should verify the identity of all attendees and state up front that the use of third-party meeting transcription tools is not allowed.",
+              textStart: "These present a serious risk of data leakage",
+              textEnd:
+                "third-party meeting transcription tools is not allowed",
+            }),
+            cite(HOW_TO_USE_AT_WORK, {
+              role: "contrasting",
+              stance:
+                "Ask for consent before using AI to transcribe, summarise, or process a discussion.",
+              section: "AI content and Freedom of Information",
+              snippet:
+                "If using AI in group meetings, ask for consent from participants before using AI to transcribe, summarise, or process the discussion.",
+              textStart:
+                "ask for consent from participants before using AI to transcribe",
+              textEnd: "process the discussion",
+            }),
+          ],
         },
         {
           id: "hosting-choices",
@@ -475,6 +758,24 @@ const categories = [
               "Treat vendor resilience as helpful, not sufficient. Retain Playbook assumptions about prompt subversion.",
           },
           citations: [
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "primary",
+              section: "Prompt injection",
+              snippet:
+                "Our defences should not rely on secret knowledge. For example, the position of the user input in a prompt. Whether it is located above or below other system instructions. This is so we may avoid the “ignore the above instruction” type of attempt.",
+              textStart:
+                "Our defences should not rely on secret knowledge",
+              textEnd: "above or below other system instructions",
+            }),
+            cite(INSIGHTS_PROMPT_RISKS, {
+              role: "primary",
+              section: "Vigilance",
+              snippet:
+                "The price of peace of mind in generative AI-based systems is continuous vigilance. Systems are rarely impenetrable.",
+              textStart:
+                "The price of peace of mind in generative AI-based systems is continuous vigilance",
+              textEnd: "Systems are rarely impenetrable",
+            }),
             cite(PLAYBOOK, {
               role: "contrasting",
               stance:
@@ -492,19 +793,10 @@ const categories = [
                 "Most vendor solutions are quite resilient, but organisations remain responsible for protection.",
               section: "Prompt injection",
               snippet:
-                "Most vendor solutions are quite resilient to these vulnerabilities, but it is our responsibility to ensure that we are safe and protected. Our defences should not rely on secret knowledge. For example, the position of the user input in a prompt.",
+                "Most vendor solutions are quite resilient to these vulnerabilities, but it is our responsibility to ensure that we are safe and protected.",
               textStart:
                 "Most vendor solutions are quite resilient to these vulnerabilities",
-              textEnd: "Our defences should not rely on secret knowledge",
-            }),
-            cite(INSIGHTS_PROMPT_RISKS, {
-              role: "supporting",
-              section: "Vigilance",
-              snippet:
-                "The price of peace of mind in generative AI-based systems is continuous vigilance. Systems are rarely impenetrable.",
-              textStart:
-                "The price of peace of mind in generative AI-based systems is continuous vigilance",
-              textEnd: "Systems are rarely impenetrable",
+              textEnd: "our responsibility to ensure that we are safe and protected",
             }),
           ],
         },
@@ -542,12 +834,21 @@ const categories = [
           question:
             "Can I trust generative AI outputs, or do they hallucinate?",
           status: "answered",
-          last_reviewed: "2026-08-04",
+          last_reviewed: "2026-08-07",
           answer:
-            "Do not trust generative AI to produce factual content uncritically. Models generate plausible but fallible outputs; correctness is not guaranteed, so evaluate outputs and keep humans in the loop for high-cost failures.",
+            "Do not trust generative AI uncritically. Check outputs with sense checks, source checks and expert review matched to risk; for official content you must review quality yourself. Normative guidance is clear that models can invent plausible but false content and correctness is not guaranteed.",
           citations: [
-            cite(PLAYBOOK, {
+            cite(HOW_TO_USE_AT_WORK, {
               role: "primary",
+              section: "How to check outputs",
+              snippet:
+                "You might need to: sense check - does this align with your knowledge and experience? Does the logic make sense?; source check - verify (cross-reference) any cited sources, references, or legislation; check the numbers - verify statistics, dates, and figures against original sources or datasets; check with experts - ask colleagues or subject matter experts to review important or public-facing content.",
+              textStart:
+                "sense check - does this align with your knowledge and experience",
+              textEnd: "review important or public-facing content",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
               section: "Hallucinations",
               snippet:
                 "Fundamentally, generative AI models cannot be trusted to produce factual content. Any generative AI services that output generated content directly to the public – for example, an LLM-powered chatbot giving advice on a government website – would be prone to hallucination and could lead to someone being misled about a government service, policy or point of law.",
@@ -565,15 +866,6 @@ const categories = [
                 "the correctness of their responses is not guaranteed",
               textEnd: "they can, and do, make errors",
             }),
-            cite(INSIGHTS_GENERATIVE_AI, {
-              role: "supporting",
-              section: "Getting reliable results",
-              snippet:
-                "HITL systems involve people to review, correct and approve system output. They’re a vital aspect of delivering critical services, especially where the cost of failure may be high",
-              textStart:
-                "They’re a vital aspect of delivering critical services",
-              textEnd: "where the cost of failure may be high",
-            }),
           ],
         },
       ],
@@ -585,13 +877,154 @@ const categories = [
         {
           id: "buy-or-build",
           question: "Should I buy an AI product or build one in-house?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
           answer:
-            "Decide based on the problem and commercial advice. Options include off-the-shelf products, AI bolted onto existing technology, outsourced builds, or co-creating with suppliers.",
-          snippet:
-            "This might be an off-the-shelf product, an existing technology with bolt-on AI elements (paid or free), outsourcing AI builds (if applicable), or co-creating AI with suppliers.",
-          section: "Specifying your requirements",
-          textStart: "off-the-shelf product, an existing technology with bolt-on AI elements",
-          textEnd: "co-creating AI with suppliers",
+            "Choose a route that fits the need — exchange schemes, pro-bono pilots, competitive flexible procedure, framework call-off, or standard procurement — and get commercial advice early. Pilots are not exempt from procurement law; you must still follow the Procurement Act 2023 and consider data protection and security from the start.",
+          citations: [
+            cite(HOW_TO_PROCUREMENT, {
+              role: "primary",
+              section: "Choose your procurement route",
+              snippet:
+                "Based on your needs you have a range of options available to you: If you wish to add specific technical expertise to your team temporarily, find out about Exchange schemes; If you wish to explore frontier technology where no proven solution exists, find out about Pro-bono pilot competitions; If you wish to select a supplier based on working prototypes they build during competition, find out about Competitive Flexible Procedure; If you wish to buy standard tools and solutions quickly from pre-approved suppliers, find out about Framework call-off; If you wish to procure when other routes do not fit or contract value requires full competitive tendering, find out about Standard procurement.",
+              textStart: "Based on your needs you have a range of options",
+              textEnd: "Standard procurement",
+            }),
+            cite(HOW_TO_PROCUREMENT, {
+              role: "supporting",
+              section: "Procuring AI",
+              snippet:
+                "Despite these unique characteristics, you must still: follow the Procurement Act 2023; consider data protection and security from the start; ensure fair competition (or document why you're using direct award); assess value for money; document your procurement decisions. AI procurement is not exempt from procurement law.",
+              textStart: "you must still: follow the Procurement Act 2023",
+              textEnd: "AI procurement is not exempt from procurement law",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Specifying your requirements",
+              snippet:
+                "This might be an off-the-shelf product, an existing technology with bolt-on AI elements (paid or free), outsourcing AI builds (if applicable), or co-creating AI with suppliers.",
+              textStart:
+                "off-the-shelf product, an existing technology with bolt-on AI elements",
+              textEnd: "co-creating AI with suppliers",
+            }),
+          ],
+        },
+        {
+          id: "procure-ai-route",
+          question:
+            "How do I choose a procurement route for an AI solution?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Match the route to the problem: exchange schemes for embedded expertise; pro-bono pilots to explore unproven frontier tech; competitive flexible procedure when you need to see prototypes; framework call-off for standard tools; standard procurement when other routes do not fit. Do not assume innovation or pilot status skips competition rules.",
+          citations: [
+            cite(HOW_TO_PROCUREMENT, {
+              role: "primary",
+              section: "Choose your procurement route",
+              snippet:
+                "Based on your needs you have a range of options available to you: Exchange schemes; Pro-bono pilot competitions; Competitive Flexible Procedure; Framework call-off; Standard procurement.",
+              textStart: "Based on your needs you have a range of options",
+              textEnd: "Standard procurement",
+            }),
+            cite(HOW_TO_PROCUREMENT, {
+              role: "supporting",
+              section: "Procuring AI",
+              snippet:
+                "Common myths: \"It's just a pilot so procurement rules don't apply\"; \"Innovation means we can skip competitive process\". Get commercial and legal advice early. AI procurement is not exempt from procurement law.",
+              textStart:
+                "It's just a pilot so procurement rules don't apply",
+              textEnd: "AI procurement is not exempt from procurement law",
+            }),
+          ],
+        },
+        {
+          id: "measure-ai-impact",
+          question: "How do I measure the impact of an AI solution?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Plan evaluation early with a baseline and Theory of Change. Measure benefit/ROI, quality, efficiency, satisfaction, usage and cost during development and after release. After release you must evaluate regularly to confirm the solution still meets user needs.",
+          citations: [
+            cite(HOW_TO_MEASURE_IMPACT, {
+              role: "primary",
+              section: "How to approach impact evaluation",
+              snippet:
+                "Make sure impact evaluation is included in the design of your product throughout its life cycle, for example: plan your evaluation strategy early so you can align delivery with continuous feedback; include evaluation metrics in objectives and key results; develop a Theory of Change; establish a baseline so you can compare information from before the solution was implemented.",
+              textStart: "plan your evaluation strategy early",
+              textEnd:
+                "compare information from before the solution was implemented",
+            }),
+            cite(HOW_TO_MEASURE_IMPACT, {
+              role: "supporting",
+              section: "Measure impact after release",
+              snippet:
+                "After release you must do regular evaluations to understand overall impact make sure the model is continuing to meet user needs",
+              textStart: "After release you must do regular evaluations",
+              textEnd: "continuing to meet user needs",
+            }),
+          ],
+        },
+        {
+          id: "make-data-ready-for-ai",
+          question: "How do I make government datasets ready for AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Prepare data intentionally across technical optimisation, data/metadata quality, ownership and access, and legal/security/ethics. Use the published AI-ready guidelines, self-assessment checklist and action plan; data use must be lawful, secure and trustworthy.",
+          citations: [
+            cite(HOW_TO_DATA_READY, {
+              role: "primary",
+              section: "What to do next",
+              snippet:
+                "Read the Guidelines and best practices for making government datasets ready for AI to gain an understanding of what makes data AI-ready. Identify datasets in your organisation that could support AI use cases. Use the self-assessment checklist to evaluate whether your datasets are AI-ready. Follow the AI-ready data action plan presented in the guidance to address technical, governance or legal barriers.",
+              textStart:
+                "Use the self-assessment checklist to evaluate whether your datasets are AI-ready",
+              textEnd: "technical, governance or legal barriers",
+            }),
+            cite(HOW_TO_DATA_READY, {
+              role: "supporting",
+              section: "What does ‘AI-ready’ data mean?",
+              snippet:
+                "organisations should consider the following aspects to help ensure their datasets are prepared effectively for AI: Technical optimisation; Data and metadata quality; Organisation and infrastructure context; Legal, security and ethical compliance. Data use must be lawful, secure and trustworthy.",
+              textStart: "Technical optimisation",
+              textEnd: "Data use must be lawful, secure and trustworthy",
+            }),
+          ],
+        },
+        {
+          id: "reduce-ai-environmental-impact",
+          question:
+            "How do I reduce the environmental impact of building or using AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "First ask whether AI is needed. Prefer energy-efficient models and green hosting, manage data retention, and monitor footprint with tools such as CodeCarbon, Ecologits or Green Algorithms. Day-to-day, pick the smallest adequate model and keep prompts short.",
+          citations: [
+            cite(HOW_TO_BUILD_SUSTAINABLY, {
+              role: "primary",
+              section: "How to reduce your environmental impact",
+              snippet:
+                "Choose green providers: Look for hosting providers that use renewable energy and hold environmental certifications. Use efficient hardware: Where possible, select regions with renewable energy, use modern compute types, and right-size your deployments. Manage data thoughtfully: Set up efficient storage with clear retention policies, so you're not keeping data longer than needed.",
+              textStart: "Choose green providers",
+              textEnd: "not keeping data longer than needed",
+            }),
+            cite(HOW_TO_BUILD_SUSTAINABLY, {
+              role: "primary",
+              section: "How to monitor your environmental impact",
+              snippet:
+                "You can use free online tools to calculate your environmental impact. Each tool serves different use cases: CodeCarbon or Carbontracker; Ecologits; Green Algorithms. Monitoring your AI product's environmental impact throughout its lifecycle helps you spot issues early and make adjustments.",
+              textStart: "CodeCarbon or Carbontracker",
+              textEnd: "spot issues early and make adjustments",
+            }),
+            cite(HOW_TO_ETHICS, {
+              role: "supporting",
+              section: "Use AI sustainably",
+              snippet:
+                "If you do need AI, if your model allows it, pick the smallest one which will do what you need. Keep your prompts short, clear and direct; use as few prompts as possible; only use AI when needed.",
+              textStart: "pick the smallest one which will do what you need",
+              textEnd: "only use AI when needed",
+            }),
+          ],
         },
         {
           id: "commercial-colleagues",
@@ -888,6 +1321,14 @@ module.exports = {
     INSIGHTS_GENERATIVE_AI,
     INSIGHTS_PROMPT_RISKS,
     INSIGHTS_LLM_BIAS,
+    HOW_TO_PRINCIPLES,
+    HOW_TO_USE_AT_WORK,
+    HOW_TO_PROMPTS,
+    HOW_TO_ETHICS,
+    HOW_TO_BUILD_SUSTAINABLY,
+    HOW_TO_DATA_READY,
+    HOW_TO_PROCUREMENT,
+    HOW_TO_MEASURE_IMPACT,
   ],
   categories: normalizedCategories,
   items,
