@@ -53,8 +53,7 @@
     }) }}
 
     {% set phaseHtml %}
-      This is a prototype. Answers cite incorporated UK public sector AI guidance, starting with the
-      <a class="govuk-link" href="{{ faq.source.url }}">{{ faq.source.title }}</a>.
+      This is a prototype. Answers cite incorporated UK public sector AI guidance from incorporated <a href="/sources">sources</a>.
     {% endset %}
     {{ govukPhaseBanner({
       tag: {
@@ -92,7 +91,8 @@
           width: "one-half",
           items: [
             { href: "/about/", text: "About this explorer" },
-            { href: "/about/process/", text: "Source lifecycle" }
+            { href: "/about/process/", text: "Source lifecycle" },
+            { href: "https://www.peterkappus.com/?utm_source=psai-guidance-explorer", text: "Made by Peter Kappus" }
           ]
         }
       ],

@@ -11,7 +11,7 @@ back:
 # About this explorer
 
 <p class="govuk-body-l">
-This is a prototype catalogue of UK public sector AI guidance. It helps people browse common questions about adopting AI in government and see answers with citations back to official guidance.
+This is a prototype catalogue of UK public sector AI guidance made by <a href="https://www.peterkappus.com/?utm_source=psai-guidance-explorer">Peter Kappus</a>. It helps people browse common questions about adopting AI in government and see answers with citations back to official guidance.
 </p>
 
 It is **not** an official GOV.UK service and does not replace organisational legal, security, commercial or data protection advice.
