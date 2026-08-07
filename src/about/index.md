@@ -30,7 +30,7 @@ We maintain a deliberate process for finding guidance, deciding what to include,
 
 ## Current sources
 
-Browse the [sources catalogue](/sources/) for guidance tracked in this explorer. The live FAQ currently cites the [AI Playbook for the UK Government](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html). Further candidate sources are listed in the catalogue and maintained in `sources.json`.
+Browse the [sources catalogue](/sources/) for guidance tracked in this explorer.
 
 ## Feedback
 
