@@ -97,6 +97,14 @@ const HOW_TO_MEASURE_IMPACT = {
   url: "https://ai.gov.uk/knowledge-hub/how-to/measure-impact",
 };
 
+const GUIDELINES_AI_PROCUREMENT = {
+  id: "guidelines-ai-procurement",
+  title: "Guidelines for AI procurement",
+  organisation:
+    "Office for Artificial Intelligence / Department for Science, Innovation and Technology (DSIT)",
+  url: "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+};
+
 function cite(source, fields) {
   return {
     source_id: source.id,
@@ -890,6 +898,16 @@ const categories = [
               textStart: "Based on your needs you have a range of options",
               textEnd: "Standard procurement",
             }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section:
+                "AI-specific considerations within the procurement process",
+              snippet:
+                "As a general principle any AI procurement should be investigated with the mindset of “how could AI technologies potentially benefit us?” rather than “how can we make our problem fit an AI system solution?”.",
+              textStart: "how could AI technologies potentially benefit us",
+              textEnd:
+                "how can we make our problem fit an AI system solution",
+            }),
             cite(HOW_TO_PROCUREMENT, {
               role: "supporting",
               section: "Procuring AI",
@@ -913,18 +931,40 @@ const categories = [
           id: "procure-ai-route",
           question:
             "How do I choose a procurement route for an AI solution?",
-          status: "answered",
+          status: "conflicted",
           last_reviewed: "2026-08-07",
+          conflict_id: "conflict-procurement-routes-currency",
           answer:
-            "Match the route to the problem: exchange schemes for embedded expertise; pro-bono pilots to explore unproven frontier tech; competitive flexible procedure when you need to see prototypes; framework call-off for standard tools; standard procurement when other routes do not fit. Do not assume innovation or pilot status skips competition rules.",
+            "Match the route to the problem using current commercial practice (Exchange schemes, pro-bono pilots, competitive flexible procedure, framework call-off, or standard procurement) and follow the Procurement Act 2023. Older Guidelines still list useful vehicles (G-Cloud, DOS, AI DPS, innovation contests) but route names and framing have moved on — get commercial advice on what is live today.",
+          conflict: {
+            summary:
+              "Knowledge Hub Procuring AI organises modern routes under the Procurement Act 2023. Guidelines for AI procurement (2020) emphasise G-Cloud, DOS, Spark DPS, GovTech Catalyst, Innovation Partnerships and the CCS AI DPS.",
+            likely_cause: "different-time",
+            user_guidance:
+              "Prefer Knowledge Hub for current route framing; use Guidelines for enduring method. Confirm live frameworks with commercial colleagues.",
+          },
           citations: [
             cite(HOW_TO_PROCUREMENT, {
               role: "primary",
+              stance:
+                "Choose among Exchange schemes, Pro-bono pilots, Competitive Flexible Procedure, Framework call-off, or Standard procurement.",
               section: "Choose your procurement route",
               snippet:
                 "Based on your needs you have a range of options available to you: Exchange schemes; Pro-bono pilot competitions; Competitive Flexible Procedure; Framework call-off; Standard procurement.",
               textStart: "Based on your needs you have a range of options",
               textEnd: "Standard procurement",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "contrasting",
+              stance:
+                "Consider frameworks (G-Cloud, DOS, Spark DPS), innovation contests, Innovation Partnerships, and the CCS AI DPS.",
+              section: "Procurement approach and vehicle",
+              snippet:
+                "Framework agreements including G-Cloud, Digital Outcomes and Specialists, and the Spark Dynamic Purchasing System (DPS) are useful starting points to consider. Innovation-oriented procurement procedures provide opportunities to accelerate the adoption of new technologies within government… The Dynamic Purchasing System for AI from Crown Commercial Service is the first example of this kind of novel approach.",
+              textStart:
+                "Framework agreements including G-Cloud, Digital Outcomes and Specialists",
+              textEnd:
+                "Dynamic Purchasing System for AI from Crown Commercial Service",
             }),
             cite(HOW_TO_PROCUREMENT, {
               role: "supporting",
@@ -934,6 +974,228 @@ const categories = [
               textStart:
                 "It's just a pilot so procurement rules don't apply",
               textEnd: "AI procurement is not exempt from procurement law",
+            }),
+          ],
+        },
+        {
+          id: "data-assessment-before-ai-procurement",
+          question:
+            "Do I need a data assessment before starting an AI procurement?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Yes. Do not spend time on AI procurement if relevant data will not be available. Run a data discovery before going to market, put data governance in place from the start, and if assessment is incomplete make a full data check a tender requirement.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "3. Conduct a data assessment before starting your procurement process",
+              snippet:
+                "Availability of relevant data is often a prerequisite for any AI system, so time should not be spent discussing AI procurement if no data will be available. Ensure data governance mechanisms are in place from the start of the procurement process. Assess whether relevant data will be available for the project.",
+              textStart:
+                "time should not be spent discussing AI procurement if no data will be available",
+              textEnd:
+                "Assess whether relevant data will be available for the project",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "Data assessment and governance",
+              snippet:
+                "Ensure that a discovery into your data is conducted before you go to market. If a thorough assessment of the data proves difficult or has not been made, make it a requirement in the invitation-to-tender to conduct a comprehensive check of the data the AI system will use to base its decisions upon.",
+              textStart:
+                "a discovery into your data is conducted before you go to market",
+              textEnd:
+                "comprehensive check of the data the AI system will use",
+            }),
+          ],
+        },
+        {
+          id: "ai-procurement-problem-statement",
+          question:
+            "Should AI procurement requirements describe the problem or prescribe a solution?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Use a clear problem statement and output-based requirements so suppliers can propose the best approach. Avoid over-specifying a solution; prioritise iterative development in the invitation to tender.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "6. Establish the right route to market and focus on the challenge rather than a specific solution",
+              snippet:
+                "Provide a clear problem statement, rather than detailed specifications for a solution. Tell suppliers about the situation or challenge, and let them propose a solution that meets your needs. Prioritise an iterative approach to product development and reflect this accordingly in the invitation to tender.",
+              textStart:
+                "Provide a clear problem statement, rather than detailed specifications for a solution",
+              textEnd: "reflect this accordingly in the invitation to tender",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "Drafting your requirement",
+              snippet:
+                "Use output-based requirements in your invitation-to-tender that focus on describing the challenges and opportunities you are facing. This will allow suppliers to determine which technologies are most appropriate for your requirements.",
+              textStart:
+                "Use output-based requirements in your invitation-to-tender",
+              textEnd:
+                "which technologies are most appropriate for your requirements",
+            }),
+          ],
+        },
+        {
+          id: "ai-impact-assessment-procurement",
+          question:
+            "What should an AI impact assessment cover when buying AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Start the impact assessment at design stage and revisit it at key decisions. Cover user needs and public benefit, socio-economic impacts, technical/process consequences, data quality and bias, unintended consequences, and whole-of-life costs — and state public benefit as a main driver in procurement documentation.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "AI Impact assessment",
+              snippet:
+                "Your AI impact assessment should be initiated at the project design stage. Your AI impact assessment should outline: Your user needs and the public benefit of your AI system; Human and socio-economic impacts of your AI system; Consequences for your existing technical and procedural landscape; Data quality and any potential inaccuracy or bias; Any potential unintended consequences; Whole-of-life cost considerations, including ongoing support and maintenance requirements.",
+              textStart:
+                "Your AI impact assessment should be initiated at the project design stage",
+              textEnd: "ongoing support and maintenance requirements",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section:
+                "4. Assess the benefits and risks of AI deployment",
+              snippet:
+                "Explain in your procurement documentation that the public benefit is a main driver of your decision-making process when assessing proposals. Set out clearly in your procurement documentation why you consider AI to be relevant to the problem, and be open to alternative solutions.",
+              textStart:
+                "the public benefit is a main driver of your decision-making process",
+              textEnd: "be open to alternative solutions",
+            }),
+          ],
+        },
+        {
+          id: "ai-procurement-market-engagement",
+          question:
+            "How should I engage the market before buying an AI system?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Engage AI suppliers early in planning, reach a wide mix including SMEs and VCSEs, and keep competition open. Share the same information with all suppliers so none gains a preferential advantage.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "5. Engage effectively with the market from the outset",
+              snippet:
+                "Engage with AI suppliers early and within your planning phase. Reach out in various ways to a wide variety of AI suppliers. Encourage an open environment that supports competition in the AI ecosystem.",
+              textStart:
+                "Engage with AI suppliers early and within your planning phase",
+              textEnd: "supports competition in the AI ecosystem",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section: "Preliminary Market Engagement",
+              snippet:
+                "All preliminary market engagement must observe the principles of public procurement and be handled in such a way that no supplier gains a preferential advantage. In practice, this means not setting the technical specification to suit a particular solution or supplier and making sure any information shared is also available during the procurement process.",
+              textStart: "no supplier gains a preferential advantage",
+              textEnd:
+                "any information shared is also available during the procurement process",
+            }),
+          ],
+        },
+        {
+          id: "avoid-black-box-ai-procurement",
+          question:
+            "How do I avoid black-box algorithms and vendor lock-in when buying AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Make explainability and interpretability design criteria so your team (and future suppliers) can understand results. That reduces lock-in by making it easier to continue or rebuild with another supplier; also build exit and portability into requirements from the start.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "8. Avoid Black Box algorithms and vendor lock in",
+              snippet:
+                "Encourage explainability and interpretability of algorithms and make this one of your design criteria. This means using methods and techniques that allow the results to be understood by your team. Highly ‘explainable’ outputs from your AI system will be able to be interpreted by your team, and by other suppliers. This will also make it more likely for you to be able to engage with other suppliers to continue or build upon your AI system in the future, limiting the risk of vendor lock-in.",
+              textStart:
+                "Encourage explainability and interpretability of algorithms",
+              textEnd: "limiting the risk of vendor lock-in",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Specifying your requirements",
+              snippet: "consider strategies to avoid vendor lock-in",
+              textStart: "consider strategies to avoid vendor lock-in",
+              textEnd: null,
+            }),
+          ],
+        },
+        {
+          id: "evaluate-ai-suppliers",
+          question:
+            "What should I look for when evaluating AI supplier tenders?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Use a multidisciplinary evaluation team. Look for ethics approaches, accountability for algorithm outputs, bias mitigation, reproducibility, testing under varied conditions, defined performance, security, and the skills and diversity of the delivery team. Expect approaches to evolve — AI delivery is iterative.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "3. Selection, Evaluation and Award",
+              snippet:
+                "Robust practices may include, but are not limited to: Having an internal AI ethics approach, with examples of how it has been applied to design, develop, and deploy AI-powered solutions; Processes to ensure accountability over outputs of algorithms; Avoiding outputs that could be unfairly discriminatory; Designing for reproducibility; Testing the model under a range of conditions; Defining acceptable model performance; Robust and proportionate security provision. As part of the evaluation process, also review the specialist skills, qualifications and diversity of the team that will develop and deploy the AI system.",
+              textStart: "Having an internal AI ethics approach",
+              textEnd:
+                "diversity of the team that will develop and deploy the AI system",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section:
+                "9. Focus on the need to address technical and ethical limitations of AI deployment during your evaluation",
+              snippet:
+                "Have suppliers highlighted and/or addressed any issues of bias within the data? Do they clearly explain why their strategies are appropriate and proportionate? Does their governance approach meet your requirements? Have the appropriate technical standards been adhered to?",
+              textStart:
+                "Have suppliers highlighted and/or addressed any issues of bias within the data",
+              textEnd:
+                "Have the appropriate technical standards been adhered to",
+            }),
+          ],
+        },
+        {
+          id: "ai-procurement-lifecycle-contract",
+          question:
+            "What lifecycle and end-of-life requirements should AI contracts include?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
+          answer:
+            "Treat procurement as lifespan management, not a one-off buy: require ongoing model monitoring, knowledge transfer and training for non-specialists, support and hosting, process-based governance/auditability, and defined end-of-contract roles for the system and data.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "10. Consider the lifecycle management of the AI system",
+              snippet:
+                "Consider during AI procurement that lifespan testing, not a one-time decision, is required. Ensure that knowledge transfer and training is part of your requirement. Ensure that you make training and explanations for non-specialists that might need to understand the AI system part of your requirement. Ensure you have the appropriate ongoing support and hosting arrangements in place.",
+              textStart:
+                "lifespan testing, not a one-time decision, is required",
+              textEnd: "ongoing support and hosting arrangements in place",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "Model testing",
+              snippet:
+                "Testing the model on an ongoing basis is necessary to maintain its accuracy. An inaccurate model can result in erroneous decisions that negatively impact citizens. Therefore, establish with the supplier how the efficacy of the model will be monitored once deployed.",
+              textStart:
+                "Testing the model on an ongoing basis is necessary to maintain its accuracy",
+              textEnd:
+                "how the efficacy of the model will be monitored once deployed",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section: "End-of-life",
+              snippet:
+                "Consider what the end-of-life processes for your AI system and the data should look like. Defining end-of-contract roles and processes for both the contracting authority and the supplier is important. Ensure the contract includes such considerations.",
+              textStart:
+                "end-of-life processes for your AI system and the data",
+              textEnd: "Ensure the contract includes such considerations",
             }),
           ],
         },
@@ -1067,13 +1329,30 @@ const categories = [
         {
           id: "specify-requirements",
           question: "How do I specify requirements when buying AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
           answer:
-            "Start from the problem statement, cover data strategy/quality/bias, demand transparency about the supplier’s AI approach, plan for maintenance, IP, liabilities and avoiding vendor lock-in.",
-          snippet:
-            "When drafting requirements for AI, you should: start with your problem statement; highlight your data strategy and requirements; focus on data quality, bias (mitigation) and limitations; underline the need for you to understand the supplier’s AI approach; consider strategies to avoid vendor lock-in",
-          section: "Specifying your requirements",
-          textStart: "start with your problem statement",
-          textEnd: "strategies to avoid vendor lock-in",
+            "Start from an output-based problem statement backed by user needs, cover data strategy/quality/bias, demand transparency about the supplier’s AI approach, and plan for maintenance, IP, liabilities and avoiding vendor lock-in.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section: "Drafting your requirement",
+              snippet:
+                "Use output-based requirements in your invitation-to-tender that focus on describing the challenges and opportunities you are facing. This will allow suppliers to determine which technologies are most appropriate for your requirements. Use output-based requirements, which allow the supplier to propose how they will respond to your requirement. You will have to draft sufficiently detailed problem statements backed by user needs and required performance.",
+              textStart:
+                "Use output-based requirements in your invitation-to-tender",
+              textEnd:
+                "detailed problem statements backed by user needs and required performance",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Specifying your requirements",
+              snippet:
+                "When drafting requirements for AI, you should: start with your problem statement; highlight your data strategy and requirements; focus on data quality, bias (mitigation) and limitations; underline the need for you to understand the supplier’s AI approach; consider strategies to avoid vendor lock-in",
+              textStart: "start with your problem statement",
+              textEnd: "strategies to avoid vendor lock-in",
+            }),
+          ],
         },
         {
           id: "intellectual-property",
@@ -1091,12 +1370,29 @@ const categories = [
         {
           id: "vendor-lock-in",
           question: "How do I avoid vendor lock-in when buying AI?",
+          status: "answered",
+          last_reviewed: "2026-08-07",
           answer:
-            "Build exit and portability into requirements and contracts from the start, including understanding the supplier’s approach and planning for transfer to successor suppliers.",
-          snippet:
-            "consider strategies to avoid vendor lock-in",
-          section: "Specifying your requirements",
-          textStart: "consider strategies to avoid vendor lock-in",
+            "Require explainable, interpretable approaches so other suppliers can continue the work, and build exit and portability into requirements and contracts from the start.",
+          citations: [
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "primary",
+              section:
+                "8. Avoid Black Box algorithms and vendor lock in",
+              snippet:
+                "Highly ‘explainable’ outputs from your AI system will be able to be interpreted by your team, and by other suppliers. This will also make it more likely for you to be able to engage with other suppliers to continue or build upon your AI system in the future, limiting the risk of vendor lock-in.",
+              textStart:
+                "Highly ‘explainable’ outputs from your AI system",
+              textEnd: "limiting the risk of vendor lock-in",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Specifying your requirements",
+              snippet: "consider strategies to avoid vendor lock-in",
+              textStart: "consider strategies to avoid vendor lock-in",
+              textEnd: null,
+            }),
+          ],
         },
       ],
     },
@@ -1329,6 +1625,7 @@ module.exports = {
     HOW_TO_DATA_READY,
     HOW_TO_PROCUREMENT,
     HOW_TO_MEASURE_IMPACT,
+    GUIDELINES_AI_PROCUREMENT,
   ],
   categories: normalizedCategories,
   items,

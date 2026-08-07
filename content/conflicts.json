@@ -99,6 +99,29 @@
       "user_guidance": "Treat the Playbook ban on unassured third-party joiners as the default for risk. Consent is additional, not a substitute. Prefer department-approved transcription where available, and still get participant consent.",
       "related_faq_ids": ["transcription-tools"],
       "opened_on": "2026-08-07"
+    },
+    {
+      "conflict_id": "conflict-procurement-routes-currency",
+      "title": "AI procurement routes: 2020 Guidelines vs Knowledge Hub how-to",
+      "status": "open",
+      "summary": "Guidelines for AI procurement (Crown copyright 2020) list routes such as G-Cloud, DOS, Spark DPS, GovTech Catalyst, Innovation Partnerships and the CCS AI DPS. Knowledge Hub Procuring AI (draft) instead organises routes as Exchange schemes, Pro-bono pilot competitions, Competitive Flexible Procedure, Framework call-off and Standard procurement under the Procurement Act 2023 mindset.",
+      "positions": [
+        {
+          "source_id": "guidelines-ai-procurement",
+          "section": "Procurement approach and vehicle",
+          "stance": "Consider frameworks (G-Cloud, DOS, Spark DPS), innovation contests (e.g. GovTech Catalyst), Innovation Partnerships, and the CCS AI Dynamic Purchasing System."
+        },
+        {
+          "source_id": "ai-knowledge-hub-how-tos",
+          "article_id": "how-to-procurement",
+          "section": "Choose your procurement route",
+          "stance": "Choose among Exchange schemes, Pro-bono pilot competitions, Competitive Flexible Procedure, Framework call-off, or Standard procurement — and still follow the Procurement Act 2023."
+        }
+      ],
+      "likely_cause": "different-time",
+      "user_guidance": "Use Knowledge Hub Procuring AI for current route framing and legal baseline. Use Guidelines for enduring method (problem statements, data assessment, explainability, evaluation criteria, lifecycle clauses). Confirm live CCS frameworks and commercial advice before choosing a vehicle.",
+      "related_faq_ids": ["procure-ai-route", "buy-or-build"],
+      "opened_on": "2026-08-07"
     }
   ]
 }

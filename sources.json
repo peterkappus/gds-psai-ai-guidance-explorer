@@ -29,6 +29,13 @@
         "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
         "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
         "notes": "Incorporated 2026-08-07. Practical how-to guidance; preferred as primary citation when explaining how to do something. Claim units in content/units/ai-knowledge-hub-how-tos.json."
+      },
+      {
+        "id": "guidelines-ai-procurement",
+        "title": "Guidelines for AI procurement",
+        "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+        "organisation": "Office for AI / DSIT (with GDS, Government Commercial Function, Crown Commercial Service)",
+        "notes": "Accepted and incorporated 2026-08-07. Correct HTML URL (not the older data-ethics path). Claim units in content/units/guidelines-ai-procurement.json. Pair with Knowledge Hub Procuring AI for current routes; flag currency tensions."
       }
     ],
     "fields": {
@@ -148,30 +155,42 @@
     {
       "id": "guidelines-ai-procurement",
       "title": "Guidelines for AI procurement",
-      "url": "https://www.gov.uk/data-ethics-guidance/guidelines-for-ai-procurement",
-      "organisation": "Government Digital Service (GDS) / historically Office for AI and DCMS/DSIT",
+      "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+      "organisation": "Office for Artificial Intelligence / Department for Science, Innovation and Technology (DSIT) (with GDS, Government Commercial Function, Crown Commercial Service)",
       "type": "guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "commercial / procurement",
         "SROs",
-        "digital delivery teams"
+        "digital delivery teams",
+        "DDaT professionals",
+        "suppliers"
       ],
       "themes": [
         "procurement",
         "buying-ai",
         "vendor-management",
-        "ethics"
+        "ethics",
+        "data-governance",
+        "assurance"
       ],
-      "summary": "Best-practice guidance for public-sector buyers on preparing, specifying, evaluating, awarding and managing AI procurements.",
-      "why_include": "Core source for buy-vs-build, requirements, lock-in, and ethics-in-procurement FAQs.",
+      "summary": "Guiding principles for buying AI in government: multidisciplinary teams, data assessment, impact assessment, market engagement, routes to market, governance, explainability, evaluation and lifecycle/contract management.",
+      "why_include": "Core source for buy-vs-build, requirements, lock-in, ethics-in-procurement and pre-market data/impact assessment FAQs.",
       "related_faq_themes": [
-        "buying-building"
+        "buying-building",
+        "delivery-assurance",
+        "lawful-ethical"
       ],
       "formats": ["HTML"],
       "priority": 1,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-08-07",
+      "claim_units_path": "content/units/guidelines-ai-procurement.json",
+      "related_urls": [
+        "https://www.gov.uk/data-ethics-guidance/guidelines-for-ai-procurement"
+      ],
+      "notes": "Catalogue previously pointed at an older/incorrect path; canonical document URL corrected on ingest. Crown copyright 2020 — check Knowledge Hub Procuring AI for newer route names (Procurement Act 2023 era)."
     },
     {
       "id": "ai-insights",
