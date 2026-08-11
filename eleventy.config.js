@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
       "assets/govuk-frontend.min.js",
     "src/assets/css": "assets/css",
     "src/assets/js": "assets/js",
+    "src/assets/icons": "assets/icons",
   });
 
   eleventyConfig.addFilter("textFragmentUrl", function (item) {

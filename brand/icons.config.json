@@ -1,0 +1,14 @@
+{
+  "inputDir": "brand",
+  "outputDir": "src/assets/icons",
+  "publicPath": "/assets/icons",
+  "manifest": {
+    "name": "AI Guidance Explorer",
+    "short_name": "AI Guidance",
+    "description": "Browse common questions about AI adoption in the UK public sector, with cited official guidance.",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#ffffff",
+    "theme_color": "#0b0c0c"
+  }
+}

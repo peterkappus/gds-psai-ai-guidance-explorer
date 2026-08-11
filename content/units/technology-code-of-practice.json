@@ -1,0 +1,194 @@
+{
+  "source_id": "technology-code-of-practice",
+  "document_url": "https://www.gov.uk/guidance/the-technology-code-of-practice",
+  "extracted_on": "2026-08-10",
+  "incorporated_articles": [
+    {
+      "article_id": "technology-code-of-practice",
+      "title": "The Technology Code of Practice",
+      "url": "https://www.gov.uk/guidance/the-technology-code-of-practice"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "tcop--spend-control-standard",
+      "section": "The Technology Code of Practice",
+      "claim_type": "definition",
+      "text": "The Technology Code of Practice (TCoP) is a cross-government agreed standard used for the Cabinet Office spend control process and the Local Digital Declaration.",
+      "is_quotation": true,
+      "text_start": "used for the Cabinet Office spend control process",
+      "text_end": "the Local Digital Declaration",
+      "themes": [
+        "spend-controls"
+      ],
+      "related_faq_ids": [
+        "spend-controls"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--must-consider-all-points",
+      "section": "Spend controls",
+      "claim_type": "requirement",
+      "text": "You must consider all points of the TCoP as part of the Cabinet Office spend control process. If your project or programme needs spend control approval you should contact the GDS Assurance team at digital-spend-assurance@dsit.gov.uk for guidance with the approvals process.",
+      "is_quotation": true,
+      "text_start": "You must consider all points of the TCoP",
+      "text_end": "contact the GDS Assurance team",
+      "themes": [
+        "spend-controls"
+      ],
+      "related_faq_ids": [
+        "spend-controls"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--explain-legacy",
+      "section": "Spend controls",
+      "claim_type": "requirement",
+      "text": "Where legacy technology limits your ability to adhere to the TCoP, you must explain this to the GDS Assurance team.",
+      "is_quotation": true,
+      "text_start": "Where legacy technology limits your ability to adhere to the TCoP",
+      "text_end": "you must explain this to the GDS Assurance team",
+      "themes": [
+        "spend-controls"
+      ],
+      "related_faq_ids": [
+        "spend-controls"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-1-user-needs",
+      "section": "1. Define user needs",
+      "claim_type": "requirement",
+      "text": "Understand your users and their needs. Develop knowledge of your users and what that means for your technology project or programme.",
+      "is_quotation": true,
+      "text_start": "Understand your users and their needs",
+      "text_end": "what that means for your technology project or programme",
+      "themes": [
+        "user-needs"
+      ],
+      "related_faq_ids": [
+        "right-tool-for-the-job",
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-5-cloud-first",
+      "section": "5. Use cloud first",
+      "claim_type": "requirement",
+      "text": "Consider using public cloud solutions first as stated in the Cloud First policy.",
+      "is_quotation": true,
+      "text_start": "Consider using public cloud solutions first",
+      "text_end": "as stated in the Cloud First policy",
+      "themes": [
+        "cloud",
+        "hosting"
+      ],
+      "related_faq_ids": [
+        "hosting-choices"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-6-secure",
+      "section": "6. Make things secure",
+      "claim_type": "requirement",
+      "text": "Keep systems and data safe with the appropriate level of security.",
+      "is_quotation": true,
+      "text_start": "Keep systems and data safe",
+      "text_end": "with the appropriate level of security",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-7-privacy",
+      "section": "7. Make privacy integral",
+      "claim_type": "requirement",
+      "text": "Make sure users rights are protected by integrating privacy as an essential part of your system.",
+      "is_quotation": true,
+      "text_start": "integrating privacy as an essential part of your system",
+      "text_end": null,
+      "themes": [
+        "privacy"
+      ],
+      "related_faq_ids": [
+        "chatgpt-official-info",
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-8-reuse",
+      "section": "8. Share, reuse and collaborate",
+      "claim_type": "recommendation",
+      "text": "Avoid duplicating effort and unnecessary costs by collaborating across government and sharing and reusing technology, data, and services.",
+      "is_quotation": true,
+      "text_start": "collaborating across government and sharing and reusing",
+      "text_end": "technology, data, and services",
+      "themes": [
+        "reuse"
+      ],
+      "related_faq_ids": [
+        "reuse"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-11-purchasing",
+      "section": "11. Define your purchasing strategy",
+      "claim_type": "requirement",
+      "text": "Your purchasing strategy must show you’ve considered commercial and technology aspects, and contractual limitations.",
+      "is_quotation": true,
+      "text_start": "Your purchasing strategy must show you’ve considered",
+      "text_end": "commercial and technology aspects, and contractual limitations",
+      "themes": [
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "spend-controls",
+        "buy-or-build"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-12-sustainable",
+      "section": "12. Make your technology sustainable",
+      "claim_type": "recommendation",
+      "text": "Increase sustainability throughout the lifecycle of your technology.",
+      "is_quotation": true,
+      "text_start": "Increase sustainability throughout the lifecycle",
+      "text_end": "of your technology",
+      "themes": [
+        "sustainability"
+      ],
+      "related_faq_ids": [
+        "reduce-ai-environmental-impact"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "tcop--point-13-service-standard",
+      "section": "13. Meet the Service Standard",
+      "claim_type": "requirement",
+      "text": "If you’re building a service as part of your technology project or programme you will also need to meet the Service Standard",
+      "is_quotation": true,
+      "text_start": "you will also need to meet the Service Standard",
+      "text_end": null,
+      "themes": [
+        "service-standard"
+      ],
+      "related_faq_ids": [
+        "service-standard"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

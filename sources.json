@@ -2,7 +2,7 @@
   "meta": {
     "title": "UK public sector AI guidance sources",
     "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
-    "updated": "2026-08-07",
+    "updated": "2026-08-10",
     "jurisdiction": "United Kingdom",
     "source_lists": [
       "Original explorer backlog (Aug 2026)",
@@ -36,6 +36,27 @@
         "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
         "organisation": "Office for AI / DSIT (with GDS, Government Commercial Function, Crown Commercial Service)",
         "notes": "Accepted and incorporated 2026-08-07. Correct HTML URL (not the older data-ethics path). Claim units in content/units/guidelines-ai-procurement.json. Pair with Knowledge Hub Procuring AI for current routes; flag currency tensions."
+      },
+      {
+        "id": "service-manual",
+        "title": "Service Manual",
+        "url": "https://www.gov.uk/service-manual",
+        "organisation": "Government Digital Service (GDS)",
+        "notes": "Incorporated 2026-08-10, focused on Using AI in services plus Service Standard point 9. Claim units in content/units/service-manual.json."
+      },
+      {
+        "id": "technology-code-of-practice",
+        "title": "Technology Code of Practice",
+        "url": "https://www.gov.uk/guidance/the-technology-code-of-practice",
+        "organisation": "Cabinet Office / Government Digital Service (GDS)",
+        "notes": "Incorporated 2026-08-10. Type corrected to code_of_practice. Claim units in content/units/technology-code-of-practice.json."
+      },
+      {
+        "id": "ai-cyber-security-code-of-practice",
+        "title": "Code of Practice for the Cyber Security of AI",
+        "url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
+        "organisation": "Department for Science, Innovation and Technology (DSIT)",
+        "notes": "Incorporated 2026-08-10. Voluntary code (shall/should). Claim units in content/units/ai-cyber-security-code-of-practice.json."
       }
     ],
     "fields": {
@@ -583,7 +604,7 @@
       "url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
       "organisation": "Department for Science, Innovation and Technology (DSIT)",
       "type": "code_of_practice",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "AI developers and operators",
         "security practitioners",
@@ -593,7 +614,8 @@
         "security",
         "secure-design",
         "lifecycle",
-        "standards"
+        "standards",
+        "supply-chain"
       ],
       "summary": "Voluntary code setting baseline cyber security requirements across AI design, development, deployment, maintenance and end of life; intended to inform emerging standards including ETSI work.",
       "why_include": "Complements NCSC guidelines with a lifecycle code of practice useful for supplier and assurance questions.",
@@ -603,16 +625,18 @@
         "delivery-assurance"
       ],
       "formats": ["HTML"],
-      "priority": 2,
+      "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-08-10",
+      "claim_units_path": "content/units/ai-cyber-security-code-of-practice.json",
       "related_urls": [
         "https://www.etsi.org/ (ETSI TS 104 223 — emerging standard informed by this code; confirm exact public URL before citing)"
       ],
       "aliases_from_potential_list": [
         "DSIT AI Cyber Security Code of Practice / ETSI TS 104 223"
       ],
-      "notes": "Treat ETSI TS 104 223 as related standards work, not a substitute citation, until a stable public text/URL is verified."
+      "notes": "Voluntary. Shall = requirement for the voluntary Code; Should = recommendation. Treat ETSI TS 104 223 as related standards work until a stable public text/URL is verified. Government services still follow Playbook / Secure by Design mandates."
     },
     {
       "id": "introduction-to-ai-assurance",
@@ -681,7 +705,7 @@
       "url": "https://www.gov.uk/service-manual",
       "organisation": "Government Digital Service (GDS)",
       "type": "guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "service teams",
         "user researchers",
@@ -691,30 +715,44 @@
         "service-design",
         "user-research",
         "agile-delivery",
-        "security"
+        "security",
+        "ai-in-services"
       ],
-      "summary": "How-to guidance for meeting the Service Standard, including team setup, user research, security and privacy practices relevant to AI-enabled services.",
-      "why_include": "Playbook repeatedly points here for team setup and user research for AI; good supporting citations for delivery FAQs.",
+      "summary": "How-to guidance for meeting the Service Standard, including team setup, user research, security and a dedicated page on using AI in services.",
+      "why_include": "Playbook repeatedly points here for team setup and user research for AI; Using AI in services is primary how-to for public-facing AI transparency and chatbot disclosure.",
       "related_faq_themes": [
         "getting-started",
         "delivery-assurance",
         "security-tools"
       ],
       "formats": ["HTML"],
-      "priority": 2,
+      "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
+      "incorporated_on": "2026-08-10",
+      "incorporated_articles": [
+        {
+          "title": "Using artificial intelligence (AI) in services",
+          "url": "https://www.gov.uk/service-manual/technology/using-artificial-intelligence-ai-in-services"
+        },
+        {
+          "title": "9. Create a secure service which protects users’ privacy",
+          "url": "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service"
+        }
+      ],
+      "claim_units_path": "content/units/service-manual.json",
       "aliases_from_potential_list": [
         "GOV.UK - Service Manual"
-      ]
+      ],
+      "notes": "First ingest focused on AI-in-services and Service Standard point 9; further Service Manual pages can be added later."
     },
     {
       "id": "technology-code-of-practice",
       "title": "Technology Code of Practice",
       "url": "https://www.gov.uk/guidance/the-technology-code-of-practice",
       "organisation": "Cabinet Office / Government Digital Service (GDS)",
-      "type": "standard",
-      "status": "candidate",
+      "type": "code_of_practice",
+      "status": "incorporated",
       "audience": [
         "technology leaders",
         "commercial teams",
@@ -724,22 +762,27 @@
         "technology-strategy",
         "security",
         "spend-controls",
-        "lifecycle"
+        "lifecycle",
+        "cloud",
+        "sustainability"
       ],
       "summary": "Cross-government criteria for designing, building and buying technology; used in spend control and referenced by the AI Playbook for lifecycle understanding.",
-      "why_include": "Supports FAQs on spend controls, secure technology choices and meeting wider digital standards alongside AI-specific guidance.",
+      "why_include": "Supports FAQs on spend controls, cloud first, secure technology choices and meeting the Service Standard alongside AI-specific guidance.",
       "related_faq_themes": [
         "buying-building",
         "delivery-assurance",
         "security-tools"
       ],
       "formats": ["HTML"],
-      "priority": 2,
+      "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
+      "incorporated_on": "2026-08-10",
+      "claim_units_path": "content/units/technology-code-of-practice.json",
       "aliases_from_potential_list": [
         "GOV.UK - Technology Code of Practice"
-      ]
+      ],
+      "notes": "Type corrected from standard to code_of_practice on ingest."
     },
     {
       "id": "roadmap-modern-digital-government-ai-guidance",

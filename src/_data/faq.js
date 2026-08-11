@@ -97,6 +97,37 @@ const HOW_TO_MEASURE_IMPACT = {
   url: "https://ai.gov.uk/knowledge-hub/how-to/measure-impact",
 };
 
+
+const SERVICE_MANUAL_AI = {
+  id: "service-manual",
+  article_id: "using-ai-in-services",
+  title: "Service Manual: Using artificial intelligence (AI) in services",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/technology/using-artificial-intelligence-ai-in-services",
+};
+
+const SERVICE_MANUAL_POINT_9 = {
+  id: "service-manual",
+  article_id: "service-standard-point-9",
+  title: "Service Manual: Create a secure service which protects users’ privacy",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service",
+};
+
+const TCOP = {
+  id: "technology-code-of-practice",
+  title: "Technology Code of Practice",
+  organisation: "Cabinet Office / Government Digital Service (GDS)",
+  url: "https://www.gov.uk/guidance/the-technology-code-of-practice",
+};
+
+const AI_CYBER_COP = {
+  id: "ai-cyber-security-code-of-practice",
+  title: "Code of Practice for the Cyber Security of AI",
+  organisation: "Department for Science, Innovation and Technology (DSIT)",
+  url: "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
+};
+
 const GUIDELINES_AI_PROCUREMENT = {
   id: "guidelines-ai-procurement",
   title: "Guidelines for AI procurement",
@@ -710,18 +741,43 @@ const categories = [
             }),
           ],
         },
-        {
+                {
           id: "hosting-choices",
           question:
             "Should I use a public AI API, a privately hosted model, or a managed platform?",
+          status: "conflicted",
+          last_reviewed: "2026-08-10",
+          conflict_id: "conflict-cloud-first-vs-private-ai-hosting",
           answer:
-            "It depends on control and risk. Public APIs still send data to a provider; private hosting keeps data in your environment but you own security and ops; managed platforms can offer private instances with stronger retention controls.",
-          snippet:
-            "By running a model in your own private cloud infrastructure, you ensure that data never leaves an environment that you own.",
-          section: "Privately hosted AI models",
-          textStart:
-            "By running a model in your own private cloud infrastructure",
-          textEnd: "data never leaves an environment that you own",
+            "Start from Cloud First and consider public cloud, but choose private or tightly controlled hosting when data sensitivity or model control requires it. Public APIs still send data to a provider; private hosting keeps data in an environment you own.",
+          conflict: {
+            summary:
+              "Technology Code of Practice: consider public cloud first. AI Playbook: private hosting keeps organisational data in an environment you own.",
+            likely_cause: "different-scope",
+            user_guidance:
+              "Document why private hosting is needed when departing from Cloud First defaults.",
+          },
+          citations: [
+            cite(TCOP, {
+              role: "contrasting",
+              stance: "Consider using public cloud solutions first under Cloud First policy.",
+              section: "5. Use cloud first",
+              snippet:
+                "Consider using public cloud solutions first as stated in the Cloud First policy.",
+              textStart: "Consider using public cloud solutions first",
+              textEnd: "as stated in the Cloud First policy",
+            }),
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance: "Private hosting keeps data in an environment you own.",
+              section: "Privately hosted AI models",
+              snippet:
+                "By running a model in your own private cloud infrastructure, you ensure that data never leaves an environment that you own.",
+              textStart:
+                "By running a model in your own private cloud infrastructure",
+              textEnd: "data never leaves an environment that you own",
+            }),
+          ],
         },
         {
           id: "main-security-risks",
@@ -1313,18 +1369,32 @@ const categories = [
             "Treasury’s Green Book (2022) guidance to create a fully fledged, five-part business case",
           textEnd: "scale of your project and investment",
         },
-        {
+                {
           id: "spend-controls",
           question:
             "What spend controls or approvals apply to AI and digital projects?",
+          status: "answered",
+          last_reviewed: "2026-08-10",
           answer:
-            "Digital and technology spend above £100,000 for public-facing services and £1 million otherwise must be assured through your assurance boards. Follow GDS spend approval guidance.",
-          snippet:
-            "When working on your business case, note that it’s mandatory to assure all digital and technology spend above £100,000 for anything public facing and £1 million for anything else, through your assurance boards.",
-          section: "AI business cases",
-          textStart:
-            "mandatory to assure all digital and technology spend above £100,000",
-          textEnd: "through your assurance boards",
+            "Use the Technology Code of Practice in Cabinet Office spend control: you must consider all TCoP points, contact GDS Assurance if approval is needed, and explain any legacy limits. Playbook thresholds still apply for assuring digital/technology spend through your boards.",
+          citations: [
+            cite(TCOP, {
+              role: "primary",
+              section: "Spend controls",
+              snippet:
+                "You must consider all points of the TCoP as part of the Cabinet Office spend control process. If your project or programme needs spend control approval you should contact the GDS Assurance team at digital-spend-assurance@dsit.gov.uk for guidance with the approvals process. Where legacy technology limits your ability to adhere to the TCoP, you must explain this to the GDS Assurance team.",
+              textStart: "You must consider all points of the TCoP",
+              textEnd: "you must explain this to the GDS Assurance team",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "AI business cases",
+              snippet:
+                "When working on your business case, note that it’s mandatory to assure all digital and technology spend above £100,000 for anything public facing and £1 million for anything else, through your assurance boards.",
+              textStart: "mandatory to assure all digital and technology spend above £100,000",
+              textEnd: "through your assurance boards",
+            }),
+          ],
         },
         {
           id: "specify-requirements",
@@ -1400,17 +1470,93 @@ const categories = [
       id: "delivery-assurance",
       title: "Delivery, assurance and operations",
       questions: [
-        {
+                {
           id: "service-standard",
           question:
             "Do AI projects still need to meet the government Service Standard?",
+          status: "answered",
+          last_reviewed: "2026-08-10",
           answer:
-            "Yes. If you develop a service, you must use the government Service Standard, alongside wider technology and cloud security guidance.",
-          snippet:
-            "If you develop a service, you must use the government Service Standard.",
-          section: "Principle 5: You understand how to manage the full AI life cycle",
-          textStart:
-            "If you develop a service, you must use the government Service Standard",
+            "Yes. AI services must meet the same standards as other technology. If you build a service, meet the Service Standard (TCoP point 13) and follow Secure by Design / Service Manual security expectations — including consulting security professionals for AI.",
+          citations: [
+            cite(SERVICE_MANUAL_AI, {
+              role: "primary",
+              section: "Using artificial intelligence (AI) in services",
+              snippet:
+                "Services using AI need to meet the same standards as services using other technology.",
+              textStart: "Services using AI need to meet the same standards",
+              textEnd: "services using other technology",
+            }),
+            cite(TCOP, {
+              role: "supporting",
+              section: "13. Meet the Service Standard",
+              snippet:
+                "If you’re building a service as part of your technology project or programme you will also need to meet the Service Standard",
+              textStart: "you will also need to meet the Service Standard",
+              textEnd: null,
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Principle 5: You understand how to manage the full AI life cycle",
+              snippet:
+                "If you develop a service, you must use the government Service Standard.",
+              textStart:
+                "If you develop a service, you must use the government Service Standard",
+              textEnd: null,
+            }),
+            cite(SERVICE_MANUAL_AI, {
+              role: "supporting",
+              section: "Involve cyber security professionals",
+              snippet:
+                "You must consult a security professional to make sure that: users’ data is protected; your service stays secure.",
+              textStart: "You must consult a security professional",
+              textEnd: "your service stays secure",
+            }),
+          ],
+        },
+        {
+          id: "tell-users-ai-in-service",
+          question:
+            "Do I need to tell users when a service uses AI?",
+          status: "conflicted",
+          last_reviewed: "2026-08-10",
+          conflict_id: "conflict-ai-transparency-when-to-disclose",
+          answer:
+            "Users do not always need to know the underlying stack, but if AI affects their data or outcomes you must explain that. For AI chatbots, tell users answers are not from a human and may be inaccurate, and provide a human contact route. Organisational openness (including ATRS where required) still applies.",
+          conflict: {
+            summary:
+              "Service Manual: users need not always know the technology, but AI effects on data/outcomes (and chatbot non-human answers) must be disclosed. Playbook: be open about how and where AI is used.",
+            likely_cause: "different-scope",
+            user_guidance:
+              "Disclose AI wherever it affects data or outcomes; follow chatbot rules; meet ATRS/Playbook openness obligations.",
+          },
+          citations: [
+            cite(SERVICE_MANUAL_AI, {
+              role: "primary",
+              section: "Tell users when AI is being used",
+              snippet:
+                "Users do not always need to know what technology or software is used in a service to be able to access it. However, if you use AI in your service, you must make it clear to users how this might affect: their data; the outcome or information they receive from the service. If you use an AI-powered chatbot, you must make sure users: understand that the answers they receive do not come from a human and might not be accurate; know how to contact a human being.",
+              textStart: "Users do not always need to know what technology or software is used",
+              textEnd: "know how to contact a human being",
+            }),
+            cite(AI_CYBER_COP, {
+              role: "supporting",
+              section: "Principle 10",
+              snippet:
+                "System Operators shall convey to End-users in an accessible way where and how their data will be used, accessed and stored (for example, if it is used for model retraining, or reviewed by employees or partners).",
+              textStart: "where and how their data will be used, accessed and stored",
+              textEnd: "reviewed by employees or partners",
+            }),
+            cite(PLAYBOOK, {
+              role: "contrasting",
+              stance: "Be open with the public about how and where AI systems are being used.",
+              section: "Principle 7: You are open and collaborative",
+              snippet:
+                "Be open with the public about how and where AI systems are being used, for example: update the ATRS (Algorithmic Transparency Recording Standard Hub)",
+              textStart: "Be open with the public about how and where AI systems are being used",
+              textEnd: "Algorithmic Transparency Recording Standard Hub",
+            }),
+          ],
         },
         {
           id: "user-research",
@@ -1436,6 +1582,124 @@ const categories = [
             "you should have ongoing performance monitoring in place",
           textEnd: "provide evidence of this",
         },
+        {
+          id: "ai-security-training",
+          question:
+            "Do staff need AI-specific cyber security training?",
+          status: "conflicted",
+          last_reviewed: "2026-08-10",
+          conflict_id: "conflict-voluntary-ai-cyber-cop-vs-mandatory-gov-security",
+          answer:
+            "The voluntary AI Cyber Security Code says organisations’ cyber training shall include role-tailored AI security content. For government services, treat Service Manual / Playbook security obligations as mandatory and use the CoP’s training and lifecycle practices to strengthen that baseline.",
+          conflict: {
+            summary:
+              "AI Cyber Security CoP is voluntary (shall within that frame). Service Manual requires consulting security professionals for AI services.",
+            likely_cause: "different-audience",
+            user_guidance:
+              "Meet mandatory government security practice; use the CoP for detailed AI-specific controls including training.",
+          },
+          citations: [
+            cite(AI_CYBER_COP, {
+              role: "primary",
+              section: "Principle 1: Raise awareness of AI security threats and risks",
+              snippet:
+                "Organisations’ cyber security training programme shall include AI security content which shall be regularly reviewed and updated. AI security training shall be tailored to the specific roles and responsibilities of staff members.",
+              textStart: "cyber security training programme shall include AI security content",
+              textEnd: "tailored to the specific roles and responsibilities of staff members",
+            }),
+            cite(SERVICE_MANUAL_AI, {
+              role: "contrasting",
+              stance: "Must consult a security professional for AI services.",
+              section: "Involve cyber security professionals",
+              snippet:
+                "You must consult a security professional to make sure that: users’ data is protected; your service stays secure.",
+              textStart: "You must consult a security professional",
+              textEnd: "your service stays secure",
+            }),
+            cite(AI_CYBER_COP, {
+              role: "supporting",
+              section: "Introduction",
+              snippet:
+                "AI stakeholders should view this document as an addendum to the Software Code of Practice.",
+              textStart: "an addendum to the Software Code of Practice",
+              textEnd: null,
+            }),
+          ],
+        },
+        {
+          id: "secure-ai-supply-chain",
+          question:
+            "How should I secure the AI supply chain (models and components)?",
+          status: "answered",
+          last_reviewed: "2026-08-10",
+          answer:
+            "Follow secure software supply chain processes for AI models and systems. If you use poorly documented or secured models, justify that choice in writing, apply mitigating controls, and re-evaluate released models before use.",
+          citations: [
+            cite(AI_CYBER_COP, {
+              role: "primary",
+              section: "Principle 7: Secure your supply chain",
+              snippet:
+                "Developers and System Operators shall follow secure software supply chain processes for their AI model and system development. System Operators that choose to use or adapt any models, or components, which are not well-documented or secured shall be able to justify their decision to use such models or components through documentation.",
+              textStart: "shall follow secure software supply chain processes",
+              textEnd: "justify their decision to use such models or components through documentation",
+            }),
+          ],
+        },
+        {
+          id: "document-ai-assets",
+          question:
+            "What AI assets should I document and inventory?",
+          status: "answered",
+          last_reviewed: "2026-08-10",
+          answer:
+            "Maintain a comprehensive inventory of AI assets and interdependencies, and keep an audit trail of system design, data/models/prompts, and post-deployment maintenance plans.",
+          citations: [
+            cite(AI_CYBER_COP, {
+              role: "primary",
+              section: "Principle 5: Identify, track and protect your assets",
+              snippet:
+                "Developers, Data Custodians and System Operators shall maintain a comprehensive inventory of their assets (including their interdependencies/connectivity).",
+              textStart: "shall maintain a comprehensive inventory of their assets",
+              textEnd: "interdependencies/connectivity",
+            }),
+            cite(AI_CYBER_COP, {
+              role: "primary",
+              section: "Principle 8: Document your data, models and prompts",
+              snippet:
+                "Developers shall document and maintain a clear audit trail of their system design and post-deployment maintenance plans.",
+              textStart: "shall document and maintain a clear audit trail",
+              textEnd: "post-deployment maintenance plans",
+            }),
+          ],
+        },
+        {
+          id: "dispose-ai-models",
+          question:
+            "How should I decommission AI models and training data?",
+          status: "answered",
+          last_reviewed: "2026-08-10",
+          answer:
+            "Involve Data Custodians and securely delete applicable data and configuration details when decommissioning a model or system. Plan end-of-life in contracts and operations, not as an afterthought.",
+          citations: [
+            cite(AI_CYBER_COP, {
+              role: "primary",
+              section: "Principle 13: Ensure proper data and model disposal",
+              snippet:
+                "If a Developer or System Operators decides to decommission a model and/or system, they shall involve Data Custodians and securely delete applicable data and configuration details.",
+              textStart: "shall involve Data Custodians and securely delete",
+              textEnd: "applicable data and configuration details",
+            }),
+            cite(GUIDELINES_AI_PROCUREMENT, {
+              role: "supporting",
+              section: "End-of-life",
+              snippet:
+                "Consider what the end-of-life processes for your AI system and the data should look like. Ensure the contract includes such considerations.",
+              textStart: "end-of-life processes for your AI system and the data",
+              textEnd: "Ensure the contract includes such considerations",
+            }),
+          ],
+        },
+
         {
           id: "model-drift",
           question:
@@ -1626,6 +1890,10 @@ module.exports = {
     HOW_TO_PROCUREMENT,
     HOW_TO_MEASURE_IMPACT,
     GUIDELINES_AI_PROCUREMENT,
+    SERVICE_MANUAL_AI,
+    SERVICE_MANUAL_POINT_9,
+    TCOP,
+    AI_CYBER_COP,
   ],
   categories: normalizedCategories,
   items,

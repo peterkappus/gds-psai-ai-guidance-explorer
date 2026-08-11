@@ -1,0 +1,199 @@
+{
+  "source_id": "service-manual",
+  "series_url": "https://www.gov.uk/service-manual",
+  "extracted_on": "2026-08-10",
+  "incorporated_articles": [
+    {
+      "article_id": "using-ai-in-services",
+      "title": "Using artificial intelligence (AI) in services",
+      "url": "https://www.gov.uk/service-manual/technology/using-artificial-intelligence-ai-in-services"
+    },
+    {
+      "article_id": "service-standard-point-9",
+      "title": "9. Create a secure service which protects users’ privacy",
+      "url": "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "service-manual--ai-must-be-safe-sustainable-secure",
+      "article_id": "using-ai-in-services",
+      "section": "Using artificial intelligence (AI) in services",
+      "claim_type": "requirement",
+      "text": "If you use AI technology in your service, you must do so in ways that: are safe for users and protect their data; are as environmentally sustainable as possible; keep your service secure.",
+      "is_quotation": true,
+      "text_start": "you must do so in ways that",
+      "text_end": "keep your service secure",
+      "themes": [
+        "safety",
+        "sustainability",
+        "security"
+      ],
+      "related_faq_ids": [
+        "tell-users-ai-in-service",
+        "reduce-ai-environmental-impact"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--ai-same-standards",
+      "article_id": "using-ai-in-services",
+      "section": "Using artificial intelligence (AI) in services",
+      "claim_type": "requirement",
+      "text": "Services using AI need to meet the same standards as services using other technology.",
+      "is_quotation": true,
+      "text_start": "Services using AI need to meet the same standards",
+      "text_end": "services using other technology",
+      "themes": [
+        "service-standard"
+      ],
+      "related_faq_ids": [
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--ai-only-where-user-need",
+      "article_id": "using-ai-in-services",
+      "section": "Deciding whether to use AI",
+      "claim_type": "requirement",
+      "text": "More established technologies might solve the problem better than AI. Only use AI where there is clear evidence of a user need.",
+      "is_quotation": true,
+      "text_start": "More established technologies might solve the problem better than AI",
+      "text_end": "Only use AI where there is clear evidence of a user need",
+      "themes": [
+        "user-needs"
+      ],
+      "related_faq_ids": [
+        "right-tool-for-the-job"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--tell-users-ai-affects",
+      "article_id": "using-ai-in-services",
+      "section": "Tell users when AI is being used",
+      "claim_type": "requirement",
+      "text": "if you use AI in your service, you must make it clear to users how this might affect: their data; the outcome or information they receive from the service",
+      "is_quotation": true,
+      "text_start": "you must make it clear to users how this might affect",
+      "text_end": "the outcome or information they receive from the service",
+      "themes": [
+        "transparency"
+      ],
+      "related_faq_ids": [
+        "tell-users-ai-in-service"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--chatbot-disclosure",
+      "article_id": "using-ai-in-services",
+      "section": "Tell users when AI is being used",
+      "claim_type": "requirement",
+      "text": "If you use an AI-powered chatbot, you must make sure users: understand that the answers they receive do not come from a human and might not be accurate; know how to contact a human being.",
+      "is_quotation": true,
+      "text_start": "understand that the answers they receive do not come from a human",
+      "text_end": "know how to contact a human being",
+      "themes": [
+        "chatbots",
+        "hallucinations"
+      ],
+      "related_faq_ids": [
+        "tell-users-ai-in-service",
+        "hallucinations"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--accurate-and-bias",
+      "article_id": "using-ai-in-services",
+      "section": "Make sure your service is accurate",
+      "claim_type": "requirement",
+      "text": "You must make sure that users: receive accurate information; are protected from bias.",
+      "is_quotation": true,
+      "text_start": "receive accurate information",
+      "text_end": "are protected from bias",
+      "themes": [
+        "accuracy",
+        "bias"
+      ],
+      "related_faq_ids": [
+        "hallucinations",
+        "bias-fairness"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--service-owner-risks",
+      "article_id": "using-ai-in-services",
+      "section": "Make sure your service is accurate",
+      "claim_type": "requirement",
+      "text": "Your service owner must understand the technology being used, the risks of using it and how to mitigate these. Someone on your team must be able to explain your service’s use of AI.",
+      "is_quotation": true,
+      "text_start": "Your service owner must understand the technology being used",
+      "text_end": "explain your service’s use of AI",
+      "themes": [
+        "governance"
+      ],
+      "related_faq_ids": [
+        "tell-users-ai-in-service",
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--consult-security",
+      "article_id": "using-ai-in-services",
+      "section": "Involve cyber security professionals",
+      "claim_type": "requirement",
+      "text": "You must consult a security professional to make sure that: users’ data is protected; your service stays secure.",
+      "is_quotation": true,
+      "text_start": "You must consult a security professional",
+      "text_end": "your service stays secure",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--monitor-iterate-stop",
+      "article_id": "using-ai-in-services",
+      "section": "Monitor and iterate continuously",
+      "claim_type": "recommendation",
+      "text": "it’s particularly important to keep monitoring and iterating services that use AI technology throughout their lifecycle. You should be prepared to stop using AI technology in your service if needed.",
+      "is_quotation": true,
+      "text_start": "keep monitoring and iterating services that use AI technology",
+      "text_end": "stop using AI technology in your service if needed",
+      "themes": [
+        "monitoring"
+      ],
+      "related_faq_ids": [
+        "live-monitoring",
+        "right-tool-for-the-job"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-manual--point-9-secure-by-design",
+      "article_id": "service-standard-point-9",
+      "section": "9. Create a secure service which protects users’ privacy",
+      "claim_type": "requirement",
+      "text": "Service teams must follow the Secure By Design principles and: perform due diligence on the security of third-party software; perform user research to create security processes that are fit for purpose and easy to understand; collect, process and store data securely and in a way which respects users’ privacy.",
+      "is_quotation": true,
+      "text_start": "Service teams must follow the Secure By Design principles",
+      "text_end": "respects users’ privacy",
+      "themes": [
+        "security",
+        "privacy"
+      ],
+      "related_faq_ids": [
+        "service-standard"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

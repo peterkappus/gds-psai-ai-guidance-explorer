@@ -40,6 +40,20 @@ No Amplify backend or environment variables are required for this prototype.
 - No crown crest or GDS Transport font (not hosted on GOV.UK)
 - FAQ answers live at `/faq/<question-slug>/` and cite snippets with Chrome text fragments (`:~:text=`)
 - About pages live at `/about/` and `/about/process/` (content from `src/about/*.md`)
+- Placeholder favicon / app icons: drop `brand/icon.svg` (or `.png`) and run `npm run icons` to regenerate `src/assets/icons/` + `site.webmanifest`. Manifest copy lives in `brand/icons.config.json`.
+- Google Analytics: set `gaMeasurementId` in `src/_data/site.js` (e.g. `G-XXXXXXXXXX`). Leave empty to disable tracking.
+
+## Icons
+
+```bash
+# put your master artwork here:
+#   brand/icon.svg   (preferred)
+#   brand/icon.png   (1024×1024 square also fine)
+
+npm run icons
+```
+
+The script prints the `<head>` tags to paste if they are missing. This project already has them in `src/_includes/layouts/base.njk`.
 
 ## Citation roles (multi-source answers)
 

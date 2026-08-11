@@ -122,6 +122,72 @@
       "user_guidance": "Use Knowledge Hub Procuring AI for current route framing and legal baseline. Use Guidelines for enduring method (problem statements, data assessment, explainability, evaluation criteria, lifecycle clauses). Confirm live CCS frameworks and commercial advice before choosing a vehicle.",
       "related_faq_ids": ["procure-ai-route", "buy-or-build"],
       "opened_on": "2026-08-07"
+    },
+    {
+      "conflict_id": "conflict-cloud-first-vs-private-ai-hosting",
+      "title": "Cloud First (TCoP) vs privately hosted AI for data control",
+      "status": "open",
+      "summary": "The Technology Code of Practice says consider public cloud solutions first under Cloud First policy. The AI Playbook emphasises privately hosted models so organisational data never leaves an environment you own — creating tension for high-sensitivity AI workloads.",
+      "positions": [
+        {
+          "source_id": "technology-code-of-practice",
+          "section": "5. Use cloud first",
+          "stance": "Consider using public cloud solutions first as stated in the Cloud First policy."
+        },
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Privately hosted AI models",
+          "stance": "By running a model in your own private cloud infrastructure, you ensure that data never leaves an environment that you own."
+        }
+      ],
+      "likely_cause": "different-scope",
+      "user_guidance": "Start from Cloud First, but choose private or private-cloud patterns when data sensitivity, sovereignty or model-control needs justify it. Document the decision for spend control / assurance.",
+      "related_faq_ids": ["hosting-choices"],
+      "opened_on": "2026-08-10"
+    },
+    {
+      "conflict_id": "conflict-voluntary-ai-cyber-cop-vs-mandatory-gov-security",
+      "title": "Voluntary AI Cyber Security CoP vs mandatory government security practice",
+      "status": "open",
+      "summary": "The Code of Practice for the Cyber Security of AI is voluntary industry baseline guidance (shall/should within that voluntary frame). Cross-government sources such as the AI Playbook and Service Manual require Secure by Design / consulting security professionals for government services — a different obligation level and audience.",
+      "positions": [
+        {
+          "source_id": "ai-cyber-security-code-of-practice",
+          "section": "Introduction / Terminology",
+          "stance": "Voluntary code and addendum to the Software Code of Practice; shall indicates a requirement for the voluntary Code."
+        },
+        {
+          "source_id": "service-manual",
+          "section": "Involve cyber security professionals",
+          "stance": "You must consult a security professional to make sure users’ data is protected and the service stays secure."
+        }
+      ],
+      "likely_cause": "different-audience",
+      "user_guidance": "For government services, treat Playbook / Service Manual / Secure by Design as the mandatory baseline. Use the AI Cyber Security CoP as detailed supply-chain and lifecycle practice to strengthen that baseline, not as optional opt-out.",
+      "related_faq_ids": ["ai-security-training", "service-standard"],
+      "opened_on": "2026-08-10"
+    },
+    {
+      "conflict_id": "conflict-ai-transparency-when-to-disclose",
+      "title": "When users must be told AI is in a service",
+      "status": "open",
+      "summary": "The Service Manual says users do not always need to know what technology is used to access a service, but if AI is used you must explain how it affects their data and outcomes — and chatbots must disclose non-human, possibly inaccurate answers plus a human contact route. This is more specific than Playbook transparency framing and can feel in tension with “users need not know the stack”.",
+      "positions": [
+        {
+          "source_id": "service-manual",
+          "section": "Tell users when AI is being used",
+          "stance": "Users do not always need to know what technology is used; however if you use AI you must make clear how it affects data and outcomes; chatbots must disclose non-human answers and how to contact a human."
+        },
+        {
+          "source_id": "ai-playbook-uk-government",
+          "section": "Principle 7 / ATRS and openness",
+          "stance": "Be open with the public about how and where AI systems are being used (including ATRS where required)."
+        }
+      ],
+      "likely_cause": "different-scope",
+      "user_guidance": "Do not hide AI where it affects data or outcomes. For chatbots, follow Service Manual disclosure rules. Use ATRS / Playbook openness for organisational transparency obligations.",
+      "related_faq_ids": ["tell-users-ai-in-service"],
+      "opened_on": "2026-08-10"
     }
   ]
 }

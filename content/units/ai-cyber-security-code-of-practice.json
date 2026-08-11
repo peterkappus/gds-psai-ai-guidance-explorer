@@ -1,0 +1,243 @@
+{
+  "source_id": "ai-cyber-security-code-of-practice",
+  "document_url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
+  "extracted_on": "2026-08-10",
+  "notes": "Voluntary code. Shall = requirement for the voluntary Code; Should = recommendation.",
+  "incorporated_articles": [
+    {
+      "article_id": "ai-cyber-security-code-of-practice",
+      "title": "Code of Practice for the Cyber Security of AI",
+      "url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ai-cyber-cop--voluntary-ai-specific",
+      "section": "Introduction",
+      "claim_type": "definition",
+      "text": "AI stakeholders should view this document as an addendum to the Software Code of Practice. We believe a Code focused specifically on the cyber security of AI is needed because AI has distinct differences to software. These include security risks from data poisoning, model obfuscation, indirect prompt injection and operational differences associated with data management.",
+      "is_quotation": true,
+      "text_start": "an addendum to the Software Code of Practice",
+      "text_end": "indirect prompt injection",
+      "themes": [
+        "security",
+        "voluntary-code"
+      ],
+      "related_faq_ids": [
+        "ai-security-training",
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--shall-should",
+      "section": "Terminology",
+      "claim_type": "definition",
+      "text": "Shall Indicates a requirement for the voluntary Code. Should Indicates a recommendation for the voluntary Code.",
+      "is_quotation": true,
+      "text_start": "Indicates a requirement for the voluntary Code",
+      "text_end": "Indicates a recommendation for the voluntary Code",
+      "themes": [
+        "voluntary-code"
+      ],
+      "related_faq_ids": [
+        "ai-security-training"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--1-1-training",
+      "section": "Principle 1: Raise awareness of AI security threats and risks",
+      "claim_type": "requirement",
+      "text": "Organisations’ cyber security training programme shall include AI security content which shall be regularly reviewed and updated. AI security training shall be tailored to the specific roles and responsibilities of staff members.",
+      "is_quotation": true,
+      "text_start": "cyber security training programme shall include AI security content",
+      "text_end": "tailored to the specific roles and responsibilities of staff members",
+      "themes": [
+        "training"
+      ],
+      "related_faq_ids": [
+        "ai-security-training"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--2-1-assess",
+      "section": "Principle 2: Design your AI system for security as well as functionality and performance",
+      "claim_type": "requirement",
+      "text": "As part of deciding whether to create an AI system, a System Operator and/or Developer shall conduct a thorough assessment that includes determining and documenting the business requirements and/or problem they are seeking to address, along with associated AI security risks and mitigation strategies.",
+      "is_quotation": true,
+      "text_start": "shall conduct a thorough assessment that includes determining and documenting the business requirements",
+      "text_end": "associated AI security risks and mitigation strategies",
+      "themes": [
+        "secure-design"
+      ],
+      "related_faq_ids": [
+        "right-tool-for-the-job"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--2-2-adversarial",
+      "section": "Principle 2",
+      "claim_type": "requirement",
+      "text": "Developers and System Operators shall ensure that AI systems are designed and implemented to withstand adversarial AI attacks, unexpected inputs and AI system failure.",
+      "is_quotation": true,
+      "text_start": "withstand adversarial AI attacks",
+      "text_end": "unexpected inputs and AI system failure",
+      "themes": [
+        "secure-design"
+      ],
+      "related_faq_ids": [
+        "ai-security-training"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--4-1-human-oversight",
+      "section": "Principle 4: Enable human responsibility for AI systems",
+      "claim_type": "recommendation",
+      "text": "When designing an AI system, Developers and/or System Operators should incorporate and maintain capabilities to enable human oversight.",
+      "is_quotation": true,
+      "text_start": "capabilities to enable human oversight",
+      "text_end": null,
+      "themes": [
+        "human-oversight"
+      ],
+      "related_faq_ids": [
+        "hallucinations",
+        "tell-users-ai-in-service"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--5-1-inventory",
+      "section": "Principle 5: Identify, track and protect your assets",
+      "claim_type": "requirement",
+      "text": "Developers, Data Custodians and System Operators shall maintain a comprehensive inventory of their assets (including their interdependencies/connectivity).",
+      "is_quotation": true,
+      "text_start": "shall maintain a comprehensive inventory of their assets",
+      "text_end": "interdependencies/connectivity",
+      "themes": [
+        "asset-management"
+      ],
+      "related_faq_ids": [
+        "document-ai-assets",
+        "ai-inventory"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--7-1-supply-chain",
+      "section": "Principle 7: Secure your supply chain",
+      "claim_type": "requirement",
+      "text": "Developers and System Operators shall follow secure software supply chain processes for their AI model and system development.",
+      "is_quotation": true,
+      "text_start": "shall follow secure software supply chain processes",
+      "text_end": "AI model and system development",
+      "themes": [
+        "supply-chain"
+      ],
+      "related_faq_ids": [
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--7-2-justify-models",
+      "section": "Principle 7: Secure your supply chain",
+      "claim_type": "requirement",
+      "text": "System Operators that choose to use or adapt any models, or components, which are not well-documented or secured shall be able to justify their decision to use such models or components through documentation.",
+      "is_quotation": true,
+      "text_start": "not well-documented or secured shall be able to justify their decision",
+      "text_end": "through documentation",
+      "themes": [
+        "supply-chain"
+      ],
+      "related_faq_ids": [
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--8-1-document",
+      "section": "Principle 8: Document your data, models and prompts",
+      "claim_type": "requirement",
+      "text": "Developers shall document and maintain a clear audit trail of their system design and post-deployment maintenance plans.",
+      "is_quotation": true,
+      "text_start": "shall document and maintain a clear audit trail",
+      "text_end": "post-deployment maintenance plans",
+      "themes": [
+        "documentation"
+      ],
+      "related_faq_ids": [
+        "document-ai-assets"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--9-1-testing",
+      "section": "Principle 9: Conduct appropriate testing and evaluation",
+      "claim_type": "requirement",
+      "text": "Developers shall ensure that all models, applications and systems that are released to System Operators and/or End-users have been tested as part of a security assessment process.",
+      "is_quotation": true,
+      "text_start": "have been tested as part of a security assessment process",
+      "text_end": null,
+      "themes": [
+        "testing"
+      ],
+      "related_faq_ids": [
+        "ai-security-training"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--10-1-data-use",
+      "section": "Principle 10",
+      "claim_type": "requirement",
+      "text": "System Operators shall convey to End-users in an accessible way where and how their data will be used, accessed and stored (for example, if it is used for model retraining, or reviewed by employees or partners).",
+      "is_quotation": true,
+      "text_start": "where and how their data will be used, accessed and stored",
+      "text_end": "reviewed by employees or partners",
+      "themes": [
+        "transparency"
+      ],
+      "related_faq_ids": [
+        "tell-users-ai-in-service"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--12-monitor",
+      "section": "Principle 12: Monitor your system’s behaviour",
+      "claim_type": "requirement",
+      "text": "System Operators shall log system and user actions to support security compliance, incident investigations, and vulnerability remediation. System Operators should analyse their logs to ensure that AI models continue to produce desired outputs and to detect anomalies, security breaches, or unexpected behaviour over time.",
+      "is_quotation": true,
+      "text_start": "shall log system and user actions",
+      "text_end": "unexpected behaviour over time",
+      "themes": [
+        "monitoring"
+      ],
+      "related_faq_ids": [
+        "live-monitoring"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ai-cyber-cop--13-2-dispose",
+      "section": "Principle 13: Ensure proper data and model disposal",
+      "claim_type": "requirement",
+      "text": "If a Developer or System Operators decides to decommission a model and/or system, they shall involve Data Custodians and securely delete applicable data and configuration details.",
+      "is_quotation": true,
+      "text_start": "shall involve Data Custodians and securely delete",
+      "text_end": "applicable data and configuration details",
+      "themes": [
+        "disposal"
+      ],
+      "related_faq_ids": [
+        "dispose-ai-models"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
