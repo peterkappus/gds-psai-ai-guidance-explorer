@@ -1796,6 +1796,162 @@ const categories = [
     },
   ];
 
+// Additional questions to expand coverage.
+// These entries reuse existing extracted citations/snippets from incorporated sources,
+// while varying question wording and answers so the UI can offer more entry points.
+// (Slugs are derived from `question` text, and uniqueness is validated below.)
+(function addMoreQuestions() {
+  function cat(id) {
+    return categories.find((c) => c.id === id);
+  }
+  function q(catId, qId) {
+    const category = cat(catId);
+    return category?.questions.find((x) => x.id === qId);
+  }
+
+  function add(catId, baseQId, next) {
+    const base = q(catId, baseQId);
+    if (!base) throw new Error(`Base question not found: ${catId}/${baseQId}`);
+    const copy = { ...base, ...next };
+    cat(catId).questions.push(copy);
+  }
+
+  // Getting started (training)
+  add("getting-started", "training", {
+    id: "ai-training-free-courses-civil-service-learning",
+    question: "Where can civil servants find free AI training courses?",
+    answer:
+      "Free AI courses are available through Civil Service Learning, including AI courses that use Government Campus learning frameworks. Senior civil servants may also use additional Digital Excellence Programme AI training.",
+  });
+  add("getting-started", "training", {
+    id: "ai-training-additional-programmes-senior-civil-servants",
+    question: "Can senior civil servants access additional AI training programmes?",
+    answer:
+      "Senior civil servants can access the Digital Excellence Programme AI course, alongside the broader free learning available in Civil Service Learning and through Government Campus learning frameworks.",
+  });
+  add("getting-started", "training", {
+    id: "government-campus-ai-learning-frameworks",
+    question: "What AI learning resources are available via Government Campus?",
+    answer:
+      "Government Campus provides AI courses accessible through its learning frameworks. These can be used alongside Civil Service Learning to develop AI skills relevant to your work.",
+  });
+  add("getting-started", "training", {
+    id: "ai-team-training-before-deployment",
+    question: "What training should AI project teams complete before deployment?",
+    answer:
+      "Use available learning resources so your team understands how AI is used in government and how to apply safer practices. Start with free courses available via Civil Service Learning and Government Campus learning frameworks, then build training around your specific use case.",
+  });
+
+  // Lawful, ethical and responsible use (legal advice)
+  add("lawful-ethical", "legal-advice", {
+    id: "legal-advice-equality-fairness-ai-projects",
+    question: "When should I consider equality and fairness advice for an AI project?",
+    answer:
+      "Seek legal advice early to understand equality and fairness obligations relevant to your AI use, including how the project could affect people’s rights, and how to reduce legal risk from the start.",
+  });
+  add("lawful-ethical", "legal-advice", {
+    id: "legal-advice-intellectual-property-ai-development",
+    question: "Do I need legal advice about intellectual property when developing AI solutions?",
+    answer:
+      "Yes. Take legal advice early so you understand intellectual property considerations, and so you can address infringement risk and ownership arrangements as part of development and commissioning decisions.",
+  });
+  add("lawful-ethical", "legal-advice", {
+    id: "legal-advice-data-protection-and-compliance",
+    question: "Should I seek legal advice on data protection and compliance for AI use?",
+    answer:
+      "Yes. Seek legal advice early on how your AI use affects people’s data, and ensure you involve appropriate compliance and data protection expertise during planning and product development.",
+  });
+  add("lawful-ethical", "legal-advice", {
+    id: "legal-advice-for-ai-procurement-decisions",
+    question: "Do AI procurement decisions need early legal advice?",
+    answer:
+      "Yes. Get legal advice early so you can address relevant legal issues in procurement, including equalities and fairness, intellectual property, and any other risks that might affect contracts or delivery.",
+  });
+
+  // Security and safe use of tools (hallucinations + contrasting/conflicted public AI)
+  add("security-tools", "hallucinations", {
+    id: "sense-check-ai-outputs",
+    question: "How can I sense-check AI outputs before using them in government?",
+    answer:
+      "Do not trust generative AI uncritically. Sense-check responses against your knowledge and experience, then match checking effort to risk. For official content, review correctness and quality yourself.",
+  });
+  add("security-tools", "hallucinations", {
+    id: "source-check-ai-citations",
+    question: "How should I source-check citations produced by generative AI?",
+    answer:
+      "Verify any cited sources or references before use. Source-check against the original guidance and confirm numbers, dates and figures, then involve expert review where the content is important or public-facing.",
+  });
+  add("security-tools", "hallucinations", {
+    id: "expert-review-generative-ai-risk",
+    question: "When should experts review generative AI output?",
+    answer:
+      "Get expert review for important or public-facing content, and involve relevant subject matter experts for high-risk uses. Match the review effort to the potential harm if the output is wrong.",
+  });
+  add("security-tools", "hallucinations", {
+    id: "do-not-over-trust-generative-ai",
+    question: "Should we treat generative AI outputs as inherently reliable?",
+    answer:
+      "No. Generative AI can produce plausible but false content. Ensure outputs are checked before they are used, and remember correctness is not guaranteed.",
+  });
+  add("security-tools", "chatgpt-official-info", {
+    id: "public-ai-unpublished-official-information",
+    question: "Can I enter unpublished official information into public generative AI tools?",
+    answer:
+      "No. Do not put unpublished official information into public AI tools. Follow departmental policy and prefer departmental systems. Where needed, use assured tools with appropriate agreements rather than conflating different scopes.",
+  });
+  add("security-tools", "chatgpt-official-info", {
+    id: "personal-or-confidential-info-in-public-chatbots",
+    question: "What should I do with personal or confidential information when using public AI chatbots?",
+    answer:
+      "Do not enter personal or identifiable information into unsuitable public tools. Follow department policy, avoid mixing free/public services with assured enterprise tools, and involve data protection and compliance expertise where appropriate.",
+  });
+
+  // Buying and building (vendor lock-in)
+  add("buying-building", "vendor-lock-in", {
+    id: "build-exit-portability-into-ai-contracts",
+    question: "How do I build exit and portability into AI procurement contracts?",
+    answer:
+      "Build exit and portability into requirements and contracts from the start. Require explainable and interpretable approaches where possible, so other suppliers can continue or build upon the work and reduce vendor lock-in risk.",
+  });
+  add("buying-building", "vendor-lock-in", {
+    id: "explainability-reduces-vendor-lock-in",
+    question: "Why does explainability help avoid vendor lock-in when buying AI?",
+    answer:
+      "Highly explainable outputs can be interpreted by your team and by other suppliers. This increases your ability to continue or extend your AI system and helps limit the risk of vendor lock-in.",
+  });
+  add("buying-building", "vendor-lock-in", {
+    id: "continue-work-with-other-suppliers",
+    question: "How can I make sure other suppliers can continue work on my AI system?",
+    answer:
+      "Require approaches that can be interpreted and maintained by others, and include contractual provisions that support continuation, exit and portability. This helps avoid lock-in and supports future delivery needs.",
+  });
+
+  // Delivery, assurance and operations (contestability)
+  add("delivery-assurance", "contestability", {
+    id: "report-issues-human-review-ai-decisions",
+    question:
+      "How can users report issues and trigger human review for AI-influenced decisions?",
+    answer:
+      "Build contestability into design so users can report issues and prompt a human review. Ensure you have systems that support human intervention at the right stages alongside transparency and oversight.",
+  });
+  add("delivery-assurance", "contestability", {
+    id: "redress-routes-for-ai-influenced-decisions",
+    question:
+      "What routes should we provide for challenge and redress for AI-influenced decisions?",
+    answer:
+      "Provide systems so users can report concerns and access human review. Design these routes alongside transparency, explainability and meaningful human oversight so challenge and redress are possible.",
+  });
+
+  // Collaboration and reuse (civil society)
+  add("collaboration", "civil-society", {
+    id: "engage-civil-society-values-for-ai",
+    question:
+      "How does engaging civil society and academia help make AI projects better?",
+    answer:
+      "Engaging wider civil society, academia and industry helps ensure AI delivers public benefit and reflects people’s values and concerns. Use that engagement to inform the direction and mitigate risks to users.",
+  });
+})();
+
 /**
  * Entire question → kebab-case slug with punctuation stripped.
  * Example: "Can I use Microsoft Copilot…?" → "can-i-use-microsoft-copilot-or-similar-embedded-ai-features-at-work"
@@ -1825,6 +1981,10 @@ function normalizeQuestion(question, category) {
 
   const primary = citations[0];
   const slug = slugifyQuestion(question.question);
+  const sourcesCount = citations.length;
+  const hasContrastingAdvice =
+    Boolean(question.conflict) ||
+    citations.some((citation) => citation.role === "contrasting");
 
   return {
     id: question.id,
@@ -1834,6 +1994,7 @@ function normalizeQuestion(question, category) {
     url: `/faq/${slug}/`,
     category_id: category.id,
     category_title: category.title,
+    sourcesCount,
     status:
       question.status ||
       (question.conflict ? "conflicted" : "answered"),
@@ -1841,6 +2002,7 @@ function normalizeQuestion(question, category) {
     conflict_id: question.conflict_id || null,
     conflict: question.conflict || null,
     citations,
+    hasContrastingAdvice,
     snippet: question.snippet || primary.snippet,
     section: question.section || primary.section,
     textStart: question.textStart || primary.textStart,

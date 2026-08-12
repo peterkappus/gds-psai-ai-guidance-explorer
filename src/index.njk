@@ -8,26 +8,53 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ title }}</h1>
       <p class="govuk-body-l">
-        Browse common questions about adopting AI in government. Each answer has its own
-        page with cited snippets and deep links to the source guidance.
+        Search common questions about adopting AI in government. Each answer has its own page with cited snippets and deep links to official guidance.
       </p>
       <p class="govuk-body">
-        Browse the <a href="/sources">sources</a> or 
-        <a href="/about">learn more about the AI Guidance Explorer.</a>
+        Browse the <a href="/sources">sources</a> or <a href="/about">learn more about the AI Guidance Explorer.</a>
       </p>
       <p class="govuk-body-s">
-        On multi-source answers, <strong class="govuk-!-font-weight-bold">Primary</strong> citations explain
-        <em>how</em> to act; <strong class="govuk-!-font-weight-bold">Secondary</strong> citations explain
-        whether something can, must, should, or should not be done.
+        On multi-source answers, <strong class="govuk-!-font-weight-bold">Primary</strong> citations explain <em>how</em> to act; <strong class="govuk-!-font-weight-bold">Secondary</strong> citations explain whether something can, must, should, or should not be done.
       </p>
     </div>
   </div>
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-!-margin-top-6">
+        <h2 class="govuk-heading-m">Search questions</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="faq-search">Type a question</label>
+          <input
+            id="faq-search"
+            name="q"
+            type="text"
+            class="govuk-input govuk-input--width-20"
+            autocomplete="off"
+            spellcheck="false"
+            aria-controls="faq-suggestions"
+            aria-expanded="false"
+            placeholder="e.g. How do I use AI ethically?"
+          />
+        </div>
+
+        <div id="faq-suggestions" class="app-faq-suggestions" hidden>
+          <div class="app-faq-suggestions__inner">
+            <p class="govuk-body-s app-faq-suggestions__hint">Suggestions</p>
+            <ul class="govuk-list app-faq-suggestions__list" id="faq-suggestions-list"></ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-m govuk-!-margin-top-6">Categories</h2>
-      <nav class="govuk-!-margin-bottom-6" aria-label="FAQ categories">
-        <ul class="govuk-list">
+      <nav aria-label="FAQ categories">
+        <h2 class="govuk-heading-s">Categories</h2>
+        <ul class="govuk-list app-category-nav">
           {% for category in faq.categories %}
             <li>
               <a class="govuk-link" href="#{{ category.id }}">{{ category.title }}</a>
@@ -49,14 +76,19 @@
                   <a class="govuk-link" href="{{ item.url }}">{{ item.question }}</a>
                 </p>
                 <p class="govuk-body-s govuk-!-margin-bottom-0">
-                  {% if item.status != "answered" %}
-                  {{ govukTag({
-                    text: item.status | humanizeToken,
-                    classes: item.status | faqStatusTagClass
-                  }) }}
+                  {% if item.hasContrastingAdvice %}
+                    {{ govukTag({
+                      text: "Contrasting",
+                      classes: "govuk-tag--orange"
+                    }) }}
+                  {% elif item.status != "answered" %}
+                    {{ govukTag({
+                      text: item.status | humanizeToken,
+                      classes: item.status | faqStatusTagClass
+                    }) }}
                   {% endif %}
-                  {% if item.citations.length > 1 %}
-                    <span>{{ item.citations.length }} sources</span>
+                  {% if item.sourcesCount %}
+                    <span class="govuk-!-margin-left-2">{{ item.sourcesCount }} sources</span>
                   {% endif %}
                 </p>
               </li>
@@ -66,4 +98,22 @@
       {% endfor %}
     </div>
   </div>
+
+  {# Lightweight data for the in-browser typeahead (JS filters these items as you type). #}
+  <div hidden>
+    <ul id="faq-suggestion-data" aria-hidden="true">
+      {% for category in faq.categories %}
+        {% for item in category.questions %}
+          <li data-faq-suggestion
+              data-question="{{ item.question | escape }}"
+              data-url="{{ item.url }}"
+              data-sources-count="{{ item.sourcesCount }}"
+              data-contrasting="{{ item.hasContrastingAdvice }}">
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <script src="/assets/js/faq-search.js"></script>
 {% endblock %}

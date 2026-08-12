@@ -41,6 +41,45 @@
   margin-top: govuk-spacing(6);
 }
 
+.app-faq-suggestions {
+  position: relative;
+  margin-top: govuk-spacing(2);
+  padding: govuk-spacing(2);
+  border: 1px solid $govuk-border-colour;
+  background: govuk-colour("white");
+}
+
+.app-faq-suggestions__inner {
+  max-height: 18rem;
+  overflow-y: auto;
+}
+
+.app-faq-suggestions__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-faq-suggestion {
+  padding: govuk-spacing(2) 0;
+  border-top: 1px solid $govuk-border-colour;
+}
+.app-faq-suggestion:first-child {
+  border-top: 0;
+}
+
+.app-faq-suggestion__link {
+  display: block;
+}
+
+.app-faq-suggestion__meta {
+  margin-top: govuk-spacing(1);
+}
+
+.app-faq-suggestion__contrasting {
+  margin-left: govuk-spacing(1);
+}
+
 .govuk-generic-header__homepage-link {
   font-weight: 700;
 }

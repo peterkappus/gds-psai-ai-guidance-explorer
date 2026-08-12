@@ -9,12 +9,15 @@ eleventyComputed:
   description: "{{ item.answer }}"
 ---
 {% extends "layouts/base.njk" %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block content %}
-  {{ govukBackLink({
-    text: "All questions",
-    href: "/#{{ item.category_id }}"
+  {{ govukBreadcrumbs({
+    items: [
+      { text: "Home", href: "/" },
+      { text: item.category_title, href: "/category/" + item.category_id + "/" },
+      { text: item.question }
+    ]
   }) }}
 
   <div class="govuk-grid-row">

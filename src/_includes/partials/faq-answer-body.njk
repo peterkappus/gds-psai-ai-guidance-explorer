@@ -4,10 +4,17 @@
 
 <p class="govuk-body">
   <!--span class="govuk-!-display-block govuk-body-s govuk-!-margin-top-2">{{ item.category_title }}</span-->
-  {{ govukTag({
-    text: item.status | humanizeToken,
-    classes: item.status | faqStatusTagClass
-  }) }}
+  {% if item.hasContrastingAdvice %}
+    {{ govukTag({
+      text: "Contrasting",
+      classes: "govuk-tag--orange"
+    }) }}
+  {% else %}
+    {{ govukTag({
+      text: item.status | humanizeToken,
+      classes: item.status | faqStatusTagClass
+    }) }}
+  {% endif %}
 </p>
 
 <p class="govuk-body-l">{{ item.answer }}</p>

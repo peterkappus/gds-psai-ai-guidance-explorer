@@ -1,0 +1,58 @@
+---
+pagination:
+  data: faq.categories
+  size: 1
+  alias: category
+permalink: "/category/{{ category.id }}/"
+eleventyComputed:
+  title: "{{ category.title }}"
+  description: "{{ category.title }}"
+---
+
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ category.title }}</h1>
+      <p class="govuk-body-l">
+        Browse questions in this category. Each answer includes citations back to official guidance.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if category.questions.length === 0 %}
+        <p class="govuk-body">No questions yet.</p>
+      {% else %}
+        <ul class="govuk-list">
+          {% for item in category.questions %}
+            <li class="govuk-!-margin-bottom-6">
+              <p class="govuk-body govuk-!-margin-bottom-1">
+                <a class="govuk-link" href="{{ item.url }}">{{ item.question }}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">
+                {% if item.sourcesCount %}
+                  <span>{{ item.sourcesCount }} sources</span>
+                {% endif %}
+                {% if item.hasContrastingAdvice %}
+                  <span class="govuk-!-margin-left-2">
+                    {{ govukTag({ text: "Contrasting", classes: "govuk-tag--orange" }) }}
+                  </span>
+                {% endif %}
+              </p>
+              {% if item.status != "answered" and not item.hasContrastingAdvice %}
+                <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                  {{ govukTag({ text: item.status | humanizeToken, classes: item.status | faqStatusTagClass }) }}
+                </p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
