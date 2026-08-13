@@ -1,0 +1,263 @@
+{
+  "source_id": "atrs-hub",
+  "series_url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
+  "extracted_on": "2026-08-13",
+  "incorporated_articles": [
+    {
+      "article_id": "atrs-hub",
+      "title": "Algorithmic Transparency Recording Standard Hub",
+      "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub"
+    },
+    {
+      "article_id": "atrs-guidance",
+      "title": "Algorithmic Transparency Recording Standard - guidance for public sector bodies",
+      "url": "https://www.gov.uk/government/publications/guidance-for-organisations-using-the-algorithmic-transparency-recording-standard/algorithmic-transparency-recording-standard-guidance-for-public-sector-bodies"
+    },
+    {
+      "article_id": "atrs-scope-exemptions",
+      "title": "Algorithmic Transparency Recording Standard (ATRS) Mandatory Scope and Exemptions Policy",
+      "url": "https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy"
+    },
+    {
+      "article_id": "atrs-publish",
+      "title": "Publish a record of algorithmic tools using the ATRS",
+      "url": "https://www.gov.uk/guidance/publish-a-record-of-algorithmic-tools-using-the-atrs"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "atrs-hub--mandatory-orgs",
+      "article_id": "atrs-hub",
+      "section": "Algorithmic Transparency Recording Standard Hub",
+      "claim_type": "requirement",
+      "text": "The ATRS is mandatory for all government departments, and for arm’s-length bodies (ALBs) which deliver public or frontline services, or directly interact with the general public. The ATRS remains recommended by the Data Standards Authority for use in the broader public sector.",
+      "is_quotation": true,
+      "text_start": "The ATRS is mandatory for all government departments",
+      "text_end": "recommended by the Data Standards Authority for use in the broader public sector",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs", "atrs-which-organisations", "atrs-local-government"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-hub--what-it-is",
+      "article_id": "atrs-hub",
+      "section": "Algorithmic Transparency Recording Standard Hub",
+      "claim_type": "definition",
+      "text": "The Algorithmic Transparency Recording Standard (ATRS) establishes a standardised way for public sector organisations to publish information about how and why they are using algorithmic tools.",
+      "is_quotation": true,
+      "text_start": "establishes a standardised way for public sector organisations to publish information",
+      "text_end": "how and why they are using algorithmic tools",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs", "tell-the-public"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--tools-in-scope",
+      "article_id": "atrs-scope-exemptions",
+      "section": "4.2 For which tools must I complete an algorithmic transparency record?",
+      "claim_type": "requirement",
+      "text": "The mandatory requirement to publish an ATRS record applies to algorithmic tools that either: have a significant influence on a decision-making process with public effect, or directly interact with the general public.",
+      "is_quotation": true,
+      "text_start": "algorithmic tools that either: have a significant influence",
+      "text_end": "directly interact with the general public",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-which-tools", "atrs"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--significant-influence",
+      "article_id": "atrs-scope-exemptions",
+      "section": "4.2 For which tools must I complete an algorithmic transparency record?",
+      "claim_type": "definition",
+      "text": "‘Significant influence’ includes where an algorithmic tool meaningfully assists, supplements, or fully automates a decision-making process. This could be a tool that plays a triaging or scoring function within a wider process.",
+      "is_quotation": true,
+      "text_start": "meaningfully assists, supplements, or fully automates a decision-making process",
+      "text_end": "triaging or scoring function within a wider process",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-which-tools"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--not-policy-models",
+      "article_id": "atrs-scope-exemptions",
+      "section": "4.2 For which tools must I complete an algorithmic transparency record?",
+      "claim_type": "recommendation",
+      "text": "Note that this is intended to apply to situations where an algorithmic tool is influencing specific operational decisions about individuals, organisations or groups, not where a tool is an analytical model supporting broad government policy-making.",
+      "is_quotation": true,
+      "text_start": "influencing specific operational decisions about individuals, organisations or groups",
+      "text_end": "analytical model supporting broad government policy-making",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-which-tools"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--lifecycle",
+      "article_id": "atrs-scope-exemptions",
+      "section": "4.3 At which stage in a tool’s development lifecycle should an ATRS record be created?",
+      "claim_type": "requirement",
+      "text": "The mandatory requirement to publish an ATRS record applies to tools that are in Beta/Pilot or Production phase. Teams are welcome to submit records for tools in earlier stages of the lifecycle, but it is not mandatory to do so.",
+      "is_quotation": true,
+      "text_start": "applies to tools that are in Beta/Pilot or Production phase",
+      "text_end": "not mandatory to do so",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-lifecycle-stage"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--retired",
+      "article_id": "atrs-scope-exemptions",
+      "section": "4.3 At which stage in a tool’s development lifecycle should an ATRS record be created?",
+      "claim_type": "requirement",
+      "text": "For tools that have previously been in use and had a record created for them and which are later being retired, the responsible team should submit an updated record changing the information in the phase field to ‘Retired’.",
+      "is_quotation": true,
+      "text_start": "submit an updated record changing the information in the phase field to ‘Retired’",
+      "text_end": null,
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-update-retire"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-scope--foia-exemptions",
+      "article_id": "atrs-scope-exemptions",
+      "section": "5.1 What information should organisations not publish?",
+      "claim_type": "requirement",
+      "text": "As a general rule, this ATRS Scope and Exemptions Policy does not require the publication of information that would be subject to an exemption under access to information legislation, i.e. the FOIA, Environmental Information Regulations and data protection legislation.",
+      "is_quotation": true,
+      "text_start": "does not require the publication of information that would be subject to an exemption",
+      "text_end": "FOIA, Environmental Information Regulations and data protection legislation",
+      "themes": ["transparency", "atrs", "exemptions"],
+      "related_faq_ids": ["atrs-exemptions-redact"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--prefer-redact",
+      "article_id": "atrs-guidance",
+      "section": "Understanding what information should and should not be published",
+      "claim_type": "recommendation",
+      "text": "In general, publishing an ATRS record and redacting certain fields with a brief explanation of why this has been done is preferable to not publishing an ATRS record at all, particularly when partial information about the algorithmic tool is already in the public domain.",
+      "is_quotation": true,
+      "text_start": "publishing an ATRS record and redacting certain fields",
+      "text_end": "preferable to not publishing an ATRS record at all",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-exemptions-redact"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--spoc",
+      "article_id": "atrs-guidance",
+      "section": "How do I know if I should complete an ATRS record?",
+      "claim_type": "recommendation",
+      "text": "If your organisation is within the mandatory scope of the ATRS policy, it should have a single point of contact (SPOC) whose role is to coordinate with the ATRS team on identifying in-scope algorithmic tools, drafting and publishing records.",
+      "is_quotation": true,
+      "text_start": "it should have a single point of contact (SPOC)",
+      "text_end": "drafting and publishing records",
+      "themes": ["transparency", "atrs", "accountability"],
+      "related_faq_ids": ["atrs-spoc-sro"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--sro",
+      "article_id": "atrs-guidance",
+      "section": "Owner and responsibility (Tier 2)",
+      "claim_type": "recommendation",
+      "text": "The SRO should be a role title, not a named individual, for business continuity and security purposes. It should be the role which is ultimately accountable for the tool in an operational context.",
+      "is_quotation": true,
+      "text_start": "The SRO should be a role title, not a named individual",
+      "text_end": "ultimately accountable for the tool in an operational context",
+      "themes": ["accountability", "atrs"],
+      "related_faq_ids": ["atrs-spoc-sro", "accountability"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--article-22",
+      "article_id": "atrs-guidance",
+      "section": "Deployment Context (Tier 2)",
+      "claim_type": "requirement",
+      "text": "You should also be aware of Article 22 UK GDPR which states that ‘The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her’. If your algorithmic tool falls within the scope of these provisions, you must complete this field.",
+      "is_quotation": true,
+      "text_start": "If your algorithmic tool falls within the scope of these provisions, you must complete this field",
+      "text_end": null,
+      "themes": ["automated-decision-making", "atrs"],
+      "related_faq_ids": ["article-22-safeguards", "contestability"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--how-publish",
+      "article_id": "atrs-guidance",
+      "section": "Publishing your ATRS record",
+      "claim_type": "requirement",
+      "text": "Email your completed ATRS template to algorithmic-transparency@dsit.gov.uk (or send to your SPOC, if your organisation has one). The ATRS team will check for readability and provide feedback or suggested amendments if necessary.",
+      "is_quotation": true,
+      "text_start": "Email your completed ATRS template to algorithmic-transparency@dsit.gov.uk",
+      "text_end": "provide feedback or suggested amendments if necessary",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-how-to-publish"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--clearance",
+      "article_id": "atrs-guidance",
+      "section": "Obtaining clearance",
+      "claim_type": "requirement",
+      "text": "The ATRS team requires written confirmation that your ATRS record has gone through all appropriate internal signoff procedures before publishing it to the GOV.UK repository. At a minimum, this should include clearance by: the team responsible for deploying/operating the algorithmic tool; the SRO for the tool; the communications/press team.",
+      "is_quotation": true,
+      "text_start": "written confirmation that your ATRS record has gone through all appropriate internal signoff",
+      "text_end": "the communications/ press team",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-how-to-publish"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--update",
+      "article_id": "atrs-guidance",
+      "section": "Updating your ATRS record",
+      "claim_type": "requirement",
+      "text": "Should substantive details change in relation to your ATRS tool, you should update the ATRS template, go through internal clearance again, and send the updated template to algorithmic-transparency@dsit.gov.uk asking for your record to be updated accordingly.",
+      "is_quotation": true,
+      "text_start": "you should update the ATRS template, go through internal clearance again",
+      "text_end": "asking for your record to be updated accordingly",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-update-retire"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--broader-public-sector",
+      "article_id": "atrs-guidance",
+      "section": "How do I know if I should complete an ATRS record?",
+      "claim_type": "recommendation",
+      "text": "However, the ATRS is recommended by the Data Standards Authority for use across the entire public sector and we have welcomed ATRS records from local government, police forces and other broader public sector organisations. If you are from such an organisation, you can complete an ATRS template and email it to algorithmic-transparency@dsit.gov.uk directly.",
+      "is_quotation": true,
+      "text_start": "welcomed ATRS records from local government, police forces",
+      "text_end": "email it to algorithmic-transparency@dsit.gov.uk directly",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-local-government"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-publish--must-do",
+      "article_id": "atrs-publish",
+      "section": "Publish a record of algorithmic tools using the ATRS",
+      "claim_type": "requirement",
+      "text": "For any algorithmic tools covered by this commitment, you must: complete a record using the ATRS record template; submit the record to the ATRS team for review at algorithmic-transparency@dsit.gov.uk.",
+      "is_quotation": true,
+      "text_start": "complete a record using the ATRS record template",
+      "text_end": "submit the record to the ATRS team for review",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-how-to-publish"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "atrs-guidance--commercial",
+      "article_id": "atrs-scope-exemptions",
+      "section": "5.3 Dealing with commercially sensitive information",
+      "claim_type": "recommendation",
+      "text": "Commercial suppliers that wish to sell algorithmic solutions to public bodies that are then used in processes that impact members of the public should be comfortable with this level of transparency that is expected of the public sector. Public bodies that are procuring solutions from vendors should make this expectation clear in their invitation to tender or other route to market.",
+      "is_quotation": true,
+      "text_start": "should be comfortable with this level of transparency that is expected of the public sector",
+      "text_end": "make this expectation clear in their invitation to tender",
+      "themes": ["procurement", "atrs", "transparency"],
+      "related_faq_ids": ["supplier-transparency-ethics"],
+      "confidence": "high"
+    }
+  ]
+}

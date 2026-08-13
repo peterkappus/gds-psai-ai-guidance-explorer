@@ -1,0 +1,274 @@
+{
+  "source_id": "ico-ai-data-protection",
+  "series_url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+  "extracted_on": "2026-08-13",
+  "notes": "ICO guidance is under review following the Data (Use and Access) Act. Cite current published text; flag that it may change.",
+  "incorporated_articles": [
+    {
+      "article_id": "ico-ai-overview",
+      "title": "Guidance on AI and data protection",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/"
+    },
+    {
+      "article_id": "ico-ai-accountability",
+      "title": "What are the accountability and governance implications of AI?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/what-are-the-accountability-and-governance-implications-of-ai/"
+    },
+    {
+      "article_id": "ico-ai-lawfulness",
+      "title": "How do we ensure lawfulness in AI?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-lawfulness-in-ai/"
+    },
+    {
+      "article_id": "ico-ai-fairness",
+      "title": "How do we ensure fairness in AI?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/"
+    },
+    {
+      "article_id": "ico-ai-transparency",
+      "title": "How do we ensure transparency in AI?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-transparency-in-ai/"
+    },
+    {
+      "article_id": "ico-ai-article-22",
+      "title": "What is the impact of Article 22 of the UK GDPR on fairness?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/what-is-the-impact-of-article-22-of-the-uk-gdpr-on-fairness/"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ico-ai--under-review",
+      "article_id": "ico-ai-overview",
+      "section": "Guidance on AI and data protection",
+      "claim_type": "warning",
+      "text": "Due to changes made by the Data (Use and Access) Act, this guidance is under review and may be subject to change.",
+      "is_quotation": true,
+      "text_start": "Due to changes made by the Data (Use and Access) Act",
+      "text_end": "this guidance is under review and may be subject to change",
+      "themes": ["data-protection"],
+      "related_faq_ids": ["process-personal-data", "dpia"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--dpia-high-risk",
+      "article_id": "ico-ai-accountability",
+      "section": "What do we need to consider when undertaking data protection impact assessments for AI?",
+      "claim_type": "requirement",
+      "text": "In the vast majority of cases, the use of AI will involve a type of processing likely to result in a high risk to individuals’ rights and freedoms, and will therefore trigger the legal requirement for you to undertake a DPIA. You will need to make this assessment on a case by case basis. In those cases where you assess that a particular use of AI does not involve high risk processing, you still need to document how you have made this assessment.",
+      "is_quotation": true,
+      "text_start": "the use of AI will involve a type of processing likely to result in a high risk",
+      "text_end": "you still need to document how you have made this assessment",
+      "themes": ["dpia", "data-protection"],
+      "related_faq_ids": ["dpia"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--dpia-consult-ico",
+      "article_id": "ico-ai-accountability",
+      "section": "What do we need to consider when undertaking data protection impact assessments for AI?",
+      "claim_type": "requirement",
+      "text": "If the result of an assessment indicates residual high risk to individuals that you cannot sufficiently reduce, you must consult with the ICO prior to starting the processing.",
+      "is_quotation": true,
+      "text_start": "you must consult with the ICO prior to starting the processing",
+      "text_end": null,
+      "themes": ["dpia"],
+      "related_faq_ids": ["dpia"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--dpia-article-35",
+      "article_id": "ico-ai-accountability",
+      "section": "How do we decide whether to do a DPIA?",
+      "claim_type": "requirement",
+      "text": "Article 35(3)(a) of the UK GDPR requires you to undertake a DPIA if your use of AI involves: systematic and extensive evaluation of personal aspects based on automated processing, including profiling, on which decisions are made that produce legal or similarly significant effects; large-scale processing of special categories of personal data; or systematic monitoring of publicly-accessible areas on a large scale.",
+      "is_quotation": true,
+      "text_start": "systematic and extensive evaluation of personal aspects based on automated processing",
+      "text_end": "systematic monitoring of publicly-accessible areas on a large scale",
+      "themes": ["dpia", "automated-decision-making"],
+      "related_faq_ids": ["dpia", "automated-decisions"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--lawful-basis-each-operation",
+      "article_id": "ico-ai-lawfulness",
+      "section": "What should we consider when deciding lawful bases?",
+      "claim_type": "requirement",
+      "text": "The development and deployment of AI systems involve processing personal data in different ways for different purposes. You must break down and separate each distinct processing operation, and identify the purpose and an appropriate lawful basis for each one, in order to comply with the principle of lawfulness.",
+      "is_quotation": true,
+      "text_start": "You must break down and separate each distinct processing operation",
+      "text_end": "identify the purpose and an appropriate lawful basis for each one",
+      "themes": ["lawfulness", "data-protection"],
+      "related_faq_ids": ["lawful-basis-ai", "process-personal-data"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--separate-train-deploy",
+      "article_id": "ico-ai-lawfulness",
+      "section": "How should we distinguish purposes between AI development and deployment?",
+      "claim_type": "recommendation",
+      "text": "In many cases, when determining your purpose(s) and lawful basis, it will make sense for you to separate the research and development phase (including conceptualisation, design, training and model selection) of AI systems from the deployment phase. This is because these are distinct and separate purposes, with different circumstances and risks.",
+      "is_quotation": true,
+      "text_start": "separate the research and development phase",
+      "text_end": "distinct and separate purposes, with different circumstances and risks",
+      "themes": ["lawfulness"],
+      "related_faq_ids": ["separate-lawful-basis-train-deploy", "reuse-personal-data"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--consent",
+      "article_id": "ico-ai-lawfulness",
+      "section": "Can we rely on consent?",
+      "claim_type": "recommendation",
+      "text": "Consent may be an appropriate lawful basis in cases where you have a direct relationship with the individuals whose data you want to process. However, you must ensure that consent is freely given, specific, informed and unambiguous, and involves a clear affirmative act on the part of the individuals. For consent to apply, individuals must have a genuine choice about whether you can use their data.",
+      "is_quotation": true,
+      "text_start": "consent is freely given, specific, informed and unambiguous",
+      "text_end": "individuals must have a genuine choice about whether you can use their data",
+      "themes": ["lawfulness", "consent"],
+      "related_faq_ids": ["consent-for-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--public-task",
+      "article_id": "ico-ai-lawfulness",
+      "section": "Can we rely on legal obligation, public task or vital interests?",
+      "claim_type": "recommendation",
+      "text": "Similarly, if you use AI as part of the exercise of your official authority, or to perform a task in the public interest set out by law, the necessary processing of personal data involved may be based on those grounds. This is likely to be relevant to public authorities using AI to deliver public services.",
+      "is_quotation": true,
+      "text_start": "if you use AI as part of the exercise of your official authority",
+      "text_end": "relevant to public authorities using AI to deliver public services",
+      "themes": ["lawfulness"],
+      "related_faq_ids": ["lawful-basis-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--legitimate-interests-pa",
+      "article_id": "ico-ai-lawfulness",
+      "section": "Can we rely on legitimate interests?",
+      "claim_type": "requirement",
+      "text": "Additionally, if you are a public authority you can only rely on legitimate interests if you are processing for a legitimate reason other than performing your tasks as a public authority.",
+      "is_quotation": true,
+      "text_start": "if you are a public authority you can only rely on legitimate interests",
+      "text_end": "other than performing your tasks as a public authority",
+      "themes": ["lawfulness"],
+      "related_faq_ids": ["lawful-basis-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--inferences-special-category",
+      "article_id": "ico-ai-lawfulness",
+      "section": "Using AI systems to make inferences",
+      "claim_type": "requirement",
+      "text": "That inference is likely to be special category data, if your use of AI means you: can (or intend to) infer relevant information about an individual; or intend to treat someone differently on the basis of the inference (even if it's not with a reasonable degree of certainty).",
+      "is_quotation": true,
+      "text_start": "That inference is likely to be special category data",
+      "text_end": "even if it's not with a reasonable degree of certainty",
+      "themes": ["special-category", "lawfulness"],
+      "related_faq_ids": ["special-category-inferences"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--fairness-definition",
+      "article_id": "ico-ai-fairness",
+      "section": "How does data protection approach fairness?",
+      "claim_type": "requirement",
+      "text": "In simple terms, fairness means you should only process personal data in ways that people would reasonably expect and not use it in any way that could have unjustified adverse effects on them. You should not process personal data in ways that are unduly detrimental, unexpected or misleading to the individuals concerned.",
+      "is_quotation": true,
+      "text_start": "only process personal data in ways that people would reasonably expect",
+      "text_end": "unduly detrimental, unexpected or misleading to the individuals concerned",
+      "themes": ["fairness", "data-protection"],
+      "related_faq_ids": ["dp-fairness-ai", "bias-fairness"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--unjust-discrimination",
+      "article_id": "ico-ai-fairness",
+      "section": "How does data protection approach fairness?",
+      "claim_type": "requirement",
+      "text": "Any processing of personal data using AI that leads to unjust discrimination between people, will violate the fairness principle.",
+      "is_quotation": true,
+      "text_start": "leads to unjust discrimination between people, will violate the fairness principle",
+      "text_end": null,
+      "themes": ["fairness"],
+      "related_faq_ids": ["dp-fairness-ai", "bias-fairness"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--article-22-when",
+      "article_id": "ico-ai-article-22",
+      "section": "What is the purpose of Article 22?",
+      "claim_type": "requirement",
+      "text": "You can only carry out this type of decision-making where the decision is: necessary for the entry into or performance of a contract; authorised by law that applies to you; or based on the individual’s explicit consent.",
+      "is_quotation": true,
+      "text_start": "necessary for the entry into or performance of a contract",
+      "text_end": "based on the individual’s explicit consent",
+      "themes": ["automated-decision-making"],
+      "related_faq_ids": ["automated-decisions", "article-22-safeguards"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--article-22-safeguards",
+      "article_id": "ico-ai-article-22",
+      "section": "What is the purpose of Article 22?",
+      "claim_type": "requirement",
+      "text": "You therefore have to identify if your processing falls under Article 22 and, where it does, make sure that you: give individuals information about the processing; introduce simple ways for them to request human intervention or challenge a decision; and carry out regular checks to make sure your systems are working as intended.",
+      "is_quotation": true,
+      "text_start": "give individuals information about the processing",
+      "text_end": "regular checks to make sure your systems are working as intended",
+      "themes": ["automated-decision-making"],
+      "related_faq_ids": ["article-22-safeguards", "contestability", "human-oversight"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--meaningful-human-review",
+      "article_id": "ico-ai-article-22",
+      "section": "When does the human-determined decision take place?",
+      "claim_type": "requirement",
+      "text": "In most cases, for human review to be meaningful, human involvement should come after the automated decision has taken place and it must relate to the actual outcome.",
+      "is_quotation": true,
+      "text_start": "for human review to be meaningful, human involvement should come after the automated decision",
+      "text_end": "it must relate to the actual outcome",
+      "themes": ["human-oversight", "automated-decision-making"],
+      "related_faq_ids": ["human-oversight", "article-22-safeguards"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--contest-timely",
+      "article_id": "ico-ai-article-22",
+      "section": "Will impacted individuals be able to contest an automated decision?",
+      "claim_type": "requirement",
+      "text": "For the processing to be fair and compliant with Article 22, individuals must be able to contest a decision in a timely manner. Meaningful transparency is fundamental to support this and you must put in place the appropriate measures to ensure individuals can exercise their rights.",
+      "is_quotation": true,
+      "text_start": "individuals must be able to contest a decision in a timely manner",
+      "text_end": "ensure individuals can exercise their rights",
+      "themes": ["contestability", "automated-decision-making"],
+      "related_faq_ids": ["contestability", "article-22-safeguards"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--transparency-privacy-info",
+      "article_id": "ico-ai-transparency",
+      "section": "What are our transparency obligations towards people?",
+      "claim_type": "requirement",
+      "text": "If you collect data directly from individuals, you must provide that privacy information to them at the time you collect it, before you use it to train a model or apply that model on those individuals.",
+      "is_quotation": true,
+      "text_start": "you must provide that privacy information to them at the time you collect it",
+      "text_end": "before you use it to train a model or apply that model on those individuals",
+      "themes": ["transparency", "data-protection"],
+      "related_faq_ids": ["process-personal-data", "tell-the-public"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ico-ai--senior-accountable",
+      "article_id": "ico-ai-accountability",
+      "section": "How should we approach AI governance and risk management?",
+      "claim_type": "requirement",
+      "text": "You cannot delegate these issues to data scientists or engineering teams. Your senior management, including DPOs, are also accountable for understanding and addressing them appropriately and promptly (although overall accountability for data protection compliance lies with the controller, ie your organisation).",
+      "is_quotation": true,
+      "text_start": "You cannot delegate these issues to data scientists or engineering teams",
+      "text_end": "overall accountability for data protection compliance lies with the controller",
+      "themes": ["accountability"],
+      "related_faq_ids": ["accountability", "legal-advice"],
+      "confidence": "high"
+    }
+  ]
+}

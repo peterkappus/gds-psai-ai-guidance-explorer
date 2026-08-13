@@ -13,6 +13,8 @@ Questions only for now — answers and citations to follow.
 - Do I need an AI strategy or governance board before I start my first project?
 - What skills and roles do I need on an AI project team?
 - Where can civil servants get training on AI?
+- When should I use the Data and AI Ethics Framework?
+- Should my team use the Data and AI Ethics Self-Assessment Tool?
 
 ## Lawful, ethical and responsible use
 
@@ -23,9 +25,26 @@ Questions only for now — answers and citations to follow.
 - How much human oversight do I need when using AI in decision making?
 - Do I need to tell the public when we are using AI or algorithms?
 - Do I need to use the Algorithmic Transparency Recording Standard (ATRS)?
+- Which organisations must use the Algorithmic Transparency Recording Standard?
+- Which algorithmic tools need an ATRS record?
+- At what stage in development must I publish an ATRS record?
+- Can I skip an ATRS record if some of the information is exempt from FOI?
+- How do I publish an ATRS record?
+- Can local government, police or other public bodies publish ATRS records?
+- When should I update or retire an ATRS record?
+- Who in my organisation owns ATRS records?
 - How do I manage bias and fairness in an AI system?
 - What equality and human rights issues should I consider when using AI?
 - Do I need legal advice before starting an AI project?
+- What lawful basis can a public authority use for AI that processes personal data?
+- Do training and deploying an AI model need separate lawful bases?
+- Can I rely on consent to process personal data in an AI system?
+- What does data-protection fairness require of an AI system?
+- What safeguards does Article 22 require for solely automated decisions?
+- Do AI inferences about people count as special category data?
+- Do I need an Equality Impact Assessment for an AI project?
+- What does privacy by design mean for an AI project?
+- Should I publish my DPIA and Equality Impact Assessment?
 
 ## Security and safe use of tools
 
@@ -47,6 +66,7 @@ Questions only for now — answers and citations to follow.
 - How do I specify requirements when buying AI?
 - Who owns the intellectual property if we develop or procure an AI solution?
 - How do I avoid vendor lock-in when buying AI?
+- What should I require from AI suppliers on transparency, bias and training data?
 
 ## Delivery, assurance and operations
 

@@ -1,0 +1,230 @@
+{
+  "source_id": "data-and-ai-ethics-framework",
+  "series_url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
+  "extracted_on": "2026-08-13",
+  "incorporated_articles": [
+    {
+      "article_id": "data-and-ai-ethics-framework",
+      "title": "Data and AI Ethics Framework",
+      "url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "data-ethics--what-it-is",
+      "section": "Introduction",
+      "claim_type": "definition",
+      "text": "This framework provides a set of principles and activities to guide the responsible development, procurement and use of data and artificial intelligence (AI) in the public sector. It helps public servants understand ethical considerations and how to address these in their work.",
+      "is_quotation": true,
+      "text_start": "principles and activities to guide the responsible development, procurement and use",
+      "text_end": "understand ethical considerations and how to address these in their work",
+      "themes": ["ethics"],
+      "related_faq_ids": ["use-data-ethics-framework"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--applies-to",
+      "section": "Introduction",
+      "claim_type": "recommendation",
+      "text": "The framework applies to any project that involves: data (collection, sharing or use); data-driven technologies; AI; automated decision-making and algorithmic tools.",
+      "is_quotation": true,
+      "text_start": "The framework applies to any project that involves",
+      "text_end": "automated decision-making and algorithmic tools",
+      "themes": ["ethics"],
+      "related_faq_ids": ["use-data-ethics-framework"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--self-assessment",
+      "section": "Data and AI Ethics Self-Assessment Tool",
+      "claim_type": "recommendation",
+      "text": "If your team is working on an AI or data-driven technology project, then as well as reading this guidance you should use the Data and AI Ethics Self-Assessment Tool. The tool will help you capture information, and share learnings, challenges and progress with colleagues. We recommend that you maintain it along with your other project documentation to record decision making across the life cycle of a project.",
+      "is_quotation": true,
+      "text_start": "you should use the Data and AI Ethics Self-Assessment Tool",
+      "text_end": "record decision making across the life cycle of a project",
+      "themes": ["ethics", "governance"],
+      "related_faq_ids": ["ethics-self-assessment-tool"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--does-not-replace",
+      "section": "Why this guidance is important",
+      "claim_type": "warning",
+      "text": "It considers themes such as safety, security and privacy through an ethical lens. It does not replace technical or regulatory guidance in these areas, but instead complements and connects to them.",
+      "is_quotation": true,
+      "text_start": "It does not replace technical or regulatory guidance in these areas",
+      "text_end": "complements and connects to them",
+      "themes": ["ethics"],
+      "related_faq_ids": ["use-data-ethics-framework"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--principles",
+      "section": "Principles",
+      "claim_type": "recommendation",
+      "text": "This is an overview of the main principles everyone should follow when working with data and AI in the public sector: Transparency; Accountability; Fairness; Privacy; Safety; Societal impact; Environmental sustainability.",
+      "is_quotation": true,
+      "text_start": "main principles everyone should follow when working with data and AI",
+      "text_end": "Environmental sustainability",
+      "themes": ["ethics"],
+      "related_faq_ids": ["ethics-principles", "use-ai-ethically-day-to-day"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--atrs-must",
+      "section": "Using the Algorithmic Transparency Recording Standard",
+      "claim_type": "requirement",
+      "text": "All central government departments and arm’s length bodies that provide public or frontline services, or routinely interact with the general public, must use the ATRS. This involves documenting information about any algorithmic tools used in decision-making processes, and making this clearly accessible to the public.",
+      "is_quotation": true,
+      "text_start": "must use the ATRS",
+      "text_end": "making this clearly accessible to the public",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs", "atrs-which-organisations"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--atrs-even-if-out-of-scope",
+      "section": "Using the Algorithmic Transparency Recording Standard",
+      "claim_type": "recommendation",
+      "text": "Even where a tool does not strictly fall within scope of the ATRS, we recommend publishing an ATRS record.",
+      "is_quotation": true,
+      "text_start": "Even where a tool does not strictly fall within scope of the ATRS",
+      "text_end": "we recommend publishing an ATRS record",
+      "themes": ["transparency", "atrs"],
+      "related_faq_ids": ["atrs-which-tools", "atrs-local-government"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--publish-dpia-eia",
+      "section": "Data protection-related transparency",
+      "claim_type": "recommendation",
+      "text": "You need to carry out a Data Protection Impact Assessment (DPIA) before you process personal data when the processing is likely to result in a high risk to the rights and freedoms of individuals. It’s good practice to publish your completed DPIA to demonstrate that you’re taking the appropriate precautions to protect personal data and ensure your system is fair.",
+      "is_quotation": true,
+      "text_start": "It’s good practice to publish your completed DPIA",
+      "text_end": "ensure your system is fair",
+      "themes": ["dpia", "transparency"],
+      "related_faq_ids": ["publish-dpia-eia", "dpia"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--eia",
+      "section": "Fairness-related transparency",
+      "claim_type": "requirement",
+      "text": "You must comply with the Public Sector Equality Duty and Equality Act 2010. This means you need to carefully consider and document the equality impact of processing personal data where it can be used to identify individuals as having a protected characteristic. This document is often referred to as an Equality Impact Assessment (EIA). It’s good practice to publish your EIA.",
+      "is_quotation": true,
+      "text_start": "carefully consider and document the equality impact of processing personal data",
+      "text_end": "It’s good practice to publish your EIA",
+      "themes": ["equality", "fairness"],
+      "related_faq_ids": ["eia-for-ai", "equality-human-rights", "publish-dpia-eia"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--eia-when",
+      "section": "Understand impacted groups",
+      "claim_type": "requirement",
+      "text": "You must assess the equality impact of your project: before making any decisions to initiate a project, including procuring and development; during implementation; after implementation.",
+      "is_quotation": true,
+      "text_start": "before making any decisions to initiate a project, including procuring and development",
+      "text_end": "after implementation",
+      "themes": ["equality"],
+      "related_faq_ids": ["eia-for-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--privacy-by-design",
+      "section": "What privacy means in practice",
+      "claim_type": "requirement",
+      "text": "You must design and build privacy into your project from the start. This includes: the very first decisions you make about what information you intend to record; every way that the data, or AI system built using this data, is used throughout your project; the safe decommissioning of the system and data set. This concept is referred to in the UK GDPR as privacy by design and default.",
+      "is_quotation": true,
+      "text_start": "You must design and build privacy into your project from the start",
+      "text_end": "privacy by design and default",
+      "themes": ["privacy"],
+      "related_faq_ids": ["privacy-by-design-ai", "process-personal-data"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--data-minimisation",
+      "section": "Scoping and data acquisition",
+      "claim_type": "requirement",
+      "text": "The data you request and acquire must be adequate, relevant and limited to what is necessary in relation to the purposes for which it is processed. This is known as data minimisation.",
+      "is_quotation": true,
+      "text_start": "adequate, relevant and limited to what is necessary",
+      "text_end": "This is known as data minimisation",
+      "themes": ["privacy", "data-minimisation"],
+      "related_faq_ids": ["privacy-by-design-ai", "process-personal-data"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--third-party-data",
+      "section": "Scoping and data acquisition",
+      "claim_type": "requirement",
+      "text": "Your project might not itself gather or process personal data. For example, if you procure an AI model from a third party or use a pre-trained model. Here you must still ensure that any personal data used to train these models meets your privacy standards and complies with relevant legislation.",
+      "is_quotation": true,
+      "text_start": "if you procure an AI model from a third party or use a pre-trained model",
+      "text_end": "meets your privacy standards and complies with relevant legislation",
+      "themes": ["privacy", "procurement"],
+      "related_faq_ids": ["supplier-transparency-ethics", "privacy-by-design-ai"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--sro",
+      "section": "Set clear roles and responsibilities",
+      "claim_type": "requirement",
+      "text": "You need strong oversight and clear responsibilities to ensure accountability across the life cycle of your data or AI project. You must set out who is responsible at each stage of the project. This includes naming senior responsible owners (SROs)– as the primary risk owners for the project.",
+      "is_quotation": true,
+      "text_start": "You must set out who is responsible at each stage of the project",
+      "text_end": "senior responsible owners (SROs)– as the primary risk owners for the project",
+      "themes": ["accountability"],
+      "related_faq_ids": ["accountability", "atrs-spoc-sro"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--human-oversight",
+      "section": "Maintain human oversight",
+      "claim_type": "requirement",
+      "text": "People must be able to monitor and influence how systems work, even when the system is partially or fully automated. People should remain responsible for the decisions they make when these are supported or informed by an AI system. Avoid fully automated decisions where the outcome could significantly affect individuals or groups, and making sure a person makes the final decision in these cases.",
+      "is_quotation": true,
+      "text_start": "People should remain responsible for the decisions they make",
+      "text_end": "a person makes the final decision in these cases",
+      "themes": ["human-oversight"],
+      "related_faq_ids": ["human-oversight", "automated-decisions"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--redress",
+      "section": "Establish feedback mechanisms",
+      "claim_type": "requirement",
+      "text": "Upholding accountability means ensuring that people affected by the use of a data or AI system can: understand how decisions were made; provide feedback; contest outcomes that are incorrect; seek redress if they’ve been affected by erroneous or unjust outcomes – for example, by asking for the decision to be reviewed or corrected, especially in the case of automated decision making.",
+      "is_quotation": true,
+      "text_start": "contest outcomes that are incorrect",
+      "text_end": "especially in the case of automated decision making",
+      "themes": ["contestability", "accountability"],
+      "related_faq_ids": ["contestability"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--supplier-questions",
+      "section": "If you’re using a third-party supplier",
+      "claim_type": "recommendation",
+      "text": "Vendors of AI systems must be able to clearly explain: the steps they take to build tools; the logic and assumptions built into their tools; how their tools generate outputs. Before entering into a contract, consider asking your supplier how they identified, evaluated and mitigated risks; what data the model has been trained on; if there are any known biases in the data or the trained model.",
+      "is_quotation": true,
+      "text_start": "Vendors of AI systems must be able to clearly explain",
+      "text_end": "if there are any known biases in the data or the trained model",
+      "themes": ["procurement", "transparency"],
+      "related_faq_ids": ["supplier-transparency-ethics"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "data-ethics--ai-disclosure",
+      "section": "Recommended actions",
+      "claim_type": "recommendation",
+      "text": "give appropriate disclosure when AI has been used to produce an output – this concerns both internal and external uses of AI",
+      "is_quotation": true,
+      "text_start": "give appropriate disclosure when AI has been used to produce an output",
+      "text_end": "both internal and external uses of AI",
+      "themes": ["transparency"],
+      "related_faq_ids": ["tell-the-public", "tell-users-ai-in-service"],
+      "confidence": "high"
+    }
+  ]
+}

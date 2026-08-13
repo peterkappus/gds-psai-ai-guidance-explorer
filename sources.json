@@ -2,7 +2,7 @@
   "meta": {
     "title": "UK public sector AI guidance sources",
     "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
-    "updated": "2026-08-10",
+    "updated": "2026-08-13",
     "jurisdiction": "United Kingdom",
     "source_lists": [
       "Original explorer backlog (Aug 2026)",
@@ -57,6 +57,27 @@
         "url": "https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai",
         "organisation": "Department for Science, Innovation and Technology (DSIT)",
         "notes": "Incorporated 2026-08-10. Voluntary code (shall/should). Claim units in content/units/ai-cyber-security-code-of-practice.json."
+      },
+      {
+        "id": "atrs-hub",
+        "title": "Algorithmic Transparency Recording Standard (ATRS) Hub",
+        "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
+        "organisation": "Government Digital Service (GDS)",
+        "notes": "Incorporated 2026-08-13 via hub, completion guidance, scope/exemptions policy, and publish-a-record page. Claim units in content/units/atrs-hub.json."
+      },
+      {
+        "id": "ico-ai-data-protection",
+        "title": "Guidance on AI and data protection",
+        "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+        "organisation": "Information Commissioner’s Office (ICO)",
+        "notes": "Incorporated 2026-08-13. Guidance is under review after the Data (Use and Access) Act. Claim units in content/units/ico-ai-data-protection.json."
+      },
+      {
+        "id": "data-and-ai-ethics-framework",
+        "title": "Data and AI Ethics Framework",
+        "url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
+        "organisation": "Government Digital Service (GDS)",
+        "notes": "Incorporated 2026-08-13. Complements ATRS, Playbook and ICO guidance; does not replace regulatory requirements. Claim units in content/units/data-and-ai-ethics-framework.json."
       }
     ],
     "fields": {
@@ -83,7 +104,7 @@
       "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
       "organisation": "Government Digital Service (GDS)",
       "type": "standard",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "central government departments",
         "in-scope arm’s-length bodies",
@@ -106,9 +127,30 @@
       "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-08-13",
+      "claim_units_path": "content/units/atrs-hub.json",
+      "incorporated_articles": [
+        {
+          "title": "Algorithmic Transparency Recording Standard Hub",
+          "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub"
+        },
+        {
+          "title": "Guidance for public sector bodies",
+          "url": "https://www.gov.uk/government/publications/guidance-for-organisations-using-the-algorithmic-transparency-recording-standard/algorithmic-transparency-recording-standard-guidance-for-public-sector-bodies"
+        },
+        {
+          "title": "Mandatory scope and exemptions policy",
+          "url": "https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy"
+        },
+        {
+          "title": "Publish a record of algorithmic tools using the ATRS",
+          "url": "https://www.gov.uk/guidance/publish-a-record-of-algorithmic-tools-using-the-atrs"
+        }
+      ],
       "aliases_from_potential_list": [
         "GOV.UK - Algorithmic Transparency Recording Standard + repository"
-      ]
+      ],
+      "notes": "Mandatory for central government departments and in-scope ALBs for tools with significant public-effect decisions or direct public interaction. Recommended more widely by the Data Standards Authority."
     },
     {
       "id": "ico-ai-data-protection",
@@ -116,7 +158,7 @@
       "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
       "organisation": "Information Commissioner’s Office (ICO)",
       "type": "regulator_guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "data protection officers",
         "legal / compliance",
@@ -138,7 +180,36 @@
       "formats": ["HTML"],
       "priority": 1,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-08-13",
+      "claim_units_path": "content/units/ico-ai-data-protection.json",
+      "incorporated_articles": [
+        {
+          "title": "Guidance on AI and data protection",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/"
+        },
+        {
+          "title": "Accountability and governance implications of AI",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/what-are-the-accountability-and-governance-implications-of-ai/"
+        },
+        {
+          "title": "How do we ensure lawfulness in AI?",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-lawfulness-in-ai/"
+        },
+        {
+          "title": "How do we ensure fairness in AI?",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/"
+        },
+        {
+          "title": "How do we ensure transparency in AI?",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-transparency-in-ai/"
+        },
+        {
+          "title": "Article 22 of the UK GDPR and fairness",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/what-is-the-impact-of-article-22-of-the-uk-gdpr-on-fairness/"
+        }
+      ],
+      "notes": "Primary regulator guidance for personal-data FAQs. Marked as under review by the ICO following the Data (Use and Access) Act — cite current published text and check for updates."
     },
     {
       "id": "ncsc-secure-ai-system-development",
@@ -540,7 +611,7 @@
       "url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
       "organisation": "Government Digital Service (GDS) / DSIT ecosystem",
       "type": "framework",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "policy and delivery teams",
         "ethics leads",
@@ -564,9 +635,13 @@
       "priority": 2,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-08-13",
+      "priority": 1,
+      "claim_units_path": "content/units/data-and-ai-ethics-framework.json",
       "aliases_from_potential_list": [
         "GOV.UK - Data (and AI) Ethics Framework"
-      ]
+      ],
+      "notes": "Bridges high-level ethics principles to project actions. Complements ATRS, Playbook and ICO guidance; does not replace technical or regulatory requirements."
     },
     {
       "id": "ethics-transparency-accountability-adm",

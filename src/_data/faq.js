@@ -136,6 +136,85 @@ const GUIDELINES_AI_PROCUREMENT = {
   url: "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
 };
 
+const ATRS_HUB = {
+  id: "atrs-hub",
+  article_id: "atrs-hub",
+  title: "Algorithmic Transparency Recording Standard Hub",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
+};
+
+const ATRS_GUIDANCE = {
+  id: "atrs-hub",
+  article_id: "atrs-guidance",
+  title: "ATRS: Guidance for public sector bodies",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/guidance-for-organisations-using-the-algorithmic-transparency-recording-standard/algorithmic-transparency-recording-standard-guidance-for-public-sector-bodies",
+};
+
+const ATRS_SCOPE = {
+  id: "atrs-hub",
+  article_id: "atrs-scope-exemptions",
+  title: "ATRS: Mandatory scope and exemptions policy",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy",
+};
+
+const ATRS_PUBLISH = {
+  id: "atrs-hub",
+  article_id: "atrs-publish",
+  title: "Publish a record of algorithmic tools using the ATRS",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/guidance/publish-a-record-of-algorithmic-tools-using-the-atrs",
+};
+
+const ICO_AI_ACCOUNTABILITY = {
+  id: "ico-ai-data-protection",
+  article_id: "ico-ai-accountability",
+  title: "ICO: Accountability and governance implications of AI",
+  organisation: "Information Commissioner’s Office (ICO)",
+  url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/what-are-the-accountability-and-governance-implications-of-ai/",
+};
+
+const ICO_AI_LAWFULNESS = {
+  id: "ico-ai-data-protection",
+  article_id: "ico-ai-lawfulness",
+  title: "ICO: How do we ensure lawfulness in AI?",
+  organisation: "Information Commissioner’s Office (ICO)",
+  url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-lawfulness-in-ai/",
+};
+
+const ICO_AI_FAIRNESS = {
+  id: "ico-ai-data-protection",
+  article_id: "ico-ai-fairness",
+  title: "ICO: How do we ensure fairness in AI?",
+  organisation: "Information Commissioner’s Office (ICO)",
+  url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/",
+};
+
+const ICO_AI_TRANSPARENCY = {
+  id: "ico-ai-data-protection",
+  article_id: "ico-ai-transparency",
+  title: "ICO: How do we ensure transparency in AI?",
+  organisation: "Information Commissioner’s Office (ICO)",
+  url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-transparency-in-ai/",
+};
+
+const ICO_AI_ARTICLE_22 = {
+  id: "ico-ai-data-protection",
+  article_id: "ico-ai-article-22",
+  title: "ICO: Article 22 of the UK GDPR and fairness",
+  organisation: "Information Commissioner’s Office (ICO)",
+  url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/what-is-the-impact-of-article-22-of-the-uk-gdpr-on-fairness/",
+};
+
+const DATA_ETHICS = {
+  id: "data-and-ai-ethics-framework",
+  title: "Data and AI Ethics Framework",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
+};
+
 function cite(source, fields) {
   return {
     source_id: source.id,
@@ -329,9 +408,9 @@ const categories = [
           id: "use-ai-ethically-day-to-day",
           question: "How do I use AI ethically and sustainably day to day?",
           status: "answered",
-          last_reviewed: "2026-08-07",
+          last_reviewed: "2026-08-13",
           answer:
-            "Follow your department’s AI policies, review outputs for accuracy/fairness/accessibility, avoid putting personal or identifiable information into unsuitable tools, be transparent about AI use, and prefer the smallest adequate model with short, necessary prompts.",
+            "Follow your department’s AI policies, review outputs for accuracy/fairness/accessibility, avoid putting personal or identifiable information into unsuitable tools, be transparent about AI use, and prefer the smallest adequate model with short, necessary prompts. The Data and AI Ethics Framework adds seven principles to work through as a team: transparency, accountability, fairness, privacy, safety, societal impact and environmental sustainability.",
           citations: [
             cite(HOW_TO_ETHICS, {
               role: "primary",
@@ -358,6 +437,15 @@ const categories = [
                 "If you do need AI, if your model allows it, pick the smallest one which will do what you need. Keep your prompts short, clear and direct; use as few prompts as possible; only use AI when needed.",
               textStart: "pick the smallest one which will do what you need",
               textEnd: "only use AI when needed",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Principles",
+              snippet:
+                "This is an overview of the main principles everyone should follow when working with data and AI in the public sector: Transparency; Accountability; Fairness; Privacy; Safety; Societal impact; Environmental sustainability.",
+              textStart:
+                "main principles everyone should follow when working with data and AI",
+              textEnd: "Environmental sustainability",
             }),
           ],
         },
@@ -423,6 +511,65 @@ const categories = [
             "AI courses are freely available within Civil Service Learning",
           textEnd: "accessed through the learning frameworks",
         },
+        {
+          id: "use-data-ethics-framework",
+          question:
+            "When should I use the Data and AI Ethics Framework?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Use it on any public-sector project involving data, data-driven technologies, AI, automated decision-making or algorithmic tools. It gives principles and activities for responsible development, procurement and use. It complements — and does not replace — ICO and other regulatory or technical guidance.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Introduction",
+              snippet:
+                "This framework provides a set of principles and activities to guide the responsible development, procurement and use of data and artificial intelligence (AI) in the public sector. It helps public servants understand ethical considerations and how to address these in their work.",
+              textStart:
+                "principles and activities to guide the responsible development, procurement and use",
+              textEnd:
+                "understand ethical considerations and how to address these in their work",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Introduction",
+              snippet:
+                "The framework applies to any project that involves: data (collection, sharing or use); data-driven technologies; AI; automated decision-making and algorithmic tools.",
+              textStart: "The framework applies to any project that involves",
+              textEnd: "automated decision-making and algorithmic tools",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Why this guidance is important",
+              snippet:
+                "It considers themes such as safety, security and privacy through an ethical lens. It does not replace technical or regulatory guidance in these areas, but instead complements and connects to them.",
+              textStart:
+                "It does not replace technical or regulatory guidance in these areas",
+              textEnd: "complements and connects to them",
+            }),
+          ],
+        },
+        {
+          id: "ethics-self-assessment-tool",
+          question:
+            "Should my team use the Data and AI Ethics Self-Assessment Tool?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Yes if you are working on an AI or data-driven technology project. Use the tool alongside the framework to capture information and share challenges and progress. Keep it with your other project documentation so you record decisions across the life cycle.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Data and AI Ethics Self-Assessment Tool",
+              snippet:
+                "If your team is working on an AI or data-driven technology project, then as well as reading this guidance you should use the Data and AI Ethics Self-Assessment Tool. The tool will help you capture information, and share learnings, challenges and progress with colleagues. We recommend that you maintain it along with your other project documentation to record decision making across the life cycle of a project.",
+              textStart:
+                "you should use the Data and AI Ethics Self-Assessment Tool",
+              textEnd:
+                "record decision making across the life cycle of a project",
+            }),
+          ],
+        },
       ],
     },
     {
@@ -432,92 +579,565 @@ const categories = [
         {
           id: "process-personal-data",
           question: "Can I use AI to process personal data?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Yes, but only lawfully and with data protection advice from the start. AI systems can process personal data, so you must protect it, comply with data protection law, and minimise privacy intrusion from the outset.",
-          snippet:
-            "You should seek data protection advice on your use of AI. This may be from your lawyers or your data protection officer. AI systems can process personal data, so you need to consider how you protect this personal data, be compliant with data protection legislation, and minimise the risk of privacy intrusion from the outset.",
-          section: "Principle 2: You use AI lawfully, ethically and responsibly",
-          textStart: "You should seek data protection advice on your use of AI",
-          textEnd: "minimise the risk of privacy intrusion from the outset",
+            "Yes, but only lawfully. Identify a purpose and lawful basis for each distinct processing operation (training and deployment may need different bases), protect personal data from the outset, and give people privacy information before you use their data to train or apply a model. Seek data protection advice early. ICO AI guidance is currently under review after the Data (Use and Access) Act.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section: "What should we consider when deciding lawful bases?",
+              snippet:
+                "The development and deployment of AI systems involve processing personal data in different ways for different purposes. You must break down and separate each distinct processing operation, and identify the purpose and an appropriate lawful basis for each one, in order to comply with the principle of lawfulness.",
+              textStart:
+                "You must break down and separate each distinct processing operation",
+              textEnd:
+                "identify the purpose and an appropriate lawful basis for each one",
+            }),
+            cite(ICO_AI_TRANSPARENCY, {
+              role: "supporting",
+              section: "What are our transparency obligations towards people?",
+              snippet:
+                "If you collect data directly from individuals, you must provide that privacy information to them at the time you collect it, before you use it to train a model or apply that model on those individuals.",
+              textStart:
+                "you must provide that privacy information to them at the time you collect it",
+              textEnd:
+                "before you use it to train a model or apply that model on those individuals",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "What privacy means in practice",
+              snippet:
+                "You must design and build privacy into your project from the start. This includes: the very first decisions you make about what information you intend to record; every way that the data, or AI system built using this data, is used throughout your project; the safe decommissioning of the system and data set.",
+              textStart:
+                "You must design and build privacy into your project from the start",
+              textEnd: "privacy by design and default",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section:
+                "Principle 2: You use AI lawfully, ethically and responsibly",
+              snippet:
+                "You should seek data protection advice on your use of AI. This may be from your lawyers or your data protection officer. AI systems can process personal data, so you need to consider how you protect this personal data, be compliant with data protection legislation, and minimise the risk of privacy intrusion from the outset.",
+              textStart: "You should seek data protection advice on your use of AI",
+              textEnd: "minimise the risk of privacy intrusion from the outset",
+            }),
+          ],
         },
         {
           id: "dpia",
           question:
             "Do I need a Data Protection Impact Assessment (DPIA) before using AI?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Before implementing AI solutions you need to undertake a DPIA. UK GDPR also requires a DPIA for certain high-risk processing, and the ICO requires one when using innovative technologies.",
-          snippet:
-            "Before implementing AI solutions, you need to undertake a data protection impact assessment (DPIA). This involves an assessment of data protection and privacy risks, and the implementation of appropriate technical and organisational measures to sufficiently mitigate them.",
-          section: "Lawfulness and purpose limitation",
-          textStart:
-            "Before implementing AI solutions, you need to undertake a data protection impact assessment (DPIA)",
-          textEnd: "sufficiently mitigate them",
+            "In most cases, yes. The ICO says use of AI will usually be high-risk processing and therefore require a DPIA. A DPIA is always required for systematic automated evaluation that produces legal or similarly significant effects, large-scale special category processing, or large-scale monitoring of public spaces. If you decide a particular AI use is not high risk, document why. If residual high risk remains, consult the ICO before you start.",
+          citations: [
+            cite(ICO_AI_ACCOUNTABILITY, {
+              role: "primary",
+              section:
+                "What do we need to consider when undertaking data protection impact assessments for AI?",
+              snippet:
+                "In the vast majority of cases, the use of AI will involve a type of processing likely to result in a high risk to individuals’ rights and freedoms, and will therefore trigger the legal requirement for you to undertake a DPIA. You will need to make this assessment on a case by case basis. In those cases where you assess that a particular use of AI does not involve high risk processing, you still need to document how you have made this assessment.",
+              textStart:
+                "the use of AI will involve a type of processing likely to result in a high risk",
+              textEnd: "you still need to document how you have made this assessment",
+            }),
+            cite(ICO_AI_ACCOUNTABILITY, {
+              role: "supporting",
+              section: "How do we decide whether to do a DPIA?",
+              snippet:
+                "Article 35(3)(a) of the UK GDPR requires you to undertake a DPIA if your use of AI involves: systematic and extensive evaluation of personal aspects based on automated processing, including profiling, on which decisions are made that produce legal or similarly significant effects; large-scale processing of special categories of personal data; or systematic monitoring of publicly-accessible areas on a large scale.",
+              textStart:
+                "systematic and extensive evaluation of personal aspects based on automated processing",
+              textEnd:
+                "systematic monitoring of publicly-accessible areas on a large scale",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Lawfulness and purpose limitation",
+              snippet:
+                "Before implementing AI solutions, you need to undertake a data protection impact assessment (DPIA). This involves an assessment of data protection and privacy risks, and the implementation of appropriate technical and organisational measures to sufficiently mitigate them.",
+              textStart:
+                "Before implementing AI solutions, you need to undertake a data protection impact assessment (DPIA)",
+              textEnd: "sufficiently mitigate them",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Data protection-related transparency",
+              snippet:
+                "You need to carry out a Data Protection Impact Assessment (DPIA) before you process personal data when the processing is likely to result in a high risk to the rights and freedoms of individuals. It’s good practice to publish your completed DPIA to demonstrate that you’re taking the appropriate precautions to protect personal data and ensure your system is fair.",
+              textStart: "It’s good practice to publish your completed DPIA",
+              textEnd: "ensure your system is fair",
+            }),
+          ],
         },
         {
           id: "reuse-personal-data",
           question:
             "Can I reuse existing personal data to train or run an AI system?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Only if the new purpose is compatible with the original purpose for collection. Assess expectations, data type, impact on people, and whether extra safeguards are needed.",
-          snippet:
-            "AI systems often reuse personal data for new purposes that are different from those for which it was originally collected. This may cause tension with the purpose limitation of the UK GDPR. Repurposing of personal data is only legitimate if a new purpose is ‘compatible’ with the purpose for which the data was originally collected.",
-          section: "Lawfulness and purpose limitation",
-          textStart:
-            "Repurposing of personal data is only legitimate if a new purpose is",
-          textEnd:
-            "purpose for which the data was originally collected",
+            "Only with a lawful basis for that new purpose. Training and deployment are often distinct purposes with different risks, so they may need different lawful bases. Playbook purpose-limitation still applies: repurposing personal data is only legitimate if the new purpose is compatible with the original collection purpose. Public authorities usually cannot rely on legitimate interests for their public tasks.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section:
+                "How should we distinguish purposes between AI development and deployment?",
+              snippet:
+                "In many cases, when determining your purpose(s) and lawful basis, it will make sense for you to separate the research and development phase (including conceptualisation, design, training and model selection) of AI systems from the deployment phase. This is because these are distinct and separate purposes, with different circumstances and risks.",
+              textStart: "separate the research and development phase",
+              textEnd:
+                "distinct and separate purposes, with different circumstances and risks",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Lawfulness and purpose limitation",
+              snippet:
+                "AI systems often reuse personal data for new purposes that are different from those for which it was originally collected. This may cause tension with the purpose limitation of the UK GDPR. Repurposing of personal data is only legitimate if a new purpose is ‘compatible’ with the purpose for which the data was originally collected.",
+              textStart:
+                "Repurposing of personal data is only legitimate if a new purpose is",
+              textEnd: "purpose for which the data was originally collected",
+            }),
+            cite(ICO_AI_LAWFULNESS, {
+              role: "supporting",
+              section: "Can we rely on legitimate interests?",
+              snippet:
+                "Additionally, if you are a public authority you can only rely on legitimate interests if you are processing for a legitimate reason other than performing your tasks as a public authority.",
+              textStart:
+                "if you are a public authority you can only rely on legitimate interests",
+              textEnd: "other than performing your tasks as a public authority",
+            }),
+          ],
         },
         {
           id: "automated-decisions",
-          question:
-            "Can AI make automated decisions that affect people?",
+          question: "Can AI make automated decisions that affect people?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Solely automated decisions with legal or similarly significant effects are restricted under UK GDPR Article 22. Where AI affects someone’s legal status or rights, it must only support decisions made by a human.",
-          snippet:
-            "Article 22 currently prohibits decision(s) based solely on automated processing that have legal or similarly significant consequences for individuals. Services using AI that affect a person’s legal status or their legal rights must only use AI to support decisions that must be made by a human decision maker.",
-          section: "Human oversight",
-          textStart:
-            "Article 22 currently prohibits decision(s) based solely on automated processing",
-          textEnd: "made by a human decision maker",
+            "Solely automated decisions with legal or similarly significant effects are restricted under UK GDPR Article 22. You can only do this where it is necessary for a contract, authorised by law, or based on explicit consent — and you must tell people, offer a simple way to request human intervention or challenge the decision, and check the system regularly. The Data and AI Ethics Framework also says avoid fully automated decisions that significantly affect people, and keep a person making the final decision in those cases.",
+          citations: [
+            cite(ICO_AI_ARTICLE_22, {
+              role: "primary",
+              section: "What is the purpose of Article 22?",
+              snippet:
+                "You can only carry out this type of decision-making where the decision is: necessary for the entry into or performance of a contract; authorised by law that applies to you; or based on the individual’s explicit consent.",
+              textStart:
+                "necessary for the entry into or performance of a contract",
+              textEnd: "based on the individual’s explicit consent",
+            }),
+            cite(ICO_AI_ARTICLE_22, {
+              role: "supporting",
+              section: "What is the purpose of Article 22?",
+              snippet:
+                "You therefore have to identify if your processing falls under Article 22 and, where it does, make sure that you: give individuals information about the processing; introduce simple ways for them to request human intervention or challenge a decision; and carry out regular checks to make sure your systems are working as intended.",
+              textStart: "give individuals information about the processing",
+              textEnd:
+                "regular checks to make sure your systems are working as intended",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Maintain human oversight",
+              snippet:
+                "Avoid fully automated decisions where the outcome could significantly affect individuals or groups, and making sure a person makes the final decision in these cases.",
+              textStart:
+                "Avoid fully automated decisions where the outcome could significantly affect individuals or groups",
+              textEnd: "a person makes the final decision in these cases",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Human oversight",
+              snippet:
+                "Article 22 currently prohibits decision(s) based solely on automated processing that have legal or similarly significant consequences for individuals. Services using AI that affect a person’s legal status or their legal rights must only use AI to support decisions that must be made by a human decision maker.",
+              textStart:
+                "Article 22 currently prohibits decision(s) based solely on automated processing",
+              textEnd: "made by a human decision maker",
+            }),
+          ],
         },
         {
           id: "human-oversight",
           question:
             "How much human oversight do I need when using AI in decision making?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "You need meaningful human control at the right stages, including validation of high-risk decisions and ways for users to report issues and trigger human review.",
-          snippet:
-            "You need to monitor the AI’s behaviour and have plans in place to prevent any harmful effects on users. This includes ensuring that humans validate any high-risk decisions influenced by AI and that you have strategies for meaningful intervention.",
-          section: "Principle 4: You have meaningful human control at the right stages",
-          textStart:
-            "ensuring that humans validate any high-risk decisions influenced by AI",
-          textEnd: "strategies for meaningful intervention",
+            "You need meaningful human control, not a rubber stamp. The ICO says meaningful human review usually comes after the automated decision and must relate to the actual outcome — merely feeding data into a model is not enough. The Playbook still requires humans to validate high-risk decisions and provide ways to intervene. People remain responsible for decisions they make with AI support.",
+          citations: [
+            cite(ICO_AI_ARTICLE_22, {
+              role: "primary",
+              section: "When does the human-determined decision take place?",
+              snippet:
+                "In most cases, for human review to be meaningful, human involvement should come after the automated decision has taken place and it must relate to the actual outcome.",
+              textStart:
+                "for human review to be meaningful, human involvement should come after the automated decision",
+              textEnd: "it must relate to the actual outcome",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section:
+                "Principle 4: You have meaningful human control at the right stages",
+              snippet:
+                "You need to monitor the AI’s behaviour and have plans in place to prevent any harmful effects on users. This includes ensuring that humans validate any high-risk decisions influenced by AI and that you have strategies for meaningful intervention.",
+              textStart:
+                "ensuring that humans validate any high-risk decisions influenced by AI",
+              textEnd: "strategies for meaningful intervention",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Maintain human oversight",
+              snippet:
+                "People must be able to monitor and influence how systems work, even when the system is partially or fully automated. People should remain responsible for the decisions they make when these are supported or informed by an AI system.",
+              textStart:
+                "People should remain responsible for the decisions they make",
+              textEnd: "supported or informed by an AI system",
+            }),
+          ],
         },
         {
           id: "tell-the-public",
           question:
             "Do I need to tell the public when we are using AI or algorithms?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Yes. Be open about where and how algorithms and AI are used in official duties, and clearly identify automated responses such as chatbot replies.",
-          snippet:
-            "You should be open with the public about where and how algorithms and AI systems are being used in official duties. If you’re a central government department or an arm’s length body within scope, you’re required to use the Algorithmic Transparency Recording Standard (ATRS).",
-          section: "Principle 7: You are open and collaborative",
-          textStart:
-            "You should be open with the public about where and how algorithms and AI systems are being used",
-          textEnd: "Algorithmic Transparency Recording Standard (ATRS)",
+            "Yes. Be open about where and how algorithms and AI are used. In-scope organisations must publish ATRS records for relevant tools. The Data and AI Ethics Framework also says give appropriate disclosure when AI has produced an output, internally and externally. User-facing services have extra Service Manual rules where AI affects data or outcomes.",
+          citations: [
+            cite(ATRS_HUB, {
+              role: "primary",
+              section: "Algorithmic Transparency Recording Standard Hub",
+              snippet:
+                "The ATRS is mandatory for all government departments, and for arm’s-length bodies (ALBs) which deliver public or frontline services, or directly interact with the general public.",
+              textStart: "The ATRS is mandatory for all government departments",
+              textEnd:
+                "directly interact with the general public",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Recommended actions",
+              snippet:
+                "give appropriate disclosure when AI has been used to produce an output – this concerns both internal and external uses of AI",
+              textStart:
+                "give appropriate disclosure when AI has been used to produce an output",
+              textEnd: "both internal and external uses of AI",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Principle 7: You are open and collaborative",
+              snippet:
+                "You should be open with the public about where and how algorithms and AI systems are being used in official duties. If you’re a central government department or an arm’s length body within scope, you’re required to use the Algorithmic Transparency Recording Standard (ATRS).",
+              textStart:
+                "You should be open with the public about where and how algorithms and AI systems are being used",
+              textEnd: "Algorithmic Transparency Recording Standard (ATRS)",
+            }),
+          ],
         },
         {
           id: "atrs",
           question:
             "Do I need to use the Algorithmic Transparency Recording Standard (ATRS)?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Central government departments and in-scope arm’s length bodies must use ATRS for algorithmic tools in decision-making. Other public bodies are encouraged to use it too.",
-          snippet:
-            "If you’re a central government department or an arm’s length body within scope, you’re required to use the Algorithmic Transparency Recording Standard (ATRS). This means you must document information about any algorithmic tools you use in decision-making processes and make it clearly accessible to the public.",
-          section: "Principle 7: You are open and collaborative",
-          textStart:
-            "you’re required to use the Algorithmic Transparency Recording Standard (ATRS)",
-          textEnd: "make it clearly accessible to the public",
+            "If you are a government department, or an ALB that delivers public or frontline services or interacts with the public, ATRS is mandatory for algorithmic tools that significantly influence a decision with public effect, or that interact directly with the public. Other public bodies are recommended to use it. Mandatory publication applies at beta/pilot or production; earlier stages are optional.",
+          citations: [
+            cite(ATRS_HUB, {
+              role: "primary",
+              section: "Algorithmic Transparency Recording Standard Hub",
+              snippet:
+                "The ATRS is mandatory for all government departments, and for arm’s-length bodies (ALBs) which deliver public or frontline services, or directly interact with the general public. The ATRS remains recommended by the Data Standards Authority for use in the broader public sector.",
+              textStart: "The ATRS is mandatory for all government departments",
+              textEnd:
+                "recommended by the Data Standards Authority for use in the broader public sector",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section:
+                "4.2 For which tools must I complete an algorithmic transparency record?",
+              snippet:
+                "The mandatory requirement to publish an ATRS record applies to algorithmic tools that either: have a significant influence on a decision-making process with public effect, or directly interact with the general public.",
+              textStart: "have a significant influence on a decision-making process with public effect",
+              textEnd: "directly interact with the general public",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section:
+                "4.3 At which stage in a tool’s development lifecycle should an ATRS record be created?",
+              snippet:
+                "The mandatory requirement to publish an ATRS record applies to tools that are in Beta/Pilot or Production phase. Teams are welcome to submit records for tools in earlier stages of the lifecycle, but it is not mandatory to do so.",
+              textStart: "applies to tools that are in Beta/Pilot or Production phase",
+              textEnd: "not mandatory to do so",
+            }),
+          ],
+        },
+        {
+          id: "atrs-which-organisations",
+          question:
+            "Which organisations must use the Algorithmic Transparency Recording Standard?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "ATRS is mandatory for all government departments, and for arm’s-length bodies that deliver public or frontline services or interact directly with the general public. The Data Standards Authority recommends it for the rest of the public sector.",
+          citations: [
+            cite(ATRS_HUB, {
+              role: "primary",
+              section: "Algorithmic Transparency Recording Standard Hub",
+              snippet:
+                "The ATRS is mandatory for all government departments, and for arm’s-length bodies (ALBs) which deliver public or frontline services, or directly interact with the general public. The ATRS remains recommended by the Data Standards Authority for use in the broader public sector.",
+              textStart: "The ATRS is mandatory for all government departments",
+              textEnd:
+                "recommended by the Data Standards Authority for use in the broader public sector",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Using the Algorithmic Transparency Recording Standard",
+              snippet:
+                "All central government departments and arm’s length bodies that provide public or frontline services, or routinely interact with the general public, must use the ATRS. This involves documenting information about any algorithmic tools used in decision-making processes, and making this clearly accessible to the public.",
+              textStart: "must use the ATRS",
+              textEnd: "making this clearly accessible to the public",
+            }),
+          ],
+        },
+        {
+          id: "atrs-which-tools",
+          question:
+            "Which algorithmic tools need an ATRS record?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Publish a record for tools that significantly influence a decision-making process with public effect, or that interact directly with the public. Significant influence includes assisting, supplementing or fully automating a decision — for example triaging or scoring. It is aimed at operational decisions about people, organisations or groups, not analytical models used only for broad policy-making. Even where a tool is out of strict scope, the ethics framework recommends publishing a record.",
+          citations: [
+            cite(ATRS_SCOPE, {
+              role: "primary",
+              section:
+                "4.2 For which tools must I complete an algorithmic transparency record?",
+              snippet:
+                "The mandatory requirement to publish an ATRS record applies to algorithmic tools that either: have a significant influence on a decision-making process with public effect, or directly interact with the general public.",
+              textStart:
+                "have a significant influence on a decision-making process with public effect",
+              textEnd: "directly interact with the general public",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section:
+                "4.2 For which tools must I complete an algorithmic transparency record?",
+              snippet:
+                "‘Significant influence’ includes where an algorithmic tool meaningfully assists, supplements, or fully automates a decision-making process. This could be a tool that plays a triaging or scoring function within a wider process.",
+              textStart:
+                "meaningfully assists, supplements, or fully automates a decision-making process",
+              textEnd: "triaging or scoring function within a wider process",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section:
+                "4.2 For which tools must I complete an algorithmic transparency record?",
+              snippet:
+                "Note that this is intended to apply to situations where an algorithmic tool is influencing specific operational decisions about individuals, organisations or groups, not where a tool is an analytical model supporting broad government policy-making.",
+              textStart:
+                "influencing specific operational decisions about individuals, organisations or groups",
+              textEnd:
+                "analytical model supporting broad government policy-making",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Using the Algorithmic Transparency Recording Standard",
+              snippet:
+                "Even where a tool does not strictly fall within scope of the ATRS, we recommend publishing an ATRS record.",
+              textStart:
+                "Even where a tool does not strictly fall within scope of the ATRS",
+              textEnd: "we recommend publishing an ATRS record",
+            }),
+          ],
+        },
+        {
+          id: "atrs-lifecycle-stage",
+          question:
+            "At what stage in development must I publish an ATRS record?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Publication is mandatory once a tool is in beta/pilot or production. You may submit a record earlier, but you do not have to.",
+          citations: [
+            cite(ATRS_SCOPE, {
+              role: "primary",
+              section:
+                "4.3 At which stage in a tool’s development lifecycle should an ATRS record be created?",
+              snippet:
+                "The mandatory requirement to publish an ATRS record applies to tools that are in Beta/Pilot or Production phase. Teams are welcome to submit records for tools in earlier stages of the lifecycle, but it is not mandatory to do so.",
+              textStart:
+                "applies to tools that are in Beta/Pilot or Production phase",
+              textEnd: "not mandatory to do so",
+            }),
+          ],
+        },
+        {
+          id: "atrs-exemptions-redact",
+          question:
+            "Can I skip an ATRS record if some of the information is exempt from FOI?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "No. ATRS does not require you to publish information that would be exempt under FOIA, the Environmental Information Regulations or data protection law. Redact those fields with a brief explanation and still publish the record. Partial publication is preferable to publishing nothing, especially if some information is already public.",
+          citations: [
+            cite(ATRS_SCOPE, {
+              role: "primary",
+              section: "5.1 What information should organisations not publish?",
+              snippet:
+                "As a general rule, this ATRS Scope and Exemptions Policy does not require the publication of information that would be subject to an exemption under access to information legislation, i.e. the FOIA, Environmental Information Regulations and data protection legislation.",
+              textStart:
+                "does not require the publication of information that would be subject to an exemption",
+              textEnd:
+                "FOIA, Environmental Information Regulations and data protection legislation",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section:
+                "Understanding what information should and should not be published",
+              snippet:
+                "In general, publishing an ATRS record and redacting certain fields with a brief explanation of why this has been done is preferable to not publishing an ATRS record at all, particularly when partial information about the algorithmic tool is already in the public domain.",
+              textStart:
+                "publishing an ATRS record and redacting certain fields",
+              textEnd: "preferable to not publishing an ATRS record at all",
+            }),
+          ],
+        },
+        {
+          id: "atrs-how-to-publish",
+          question: "How do I publish an ATRS record?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Complete the ATRS template and email it to algorithmic-transparency@dsit.gov.uk, or send it to your organisation’s single point of contact. The ATRS team checks readability and may suggest amendments. You must also confirm written internal clearance — at least from the operating team, the SRO and communications/press — before it is published on GOV.UK.",
+          citations: [
+            cite(ATRS_PUBLISH, {
+              role: "primary",
+              section:
+                "Publish a record of algorithmic tools using the ATRS",
+              snippet:
+                "For any algorithmic tools covered by this commitment, you must: complete a record using the ATRS record template; submit the record to the ATRS team for review at algorithmic-transparency@dsit.gov.uk.",
+              textStart: "complete a record using the ATRS record template",
+              textEnd: "submit the record to the ATRS team for review",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section: "Publishing your ATRS record",
+              snippet:
+                "Email your completed ATRS template to algorithmic-transparency@dsit.gov.uk (or send to your SPOC, if your organisation has one). The ATRS team will check for readability and provide feedback or suggested amendments if necessary.",
+              textStart:
+                "Email your completed ATRS template to algorithmic-transparency@dsit.gov.uk",
+              textEnd: "provide feedback or suggested amendments if necessary",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section: "Obtaining clearance",
+              snippet:
+                "The ATRS team requires written confirmation that your ATRS record has gone through all appropriate internal signoff procedures before publishing it to the GOV.UK repository. At a minimum, this should include clearance by: the team responsible for deploying/operating the algorithmic tool; the SRO for the tool; the communications/press team.",
+              textStart:
+                "written confirmation that your ATRS record has gone through all appropriate internal signoff",
+              textEnd: "the communications/press team",
+            }),
+          ],
+        },
+        {
+          id: "atrs-local-government",
+          question:
+            "Can local government, police or other public bodies publish ATRS records?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Yes. ATRS is recommended across the public sector. Local government, police forces and other bodies can complete a template and email it directly to the ATRS team. The ethics framework also recommends publishing a record even where a tool is out of strict mandatory scope.",
+          citations: [
+            cite(ATRS_GUIDANCE, {
+              role: "primary",
+              section: "How do I know if I should complete an ATRS record?",
+              snippet:
+                "However, the ATRS is recommended by the Data Standards Authority for use across the entire public sector and we have welcomed ATRS records from local government, police forces and other broader public sector organisations. If you are from such an organisation, you can complete an ATRS template and email it to algorithmic-transparency@dsit.gov.uk directly.",
+              textStart:
+                "welcomed ATRS records from local government, police forces",
+              textEnd:
+                "email it to algorithmic-transparency@dsit.gov.uk directly",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Using the Algorithmic Transparency Recording Standard",
+              snippet:
+                "Even where a tool does not strictly fall within scope of the ATRS, we recommend publishing an ATRS record.",
+              textStart:
+                "Even where a tool does not strictly fall within scope of the ATRS",
+              textEnd: "we recommend publishing an ATRS record",
+            }),
+          ],
+        },
+        {
+          id: "atrs-update-retire",
+          question:
+            "When should I update or retire an ATRS record?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "If substantive details change, update the template, repeat internal clearance, and send it to the ATRS team asking for the published record to be updated. If a previously recorded tool is retired, submit an update that sets the phase field to ‘Retired’.",
+          citations: [
+            cite(ATRS_GUIDANCE, {
+              role: "primary",
+              section: "Updating your ATRS record",
+              snippet:
+                "Should substantive details change in relation to your ATRS tool, you should update the ATRS template, go through internal clearance again, and send the updated template to algorithmic-transparency@dsit.gov.uk asking for your record to be updated accordingly.",
+              textStart:
+                "you should update the ATRS template, go through internal clearance again",
+              textEnd: "asking for your record to be updated accordingly",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section:
+                "4.3 At which stage in a tool’s development lifecycle should an ATRS record be created?",
+              snippet:
+                "For tools that have previously been in use and had a record created for them and which are later being retired, the responsible team should submit an updated record changing the information in the phase field to ‘Retired’.",
+              textStart:
+                "submit an updated record changing the information in the phase field to ‘Retired’",
+              textEnd: null,
+            }),
+          ],
+        },
+        {
+          id: "atrs-spoc-sro",
+          question:
+            "Who in my organisation owns ATRS records?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "In-scope organisations should have a single point of contact (SPOC) who coordinates with the ATRS team on identifying tools, drafting and publishing records. Name an SRO as the primary risk owner. On the ATRS record, the SRO should be a role title, not a named person.",
+          citations: [
+            cite(ATRS_GUIDANCE, {
+              role: "primary",
+              section: "How do I know if I should complete an ATRS record?",
+              snippet:
+                "If your organisation is within the mandatory scope of the ATRS policy, it should have a single point of contact (SPOC) whose role is to coordinate with the ATRS team on identifying in-scope algorithmic tools, drafting and publishing records.",
+              textStart: "it should have a single point of contact (SPOC)",
+              textEnd: "drafting and publishing records",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Set clear roles and responsibilities",
+              snippet:
+                "You need strong oversight and clear responsibilities to ensure accountability across the life cycle of your data or AI project. You must set out who is responsible at each stage of the project. This includes naming senior responsible owners (SROs)– as the primary risk owners for the project.",
+              textStart:
+                "You must set out who is responsible at each stage of the project",
+              textEnd:
+                "senior responsible owners (SROs)– as the primary risk owners for the project",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section: "Owner and responsibility (Tier 2)",
+              snippet:
+                "The SRO should be a role title, not a named individual, for business continuity and security purposes. It should be the role which is ultimately accountable for the tool in an operational context.",
+              textStart:
+                "The SRO should be a role title, not a named individual",
+              textEnd:
+                "ultimately accountable for the tool in an operational context",
+            }),
+          ],
         },
         {
           id: "bias-fairness",
@@ -543,6 +1163,15 @@ const categories = [
               textStart:
                 "effective bias management requires continuous integration into MLOps workflows",
               textEnd: "development through production monitoring",
+            }),
+            cite(ICO_AI_FAIRNESS, {
+              role: "supporting",
+              section: "How does data protection approach fairness?",
+              snippet:
+                "In simple terms, fairness means you should only process personal data in ways that people would reasonably expect and not use it in any way that could have unjustified adverse effects on them. Any processing of personal data using AI that leads to unjust discrimination between people, will violate the fairness principle.",
+              textStart:
+                "only process personal data in ways that people would reasonably expect",
+              textEnd: "will violate the fairness principle",
             }),
             cite(PLAYBOOK, {
               role: "contrasting",
@@ -572,26 +1201,384 @@ const categories = [
           id: "equality-human-rights",
           question:
             "What equality and human rights issues should I consider when using AI?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Consider Equality Act and Public Sector Equality Duty obligations, and whether AI may affect Convention rights such as privacy or freedom of expression. Assess equality impacts early.",
-          snippet:
-            "Lawyers can help you navigate the equality issues raised by the use of AI in government – for example, obligations arising under the Equality Act 2010 and the Public Sector Equality Duty. Conducting an assessment of the equality impacts of your use of AI can also be one way to guard against bias, which is particularly important in the context of AI.",
-          section: "Equality issues",
-          textStart:
-            "obligations arising under the Equality Act 2010 and the Public Sector Equality Duty",
-          textEnd: "guard against bias",
+            "Comply with the Equality Act 2010 and Public Sector Equality Duty. Assess equality impact before you start (including procurement), during implementation and after go-live. Document this in an Equality Impact Assessment and consider publishing it. Lawyers can help with Convention rights such as privacy or freedom of expression.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Understand impacted groups",
+              snippet:
+                "You must assess the equality impact of your project: before making any decisions to initiate a project, including procuring and development; during implementation; after implementation.",
+              textStart:
+                "before making any decisions to initiate a project, including procuring and development",
+              textEnd: "after implementation",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Fairness-related transparency",
+              snippet:
+                "You must comply with the Public Sector Equality Duty and Equality Act 2010. This means you need to carefully consider and document the equality impact of processing personal data where it can be used to identify individuals as having a protected characteristic. This document is often referred to as an Equality Impact Assessment (EIA).",
+              textStart:
+                "carefully consider and document the equality impact of processing personal data",
+              textEnd: "Equality Impact Assessment (EIA)",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Equality issues",
+              snippet:
+                "Lawyers can help you navigate the equality issues raised by the use of AI in government – for example, obligations arising under the Equality Act 2010 and the Public Sector Equality Duty. Conducting an assessment of the equality impacts of your use of AI can also be one way to guard against bias, which is particularly important in the context of AI.",
+              textStart:
+                "obligations arising under the Equality Act 2010 and the Public Sector Equality Duty",
+              textEnd: "guard against bias",
+            }),
+          ],
         },
         {
           id: "legal-advice",
           question: "Do I need legal advice before starting an AI project?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Yes — seek legal advice early on development and use of AI, including equalities, fairness, intellectual property and other legal issues. Explain aims, capabilities and risks when you contact lawyers.",
-          snippet:
-            "Your use of AI tools must be lawful and responsible. You should seek legal advice on the development and use of AI and engage with compliance, legal and data protection experts in your organisation early in your journey, including during product development.",
-          section: "Principle 2: You use AI lawfully, ethically and responsibly",
-          textStart:
-            "You should seek legal advice on the development and use of AI",
-          textEnd: "including during product development",
+            "Yes. Seek legal, compliance and data protection advice early — including during product development. The ICO is clear that senior management and DPOs cannot leave AI data-protection issues to engineers alone. Cover equalities, fairness, intellectual property and other legal issues.",
+          citations: [
+            cite(PLAYBOOK, {
+              role: "primary",
+              section:
+                "Principle 2: You use AI lawfully, ethically and responsibly",
+              snippet:
+                "Your use of AI tools must be lawful and responsible. You should seek legal advice on the development and use of AI and engage with compliance, legal and data protection experts in your organisation early in your journey, including during product development.",
+              textStart:
+                "You should seek legal advice on the development and use of AI",
+              textEnd: "including during product development",
+            }),
+            cite(ICO_AI_ACCOUNTABILITY, {
+              role: "supporting",
+              section: "How should we approach AI governance and risk management?",
+              snippet:
+                "You cannot delegate these issues to data scientists or engineering teams. Your senior management, including DPOs, are also accountable for understanding and addressing them appropriately and promptly (although overall accountability for data protection compliance lies with the controller, ie your organisation).",
+              textStart:
+                "You cannot delegate these issues to data scientists or engineering teams",
+              textEnd:
+                "overall accountability for data protection compliance lies with the controller",
+            }),
+          ],
+        },
+        {
+          id: "lawful-basis-ai",
+          question:
+            "What lawful basis can a public authority use for AI that processes personal data?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Identify a purpose and lawful basis for each distinct processing operation. If you use AI in the exercise of official authority or to perform a public task set out by law, that is often the relevant basis for delivering public services. Public authorities can rely on legitimate interests only for a reason other than performing their tasks as a public authority. ICO AI guidance is under review after the Data (Use and Access) Act.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section: "What should we consider when deciding lawful bases?",
+              snippet:
+                "The development and deployment of AI systems involve processing personal data in different ways for different purposes. You must break down and separate each distinct processing operation, and identify the purpose and an appropriate lawful basis for each one, in order to comply with the principle of lawfulness.",
+              textStart:
+                "You must break down and separate each distinct processing operation",
+              textEnd:
+                "identify the purpose and an appropriate lawful basis for each one",
+            }),
+            cite(ICO_AI_LAWFULNESS, {
+              role: "supporting",
+              section:
+                "Can we rely on legal obligation, public task or vital interests?",
+              snippet:
+                "Similarly, if you use AI as part of the exercise of your official authority, or to perform a task in the public interest set out by law, the necessary processing of personal data involved may be based on those grounds. This is likely to be relevant to public authorities using AI to deliver public services.",
+              textStart:
+                "if you use AI as part of the exercise of your official authority",
+              textEnd:
+                "relevant to public authorities using AI to deliver public services",
+            }),
+            cite(ICO_AI_LAWFULNESS, {
+              role: "supporting",
+              section: "Can we rely on legitimate interests?",
+              snippet:
+                "Additionally, if you are a public authority you can only rely on legitimate interests if you are processing for a legitimate reason other than performing your tasks as a public authority.",
+              textStart:
+                "if you are a public authority you can only rely on legitimate interests",
+              textEnd:
+                "other than performing your tasks as a public authority",
+            }),
+          ],
+        },
+        {
+          id: "separate-lawful-basis-train-deploy",
+          question:
+            "Do training and deploying an AI model need separate lawful bases?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Often yes. The ICO says it usually makes sense to separate research and development (including training and model selection) from deployment, because they are distinct purposes with different circumstances and risks. Identify a purpose and lawful basis for each operation.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section:
+                "How should we distinguish purposes between AI development and deployment?",
+              snippet:
+                "In many cases, when determining your purpose(s) and lawful basis, it will make sense for you to separate the research and development phase (including conceptualisation, design, training and model selection) of AI systems from the deployment phase. This is because these are distinct and separate purposes, with different circumstances and risks.",
+              textStart: "separate the research and development phase",
+              textEnd:
+                "distinct and separate purposes, with different circumstances and risks",
+            }),
+            cite(ICO_AI_LAWFULNESS, {
+              role: "supporting",
+              section: "What should we consider when deciding lawful bases?",
+              snippet:
+                "The development and deployment of AI systems involve processing personal data in different ways for different purposes. You must break down and separate each distinct processing operation, and identify the purpose and an appropriate lawful basis for each one, in order to comply with the principle of lawfulness.",
+              textStart:
+                "You must break down and separate each distinct processing operation",
+              textEnd:
+                "identify the purpose and an appropriate lawful basis for each one",
+            }),
+          ],
+        },
+        {
+          id: "consent-for-ai",
+          question:
+            "Can I rely on consent to process personal data in an AI system?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Only if you have a direct relationship with the people whose data you process, and consent is freely given, specific, informed, unambiguous and shown by a clear affirmative act. People must have a genuine choice. Consent is often hard to rely on for public services where people cannot reasonably refuse. For solely automated decisions under Article 22, explicit consent is one of the three permitted conditions — and still needs the extra safeguards.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section: "Can we rely on consent?",
+              snippet:
+                "Consent may be an appropriate lawful basis in cases where you have a direct relationship with the individuals whose data you want to process. However, you must ensure that consent is freely given, specific, informed and unambiguous, and involves a clear affirmative act on the part of the individuals. For consent to apply, individuals must have a genuine choice about whether you can use their data.",
+              textStart:
+                "consent is freely given, specific, informed and unambiguous",
+              textEnd:
+                "individuals must have a genuine choice about whether you can use their data",
+            }),
+            cite(ICO_AI_ARTICLE_22, {
+              role: "supporting",
+              section: "What is the purpose of Article 22?",
+              snippet:
+                "You can only carry out this type of decision-making where the decision is: necessary for the entry into or performance of a contract; authorised by law that applies to you; or based on the individual’s explicit consent.",
+              textStart:
+                "necessary for the entry into or performance of a contract",
+              textEnd: "based on the individual’s explicit consent",
+            }),
+          ],
+        },
+        {
+          id: "dp-fairness-ai",
+          question:
+            "What does data-protection fairness require of an AI system?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Process personal data only in ways people would reasonably expect, and not in ways that are unduly detrimental, unexpected or misleading. Any AI processing that leads to unjust discrimination violates the fairness principle. This sits alongside — and is not the same as — wider equality and bias-management duties.",
+          citations: [
+            cite(ICO_AI_FAIRNESS, {
+              role: "primary",
+              section: "How does data protection approach fairness?",
+              snippet:
+                "In simple terms, fairness means you should only process personal data in ways that people would reasonably expect and not use it in any way that could have unjustified adverse effects on them. You should not process personal data in ways that are unduly detrimental, unexpected or misleading to the individuals concerned.",
+              textStart:
+                "only process personal data in ways that people would reasonably expect",
+              textEnd:
+                "unduly detrimental, unexpected or misleading to the individuals concerned",
+            }),
+            cite(ICO_AI_FAIRNESS, {
+              role: "supporting",
+              section: "How does data protection approach fairness?",
+              snippet:
+                "Any processing of personal data using AI that leads to unjust discrimination between people, will violate the fairness principle.",
+              textStart:
+                "leads to unjust discrimination between people, will violate the fairness principle",
+              textEnd: null,
+            }),
+          ],
+        },
+        {
+          id: "article-22-safeguards",
+          question:
+            "What safeguards does Article 22 require for solely automated decisions?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "You may only take a solely automated decision with legal or similarly significant effects if it is necessary for a contract, authorised by law, or based on explicit consent. Then you must tell people about the processing, give them simple ways to request human intervention or challenge the decision, and run regular checks that the system works as intended. Meaningful human review usually happens after the automated decision and must relate to the actual outcome. If the tool is in ATRS scope, complete the Article 22 field on the record.",
+          citations: [
+            cite(ICO_AI_ARTICLE_22, {
+              role: "primary",
+              section: "What is the purpose of Article 22?",
+              snippet:
+                "You therefore have to identify if your processing falls under Article 22 and, where it does, make sure that you: give individuals information about the processing; introduce simple ways for them to request human intervention or challenge a decision; and carry out regular checks to make sure your systems are working as intended.",
+              textStart: "give individuals information about the processing",
+              textEnd:
+                "regular checks to make sure your systems are working as intended",
+            }),
+            cite(ICO_AI_ARTICLE_22, {
+              role: "supporting",
+              section: "What is the purpose of Article 22?",
+              snippet:
+                "You can only carry out this type of decision-making where the decision is: necessary for the entry into or performance of a contract; authorised by law that applies to you; or based on the individual’s explicit consent.",
+              textStart:
+                "necessary for the entry into or performance of a contract",
+              textEnd: "based on the individual’s explicit consent",
+            }),
+            cite(ICO_AI_ARTICLE_22, {
+              role: "supporting",
+              section: "When does the human-determined decision take place?",
+              snippet:
+                "In most cases, for human review to be meaningful, human involvement should come after the automated decision has taken place and it must relate to the actual outcome.",
+              textStart:
+                "for human review to be meaningful, human involvement should come after the automated decision",
+              textEnd: "it must relate to the actual outcome",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section: "Deployment Context (Tier 2)",
+              snippet:
+                "You should also be aware of Article 22 UK GDPR which states that ‘The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her’. If your algorithmic tool falls within the scope of these provisions, you must complete this field.",
+              textStart:
+                "If your algorithmic tool falls within the scope of these provisions, you must complete this field",
+              textEnd: null,
+            }),
+          ],
+        },
+        {
+          id: "special-category-inferences",
+          question:
+            "Do AI inferences about people count as special category data?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "An inference is personal data if it relates to an identified or identifiable person. It is likely to be special category data — and to trigger Article 9 — if you can or intend to infer that kind of information about someone, or you intend to treat them differently on the basis of the inference, even without a reasonable degree of certainty. If you intend to process special category or criminal offence data, you also need an Article 9 or 10 condition as well as an Article 6 lawful basis.",
+          citations: [
+            cite(ICO_AI_LAWFULNESS, {
+              role: "primary",
+              section: "Using AI systems to make inferences",
+              snippet:
+                "That inference is likely to be special category data, if your use of AI means you: can (or intend to) infer relevant information about an individual; or intend to treat someone differently on the basis of the inference (even if it's not with a reasonable degree of certainty).",
+              textStart: "That inference is likely to be special category data",
+              textEnd:
+                "even if it's not with a reasonable degree of certainty",
+            }),
+            cite(ICO_AI_LAWFULNESS, {
+              role: "supporting",
+              section:
+                "What about special category data and data about criminal offences?",
+              snippet:
+                "If you intend to use AI to process special category data or data about criminal offences, then you will need to ensure you comply with the requirements of Articles 9 and 10 of the UK GDPR, as well as the DPA 2018.",
+              textStart:
+                "If you intend to use AI to process special category data or data about criminal offences",
+              textEnd: "as well as the DPA 2018",
+            }),
+          ],
+        },
+        {
+          id: "eia-for-ai",
+          question:
+            "Do I need an Equality Impact Assessment for an AI project?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "You must comply with the Public Sector Equality Duty and the Equality Act 2010. Document the equality impact where processing can identify people as having a protected characteristic — often as an EIA. Assess before you decide to start (including procurement and development), during implementation, and after implementation. Publishing the EIA is good practice.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Fairness-related transparency",
+              snippet:
+                "You must comply with the Public Sector Equality Duty and Equality Act 2010. This means you need to carefully consider and document the equality impact of processing personal data where it can be used to identify individuals as having a protected characteristic. This document is often referred to as an Equality Impact Assessment (EIA). It’s good practice to publish your EIA.",
+              textStart:
+                "carefully consider and document the equality impact of processing personal data",
+              textEnd: "It’s good practice to publish your EIA",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Understand impacted groups",
+              snippet:
+                "You must assess the equality impact of your project: before making any decisions to initiate a project, including procuring and development; during implementation; after implementation.",
+              textStart:
+                "before making any decisions to initiate a project, including procuring and development",
+              textEnd: "after implementation",
+            }),
+          ],
+        },
+        {
+          id: "privacy-by-design-ai",
+          question:
+            "What does privacy by design mean for an AI project?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Build privacy in from the first decision about what information you will record, through every use of the data or model, to safe decommissioning. Request only data that is adequate, relevant and limited to what is necessary (data minimisation). If you buy a model or use a pre-trained one, you must still ensure any personal data used to train it meets your privacy standards and the law.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "What privacy means in practice",
+              snippet:
+                "You must design and build privacy into your project from the start. This includes: the very first decisions you make about what information you intend to record; every way that the data, or AI system built using this data, is used throughout your project; the safe decommissioning of the system and data set. This concept is referred to in the UK GDPR as privacy by design and default.",
+              textStart:
+                "You must design and build privacy into your project from the start",
+              textEnd: "privacy by design and default",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Scoping and data acquisition",
+              snippet:
+                "The data you request and acquire must be adequate, relevant and limited to what is necessary in relation to the purposes for which it is processed. This is known as data minimisation.",
+              textStart: "adequate, relevant and limited to what is necessary",
+              textEnd: "This is known as data minimisation",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Scoping and data acquisition",
+              snippet:
+                "Your project might not itself gather or process personal data. For example, if you procure an AI model from a third party or use a pre-trained model. Here you must still ensure that any personal data used to train these models meets your privacy standards and complies with relevant legislation.",
+              textStart:
+                "if you procure an AI model from a third party or use a pre-trained model",
+              textEnd:
+                "meets your privacy standards and complies with relevant legislation",
+            }),
+          ],
+        },
+        {
+          id: "publish-dpia-eia",
+          question:
+            "Should I publish my DPIA and Equality Impact Assessment?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "You still need a DPIA before high-risk processing of personal data. Publishing the completed DPIA is good practice to show you are protecting personal data and considering fairness. Publishing the EIA is also good practice. Redact anything that would be exempt from disclosure.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Data protection-related transparency",
+              snippet:
+                "You need to carry out a Data Protection Impact Assessment (DPIA) before you process personal data when the processing is likely to result in a high risk to the rights and freedoms of individuals. It’s good practice to publish your completed DPIA to demonstrate that you’re taking the appropriate precautions to protect personal data and ensure your system is fair.",
+              textStart: "It’s good practice to publish your completed DPIA",
+              textEnd: "ensure your system is fair",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Fairness-related transparency",
+              snippet:
+                "You must comply with the Public Sector Equality Duty and Equality Act 2010. This means you need to carefully consider and document the equality impact of processing personal data where it can be used to identify individuals as having a protected characteristic. This document is often referred to as an Equality Impact Assessment (EIA). It’s good practice to publish your EIA.",
+              textStart:
+                "carefully consider and document the equality impact of processing personal data",
+              textEnd: "It’s good practice to publish your EIA",
+            }),
+            cite(ICO_AI_ACCOUNTABILITY, {
+              role: "supporting",
+              section:
+                "What do we need to consider when undertaking data protection impact assessments for AI?",
+              snippet:
+                "In the vast majority of cases, the use of AI will involve a type of processing likely to result in a high risk to individuals’ rights and freedoms, and will therefore trigger the legal requirement for you to undertake a DPIA.",
+              textStart:
+                "the use of AI will involve a type of processing likely to result in a high risk",
+              textEnd: "trigger the legal requirement for you to undertake a DPIA",
+            }),
+          ],
         },
       ],
     },
@@ -1464,6 +2451,45 @@ const categories = [
             }),
           ],
         },
+        {
+          id: "supplier-transparency-ethics",
+          question:
+            "What should I require from AI suppliers on transparency, bias and training data?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
+          answer:
+            "Before you contract, vendors must be able to explain how they build tools, the logic and assumptions, and how outputs are generated. Ask how they identified, evaluated and mitigated risks; what data the model was trained on; and whether there are known biases. If you buy a pre-trained model, you still need to ensure any personal data used to train it meets your privacy standards. Make ATRS-level transparency an expectation in your invitation to tender — suppliers selling tools that affect the public should be comfortable with that.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "If you’re using a third-party supplier",
+              snippet:
+                "Vendors of AI systems must be able to clearly explain: the steps they take to build tools; the logic and assumptions built into their tools; how their tools generate outputs. Before entering into a contract, consider asking your supplier how they identified, evaluated and mitigated risks; what data the model has been trained on; if there are any known biases in the data or the trained model.",
+              textStart: "Vendors of AI systems must be able to clearly explain",
+              textEnd:
+                "if there are any known biases in the data or the trained model",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Scoping and data acquisition",
+              snippet:
+                "Your project might not itself gather or process personal data. For example, if you procure an AI model from a third party or use a pre-trained model. Here you must still ensure that any personal data used to train these models meets your privacy standards and complies with relevant legislation.",
+              textStart:
+                "if you procure an AI model from a third party or use a pre-trained model",
+              textEnd:
+                "meets your privacy standards and complies with relevant legislation",
+            }),
+            cite(ATRS_SCOPE, {
+              role: "supporting",
+              section: "5.3 Dealing with commercially sensitive information",
+              snippet:
+                "Commercial suppliers that wish to sell algorithmic solutions to public bodies that are then used in processes that impact members of the public should be comfortable with this level of transparency that is expected of the public sector. Public bodies that are procuring solutions from vendors should make this expectation clear in their invitation to tender or other route to market.",
+              textStart:
+                "should be comfortable with this level of transparency that is expected of the public sector",
+              textEnd: "make this expectation clear in their invitation to tender",
+            }),
+          ],
+        },
       ],
     },
     {
@@ -1519,10 +2545,11 @@ const categories = [
           question:
             "Do I need to tell users when a service uses AI?",
           status: "conflicted",
-          last_reviewed: "2026-08-10",
+          last_reviewed: "2026-08-13",
           conflict_id: "conflict-ai-transparency-when-to-disclose",
+          last_reviewed: "2026-08-13",
           answer:
-            "Users do not always need to know the underlying stack, but if AI affects their data or outcomes you must explain that. For AI chatbots, tell users answers are not from a human and may be inaccurate, and provide a human contact route. Organisational openness (including ATRS where required) still applies.",
+            "Users do not always need to know the underlying stack, but if AI affects their data or outcomes you must explain that. For AI chatbots, tell users answers are not from a human and may be inaccurate, and provide a human contact route. The Data and AI Ethics Framework also recommends appropriate disclosure when AI produced an output, internally and externally. Organisational openness (including ATRS where required) still applies.",
           conflict: {
             summary:
               "Service Manual: users need not always know the technology, but AI effects on data/outcomes (and chatbot non-human answers) must be disclosed. Playbook: be open about how and where AI is used.",
@@ -1538,6 +2565,15 @@ const categories = [
                 "Users do not always need to know what technology or software is used in a service to be able to access it. However, if you use AI in your service, you must make it clear to users how this might affect: their data; the outcome or information they receive from the service. If you use an AI-powered chatbot, you must make sure users: understand that the answers they receive do not come from a human and might not be accurate; know how to contact a human being.",
               textStart: "Users do not always need to know what technology or software is used",
               textEnd: "know how to contact a human being",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Recommended actions",
+              snippet:
+                "give appropriate disclosure when AI has been used to produce an output – this concerns both internal and external uses of AI",
+              textStart:
+                "give appropriate disclosure when AI has been used to produce an output",
+              textEnd: "both internal and external uses of AI",
             }),
             cite(AI_CYBER_COP, {
               role: "supporting",
@@ -1716,39 +2752,116 @@ const categories = [
           id: "ai-inventory",
           question:
             "How do I keep an inventory of AI systems in my organisation?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Maintain a live AI/ML systems inventory covering purpose, risks, data, ownership and key dates, in addition to ATRS transparency records where required.",
-          snippet:
-            "To provide a comprehensive view of all deployed AI systems within an organisation or programme, organisations should set up an AI and machine learning (ML) systems inventory. This is in addition to the Algorithmic Transparency Recording Standard (ATRS) that all government departments and certain arm’s length bodies must use",
-          section: "Creating an AI systems inventory",
-          textStart:
-            "organisations should set up an AI and machine learning (ML) systems inventory",
-          textEnd: "Algorithmic Transparency Recording Standard (ATRS)",
+            "Maintain a live AI/ML systems inventory covering purpose, risks, data, ownership and key dates. This is in addition to ATRS transparency records, which in-scope organisations must publish for tools that significantly influence a public-effect decision or interact directly with the public.",
+          citations: [
+            cite(PLAYBOOK, {
+              role: "primary",
+              section: "Creating an AI systems inventory",
+              snippet:
+                "To provide a comprehensive view of all deployed AI systems within an organisation or programme, organisations should set up an AI and machine learning (ML) systems inventory. This is in addition to the Algorithmic Transparency Recording Standard (ATRS) that all government departments and certain arm’s length bodies must use",
+              textStart:
+                "organisations should set up an AI and machine learning (ML) systems inventory",
+              textEnd: "Algorithmic Transparency Recording Standard (ATRS)",
+            }),
+            cite(ATRS_HUB, {
+              role: "supporting",
+              section: "Algorithmic Transparency Recording Standard Hub",
+              snippet:
+                "The ATRS is mandatory for all government departments, and for arm’s-length bodies (ALBs) which deliver public or frontline services, or directly interact with the general public.",
+              textStart: "The ATRS is mandatory for all government departments",
+              textEnd: "directly interact with the general public",
+            }),
+          ],
         },
         {
           id: "accountability",
           question:
             "Who is accountable if an AI system causes harm or makes a bad decision?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Your organisation needs clear ownership of risk and responsibility for mitigations and compliance. Connect with assurance teams early and document review and escalation routes.",
-          snippet:
-            "Accountability is a key principle that establishes ownership of risk, responsibility for mitigations, compliance with legislation, the ability to demonstrate compliance, and high standards for privacy.",
-          section: "Accountability",
-          textStart:
-            "Accountability is a key principle that establishes ownership of risk",
-          textEnd: "high standards for privacy",
+            "Your organisation (the controller) remains accountable for data-protection compliance. Name an SRO as the primary risk owner, plus data and AI asset owners. Senior management and DPOs cannot leave this to engineers. Record the SRO as a role title, not a named individual, on ATRS records.",
+          citations: [
+            cite(DATA_ETHICS, {
+              role: "primary",
+              section: "Set clear roles and responsibilities",
+              snippet:
+                "You need strong oversight and clear responsibilities to ensure accountability across the life cycle of your data or AI project. You must set out who is responsible at each stage of the project. This includes naming senior responsible owners (SROs)– as the primary risk owners for the project.",
+              textStart:
+                "You must set out who is responsible at each stage of the project",
+              textEnd:
+                "senior responsible owners (SROs)– as the primary risk owners for the project",
+            }),
+            cite(ICO_AI_ACCOUNTABILITY, {
+              role: "supporting",
+              section: "How should we approach AI governance and risk management?",
+              snippet:
+                "You cannot delegate these issues to data scientists or engineering teams. Your senior management, including DPOs, are also accountable for understanding and addressing them appropriately and promptly (although overall accountability for data protection compliance lies with the controller, ie your organisation).",
+              textStart:
+                "You cannot delegate these issues to data scientists or engineering teams",
+              textEnd:
+                "overall accountability for data protection compliance lies with the controller",
+            }),
+            cite(ATRS_GUIDANCE, {
+              role: "supporting",
+              section: "Owner and responsibility (Tier 2)",
+              snippet:
+                "The SRO should be a role title, not a named individual, for business continuity and security purposes. It should be the role which is ultimately accountable for the tool in an operational context.",
+              textStart: "The SRO should be a role title, not a named individual",
+              textEnd: "ultimately accountable for the tool in an operational context",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section: "Accountability",
+              snippet:
+                "Accountability is a key principle that establishes ownership of risk, responsibility for mitigations, compliance with legislation, the ability to demonstrate compliance, and high standards for privacy.",
+              textStart:
+                "Accountability is a key principle that establishes ownership of risk",
+              textEnd: "high standards for privacy",
+            }),
+          ],
         },
         {
           id: "contestability",
           question:
             "How do people challenge or seek redress for an AI-influenced decision?",
+          status: "answered",
+          last_reviewed: "2026-08-13",
           answer:
-            "Build contestability and redress into design so people can challenge outcomes and seek remedy. This sits alongside transparency, explainability and meaningful human oversight.",
-          snippet:
-            "You should have systems in place that allow users to report issues and prompt a human review.",
-          section: "Principle 4: You have meaningful human control at the right stages",
-          textStart:
-            "allow users to report issues and prompt a human review",
+            "Build contestability into the service. Under Article 22, people must be able to contest a solely automated decision in a timely way, with simple routes to human intervention. The Data and AI Ethics Framework also requires feedback, contest and redress routes. Record those routes in the ATRS deployment-context field where the tool is in scope.",
+          citations: [
+            cite(ICO_AI_ARTICLE_22, {
+              role: "primary",
+              section:
+                "Will impacted individuals be able to contest an automated decision?",
+              snippet:
+                "For the processing to be fair and compliant with Article 22, individuals must be able to contest a decision in a timely manner. Meaningful transparency is fundamental to support this and you must put in place the appropriate measures to ensure individuals can exercise their rights.",
+              textStart:
+                "individuals must be able to contest a decision in a timely manner",
+              textEnd: "ensure individuals can exercise their rights",
+            }),
+            cite(DATA_ETHICS, {
+              role: "supporting",
+              section: "Establish feedback mechanisms",
+              snippet:
+                "Upholding accountability means ensuring that people affected by the use of a data or AI system can: understand how decisions were made; provide feedback; contest outcomes that are incorrect; seek redress if they’ve been affected by erroneous or unjust outcomes – for example, by asking for the decision to be reviewed or corrected, especially in the case of automated decision making.",
+              textStart: "contest outcomes that are incorrect",
+              textEnd: "especially in the case of automated decision making",
+            }),
+            cite(PLAYBOOK, {
+              role: "supporting",
+              section:
+                "Principle 4: You have meaningful human control at the right stages",
+              snippet:
+                "You should have systems in place that allow users to report issues and prompt a human review.",
+              textStart:
+                "allow users to report issues and prompt a human review",
+              textEnd: null,
+            }),
+          ],
         },
       ],
     },
@@ -1786,171 +2899,16 @@ const categories = [
           answer:
             "Yes where possible. Engaging wider civil society, academia and industry helps ensure AI delivers public benefit and reflects people’s values and concerns.",
           snippet:
-            "Where possible, you should engage with the wider civil society including groups, communities, and non-governmental, academic and public representative organisations that have an interest in your project.",
+            "Where possible, you should engage with the wider civil society including groups, communities, and non-governmental, academic and public representative organisations that have an interest in your project. Collaborating with people both inside and outside government will help you ensure we use AI to deliver tangible benefits to individuals and society as a whole.",
           section: "Principle 7: You are open and collaborative",
           textStart:
-            "engage with the wider civil society including groups, communities",
-          textEnd: "that have an interest in your project",
+            "Where possible, you should engage with the wider civil society including groups, communities",
+          textEnd: "as a whole.",
         },
       ],
     },
   ];
 
-// Additional questions to expand coverage.
-// These entries reuse existing extracted citations/snippets from incorporated sources,
-// while varying question wording and answers so the UI can offer more entry points.
-// (Slugs are derived from `question` text, and uniqueness is validated below.)
-(function addMoreQuestions() {
-  function cat(id) {
-    return categories.find((c) => c.id === id);
-  }
-  function q(catId, qId) {
-    const category = cat(catId);
-    return category?.questions.find((x) => x.id === qId);
-  }
-
-  function add(catId, baseQId, next) {
-    const base = q(catId, baseQId);
-    if (!base) throw new Error(`Base question not found: ${catId}/${baseQId}`);
-    const copy = { ...base, ...next };
-    cat(catId).questions.push(copy);
-  }
-
-  // Getting started (training)
-  add("getting-started", "training", {
-    id: "ai-training-free-courses-civil-service-learning",
-    question: "Where can civil servants find free AI training courses?",
-    answer:
-      "Free AI courses are available through Civil Service Learning, including AI courses that use Government Campus learning frameworks. Senior civil servants may also use additional Digital Excellence Programme AI training.",
-  });
-  add("getting-started", "training", {
-    id: "ai-training-additional-programmes-senior-civil-servants",
-    question: "Can senior civil servants access additional AI training programmes?",
-    answer:
-      "Senior civil servants can access the Digital Excellence Programme AI course, alongside the broader free learning available in Civil Service Learning and through Government Campus learning frameworks.",
-  });
-  add("getting-started", "training", {
-    id: "government-campus-ai-learning-frameworks",
-    question: "What AI learning resources are available via Government Campus?",
-    answer:
-      "Government Campus provides AI courses accessible through its learning frameworks. These can be used alongside Civil Service Learning to develop AI skills relevant to your work.",
-  });
-  add("getting-started", "training", {
-    id: "ai-team-training-before-deployment",
-    question: "What training should AI project teams complete before deployment?",
-    answer:
-      "Use available learning resources so your team understands how AI is used in government and how to apply safer practices. Start with free courses available via Civil Service Learning and Government Campus learning frameworks, then build training around your specific use case.",
-  });
-
-  // Lawful, ethical and responsible use (legal advice)
-  add("lawful-ethical", "legal-advice", {
-    id: "legal-advice-equality-fairness-ai-projects",
-    question: "When should I consider equality and fairness advice for an AI project?",
-    answer:
-      "Seek legal advice early to understand equality and fairness obligations relevant to your AI use, including how the project could affect people’s rights, and how to reduce legal risk from the start.",
-  });
-  add("lawful-ethical", "legal-advice", {
-    id: "legal-advice-intellectual-property-ai-development",
-    question: "Do I need legal advice about intellectual property when developing AI solutions?",
-    answer:
-      "Yes. Take legal advice early so you understand intellectual property considerations, and so you can address infringement risk and ownership arrangements as part of development and commissioning decisions.",
-  });
-  add("lawful-ethical", "legal-advice", {
-    id: "legal-advice-data-protection-and-compliance",
-    question: "Should I seek legal advice on data protection and compliance for AI use?",
-    answer:
-      "Yes. Seek legal advice early on how your AI use affects people’s data, and ensure you involve appropriate compliance and data protection expertise during planning and product development.",
-  });
-  add("lawful-ethical", "legal-advice", {
-    id: "legal-advice-for-ai-procurement-decisions",
-    question: "Do AI procurement decisions need early legal advice?",
-    answer:
-      "Yes. Get legal advice early so you can address relevant legal issues in procurement, including equalities and fairness, intellectual property, and any other risks that might affect contracts or delivery.",
-  });
-
-  // Security and safe use of tools (hallucinations + contrasting/conflicted public AI)
-  add("security-tools", "hallucinations", {
-    id: "sense-check-ai-outputs",
-    question: "How can I sense-check AI outputs before using them in government?",
-    answer:
-      "Do not trust generative AI uncritically. Sense-check responses against your knowledge and experience, then match checking effort to risk. For official content, review correctness and quality yourself.",
-  });
-  add("security-tools", "hallucinations", {
-    id: "source-check-ai-citations",
-    question: "How should I source-check citations produced by generative AI?",
-    answer:
-      "Verify any cited sources or references before use. Source-check against the original guidance and confirm numbers, dates and figures, then involve expert review where the content is important or public-facing.",
-  });
-  add("security-tools", "hallucinations", {
-    id: "expert-review-generative-ai-risk",
-    question: "When should experts review generative AI output?",
-    answer:
-      "Get expert review for important or public-facing content, and involve relevant subject matter experts for high-risk uses. Match the review effort to the potential harm if the output is wrong.",
-  });
-  add("security-tools", "hallucinations", {
-    id: "do-not-over-trust-generative-ai",
-    question: "Should we treat generative AI outputs as inherently reliable?",
-    answer:
-      "No. Generative AI can produce plausible but false content. Ensure outputs are checked before they are used, and remember correctness is not guaranteed.",
-  });
-  add("security-tools", "chatgpt-official-info", {
-    id: "public-ai-unpublished-official-information",
-    question: "Can I enter unpublished official information into public generative AI tools?",
-    answer:
-      "No. Do not put unpublished official information into public AI tools. Follow departmental policy and prefer departmental systems. Where needed, use assured tools with appropriate agreements rather than conflating different scopes.",
-  });
-  add("security-tools", "chatgpt-official-info", {
-    id: "personal-or-confidential-info-in-public-chatbots",
-    question: "What should I do with personal or confidential information when using public AI chatbots?",
-    answer:
-      "Do not enter personal or identifiable information into unsuitable public tools. Follow department policy, avoid mixing free/public services with assured enterprise tools, and involve data protection and compliance expertise where appropriate.",
-  });
-
-  // Buying and building (vendor lock-in)
-  add("buying-building", "vendor-lock-in", {
-    id: "build-exit-portability-into-ai-contracts",
-    question: "How do I build exit and portability into AI procurement contracts?",
-    answer:
-      "Build exit and portability into requirements and contracts from the start. Require explainable and interpretable approaches where possible, so other suppliers can continue or build upon the work and reduce vendor lock-in risk.",
-  });
-  add("buying-building", "vendor-lock-in", {
-    id: "explainability-reduces-vendor-lock-in",
-    question: "Why does explainability help avoid vendor lock-in when buying AI?",
-    answer:
-      "Highly explainable outputs can be interpreted by your team and by other suppliers. This increases your ability to continue or extend your AI system and helps limit the risk of vendor lock-in.",
-  });
-  add("buying-building", "vendor-lock-in", {
-    id: "continue-work-with-other-suppliers",
-    question: "How can I make sure other suppliers can continue work on my AI system?",
-    answer:
-      "Require approaches that can be interpreted and maintained by others, and include contractual provisions that support continuation, exit and portability. This helps avoid lock-in and supports future delivery needs.",
-  });
-
-  // Delivery, assurance and operations (contestability)
-  add("delivery-assurance", "contestability", {
-    id: "report-issues-human-review-ai-decisions",
-    question:
-      "How can users report issues and trigger human review for AI-influenced decisions?",
-    answer:
-      "Build contestability into design so users can report issues and prompt a human review. Ensure you have systems that support human intervention at the right stages alongside transparency and oversight.",
-  });
-  add("delivery-assurance", "contestability", {
-    id: "redress-routes-for-ai-influenced-decisions",
-    question:
-      "What routes should we provide for challenge and redress for AI-influenced decisions?",
-    answer:
-      "Provide systems so users can report concerns and access human review. Design these routes alongside transparency, explainability and meaningful human oversight so challenge and redress are possible.",
-  });
-
-  // Collaboration and reuse (civil society)
-  add("collaboration", "civil-society", {
-    id: "engage-civil-society-values-for-ai",
-    question:
-      "How does engaging civil society and academia help make AI projects better?",
-    answer:
-      "Engaging wider civil society, academia and industry helps ensure AI delivers public benefit and reflects people’s values and concerns. Use that engagement to inform the direction and mitigate risks to users.",
-  });
-})();
 
 /**
  * Entire question → kebab-case slug with punctuation stripped.
@@ -2056,6 +3014,16 @@ module.exports = {
     SERVICE_MANUAL_POINT_9,
     TCOP,
     AI_CYBER_COP,
+    ATRS_HUB,
+    ATRS_GUIDANCE,
+    ATRS_SCOPE,
+    ATRS_PUBLISH,
+    ICO_AI_ACCOUNTABILITY,
+    ICO_AI_LAWFULNESS,
+    ICO_AI_FAIRNESS,
+    ICO_AI_TRANSPARENCY,
+    ICO_AI_ARTICLE_22,
+    DATA_ETHICS,
   ],
   categories: normalizedCategories,
   items,
