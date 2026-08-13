@@ -15,8 +15,7 @@ eleventyComputed:
   {{ govukBreadcrumbs({
     items: [
       { text: "Home", href: "/" },
-      { text: item.category_title, href: "/category/" + item.category_id + "/" },
-      { text: item.question }
+      { text: item.category_title, href: "/category/" + item.category_id + "/" }
     ]
   }) }}
 

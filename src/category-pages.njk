@@ -11,14 +11,17 @@ eleventyComputed:
 
 {% extends "layouts/base.njk" %}
 {% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block content %}
+  {{ govukBreadcrumbs({
+    items: [
+      { text: "Home", href: "/" }
+    ]
+  }) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ category.title }}</h1>
-      <p class="govuk-body-l">
-        Browse questions in this category. Each answer includes citations back to official guidance.
-      </p>
     </div>
   </div>
 
@@ -29,13 +32,13 @@ eleventyComputed:
       {% else %}
         <ul class="govuk-list">
           {% for item in category.questions %}
-            <li class="govuk-!-margin-bottom-6">
+            <li class="govuk-!-margin-bottom-2">
               <p class="govuk-body govuk-!-margin-bottom-1">
                 <a class="govuk-link" href="{{ item.url }}">{{ item.question }}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-0">
                 {% if item.sourcesCount %}
-                  <span>{{ item.sourcesCount }} sources</span>
+                  <span>{{ item.sourcesCount }} {% if item.sourcesCount == 1 %} source {%else%} sources{% endif %}</span>
                 {% endif %}
                 {% if item.hasContrastingAdvice %}
                   <span class="govuk-!-margin-left-2">

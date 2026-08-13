@@ -8,24 +8,20 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ title }}</h1>
       <p class="govuk-body-l">
-        Search common questions about adopting AI in government. Each answer has its own page with cited snippets and deep links to official guidance.
-      </p>
-      <p class="govuk-body">
+        Search common questions about adopting AI in government.
         Browse the <a href="/sources">sources</a> or <a href="/about">learn more about the AI Guidance Explorer.</a>
       </p>
-      <p class="govuk-body-s">
-        On multi-source answers, <strong class="govuk-!-font-weight-bold">Primary</strong> citations explain <em>how</em> to act; <strong class="govuk-!-font-weight-bold">Secondary</strong> citations explain whether something can, must, should, or should not be done.
-      </p>
+      
     </div>
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       <div class="govuk-!-margin-top-6">
-        <h2 class="govuk-heading-m">Search questions</h2>
+        <h2 class="govuk-heading-l">Search questions</h2>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="faq-search">Type a question</label>
+          <!--label class="govuk-label" for="faq-search">Type a question</label-->
           <input
             id="faq-search"
             name="q"
@@ -46,25 +42,29 @@
           </div>
         </div>
 
+        <p class="govuk-body-s">
+        On multi-source answers, <strong class="govuk-!-font-weight-bold">Primary</strong> citations explain <em>how</em> to act; <strong class="govuk-!-font-weight-bold">Secondary</strong> citations explain whether something can, must, should, or should not be done.
+      </p>
+
       </div>
     </div>
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-two-thirds">
       <nav aria-label="FAQ categories">
-        <h2 class="govuk-heading-s">Categories</h2>
+        <h2 class="govuk-heading-l">Browse categories</h2>
         <ul class="govuk-list app-category-nav">
           {% for category in faq.categories %}
             <li>
-              <a class="govuk-link" href="#{{ category.id }}">{{ category.title }}</a>
+              <a class="govuk-link" href="/category/{{ category.id }}">{{ category.title }}</a>
             </li>
           {% endfor %}
         </ul>
       </nav>
     </div>
 
-    <div class="govuk-grid-column-two-thirds">
+    <!--div class="govuk-grid-column-two-thirds">
       {% for category in faq.categories %}
         <section class="app-category" id="{{ category.id }}">
           <h2 class="govuk-heading-l">{{ category.title }}</h2>
@@ -96,7 +96,7 @@
           </ul>
         </section>
       {% endfor %}
-    </div>
+    </div-->
   </div>
 
   {# Lightweight data for the in-browser typeahead (JS filters these items as you type). #}

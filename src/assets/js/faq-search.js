@@ -35,7 +35,7 @@
       const meta = document.createElement("div");
       meta.className = "app-faq-suggestion__meta";
 
-      const sources = m.sourcesCount ? `${m.sourcesCount} sources` : "";
+      const sources = m.sourcesCount ? `${m.sourcesCount} source` + (m.sourcesCount == 1 ? '' : 's') : "";
       meta.textContent = sources;
 
       if (m.contrasting) {
