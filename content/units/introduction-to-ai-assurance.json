@@ -1,0 +1,179 @@
+{
+  "source_id": "introduction-to-ai-assurance",
+  "series_url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance/introduction-to-ai-assurance",
+  "extracted_on": "2026-08-25",
+  "incorporated_articles": [
+    {
+      "article_id": "intro-ai-assurance",
+      "title": "Introduction to AI assurance",
+      "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance/introduction-to-ai-assurance"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "assurance--definition",
+      "section": "3.1 The importance of trust",
+      "claim_type": "definition",
+      "text": "Assurance is the process of measuring, evaluating and communicating something about a system or process, documentation, a product or an organisation. In the case of AI, assurance measures, evaluates and communicates the trustworthiness of AI systems.",
+      "is_quotation": true,
+      "text_start": "Assurance is the process of measuring, evaluating and communicating",
+      "text_end": "trustworthiness of AI systems",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "what-is-ai-assurance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--five-principles",
+      "section": "3.2 AI assurance and governance",
+      "claim_type": "recommendation",
+      "text": "It includes five cross-sectoral principles to guide and inform the responsible development and use of AI in all sectors of the economy: Safety, Security and Robustness; Appropriate Transparency and Explainability; Fairness; Accountability and Governance; Contestability and Redress.",
+      "is_quotation": true,
+      "text_start": "five cross-sectoral principles",
+      "text_end": "Contestability and Redress",
+      "themes": [
+        "assurance",
+        "governance"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-regulatory-principles"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--measure-evaluate-communicate",
+      "section": "4.1 Measure, evaluate and communicate",
+      "claim_type": "recommendation",
+      "text": "Assurance requires robust techniques that help organisations to measure and evaluate their systems and communicate that their systems are trustworthy and aligned with relevant regulatory principles.",
+      "is_quotation": true,
+      "text_start": "measure and evaluate their systems and communicate",
+      "text_end": "aligned with relevant regulatory principles",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "what-is-ai-assurance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--techniques",
+      "section": "4.2 AI assurance mechanisms",
+      "claim_type": "recommendation",
+      "text": "There is a spectrum of AI assurance mechanisms that can, and should, be used in combination with one another across the AI lifecycle. These range from qualitative assessments which can be used where there is a high degree of uncertainty, ambiguity and subjectivity, for example thinking about the potential risks and societal impacts of systems, to quantitative assessments for subjects that can be measured objectively and with a high degree of certainty",
+      "is_quotation": true,
+      "text_start": "spectrum of AI assurance mechanisms that can, and should, be used in combination",
+      "text_end": "across the AI lifecycle",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-techniques"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--no-silver-bullet",
+      "section": "4.2 AI assurance mechanisms",
+      "claim_type": "warning",
+      "text": "There will never be a silver bullet for AI assurance. Rather, multiple assurance techniques will need to be used in combination with one another across the lifecycle.",
+      "is_quotation": true,
+      "text_start": "There will never be a silver bullet for AI assurance",
+      "text_end": "across the lifecycle",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-techniques"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--proportionate",
+      "section": "4.2 AI assurance mechanisms",
+      "claim_type": "recommendation",
+      "text": "However, this also allows for a proportionate approach to assurance, with low-risk use-cases able to rely on a smaller range of assurance techniques, and high-risk use-cases utilising a more robust combination of assurance techniques.",
+      "is_quotation": true,
+      "text_start": "proportionate approach to assurance",
+      "text_end": "more robust combination of assurance techniques",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-proportionate"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--dpia-all-personal",
+      "section": "5.3 Assuring data, models, systems and governance in practice",
+      "claim_type": "requirement",
+      "text": "All organisations processing data must comply with existing legal requirements, in particular, UK GDPR and the Data Protection Act 2018. All systems using personal data must carry-out a data protection impact assessment (DPIA).",
+      "is_quotation": true,
+      "text_start": "All systems using personal data must carry-out a data protection impact assessment",
+      "text_end": null,
+      "themes": [
+        "dpia",
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "dpia",
+        "assurance-and-dpia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--no-statutory-ai",
+      "section": "6.1 Steps to build AI assurance",
+      "claim_type": "warning",
+      "text": "While there is not currently statutory AI regulation in the UK, there are existing regulations that are relevant for AI systems. For example, systems must adhere to existing regulation such as UK GDPR, the Equality Act 2010 and other industry-specific regulation.",
+      "is_quotation": true,
+      "text_start": "there is not currently statutory AI regulation in the UK",
+      "text_end": "UK GDPR, the Equality Act 2010 and other industry-specific regulation",
+      "themes": [
+        "assurance",
+        "lawfulness"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-existing-law"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--governance-baseline",
+      "section": "5.3 Assuring data, models, systems and governance in practice",
+      "claim_type": "recommendation",
+      "text": "As a foundation, all organisations should integrate robust organisational governance frameworks for AI systems. There are core steps organisations should build into governance processes to enable the effective evaluation and measurement of risks and biases associated with AI and to support clear and accurate communication to ensure concerns and issues are flagged.",
+      "is_quotation": true,
+      "text_start": "integrate robust organisational governance frameworks for AI systems",
+      "text_end": "concerns and issues are flagged",
+      "themes": [
+        "governance",
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "ai-assurance-governance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "assurance--ukas",
+      "section": "5.8 Conformity assessment",
+      "claim_type": "recommendation",
+      "text": "It is UK government policy that where third-party conformity assessment services are sought, they should be obtained from an organisation accredited by UKAS.",
+      "is_quotation": true,
+      "text_start": "obtained from an organisation accredited by UKAS",
+      "text_end": null,
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "ai-conformity-assessment"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

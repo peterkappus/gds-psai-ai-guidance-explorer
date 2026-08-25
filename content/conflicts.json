@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-08-25",
   "conflicts": [
     {
       "conflict_id": "conflict-public-ai-data-rules",
@@ -164,8 +164,9 @@
       ],
       "likely_cause": "different-audience",
       "user_guidance": "For government services, treat Playbook / Service Manual / Secure by Design as the mandatory baseline. Use the AI Cyber Security CoP as detailed supply-chain and lifecycle practice to strengthen that baseline, not as optional opt-out.",
-      "related_faq_ids": ["ai-security-training", "service-standard"],
-      "opened_on": "2026-08-10"
+      "related_faq_ids": ["ai-security-training", "service-standard", "secure-by-design-mandatory"],
+      "opened_on": "2026-08-10",
+      "updated_on": "2026-08-25"
     },
     {
       "conflict_id": "conflict-ai-transparency-when-to-disclose",
@@ -188,6 +189,73 @@
       "user_guidance": "Do not hide AI where it affects data or outcomes. For chatbots, follow Service Manual disclosure rules. Use ATRS / Playbook openness for organisational transparency obligations.",
       "related_faq_ids": ["tell-users-ai-in-service"],
       "opened_on": "2026-08-10"
+    },
+    {
+      "conflict_id": "conflict-adm-presumption-vs-service-manual-stack",
+      "title": "ADM presumption of publication vs users need not know the stack",
+      "status": "open",
+      "summary": "The Ethics, Transparency and Accountability Framework for Automated Decision-Making works on a presumption of publication for algorithms that enable ADM, with plain-English explanations (exceptions need legal advice before ministerial authorisation). The Service Manual says users do not always need to know what technology is used to access a service, while still requiring disclosure where AI affects data or outcomes.",
+      "positions": [
+        {
+          "source_id": "ethics-transparency-accountability-adm",
+          "section": "5. Help users and citizens understand how it impacts them",
+          "stance": "Presumption of publication for algorithms that enable automated decision-making, with plain-English explanations."
+        },
+        {
+          "source_id": "service-manual",
+          "section": "Tell users when AI is being used",
+          "stance": "Users do not always need to know what technology is used; if AI is used you must make clear how it affects data and outcomes."
+        }
+      ],
+      "likely_cause": "different-scope",
+      "user_guidance": "For ADM, start from presumption of publication and ATRS. For service UX, follow Service Manual disclosure for effects on data/outcomes. Do not hide AI where it affects outcomes.",
+      "related_faq_ids": ["adm-presumption-publication", "tell-the-public"],
+      "opened_on": "2026-08-25"
+    },
+    {
+      "conflict_id": "conflict-dpia-all-personal-vs-high-risk",
+      "title": "DPIA for all personal-data AI vs high-risk case-by-case",
+      "status": "open",
+      "summary": "Introduction to AI assurance states all systems using personal data must carry out a DPIA. ICO AI guidance says the vast majority of AI uses are high risk and therefore trigger a DPIA, but you still assess case by case and document how you concluded a use is not high risk.",
+      "positions": [
+        {
+          "source_id": "introduction-to-ai-assurance",
+          "section": "5.3 Assuring data, models, systems and governance in practice",
+          "stance": "All systems using personal data must carry out a DPIA."
+        },
+        {
+          "source_id": "ico-ai-data-protection",
+          "article_id": "ico-ai-accountability",
+          "section": "What do we need to consider when undertaking data protection impact assessments for AI?",
+          "stance": "Vast majority of AI use is high risk and triggers a DPIA; assess case by case and document if you conclude it is not."
+        }
+      ],
+      "likely_cause": "ambiguity",
+      "user_guidance": "Treat DPIA as the default for AI involving personal data. If you think a use is not high risk, document that assessment carefully and take DPO/legal advice.",
+      "related_faq_ids": ["dpia"],
+      "opened_on": "2026-08-25"
+    },
+    {
+      "conflict_id": "conflict-separate-vs-merged-dpia-eqia",
+      "title": "Separate DPIA/EIA publications vs merged assessments",
+      "status": "open",
+      "summary": "The Data and AI Ethics Framework treats publishing DPIA and EIA as good practice. The LGA Responsibly buying AI guide suggests integrating DPIA with EqIA or into an Algorithmic Impact Assessment to streamline, provided all DPIA and PSED requirements are still met.",
+      "positions": [
+        {
+          "source_id": "data-and-ai-ethics-framework",
+          "section": "Data protection-related transparency / Fairness-related transparency",
+          "stance": "Good practice to publish completed DPIA and EIA."
+        },
+        {
+          "source_id": "lga-responsibly-buying-ai",
+          "section": "What does data protection law require?",
+          "stance": "Consider integrating DPIA with EqIA or into an AIA if all DPIA and PSED requirements are met."
+        }
+      ],
+      "likely_cause": "different-audience",
+      "user_guidance": "Meet all DPIA and PSED substance either way. Merging documents is fine if nothing required is lost; publishing remains good practice for transparency.",
+      "related_faq_ids": ["publish-dpia-eia", "lga-merge-dpia-eqia"],
+      "opened_on": "2026-08-25"
     }
   ]
 }

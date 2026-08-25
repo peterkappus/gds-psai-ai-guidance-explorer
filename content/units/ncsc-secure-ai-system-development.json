@@ -1,0 +1,265 @@
+{
+  "source_id": "ncsc-secure-ai-system-development",
+  "series_url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+  "extracted_on": "2026-08-25",
+  "incorporated_articles": [
+    {
+      "article_id": "ncsc-secure-ai-overview",
+      "title": "Guidelines for secure AI system development",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development"
+    },
+    {
+      "article_id": "ncsc-secure-design",
+      "title": "Secure design",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-design"
+    },
+    {
+      "article_id": "ncsc-secure-development",
+      "title": "Secure development",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-development"
+    },
+    {
+      "article_id": "ncsc-secure-deployment",
+      "title": "Secure deployment",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-deployment"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ncsc--security-core-lifecycle",
+      "article_id": "ncsc-secure-ai-overview",
+      "section": "About the guidelines",
+      "claim_type": "requirement",
+      "text": "Security must be a core requirement, not just in the development phase, but throughout the life cycle of the system.",
+      "is_quotation": true,
+      "text_start": "Security must be a core requirement",
+      "text_end": "throughout the life cycle of the system",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "ncsc-secure-ai-lifecycle",
+        "main-security-risks"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--adversarial-ml",
+      "article_id": "ncsc-secure-ai-overview",
+      "section": "Why is AI security different?",
+      "claim_type": "definition",
+      "text": "As well as existing cyber security threats, AI systems are subject to new types of vulnerabilities. The term \u2018adversarial machine learning\u2019 (AML), is used to describe the exploitation of fundamental vulnerabilities in ML components, including hardware, software, workflows and supply chains.",
+      "is_quotation": true,
+      "text_start": "AI systems are subject to new types of vulnerabilities",
+      "text_end": "hardware, software, workflows and supply chains",
+      "themes": [
+        "security",
+        "adversarial-ml"
+      ],
+      "related_faq_ids": [
+        "adversarial-ml-threats",
+        "data-poisoning"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--provider-responsibility",
+      "article_id": "ncsc-secure-ai-overview",
+      "section": "Who is responsible for developing secure AI?",
+      "claim_type": "requirement",
+      "text": "As such, in line with \u2018secure by design\u2019 principles, providers of AI components should take responsibility for the security outcomes of users further down the supply chain.",
+      "is_quotation": true,
+      "text_start": "providers of AI components should take responsibility",
+      "text_end": "users further down the supply chain",
+      "themes": [
+        "security",
+        "supply-chain"
+      ],
+      "related_faq_ids": [
+        "ncsc-provider-responsibility",
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--threat-model",
+      "article_id": "ncsc-secure-design",
+      "section": "Model the threats to your system",
+      "claim_type": "requirement",
+      "text": "As part of your risk management process, you apply a holistic process to assess the threats to your system, which includes understanding the potential impacts to the system, users, organisations, and wider society if an AI component is compromised or behaves unexpectedly. This process involves assessing the impact of AI-specific threats and documenting your decision making.",
+      "is_quotation": true,
+      "text_start": "you apply a holistic process to assess the threats to your system",
+      "text_end": "documenting your decision making",
+      "themes": [
+        "security",
+        "threat-modelling"
+      ],
+      "related_faq_ids": [
+        "ai-threat-modelling"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--third-party-models",
+      "article_id": "ncsc-secure-design",
+      "section": "Design your system for security as well as functionality and performance",
+      "claim_type": "requirement",
+      "text": "you implement scanning and isolation/sandboxing when importing third-party models or serialised weights, which should be treated as untrusted third-party code and could enable remote code execution",
+      "is_quotation": true,
+      "text_start": "scanning and isolation/sandboxing when importing third-party models",
+      "text_end": "could enable remote code execution",
+      "themes": [
+        "security",
+        "supply-chain"
+      ],
+      "related_faq_ids": [
+        "third-party-model-import",
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--external-api-data",
+      "article_id": "ncsc-secure-design",
+      "section": "Design your system for security as well as functionality and performance",
+      "claim_type": "requirement",
+      "text": "if using an external API, you apply appropriate controls to data that can be sent to services outside of your organisation\u2019s control, such as requiring users to log in and confirm before sending potentially sensitive information",
+      "is_quotation": true,
+      "text_start": "apply appropriate controls to data that can be sent to services outside",
+      "text_end": "before sending potentially sensitive information",
+      "themes": [
+        "security",
+        "data-leakage"
+      ],
+      "related_faq_ids": [
+        "external-ai-api-controls"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--supply-chain",
+      "article_id": "ncsc-secure-development",
+      "section": "Secure your supply chain",
+      "claim_type": "requirement",
+      "text": "You assess and monitor the security of your AI supply chains across a system\u2019s life cycle, and require suppliers to adhere to the same standards your own organisation applies to other software.",
+      "is_quotation": true,
+      "text_start": "assess and monitor the security of your AI supply chains",
+      "text_end": "same standards your own organisation applies to other software",
+      "themes": [
+        "security",
+        "supply-chain"
+      ],
+      "related_faq_ids": [
+        "secure-ai-supply-chain"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--protect-assets-logs",
+      "article_id": "ncsc-secure-development",
+      "section": "Identify, track and protect your assets",
+      "claim_type": "requirement",
+      "text": "You understand the value to your organisation of your AI-related assets, including models, data (including user feedback), prompts, software, documentation, logs and assessments (including information about potentially unsafe capabilities and failure modes), recognising where they represent significant investment and where access to them enables an attacker. You treat logs as sensitive data and implement controls to protect their confidentiality, integrity and availability.",
+      "is_quotation": true,
+      "text_start": "You treat logs as sensitive data",
+      "text_end": "confidentiality, integrity and availability",
+      "themes": [
+        "security",
+        "assets"
+      ],
+      "related_faq_ids": [
+        "protect-ai-assets-logs",
+        "document-ai-assets"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--model-cards",
+      "article_id": "ncsc-secure-development",
+      "section": "Document your data, models and prompts",
+      "claim_type": "recommendation",
+      "text": "You document the creation, operation, and life cycle management of any models, datasets and meta - or system - prompts. Your documentation includes security-relevant information such as the sources of training data (including fine-tuning data and human or other operational feedback), intended scope and limitations, guardrails, cryptographic hashes or signatures, retention time, suggested review frequency and potential failure modes. Useful structures to help do this include model cards, data cards and software bills of materials (SBOMs).",
+      "is_quotation": true,
+      "text_start": "Useful structures to help do this include model cards, data cards",
+      "text_end": "software bills of materials (SBOMs)",
+      "themes": [
+        "security",
+        "documentation"
+      ],
+      "related_faq_ids": [
+        "model-cards-sboms"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--model-extraction",
+      "article_id": "ncsc-secure-deployment",
+      "section": "Protect your model continuously",
+      "claim_type": "requirement",
+      "text": "Attackers may be able to reconstruct the functionality of a model or the data it was trained on, by accessing a model directly (by acquiring model weights) or indirectly (by querying the model via an application or service).",
+      "is_quotation": true,
+      "text_start": "Attackers may be able to reconstruct the functionality of a model",
+      "text_end": "querying the model via an application or service",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "model-extraction-risk"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--responsible-release",
+      "article_id": "ncsc-secure-deployment",
+      "section": "Release AI responsibly",
+      "claim_type": "requirement",
+      "text": "You release models, applications or systems only after subjecting them to appropriate and effective security evaluation such as benchmarking and red teaming (as well as other tests that are out of scope for these guidelines, such as safety or fairness), and you are clear to your users about known limitations or potential failure modes.",
+      "is_quotation": true,
+      "text_start": "only after subjecting them to appropriate and effective security evaluation",
+      "text_end": "known limitations or potential failure modes",
+      "themes": [
+        "security",
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "red-team-before-release"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--secure-by-default",
+      "article_id": "ncsc-secure-deployment",
+      "section": "Make it easy for users to do the right things",
+      "claim_type": "requirement",
+      "text": "Ideally, the most secure setting will be integrated into the system as the only option. When configuration is necessary, the default option should be broadly secure against common threats (that is, secure by default).",
+      "is_quotation": true,
+      "text_start": "the default option should be broadly secure against common threats",
+      "text_end": "secure by default",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "secure-by-default-ai"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "ncsc--monitor-inputs",
+      "article_id": "ncsc-secure-ai-overview",
+      "section": "Secure operation and maintenance",
+      "claim_type": "requirement",
+      "text": "In line with privacy and data protection requirements, you monitor and log inputs to your system (such as inference requests, queries or prompts) to enable compliance obligations, audit, investigation and remediation in the case of compromise or misuse.",
+      "is_quotation": true,
+      "text_start": "you monitor and log inputs to your system",
+      "text_end": "compromise or misuse",
+      "themes": [
+        "security",
+        "monitoring"
+      ],
+      "related_faq_ids": [
+        "monitor-ai-inputs-outputs"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

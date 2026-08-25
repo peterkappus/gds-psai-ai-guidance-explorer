@@ -1,0 +1,182 @@
+{
+  "source_id": "ethics-transparency-accountability-adm",
+  "series_url": "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making",
+  "extracted_on": "2026-08-25",
+  "incorporated_articles": [
+    {
+      "article_id": "adm-ethics-framework",
+      "title": "Ethics, Transparency and Accountability Framework for Automated Decision-Making",
+      "url": "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "adm--both-forms",
+      "section": "What we mean by automated decision-making",
+      "claim_type": "requirement",
+      "text": "Automated decision-making refers to both solely automated decisions (no human judgement) and automated assisted decision-making (assisting human judgement). There are some different legal requirements for the two forms of automated decision-making. This framework should be applied in its entirety for both forms to ensure best practice.",
+      "is_quotation": true,
+      "text_start": "both solely automated decisions (no human judgement) and automated assisted decision-making",
+      "text_end": "applied in its entirety for both forms",
+      "themes": [
+        "automated-decision-making"
+      ],
+      "related_faq_ids": [
+        "adm-framework-when",
+        "automated-decisions"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--not-fix-all",
+      "section": "Algorithms are not the solution to every policy problem",
+      "claim_type": "recommendation",
+      "text": "Decision-makers should not assume that automated or algorithmic decision-making is a \u2018fix-all\u2019 solution, particularly for the most complex problems.",
+      "is_quotation": true,
+      "text_start": "should not assume that automated or algorithmic decision-making is a \u2018fix-all\u2019 solution",
+      "text_end": "particularly for the most complex problems",
+      "themes": [
+        "automated-decision-making"
+      ],
+      "related_faq_ids": [
+        "adm-not-fix-all"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--seven-points",
+      "section": "How to use this framework",
+      "claim_type": "recommendation",
+      "text": "When you use automated decision-making in a service, you should: 1. Test to avoid any unintended outcomes or consequences. 2. Deliver fair services for all of our users and citizens. 3. Be clear who is responsible. 4. Handle data safely and protect citizens\u2019 interests. 5. Help users and citizens understand how it impacts them. 6. Ensure that you are compliant with the law. 7. Build something that is future proof.",
+      "is_quotation": true,
+      "text_start": "Test to avoid any unintended outcomes or consequences",
+      "text_end": "Build something that is future proof",
+      "themes": [
+        "automated-decision-making"
+      ],
+      "related_faq_ids": [
+        "adm-framework-when"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--ministerial",
+      "section": "3. Be clear who is responsible",
+      "claim_type": "requirement",
+      "text": "Work on the assumption that every significant automated decision should be agreed by a minister and all major processes and services, subject to automation consideration, should have a senior owner.",
+      "is_quotation": true,
+      "text_start": "every significant automated decision should be agreed by a minister",
+      "text_end": "should have a senior owner",
+      "themes": [
+        "accountability",
+        "automated-decision-making"
+      ],
+      "related_faq_ids": [
+        "adm-ministerial-signoff",
+        "accountability"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--eia-must",
+      "section": "2. Deliver fair services for all of our users and citizens",
+      "claim_type": "requirement",
+      "text": "You must do an Equality Impact Assessment to adhere to the Equality Act (2010) and Public Sector Equality Duty.",
+      "is_quotation": true,
+      "text_start": "You must do an Equality Impact Assessment",
+      "text_end": "Public Sector Equality Duty",
+      "themes": [
+        "equality"
+      ],
+      "related_faq_ids": [
+        "eia-for-ai",
+        "adm-fairness-eia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--presumption-publication",
+      "section": "5. Help users and citizens understand how it impacts them",
+      "claim_type": "requirement",
+      "text": "Work on the basis of a \u2018presumption of publication\u2019 for all algorithms that enable automated decision-making, notifying citizens when a process or service has automated decision-making with plain English explanations (all exceptions to that rule agreed with government legal advisors before ministerial authorisation).",
+      "is_quotation": true,
+      "text_start": "presumption of publication\u2019 for all algorithms that enable automated decision-making",
+      "text_end": "plain English explanations",
+      "themes": [
+        "transparency"
+      ],
+      "related_faq_ids": [
+        "adm-presumption-publication",
+        "tell-the-public"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--legal-signoff",
+      "section": "6. Ensure that you are compliant with the law",
+      "claim_type": "requirement",
+      "text": "Ensure that your algorithm or system adheres to the necessary legislation and has full legal sign-off from relevant government legal advisors.",
+      "is_quotation": true,
+      "text_start": "full legal sign-off from relevant government legal advisors",
+      "text_end": null,
+      "themes": [
+        "lawfulness"
+      ],
+      "related_faq_ids": [
+        "adm-legal-signoff",
+        "legal-advice"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--quarterly-review",
+      "section": "7. Build something that is future proof",
+      "claim_type": "recommendation",
+      "text": "Continuously monitor the algorithm or system, institute formal review points (recommended at least quarterly), and end user challenge to ensure it delivers the intended outcomes and mitigates against unintended consequences that may develop over time",
+      "is_quotation": true,
+      "text_start": "formal review points (recommended at least quarterly)",
+      "text_end": "unintended consequences that may develop over time",
+      "themes": [
+        "monitoring"
+      ],
+      "related_faq_ids": [
+        "adm-quarterly-review",
+        "live-monitoring"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--red-team",
+      "section": "1. Test to avoid any unintended outcomes or consequences",
+      "claim_type": "recommendation",
+      "text": "Do \u2018red team testing\u2019, with the presumption that all algorithms systems are capable of inflicting some degree of harm.",
+      "is_quotation": true,
+      "text_start": "Do \u2018red team testing\u2019",
+      "text_end": "capable of inflicting some degree of harm",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "adm-red-team-testing",
+        "red-team-before-release"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "adm--proxy-data",
+      "section": "4. Handle data safely and protect citizens\u2019 interests",
+      "claim_type": "requirement",
+      "text": "In particular, when datasets are used for decision-making purposes they were not intended for, such as proxy datasets and generalised social datasets (for example individual decisions based on regional location data from the Census), additional caution and robust human oversight is required.",
+      "is_quotation": true,
+      "text_start": "when datasets are used for decision-making purposes they were not intended for",
+      "text_end": "robust human oversight is required",
+      "themes": [
+        "data-protection"
+      ],
+      "related_faq_ids": [
+        "adm-proxy-datasets"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

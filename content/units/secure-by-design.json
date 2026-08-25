@@ -1,0 +1,204 @@
+{
+  "source_id": "secure-by-design",
+  "series_url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/",
+  "extracted_on": "2026-08-25",
+  "incorporated_articles": [
+    {
+      "article_id": "sbd-about",
+      "title": "About Secure by Design",
+      "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/about/"
+    },
+    {
+      "article_id": "sbd-principles",
+      "title": "Secure by Design Principles",
+      "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/principles/"
+    },
+    {
+      "article_id": "sbd-implementation",
+      "title": "Implementing Secure by Design",
+      "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/implementation/"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "sbd--mandatory",
+      "article_id": "sbd-principles",
+      "section": "Overview",
+      "claim_type": "requirement",
+      "text": "As outlined in the Secure by Design policy, these principles are mandatory for government departments and arm\u2019s length bodies (ALBs), and optional for other parts of the public sector.",
+      "is_quotation": true,
+      "text_start": "these principles are mandatory for government departments and arm\u2019s length bodies",
+      "text_end": "optional for other parts of the public sector",
+      "themes": [
+        "security",
+        "secure-by-design"
+      ],
+      "related_faq_ids": [
+        "secure-by-design-mandatory",
+        "service-standard"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--cyber-standard",
+      "article_id": "sbd-about",
+      "section": "About Secure by Design",
+      "claim_type": "requirement",
+      "text": "The Cyber Security Standard requires all organisations delivering new digital services and technical infrastructure to meet the 10 Secure by Design principles.",
+      "is_quotation": true,
+      "text_start": "requires all organisations delivering new digital services",
+      "text_end": "meet the 10 Secure by Design principles",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "secure-by-design-mandatory"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--service-standard-9",
+      "article_id": "sbd-about",
+      "section": "Secure by Design\u2019s wider context",
+      "claim_type": "requirement",
+      "text": "The Service Standard Point 9(Create a secure service which protects users\u2019 privacy) advises service teams that they must follow the Secure by Design principles.",
+      "is_quotation": true,
+      "text_start": "they must follow the Secure by Design principles",
+      "text_end": null,
+      "themes": [
+        "security",
+        "service-standard"
+      ],
+      "related_faq_ids": [
+        "service-standard",
+        "secure-by-design-mandatory"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--risk-owners",
+      "article_id": "sbd-principles",
+      "section": "1. Create responsibility for cyber security risk",
+      "claim_type": "requirement",
+      "text": "Assign risk owners to be accountable for managing cyber security risks for a service throughout its life cycle. These must be senior stakeholders with the experience, knowledge and authority to lead on security activities.",
+      "is_quotation": true,
+      "text_start": "Assign risk owners to be accountable for managing cyber security risks",
+      "text_end": "authority to lead on security activities",
+      "themes": [
+        "security",
+        "accountability"
+      ],
+      "related_faq_ids": [
+        "sbd-risk-owners"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--source-secure",
+      "article_id": "sbd-principles",
+      "section": "2. Source secure technology products",
+      "claim_type": "requirement",
+      "text": "Where third-party products are used, perform security due diligence by continually assessing platforms, software and code for security vulnerabilities.",
+      "is_quotation": true,
+      "text_start": "perform security due diligence by continually assessing platforms",
+      "text_end": "security vulnerabilities",
+      "themes": [
+        "security",
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "sbd-source-secure-products"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--detect-respond",
+      "article_id": "sbd-principles",
+      "section": "5. Build in detect and respond security",
+      "claim_type": "requirement",
+      "text": "Design for the inevitability of security vulnerabilities and incidents. Integrate appropriate security logging, monitoring, alerting and response capabilities. These must be continually tested and iterated.",
+      "is_quotation": true,
+      "text_start": "Design for the inevitability of security vulnerabilities and incidents",
+      "text_end": "continually tested and iterated",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "sbd-detect-respond"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--continuous-assurance",
+      "article_id": "sbd-principles",
+      "section": "9. Embed continuous assurance",
+      "claim_type": "requirement",
+      "text": "Implement continuous security assurance processes to create confidence in the effectiveness of security controls, both at the point of delivery and throughout the operational life of the service.",
+      "is_quotation": true,
+      "text_start": "Implement continuous security assurance processes",
+      "text_end": "throughout the operational life of the service",
+      "themes": [
+        "security",
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "sbd-continuous-assurance",
+        "what-is-ai-assurance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--self-assessment",
+      "article_id": "sbd-about",
+      "section": "How organisations show they\u2019re implementing Secure by Design",
+      "claim_type": "recommendation",
+      "text": "While Secure by Design is not an assurance process, one of its principles is to continuously deliver effective security controls throughout the life of a service. Delivery teams should complete a self assessment as evidence they\u2019re meeting the Secure by Design principles.",
+      "is_quotation": true,
+      "text_start": "Delivery teams should complete a self assessment",
+      "text_end": "meeting the Secure by Design principles",
+      "themes": [
+        "security",
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "sbd-self-assessment"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--procurement",
+      "article_id": "sbd-implementation",
+      "section": "Guidance for commercial teams",
+      "claim_type": "requirement",
+      "text": "Commercial and procurement teams play a vital role in ensuring that cyber security is embedded into government digital and technology procurements from the outset. Secure by Design should be a core consideration throughout the procurement life cycle, from defining requirements and evaluating suppliers to contract management and service delivery.",
+      "is_quotation": true,
+      "text_start": "Secure by Design should be a core consideration throughout the procurement life cycle",
+      "text_end": "contract management and service delivery",
+      "themes": [
+        "security",
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "sbd-in-procurement"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "sbd--implementation-must",
+      "article_id": "sbd-implementation",
+      "section": "Implementing Secure by Design",
+      "claim_type": "requirement",
+      "text": "All central government departments and arm's length bodies (ALBs) must incorporate effective security practices and meet the Secure by Design policy when delivering and building digital services and technical infrastructure.",
+      "is_quotation": true,
+      "text_start": "must incorporate effective security practices and meet the Secure by Design policy",
+      "text_end": "digital services and technical infrastructure",
+      "themes": [
+        "security"
+      ],
+      "related_faq_ids": [
+        "secure-by-design-mandatory"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

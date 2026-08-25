@@ -15,6 +15,10 @@ Questions only for now — answers and citations to follow.
 - Where can civil servants get training on AI?
 - When should I use the Data and AI Ethics Framework?
 - Should my team use the Data and AI Ethics Self-Assessment Tool?
+- What is AI assurance?
+- How does AI assurance relate to the UK’s five AI regulatory principles?
+- Is there statutory AI regulation in the UK I must follow for assurance?
+
 
 ## Lawful, ethical and responsible use
 
@@ -45,6 +49,18 @@ Questions only for now — answers and citations to follow.
 - Do I need an Equality Impact Assessment for an AI project?
 - What does privacy by design mean for an AI project?
 - Should I publish my DPIA and Equality Impact Assessment?
+- When should I use the Ethics, Transparency and Accountability Framework for Automated Decision-Making?
+- Should automated decision-making be the default solution for complex policy problems?
+- Do significant automated decisions need ministerial agreement?
+- Should we publish algorithms used for automated decision-making?
+- Do automated decision-making systems need legal sign-off?
+- Can I use proxy or generalised social datasets for automated decisions about individuals?
+- Should we red-team automated decision-making systems before go-live?
+- How often should we formally review an automated decision-making system?
+- If we contract out AI processing, who owns equality compliance?
+- Can councils merge DPIA and Equality Impact Assessment for AI buys?
+- Do I need an Algorithmic Impact Assessment in the UK?
+
 
 ## Security and safe use of tools
 
@@ -56,6 +72,18 @@ Questions only for now — answers and citations to follow.
 - How do I stop an AI system from leaking personal or sensitive data?
 - How should I handle prompt injection and other generative AI-specific threats?
 - Can I trust generative AI outputs, or do they hallucinate?
+- What does NCSC say about securing AI across the life cycle?
+- What is adversarial machine learning and why does it matter?
+- What is data poisoning in an AI system?
+- How should I threat-model an AI system?
+- How should I handle importing third-party AI models or weights?
+- What controls do I need when calling an external AI API?
+- Which AI assets should I protect, including logs?
+- Can attackers steal my model or training data through the API?
+- Should AI products ship with secure-by-default settings?
+- Is Secure by Design mandatory for government AI services?
+- What does Secure by Design expect for detect and respond?
+
 
 ## Buying and building
 
@@ -67,6 +95,15 @@ Questions only for now — answers and citations to follow.
 - Who owns the intellectual property if we develop or procure an AI solution?
 - How do I avoid vendor lock-in when buying AI?
 - What should I require from AI suppliers on transparency, bias and training data?
+- When should councils use the LGA Responsibly buying AI guide?
+- When must a council assess equality impact before buying AI?
+- When should a council involve its DPO in an AI procurement?
+- How do I build equality and data protection into AI tenders?
+- Is deciding not to buy an AI product a valid outcome?
+- How should commercial teams apply Secure by Design when buying AI?
+- What does Secure by Design require when buying third-party technology?
+- Who is responsible for security when we use third-party AI components?
+
 
 ## Delivery, assurance and operations
 
@@ -83,3 +120,15 @@ Questions only for now — answers and citations to follow.
 - How do I find out what other departments are already doing with AI?
 - Can I reuse AI code, models, or approaches from elsewhere in government?
 - Should I engage civil society, academia, or industry on my AI project?
+- Which AI assurance techniques should my organisation use?
+- How do I keep AI assurance proportionate to risk?
+- What governance should underpin AI assurance?
+- When should we use third-party conformity assessment for AI?
+- Should we red-team AI before release?
+- Should we document AI models with model cards or SBOMs?
+- Should we monitor AI system inputs as well as outputs?
+- How do teams evidence Secure by Design?
+- Who should own cyber security risk for an AI service under Secure by Design?
+- What is continuous assurance under Secure by Design?
+- Do equality and data-protection checks stop once an AI contract is signed?
+

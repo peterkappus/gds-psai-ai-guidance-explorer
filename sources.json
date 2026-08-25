@@ -2,7 +2,7 @@
   "meta": {
     "title": "UK public sector AI guidance sources",
     "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
-    "updated": "2026-08-13",
+    "updated": "2026-08-25",
     "jurisdiction": "United Kingdom",
     "source_lists": [
       "Original explorer backlog (Aug 2026)",
@@ -25,7 +25,7 @@
       },
       {
         "id": "ai-knowledge-hub-how-tos",
-        "title": "AI Knowledge Hub — How-tos and resources",
+        "title": "AI Knowledge Hub \u2014 How-tos and resources",
         "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
         "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
         "notes": "Incorporated 2026-08-07. Practical how-to guidance; preferred as primary citation when explaining how to do something. Claim units in content/units/ai-knowledge-hub-how-tos.json."
@@ -69,7 +69,7 @@
         "id": "ico-ai-data-protection",
         "title": "Guidance on AI and data protection",
         "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
-        "organisation": "Information Commissioner’s Office (ICO)",
+        "organisation": "Information Commissioner\u2019s Office (ICO)",
         "notes": "Incorporated 2026-08-13. Guidance is under review after the Data (Use and Access) Act. Claim units in content/units/ico-ai-data-protection.json."
       },
       {
@@ -78,6 +78,41 @@
         "url": "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
         "organisation": "Government Digital Service (GDS)",
         "notes": "Incorporated 2026-08-13. Complements ATRS, Playbook and ICO guidance; does not replace regulatory requirements. Claim units in content/units/data-and-ai-ethics-framework.json."
+      },
+      {
+        "id": "ncsc-secure-ai-system-development",
+        "title": "Guidelines for secure AI system development",
+        "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+        "organisation": "National Cyber Security Centre (NCSC)",
+        "notes": "Incorporated 2026-08-25. Claim units in content/units/ncsc-secure-ai-system-development.json."
+      },
+      {
+        "id": "secure-by-design",
+        "title": "Secure by Design",
+        "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/",
+        "organisation": "Government Cyber Unit / DSIT (security.gov.uk)",
+        "notes": "Incorporated 2026-08-25. Mandatory for central government and ALBs. Claim units in content/units/secure-by-design.json."
+      },
+      {
+        "id": "ethics-transparency-accountability-adm",
+        "title": "Ethics, Transparency and Accountability Framework for Automated Decision-Making",
+        "url": "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making",
+        "organisation": "Cabinet Office / DSIT / Office for AI (as published)",
+        "notes": "Incorporated 2026-08-25. Claim units in content/units/ethics-transparency-accountability-adm.json."
+      },
+      {
+        "id": "introduction-to-ai-assurance",
+        "title": "Introduction to AI assurance",
+        "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
+        "organisation": "Department for Science, Innovation and Technology (DSIT) \u2013 Responsible Technology Adoption Unit",
+        "notes": "Incorporated 2026-08-25. Claim units in content/units/introduction-to-ai-assurance.json."
+      },
+      {
+        "id": "lga-responsibly-buying-ai",
+        "title": "Responsibly buying AI: a guide for councils in England",
+        "url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
+        "organisation": "Local Government Association (LGA), with LOTI, EHRC and ICO",
+        "notes": "Incorporated 2026-08-25. Claim units in content/units/lga-responsibly-buying-ai.json."
       }
     ],
     "fields": {
@@ -107,7 +142,7 @@
       "status": "incorporated",
       "audience": [
         "central government departments",
-        "in-scope arm’s-length bodies",
+        "in-scope arm\u2019s-length bodies",
         "transparency / data teams"
       ],
       "themes": [
@@ -123,7 +158,10 @@
         "delivery-assurance",
         "collaboration"
       ],
-      "formats": ["HTML collection", "Excel/Google Sheets template"],
+      "formats": [
+        "HTML collection",
+        "Excel/Google Sheets template"
+      ],
       "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
@@ -156,7 +194,7 @@
       "id": "ico-ai-data-protection",
       "title": "Guidance on AI and data protection",
       "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
-      "organisation": "Information Commissioner’s Office (ICO)",
+      "organisation": "Information Commissioner\u2019s Office (ICO)",
       "type": "regulator_guidance",
       "status": "incorporated",
       "audience": [
@@ -177,7 +215,9 @@
         "lawful-ethical",
         "security-tools"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 1,
       "discovered_via": "original-backlog",
       "discovered_on": "2026-08-03",
@@ -209,7 +249,7 @@
           "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/what-is-the-impact-of-article-22-of-the-uk-gdpr-on-fairness/"
         }
       ],
-      "notes": "Primary regulator guidance for personal-data FAQs. Marked as under review by the ICO following the Data (Use and Access) Act — cite current published text and check for updates."
+      "notes": "Primary regulator guidance for personal-data FAQs. Marked as under review by the ICO following the Data (Use and Access) Act \u2014 cite current published text and check for updates."
     },
     {
       "id": "ncsc-secure-ai-system-development",
@@ -217,7 +257,7 @@
       "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
       "organisation": "National Cyber Security Centre (NCSC)",
       "type": "guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "security teams",
         "AI / ML engineers",
@@ -236,12 +276,39 @@
         "buying-building",
         "delivery-assurance"
       ],
-      "formats": ["HTML collection", "PDF"],
+      "formats": [
+        "HTML collection",
+        "PDF"
+      ],
       "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
       "aliases_from_potential_list": [
         "NCSC - Guidelines for Secure AI System Development and AI guidance"
+      ],
+      "claim_units_path": "content/units/ncsc-secure-ai-system-development.json",
+      "incorporated_on": "2026-08-25",
+      "incorporated_articles": [
+        {
+          "article_id": "ncsc-secure-ai-overview",
+          "title": "Guidelines for secure AI system development",
+          "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development"
+        },
+        {
+          "article_id": "ncsc-secure-design",
+          "title": "Secure design",
+          "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-design"
+        },
+        {
+          "article_id": "ncsc-secure-development",
+          "title": "Secure development",
+          "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-development"
+        },
+        {
+          "article_id": "ncsc-secure-deployment",
+          "title": "Secure deployment",
+          "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-deployment"
+        }
       ]
     },
     {
@@ -273,7 +340,9 @@
         "delivery-assurance",
         "lawful-ethical"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 1,
       "discovered_via": "original-backlog",
       "discovered_on": "2026-08-03",
@@ -282,7 +351,7 @@
       "related_urls": [
         "https://www.gov.uk/data-ethics-guidance/guidelines-for-ai-procurement"
       ],
-      "notes": "Catalogue previously pointed at an older/incorrect path; canonical document URL corrected on ingest. Crown copyright 2020 — check Knowledge Hub Procuring AI for newer route names (Procurement Act 2023 era)."
+      "notes": "Catalogue previously pointed at an older/incorrect path; canonical document URL corrected on ingest. Crown copyright 2020 \u2014 check Knowledge Hub Procuring AI for newer route names (Procurement Act 2023 era)."
     },
     {
       "id": "ai-insights",
@@ -313,7 +382,9 @@
         "security-tools",
         "lawful-ethical"
       ],
-      "formats": ["HTML publication series"],
+      "formats": [
+        "HTML publication series"
+      ],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -364,7 +435,9 @@
         "getting-started",
         "buying-building"
       ],
-      "formats": ["HTML hub"],
+      "formats": [
+        "HTML hub"
+      ],
       "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -380,7 +453,7 @@
     },
     {
       "id": "ai-knowledge-hub-how-tos",
-      "title": "AI Knowledge Hub — How-tos and resources",
+      "title": "AI Knowledge Hub \u2014 How-tos and resources",
       "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "guidance",
@@ -410,7 +483,9 @@
         "buying-building",
         "delivery-assurance"
       ],
-      "formats": ["HTML how-to collection"],
+      "formats": [
+        "HTML how-to collection"
+      ],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -482,7 +557,7 @@
     },
     {
       "id": "ai-knowledge-hub-prompts",
-      "title": "AI Knowledge Hub — Prompt library",
+      "title": "AI Knowledge Hub \u2014 Prompt library",
       "url": "https://ai.gov.uk/knowledge-hub/prompts",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "hub",
@@ -504,7 +579,9 @@
         "getting-started",
         "collaboration"
       ],
-      "formats": ["HTML library"],
+      "formats": [
+        "HTML library"
+      ],
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-07",
@@ -512,7 +589,7 @@
     },
     {
       "id": "ai-knowledge-hub-tools",
-      "title": "AI Knowledge Hub — Tool library",
+      "title": "AI Knowledge Hub \u2014 Tool library",
       "url": "https://ai.gov.uk/knowledge-hub/tools",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "hub",
@@ -529,13 +606,15 @@
         "adoption"
       ],
       "summary": "Catalogue of AI tools created or bought to support public-sector delivery, tagged by agile life-cycle phase. Information is time-bound; third-party tools are not endorsements.",
-      "why_include": "Answers “what are others already using?” style questions. Practice catalogue rather than requirements guidance.",
+      "why_include": "Answers \u201cwhat are others already using?\u201d style questions. Practice catalogue rather than requirements guidance.",
       "related_faq_themes": [
         "collaboration",
         "buying-building",
         "getting-started"
       ],
-      "formats": ["HTML library"],
+      "formats": [
+        "HTML library"
+      ],
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-07",
@@ -547,7 +626,7 @@
       "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/",
       "organisation": "Government Cyber Unit / DSIT (security.gov.uk)",
       "type": "framework",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "delivery teams",
         "security professionals",
@@ -566,12 +645,33 @@
         "buying-building",
         "delivery-assurance"
       ],
-      "formats": ["HTML collection"],
+      "formats": [
+        "HTML collection"
+      ],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
       "aliases_from_potential_list": [
         "GOV.UK - Secure by Design"
+      ],
+      "claim_units_path": "content/units/secure-by-design.json",
+      "incorporated_on": "2026-08-25",
+      "incorporated_articles": [
+        {
+          "article_id": "sbd-about",
+          "title": "About Secure by Design",
+          "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/about/"
+        },
+        {
+          "article_id": "sbd-principles",
+          "title": "Secure by Design Principles",
+          "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/principles/"
+        },
+        {
+          "article_id": "sbd-implementation",
+          "title": "Implementing Secure by Design",
+          "url": "https://www.security.gov.uk/policy-and-guidance/secure-by-design/implementation/"
+        }
       ]
     },
     {
@@ -597,7 +697,9 @@
         "security-tools",
         "collaboration"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -631,12 +733,14 @@
         "getting-started",
         "buying-building"
       ],
-      "formats": ["HTML", "self-assessment tool"],
-      "priority": 2,
+      "formats": [
+        "HTML",
+        "self-assessment tool"
+      ],
+      "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
       "incorporated_on": "2026-08-13",
-      "priority": 1,
       "claim_units_path": "content/units/data-and-ai-ethics-framework.json",
       "aliases_from_potential_list": [
         "GOV.UK - Data (and AI) Ethics Framework"
@@ -649,7 +753,7 @@
       "url": "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making",
       "organisation": "Cabinet Office / DSIT / Office for AI (as published)",
       "type": "framework",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "senior process owners",
         "operational leaders",
@@ -668,10 +772,15 @@
         "lawful-ethical",
         "delivery-assurance"
       ],
-      "formats": ["HTML", "assessment form"],
+      "formats": [
+        "HTML",
+        "assessment form"
+      ],
       "priority": 2,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "claim_units_path": "content/units/ethics-transparency-accountability-adm.json",
+      "incorporated_on": "2026-08-25"
     },
     {
       "id": "ai-cyber-security-code-of-practice",
@@ -699,14 +808,16 @@
         "buying-building",
         "delivery-assurance"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 1,
       "discovered_via": "original-backlog|potential_external_sources",
       "discovered_on": "2026-08-03",
       "incorporated_on": "2026-08-10",
       "claim_units_path": "content/units/ai-cyber-security-code-of-practice.json",
       "related_urls": [
-        "https://www.etsi.org/ (ETSI TS 104 223 — emerging standard informed by this code; confirm exact public URL before citing)"
+        "https://www.etsi.org/ (ETSI TS 104 223 \u2014 emerging standard informed by this code; confirm exact public URL before citing)"
       ],
       "aliases_from_potential_list": [
         "DSIT AI Cyber Security Code of Practice / ETSI TS 104 223"
@@ -717,9 +828,9 @@
       "id": "introduction-to-ai-assurance",
       "title": "Introduction to AI assurance",
       "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
-      "organisation": "Department for Science, Innovation and Technology (DSIT) – Responsible Technology Adoption Unit",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) \u2013 Responsible Technology Adoption Unit",
       "type": "guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "assurance / risk teams",
         "product owners",
@@ -737,10 +848,15 @@
         "delivery-assurance",
         "getting-started"
       ],
-      "formats": ["HTML landing page", "PDF"],
+      "formats": [
+        "HTML landing page",
+        "PDF"
+      ],
       "priority": 2,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "claim_units_path": "content/units/introduction-to-ai-assurance.json",
+      "incorporated_on": "2026-08-25"
     },
     {
       "id": "service-standard",
@@ -766,7 +882,9 @@
         "delivery-assurance",
         "getting-started"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -800,7 +918,9 @@
         "delivery-assurance",
         "security-tools"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -811,7 +931,7 @@
           "url": "https://www.gov.uk/service-manual/technology/using-artificial-intelligence-ai-in-services"
         },
         {
-          "title": "9. Create a secure service which protects users’ privacy",
+          "title": "9. Create a secure service which protects users\u2019 privacy",
           "url": "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service"
         }
       ],
@@ -848,7 +968,9 @@
         "delivery-assurance",
         "security-tools"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 1,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -883,7 +1005,9 @@
         "getting-started",
         "collaboration"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 3,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -916,7 +1040,10 @@
         "buying-building",
         "collaboration"
       ],
-      "formats": ["HTML", "PDF (plan)"],
+      "formats": [
+        "HTML",
+        "PDF (plan)"
+      ],
       "related_urls": [
         "https://assets.publishing.service.gov.uk/media/67851771f0528401055d2329/ai_opportunities_action_plan.pdf"
       ],
@@ -930,7 +1057,7 @@
       "url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
       "organisation": "Local Government Association (LGA), with LOTI, EHRC and ICO",
       "type": "guidance",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "local authority commissioners",
         "procurement officers",
@@ -948,10 +1075,14 @@
         "buying-building",
         "lawful-ethical"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 3,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "claim_units_path": "content/units/lga-responsibly-buying-ai.json",
+      "incorporated_on": "2026-08-25"
     },
     {
       "id": "lga-ai-hub-and-network",
@@ -976,7 +1107,10 @@
         "collaboration",
         "buying-building"
       ],
-      "formats": ["HTML hub", "peer network"],
+      "formats": [
+        "HTML hub",
+        "peer network"
+      ],
       "priority": 3,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1005,13 +1139,15 @@
         "adoption"
       ],
       "summary": "NHS repository and community resources for responsible AI adoption in health and care, including the AI Ambassador Network.",
-      "why_include": "Sector-specific guidance for health FAQs; may conflict with or specialise central-government general advice — flag scope carefully.",
+      "why_include": "Sector-specific guidance for health FAQs; may conflict with or specialise central-government general advice \u2014 flag scope carefully.",
       "related_faq_themes": [
         "lawful-ethical",
         "delivery-assurance",
         "collaboration"
       ],
-      "formats": ["HTML hub"],
+      "formats": [
+        "HTML hub"
+      ],
       "priority": 3,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1041,7 +1177,9 @@
         "getting-started",
         "collaboration"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "priority": 3,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1070,7 +1208,9 @@
       "related_faq_themes": [
         "collaboration"
       ],
-      "formats": ["HTML organisation page"],
+      "formats": [
+        "HTML organisation page"
+      ],
       "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1103,7 +1243,9 @@
         "delivery-assurance",
         "collaboration"
       ],
-      "formats": ["HTML hub"],
+      "formats": [
+        "HTML hub"
+      ],
       "priority": 3,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1133,7 +1275,9 @@
         "collaboration",
         "getting-started"
       ],
-      "formats": ["HTML"],
+      "formats": [
+        "HTML"
+      ],
       "related_urls": [
         "https://www.gov.uk/government/organisations/incubator-for-artificial-intelligence"
       ],
@@ -1167,7 +1311,10 @@
         "security-tools",
         "delivery-assurance"
       ],
-      "formats": ["HTML organisation hub", "reports"],
+      "formats": [
+        "HTML organisation hub",
+        "reports"
+      ],
       "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1197,7 +1344,9 @@
       "related_faq_themes": [
         "collaboration"
       ],
-      "formats": ["community page"],
+      "formats": [
+        "community page"
+      ],
       "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",
@@ -1227,7 +1376,9 @@
         "lawful-ethical",
         "collaboration"
       ],
-      "formats": ["HTML group page"],
+      "formats": [
+        "HTML group page"
+      ],
       "priority": 4,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-04",

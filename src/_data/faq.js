@@ -215,6 +215,87 @@ const DATA_ETHICS = {
   url: "https://www.gov.uk/government/publications/data-ethics-framework/data-and-ai-ethics-framework",
 };
 
+const NCSC = {
+  id: "ncsc-secure-ai-system-development",
+  article_id: "ncsc-secure-ai-overview",
+  title: "Guidelines for secure AI system development",
+  organisation: "National Cyber Security Centre (NCSC)",
+  url: "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+};
+
+const NCSC_DESIGN = {
+  id: "ncsc-secure-ai-system-development",
+  article_id: "ncsc-secure-design",
+  title: "NCSC: Secure design (AI systems)",
+  organisation: "National Cyber Security Centre (NCSC)",
+  url: "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-design",
+};
+
+const NCSC_DEV = {
+  id: "ncsc-secure-ai-system-development",
+  article_id: "ncsc-secure-development",
+  title: "NCSC: Secure development (AI systems)",
+  organisation: "National Cyber Security Centre (NCSC)",
+  url: "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-development",
+};
+
+const NCSC_DEPLOY = {
+  id: "ncsc-secure-ai-system-development",
+  article_id: "ncsc-secure-deployment",
+  title: "NCSC: Secure deployment (AI systems)",
+  organisation: "National Cyber Security Centre (NCSC)",
+  url: "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development/guidelines/secure-deployment",
+};
+
+const SBD = {
+  id: "secure-by-design",
+  article_id: "sbd-about",
+  title: "About Secure by Design",
+  organisation: "Government Cyber Unit / DSIT (security.gov.uk)",
+  url: "https://www.security.gov.uk/policy-and-guidance/secure-by-design/about/",
+};
+
+const SBD_PRINCIPLES = {
+  id: "secure-by-design",
+  article_id: "sbd-principles",
+  title: "Secure by Design Principles",
+  organisation: "Government Cyber Unit / DSIT (security.gov.uk)",
+  url: "https://www.security.gov.uk/policy-and-guidance/secure-by-design/principles/",
+};
+
+const SBD_IMPL = {
+  id: "secure-by-design",
+  article_id: "sbd-implementation",
+  title: "Implementing Secure by Design",
+  organisation: "Government Cyber Unit / DSIT (security.gov.uk)",
+  url: "https://www.security.gov.uk/policy-and-guidance/secure-by-design/implementation/",
+};
+
+const ADM = {
+  id: "ethics-transparency-accountability-adm",
+  title:
+    "Ethics, Transparency and Accountability Framework for Automated Decision-Making",
+  organisation: "Cabinet Office / DSIT / Office for AI (as published)",
+  url: "https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making",
+};
+
+const ASSURANCE = {
+  id: "introduction-to-ai-assurance",
+  title: "Introduction to AI assurance",
+  organisation:
+    "Department for Science, Innovation and Technology (DSIT) – Responsible Technology Adoption Unit",
+  url: "https://www.gov.uk/government/publications/introduction-to-ai-assurance/introduction-to-ai-assurance",
+};
+
+const LGA = {
+  id: "lga-responsibly-buying-ai",
+  title: "Responsibly buying AI: a guide for councils in England",
+  organisation: "Local Government Association (LGA), with LOTI, EHRC and ICO",
+  url: "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
+};
+
+const { applyFaqBatch } = require("./faqBatch20260825");
+
 function cite(source, fields) {
   return {
     source_id: source.id,
@@ -2909,6 +2990,25 @@ const categories = [
     },
   ];
 
+applyFaqBatch(categories, {
+  cite,
+  NCSC,
+  NCSC_DESIGN,
+  NCSC_DEV,
+  NCSC_DEPLOY,
+  SBD,
+  SBD_PRINCIPLES,
+  SBD_IMPL,
+  ADM,
+  ASSURANCE,
+  LGA,
+  PLAYBOOK,
+  SERVICE_MANUAL_AI,
+  AI_CYBER_COP,
+  ICO_AI_ACCOUNTABILITY,
+  DATA_ETHICS,
+  GUIDELINES_AI_PROCUREMENT,
+});
 
 /**
  * Entire question → kebab-case slug with punctuation stripped.
@@ -3024,6 +3124,16 @@ module.exports = {
     ICO_AI_TRANSPARENCY,
     ICO_AI_ARTICLE_22,
     DATA_ETHICS,
+    NCSC,
+    NCSC_DESIGN,
+    NCSC_DEV,
+    NCSC_DEPLOY,
+    SBD,
+    SBD_PRINCIPLES,
+    SBD_IMPL,
+    ADM,
+    ASSURANCE,
+    LGA,
   ],
   categories: normalizedCategories,
   items,

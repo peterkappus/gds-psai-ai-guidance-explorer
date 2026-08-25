@@ -1,0 +1,197 @@
+{
+  "source_id": "lga-responsibly-buying-ai",
+  "series_url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
+  "extracted_on": "2026-08-25",
+  "incorporated_articles": [
+    {
+      "article_id": "lga-responsibly-buying-ai",
+      "title": "Responsibly buying AI: a guide for councils in England",
+      "url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "lga--scope",
+      "section": "What is this guide about?",
+      "claim_type": "definition",
+      "text": "This guide provides councils in England with questions to help them comply with the Public Sector Equality Duty (PSED) and data protection law when procuring artificial intelligence (AI) based technology or contracting out part of their public functions to an organisation that uses AI-based technologies. This guide applies to the procurement of any goods or services that include AI-based technologies.",
+      "is_quotation": true,
+      "text_start": "help them comply with the Public Sector Equality Duty (PSED) and data protection law",
+      "text_end": "any goods or services that include AI-based technologies",
+      "themes": [
+        "procurement",
+        "local-government"
+      ],
+      "related_faq_ids": [
+        "lga-when-to-use-guide"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--councils-buy",
+      "section": "Who is this guide for?",
+      "claim_type": "recommendation",
+      "text": "Councils typically procure the AI-based technologies they use as opposed to developing them in-house.",
+      "is_quotation": true,
+      "text_start": "Councils typically procure the AI-based technologies they use",
+      "text_end": "as opposed to developing them in-house",
+      "themes": [
+        "procurement",
+        "local-government"
+      ],
+      "related_faq_ids": [
+        "lga-when-to-use-guide",
+        "buy-or-build"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--contract-out-responsibility",
+      "section": "What does the PSED require?",
+      "claim_type": "requirement",
+      "text": "The responsibility for ensuring that the equality impact of policies is thoroughly assessed and monitored lies with public authorities. This is the case even when they contract out a public function such as processing data using AI-based technologies to a third-party organisation.",
+      "is_quotation": true,
+      "text_start": "even when they contract out a public function",
+      "text_end": "to a third-party organisation",
+      "themes": [
+        "equality",
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "lga-equality-when-outsourcing"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--assess-before-procure",
+      "section": "What does the PSED require?",
+      "claim_type": "requirement",
+      "text": "Assess how using these technologies may impact people with different protected characteristics as early as possible and before they decide to procure them.",
+      "is_quotation": true,
+      "text_start": "as early as possible and before they decide to procure them",
+      "text_end": null,
+      "themes": [
+        "equality"
+      ],
+      "related_faq_ids": [
+        "lga-equality-before-buy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--dpo-early",
+      "section": "What does data protection law require?",
+      "claim_type": "recommendation",
+      "text": "You should involve your Data Protection Officer (DPO) at the earliest possible stage of procuring an AI-based technology and in developing a DPIA.",
+      "is_quotation": true,
+      "text_start": "involve your Data Protection Officer (DPO) at the earliest possible stage",
+      "text_end": "developing a DPIA",
+      "themes": [
+        "data-protection",
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "lga-dpo-in-procurement"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--merge-assessments",
+      "section": "What does data protection law require?",
+      "claim_type": "recommendation",
+      "text": "To streamline the process, please consider integrating your Data Protection Impact Assessment (DPIA) with either an Equality Impact Assessment (EqIA) or into an Algorithmic Impact Assessment (AIA, see below), provided all DPIA and PSED requirements are met.",
+      "is_quotation": true,
+      "text_start": "integrating your Data Protection Impact Assessment (DPIA) with either an Equality Impact Assessment",
+      "text_end": "provided all DPIA and PSED requirements are met",
+      "themes": [
+        "dpia",
+        "equality"
+      ],
+      "related_faq_ids": [
+        "lga-merge-dpia-eqia"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--aia-voluntary",
+      "section": "Algorithmic Impact Assessment",
+      "claim_type": "recommendation",
+      "text": "While not required by law in the UK, you may benefit from undertaking an Algorithmic Impact Assessment (AIA) that promotes investigation into AI-specific and automated decision making risks or otherwise integrating elements of AIAs into organisational DPIA and EqIA templates.",
+      "is_quotation": true,
+      "text_start": "While not required by law in the UK, you may benefit from undertaking an Algorithmic Impact Assessment",
+      "text_end": "AI-specific and automated decision making risks",
+      "themes": [
+        "assurance"
+      ],
+      "related_faq_ids": [
+        "lga-algorithmic-impact-assessment"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--lifecycle-contract",
+      "section": "What is this guide about?",
+      "claim_type": "requirement",
+      "text": "Understand that these considerations and assessments are not static and that due consideration for equalities and data protection risks must occur throughout the lifecycle of a contract and use of AI-based technologies. This includes where AI is introduced during a contract variation, upgrades to products, or when new features are added.",
+      "is_quotation": true,
+      "text_start": "must occur throughout the lifecycle of a contract",
+      "text_end": "when new features are added",
+      "themes": [
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "lga-contract-lifecycle-monitoring"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--build-into-tenders",
+      "section": "What is this guide about?",
+      "claim_type": "recommendation",
+      "text": "Build equality and data protection requirements into the design of their tendering and contract arrangements so councils get the information they need to design a successful procurement process, adequately monitor the impacts of using the technology, and ensure contracts and contract monitoring processes allow them to maintain equitable, lawful and safe use.",
+      "is_quotation": true,
+      "text_start": "Build equality and data protection requirements into the design of their tendering and contract arrangements",
+      "text_end": "equitable, lawful and safe use",
+      "themes": [
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "lga-tender-equality-dp"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--may-not-proceed",
+      "section": "Reminder",
+      "claim_type": "warning",
+      "text": "When reading this guide and undertaking your equality and data protection impact assessments, it is a genuine possibility and legitimate outcome that you do not move ahead with the procurement or commissioning of a particular technology, because you are unable to reduce, mitigate or manage the risks you have identified.",
+      "is_quotation": true,
+      "text_start": "legitimate outcome that you do not move ahead with the procurement",
+      "text_end": "unable to reduce, mitigate or manage the risks",
+      "themes": [
+        "procurement",
+        "risk"
+      ],
+      "related_faq_ids": [
+        "lga-may-not-buy"
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "lga--does-not-replace",
+      "section": "Who is this guide for?",
+      "claim_type": "warning",
+      "text": "This guide does not replace other, more detailed, specialist or regulator guidance, but it provides practical prompts and questions you can use to robustly consider the Public Sector Equality Duty and data protection law compliance throughout the procurement and contract management processes of AI-based technology.",
+      "is_quotation": true,
+      "text_start": "This guide does not replace other, more detailed, specialist or regulator guidance",
+      "text_end": "practical prompts and questions",
+      "themes": [
+        "procurement"
+      ],
+      "related_faq_ids": [
+        "lga-when-to-use-guide"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
