@@ -71,3 +71,17 @@
     </div>
   </div>
 {% endfor %}
+
+{% if item.related and item.related.length %}
+  <h2 class="govuk-heading-m">Related questions</h2>
+  <ul class="govuk-list">
+    {% for related in item.related %}
+      <li>
+        <a class="govuk-link" href="{{ related.url }}">{{ related.question }}</a>
+        {% if related.category_id != item.category_id %}
+          <span class="govuk-hint govuk-!-display-inline govuk-!-margin-left-1">{{ related.category_title }}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

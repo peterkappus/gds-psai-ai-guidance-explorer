@@ -3077,6 +3077,194 @@ const normalizedCategories = categories.map((category) => ({
 
 const items = normalizedCategories.flatMap((category) => category.questions);
 
+const STOPWORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "any",
+  "are",
+  "as",
+  "at",
+  "be",
+  "before",
+  "by",
+  "can",
+  "do",
+  "does",
+  "for",
+  "from",
+  "get",
+  "government",
+  "have",
+  "how",
+  "i",
+  "if",
+  "in",
+  "into",
+  "is",
+  "it",
+  "its",
+  "make",
+  "must",
+  "my",
+  "need",
+  "of",
+  "on",
+  "or",
+  "our",
+  "project",
+  "projects",
+  "should",
+  "still",
+  "the",
+  "their",
+  "them",
+  "this",
+  "to",
+  "use",
+  "used",
+  "using",
+  "we",
+  "what",
+  "when",
+  "where",
+  "which",
+  "who",
+  "why",
+  "with",
+  "you",
+  "your",
+  "ai", // too common across every FAQ
+]);
+
+function tokenizeForRelated(text) {
+  return new Set(
+    String(text || "")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s]/g, " ")
+      .split(/\s+/)
+      .filter((token) => token.length > 2 && !STOPWORDS.has(token))
+  );
+}
+
+function overlapScore(a, b) {
+  if (!a.size || !b.size) return 0;
+  let shared = 0;
+  for (const token of a) {
+    if (b.has(token)) shared += 1;
+  }
+  // Prefer distinctive shared terms over sheer length.
+  return shared / Math.sqrt(a.size * b.size);
+}
+
+function sharedTokenCount(a, b) {
+  let shared = 0;
+  for (const token of a) {
+    if (b.has(token)) shared += 1;
+  }
+  return shared;
+}
+
+const relatedIndex = items.map((item) => ({
+  item,
+  questionTokens: tokenizeForRelated(item.question),
+  answerTokens: tokenizeForRelated(item.answer),
+}));
+
+for (const current of relatedIndex) {
+  const scored = relatedIndex
+    .filter((candidate) => candidate.item.id !== current.item.id)
+    .map((candidate) => {
+      const questionOverlap = overlapScore(
+        current.questionTokens,
+        candidate.questionTokens
+      );
+      const answerOverlap = overlapScore(
+        current.answerTokens,
+        candidate.answerTokens
+      );
+      const crossOverlap =
+        overlapScore(current.questionTokens, candidate.answerTokens) * 0.5 +
+        overlapScore(current.answerTokens, candidate.questionTokens) * 0.35;
+      const sharedInQuestions = sharedTokenCount(
+        current.questionTokens,
+        candidate.questionTokens
+      );
+      const sharedOverall =
+        sharedInQuestions +
+        sharedTokenCount(current.answerTokens, candidate.answerTokens) +
+        sharedTokenCount(current.questionTokens, candidate.answerTokens) +
+        sharedTokenCount(current.answerTokens, candidate.questionTokens);
+      const lexical = questionOverlap * 3 + answerOverlap * 1.2 + crossOverlap;
+      const sameCategory =
+        candidate.item.category_id === current.item.category_id;
+      // Prefer title-to-title matches; avoid single-token false friends (e.g. civil/civil).
+      const strongLexical =
+        sharedInQuestions >= 2 ||
+        (sharedInQuestions >= 1 &&
+          sharedOverall >= 5 &&
+          questionOverlap >= 0.2 &&
+          lexical >= 0.22);
+      return {
+        candidate,
+        lexical,
+        sameCategory,
+        strongLexical,
+        sharedOverall,
+        sharedInQuestions,
+      };
+    });
+
+  const similar = scored
+    .filter((row) => row.strongLexical)
+    .sort((a, b) => {
+      if (b.lexical !== a.lexical) return b.lexical - a.lexical;
+      if (b.sharedInQuestions !== a.sharedInQuestions) {
+        return b.sharedInQuestions - a.sharedInQuestions;
+      }
+      if (Number(b.sameCategory) !== Number(a.sameCategory)) {
+        return Number(b.sameCategory) - Number(a.sameCategory);
+      }
+      return a.candidate.item.question.localeCompare(b.candidate.item.question);
+    });
+
+  const picked = [];
+  const pickedIds = new Set();
+  for (const row of similar) {
+    if (picked.length >= 5) break;
+    picked.push({ ...row, related_by: "similar-words" });
+    pickedIds.add(row.candidate.item.id);
+  }
+
+  if (picked.length < 5) {
+    const sameCategoryFallback = scored
+      .filter((row) => row.sameCategory && !pickedIds.has(row.candidate.item.id))
+      .sort((a, b) => {
+        if (b.lexical !== a.lexical) return b.lexical - a.lexical;
+        return a.candidate.item.question.localeCompare(b.candidate.item.question);
+      });
+    for (const row of sameCategoryFallback) {
+      if (picked.length >= 5) break;
+      picked.push({ ...row, related_by: "same-category" });
+      pickedIds.add(row.candidate.item.id);
+    }
+  }
+
+  current.item.related = picked.map(
+    ({ candidate, related_by, sameCategory }) => ({
+      id: candidate.item.id,
+      question: candidate.item.question,
+      url: candidate.item.url,
+      category_id: candidate.item.category_id,
+      category_title: candidate.item.category_title,
+      related_by,
+      same_category: Boolean(sameCategory),
+    })
+  );
+}
+
 const slugCounts = items.reduce((counts, item) => {
   counts[item.slug] = (counts[item.slug] || 0) + 1;
   return counts;
