@@ -68,6 +68,20 @@ permalink: /guidance-map/
   {% endif %}
 {% endmacro %}
 
+{% macro alignmentTopicDetail(topic) %}
+  <p class="govuk-body-s">{{ topic.summary }} across {{ topic.sources_count }} source{% if topic.sources_count != 1 %}s{% endif %}.</p>
+  <ul class="govuk-list app-guidance-map__alignment-faq-list">
+    {% for faq in topic.faqs %}
+      <li>
+        <a class="govuk-link" href="{{ faq.url }}">{{ faq.title }}</a>
+        <div class="govuk-!-margin-top-1">
+          {{ sourceChips(faq.sources) }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -96,8 +110,8 @@ permalink: /guidance-map/
           <span class="app-guidance-map__stat-label">Gaps / partial</span>
         </li>
         <li>
-          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.alignment_count }}</span>
-          <span class="app-guidance-map__stat-label">Aligned multi-source FAQs</span>
+          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.alignment_topic_count }}</span>
+          <span class="app-guidance-map__stat-label">Topics with alignment</span>
         </li>
         <li>
           <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.incorporated_source_count }}</span>
@@ -125,7 +139,7 @@ permalink: /guidance-map/
                   <label class="govuk-label govuk-checkboxes__label" for="kind-gap">Gaps</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="kind-alignment" name="kind" type="checkbox" value="alignment" data-filter="kind">
+                  <input class="govuk-checkboxes__input" id="kind-alignment" name="kind" type="checkbox" value="alignment" data-filter="kind" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="kind-alignment">Alignments</label>
                 </div>
               </div>
@@ -195,7 +209,7 @@ permalink: /guidance-map/
             <tbody class="govuk-table__body">
               {% for row in guidanceMap.conflicts %}
                 <tr
-                  class="govuk-table__row"
+                  class="govuk-table__row app-guidance-map__conflict-summary"
                   data-map-row
                   data-map-id="conflict-{{ row.id }}"
                   data-kind="conflict"
@@ -206,14 +220,15 @@ permalink: /guidance-map/
                     <span class="govuk-!-font-weight-bold">{{ row.topic_label }}</span>
                   </td>
                   <td class="govuk-table__cell">
-                    {% set conflictDetailsHtml %}
-                      {{ conflictDetail(row) }}
-                    {% endset %}
-                    {{ govukDetails({
-                      summaryText: row.title,
-                      classes: "app-guidance-map__conflict-details",
-                      html: conflictDetailsHtml
-                    }) }}
+                    <button
+                      type="button"
+                      class="app-guidance-map__conflict-toggle"
+                      aria-expanded="false"
+                      aria-controls="conflict-detail-{{ row.id }}"
+                      id="conflict-toggle-{{ row.id }}"
+                    >
+                      <span class="app-guidance-map__conflict-toggle-text">{{ row.title }}</span>
+                    </button>
                   </td>
                   <td class="govuk-table__cell">
                     {% if row.likely_cause_label %}
@@ -225,6 +240,19 @@ permalink: /guidance-map/
                   </td>
                   <td class="govuk-table__cell">
                     {{ sourceChips(row.sources) }}
+                  </td>
+                </tr>
+                <tr
+                  class="govuk-table__row app-guidance-map__conflict-detail-row"
+                  id="conflict-detail-{{ row.id }}"
+                  data-map-detail-for="conflict-{{ row.id }}"
+                  hidden
+                >
+                  <td class="govuk-table__cell app-guidance-map__conflict-detail-spacer" aria-hidden="true"></td>
+                  <td class="govuk-table__cell app-guidance-map__conflict-detail-cell" colspan="3">
+                    <div class="app-guidance-map__conflict-detail-panel">
+                      {{ conflictDetail(row) }}
+                    </div>
                   </td>
                 </tr>
               {% endfor %}
@@ -363,38 +391,66 @@ permalink: /guidance-map/
       </section>
 
       <section class="app-guidance-map__section" data-map-section="alignment" aria-labelledby="alignment-heading">
-        <h2 class="govuk-heading-l" id="alignment-heading">Alignment overview</h2>
+        <h2 class="govuk-heading-l" id="alignment-heading">Where guidance aligns</h2>
         <p class="govuk-body">
-          FAQs where two or more sources cite the same question with no contrasting mark.
-          Turn on Alignments in the filters to show this section.
+          Topics with questions where two or more sources agree without a contrasting mark
+          ({{ guidanceMap.summary.alignment_count }} aligned FAQs across {{ guidanceMap.summary.alignment_topic_count }} topics).
+          Open a topic to see the questions and sources.
         </p>
 
         <div class="app-guidance-map__table-wrap">
           <table class="govuk-table app-guidance-map__table app-guidance-map__table--alignments">
-            <caption class="govuk-table__caption govuk-visually-hidden">Aligned multi-source FAQs</caption>
+            <caption class="govuk-table__caption govuk-visually-hidden">Topics with aligned multi-source FAQs</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header app-guidance-map__col-topic">Topic</th>
-                <th scope="col" class="govuk-table__header">Question</th>
-                <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Aligned sources</th>
+                <th scope="col" class="govuk-table__header">Aligned coverage</th>
+                <th scope="col" class="govuk-table__header app-guidance-map__col-cause">Questions</th>
+                <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Sources</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% for row in guidanceMap.alignments %}
+              {% for topic in guidanceMap.alignmentTopics %}
                 <tr
-                  class="govuk-table__row"
+                  class="govuk-table__row app-guidance-map__conflict-summary"
                   data-map-row
-                  data-map-id="alignment-{{ row.id }}"
+                  data-map-id="alignment-{{ topic.id }}"
                   data-kind="alignment"
-                  data-topic="{{ row.topic_id }}"
+                  data-topic="{{ topic.topic_id }}"
                   data-cause=""
                 >
-                  <td class="govuk-table__cell">{{ row.topic_label }}</td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                    <span class="govuk-!-font-weight-bold">{{ topic.topic_label }}</span>
                   </td>
                   <td class="govuk-table__cell">
-                    {{ sourceChips(row.sources) }}
+                    <button
+                      type="button"
+                      class="app-guidance-map__conflict-toggle"
+                      aria-expanded="false"
+                      aria-controls="alignment-detail-{{ topic.id }}"
+                      id="alignment-toggle-{{ topic.id }}"
+                    >
+                      <span class="app-guidance-map__conflict-toggle-text">{{ topic.summary }}</span>
+                    </button>
+                  </td>
+                  <td class="govuk-table__cell">
+                    {{ topic.faq_count }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    {{ sourceChips(topic.sources) }}
+                  </td>
+                </tr>
+                <tr
+                  class="govuk-table__row app-guidance-map__conflict-detail-row"
+                  id="alignment-detail-{{ topic.id }}"
+                  data-map-detail-for="alignment-{{ topic.id }}"
+                  hidden
+                >
+                  <td class="govuk-table__cell app-guidance-map__conflict-detail-spacer" aria-hidden="true"></td>
+                  <td class="govuk-table__cell app-guidance-map__conflict-detail-cell" colspan="3">
+                    <div class="app-guidance-map__alignment-detail-panel">
+                      {{ alignmentTopicDetail(topic) }}
+                    </div>
                   </td>
                 </tr>
               {% endfor %}
@@ -403,21 +459,31 @@ permalink: /guidance-map/
         </div>
 
         <div class="app-guidance-map__cards">
-          {% for row in guidanceMap.alignments %}
+          {% for topic in guidanceMap.alignmentTopics %}
             <article
               class="app-guidance-map__card"
               data-map-row
-              data-map-id="alignment-{{ row.id }}"
+              data-map-id="alignment-{{ topic.id }}"
               data-kind="alignment"
-              data-topic="{{ row.topic_id }}"
+              data-topic="{{ topic.topic_id }}"
               data-cause=""
             >
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
-              <h3 class="govuk-heading-s">
-                <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
-              </h3>
-              <h4 class="govuk-heading-s">Aligned sources</h4>
-              {{ sourceChips(row.sources) }}
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ topic.topic_label }}</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-2">{{ topic.faq_count }} aligned questions</p>
+              <div class="govuk-!-margin-bottom-2">
+                <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1">Sources</p>
+                {{ sourceChips(topic.sources) }}
+              </div>
+              {% set alignmentCardDetailsHtml %}
+                <div class="app-guidance-map__alignment-detail-panel">
+                  {{ alignmentTopicDetail(topic) }}
+                </div>
+              {% endset %}
+              {{ govukDetails({
+                summaryText: topic.summary,
+                classes: "app-guidance-map__conflict-details",
+                html: alignmentCardDetailsHtml
+              }) }}
             </article>
           {% endfor %}
         </div>

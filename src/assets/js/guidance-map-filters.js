@@ -1,11 +1,12 @@
 (function () {
   const form = document.getElementById("guidance-map-filters");
   const rows = Array.from(document.querySelectorAll("[data-map-row]"));
+  const detailRows = Array.from(document.querySelectorAll("[data-map-detail-for]"));
   const sections = Array.from(document.querySelectorAll("[data-map-section]"));
   const countEl = document.getElementById("guidance-map-filter-count");
   const emptyEl = document.getElementById("guidance-map-no-results");
   const resetButton = document.querySelector("[data-filter-reset]");
-  const defaultKinds = { conflict: true, gap: true, alignment: false };
+  const defaultKinds = { conflict: true, gap: true, alignment: true };
 
   if (!form || !rows.length) return;
 
@@ -31,6 +32,21 @@
     return kindOk && topicOk && causeOk;
   }
 
+  function syncDetailRows() {
+    detailRows.forEach(function (detailRow) {
+      const mapId = detailRow.dataset.mapDetailFor;
+      const summaryRow = rows.find(function (row) {
+        return row.dataset.mapId === mapId;
+      });
+      const toggle = summaryRow
+        ? summaryRow.querySelector(".app-guidance-map__conflict-toggle")
+        : null;
+      const expanded = toggle && toggle.getAttribute("aria-expanded") === "true";
+      const summaryVisible = summaryRow && !summaryRow.hidden;
+      detailRow.hidden = !(summaryVisible && expanded);
+    });
+  }
+
   function applyFilters() {
     const kinds = selectedValues("kind");
     const topics = selectedValues("topic");
@@ -49,6 +65,8 @@
         visibleIds[row.dataset.mapId] = true;
       }
     });
+
+    syncDetailRows();
 
     const visible = Object.keys(visibleIds).length;
     const totalIds = {};
@@ -78,6 +96,14 @@
       emptyEl.hidden = visible !== 0;
     }
   }
+
+  document.querySelectorAll(".app-guidance-map__conflict-toggle").forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      syncDetailRows();
+    });
+  });
 
   form.addEventListener("change", applyFilters);
 
