@@ -112,6 +112,151 @@
   margin-right: 0;
 }
 
+.app-guidance-map__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: govuk-spacing(4);
+  margin-top: govuk-spacing(2);
+  margin-bottom: govuk-spacing(6);
+  padding: 0;
+  list-style: none;
+}
+
+.app-guidance-map__stats > li {
+  min-width: 8rem;
+  padding: govuk-spacing(3);
+  border: 1px solid $govuk-border-colour;
+  background-color: govuk-colour("black", $variant: "tint-95");
+}
+
+.app-guidance-map__stat-value {
+  display: block;
+  @include govuk-font($size: 36, $weight: bold);
+  line-height: 1.1;
+}
+
+.app-guidance-map__stat-label {
+  display: block;
+  @include govuk-font($size: 16);
+  margin-top: govuk-spacing(1);
+}
+
+.app-guidance-map__filter-bar {
+  margin-bottom: govuk-spacing(6);
+}
+
+.app-guidance-map__filter-bar-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: govuk-spacing(2);
+  margin-bottom: govuk-spacing(3);
+}
+
+.app-guidance-map__filter-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: govuk-spacing(2) govuk-spacing(4);
+}
+
+.app-guidance-map__filter-inline .govuk-checkboxes__item {
+  float: none;
+  margin-bottom: 0;
+  clear: none;
+}
+
+.app-guidance-map__filter-panels {
+  display: grid;
+  gap: govuk-spacing(4);
+  margin-bottom: govuk-spacing(4);
+}
+
+@media (min-width: 40.0625em) {
+  .app-guidance-map__filter-panels {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.app-guidance-map__section {
+  margin-bottom: govuk-spacing(8);
+}
+
+.app-guidance-map__table-wrap {
+  overflow-x: auto;
+}
+
+.app-guidance-map__table .govuk-table__cell,
+.app-guidance-map__table .govuk-table__header {
+  vertical-align: top;
+}
+
+.app-guidance-map__col-topic {
+  width: 12rem;
+}
+
+.app-guidance-map__col-cause {
+  width: 9rem;
+}
+
+.app-guidance-map__col-sources {
+  width: 14rem;
+}
+
+.app-guidance-map__table--conflicts .govuk-details,
+.app-guidance-map__card .govuk-details {
+  margin-bottom: 0;
+}
+
+.app-guidance-map__source-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: govuk-spacing(1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-guidance-map__source-chip {
+  display: inline-block;
+  @include govuk-font($size: 16);
+  padding: 2px govuk-spacing(1);
+  border: 1px solid $govuk-border-colour;
+  background-color: govuk-colour("white");
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.app-guidance-map__cards {
+  display: none;
+}
+
+.app-guidance-map__card {
+  margin-bottom: govuk-spacing(4);
+  padding: govuk-spacing(4);
+  border: 1px solid $govuk-border-colour;
+}
+
+@media (max-width: 40.0625em) {
+  .app-guidance-map__table-wrap {
+    display: none;
+  }
+
+  .app-guidance-map__cards {
+    display: block;
+  }
+
+  .app-guidance-map__col-topic,
+  .app-guidance-map__col-cause,
+  .app-guidance-map__col-sources {
+    width: auto;
+  }
+}
+
 // Markdown pages: markdown-it-govuk supplies most component classes.
 // These rules cover fenced code and wide tables on long process docs.
 .app-prose {

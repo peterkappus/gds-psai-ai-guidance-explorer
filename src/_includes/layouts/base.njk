@@ -44,6 +44,7 @@
 
     {% set aboutIsCurrent = page.url.indexOf('/about/') === 0 %}
     {% set sourcesIsCurrent = page.url.indexOf('/sources/') === 0 %}
+    {% set guidanceMapIsCurrent = page.url.indexOf('/guidance-map/') === 0 %}
     {% set questionsIsCurrent = page.url === "/" or page.url.indexOf('/faq/') === 0 %}
     {{ govukServiceNavigation({
       navigation: [
@@ -56,6 +57,11 @@
           href: "/sources/",
           text: "Sources",
           current: sourcesIsCurrent
+        },
+        {
+          href: "/guidance-map/",
+          text: "Guidance map",
+          current: guidanceMapIsCurrent
         },
         {
           href: "/about/",
@@ -98,7 +104,8 @@
           title: "Explore",
           items: [
             { href: "/", text: "Questions" },
-            { href: "/sources/", text: "Sources" }
+            { href: "/sources/", text: "Sources" },
+            { href: "/guidance-map/", text: "Guidance map" }
           ]
         },
         {
@@ -114,7 +121,8 @@
       meta: {
         visuallyHiddenTitle: "About this page",
         html: footerHtml
-      }
+      },
+      contentLicence: null
     }) }}
 
     <script type="module" src="/assets/govuk-frontend.min.js"></script>

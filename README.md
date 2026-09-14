@@ -2,6 +2,10 @@
 
 Prototype catalogue of UK public sector AI guidance, starting with an FAQ drawn from the [AI Playbook for the UK Government](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html).
 
+This is a proof-of-concept only, it is NOT an official service of the UK government and is NOT intended to provide official answers to questions about AI in government.
+
+Always consult official cited sources for official guidance & policy.
+
 ## Run locally
 
 ```bash

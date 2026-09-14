@@ -1,0 +1,433 @@
+---
+permalink: /guidance-map/
+---
+{% extends "layouts/base.njk" %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% set title = "Guidance map" %}
+{% set description = "Curator overview of where incorporated AI guidance aligns, conflicts, or leaves gaps." %}
+
+{% macro sourceChips(sources) %}
+  {% if sources and sources.length %}
+    <ul class="app-guidance-map__source-chips govuk-list govuk-!-margin-bottom-0">
+      {% for source in sources %}
+        <li>
+          <a
+            class="govuk-link app-guidance-map__source-chip"
+            href="{{ source.url }}"
+            title="{{ source.title }}"
+          >{{ source.short_label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <span class="govuk-hint">None listed</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro faqLinks(faqs) %}
+  {% if faqs and faqs.length %}
+    <ul class="govuk-list govuk-!-margin-bottom-0">
+      {% for faq in faqs %}
+        <li>
+          <a class="govuk-link" href="{{ faq.url }}">{{ faq.question }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <span class="govuk-hint">None linked</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro conflictDetail(row) %}
+  <p class="govuk-body-s">{{ row.summary }}</p>
+  {% if row.user_guidance %}
+    <p class="govuk-body-s">
+      <strong class="govuk-!-font-weight-bold">Navigate:</strong> {{ row.user_guidance }}
+    </p>
+  {% endif %}
+  {% if row.related_faqs and row.related_faqs.length %}
+    <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1">Related questions</p>
+    {{ faqLinks(row.related_faqs) }}
+  {% endif %}
+  {% if row.positions and row.positions.length %}
+    <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1 govuk-!-margin-top-3">Positions</p>
+    <ul class="govuk-list">
+      {% for position in row.positions %}
+        <li class="govuk-body-s">
+          <a class="govuk-link" href="{{ position.source.url }}" title="{{ position.source.title }}">{{ position.source.short_label }}</a>
+          {% if position.section %}
+            <span class="govuk-hint">({{ position.section }})</span>
+          {% endif %}
+          — {{ position.stance }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Guidance map</h1>
+      <p class="govuk-body-l">
+        Curator view of how incorporated sources work together: documented tensions,
+        unanswered questions, and FAQs where multiple sources agree without contrast.
+      </p>
+      <p class="govuk-body">
+        Alignment is best-effort from FAQ citations (two or more sources on the same
+        question, none marked contrasting). Conflicts come from the curated conflict
+        register. Gaps are FAQ items marked <code>gap</code> or <code>partial</code>.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <ul class="app-guidance-map__stats govuk-list">
+        <li>
+          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.open_conflict_count }}</span>
+          <span class="app-guidance-map__stat-label">Open conflicts</span>
+        </li>
+        <li>
+          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.gap_count }}</span>
+          <span class="app-guidance-map__stat-label">Gaps / partial</span>
+        </li>
+        <li>
+          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.alignment_count }}</span>
+          <span class="app-guidance-map__stat-label">Aligned multi-source FAQs</span>
+        </li>
+        <li>
+          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.incorporated_source_count }}</span>
+          <span class="app-guidance-map__stat-label">Incorporated sources</span>
+        </li>
+      </ul>
+
+      <div class="app-guidance-map__filter-bar app-filter" data-module="app-guidance-map-filters">
+        <div class="app-guidance-map__filter-bar-top">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Filter</h2>
+          <p class="govuk-body-s govuk-!-margin-bottom-0" id="guidance-map-filter-count" aria-live="polite"></p>
+        </div>
+
+        <form id="guidance-map-filters" method="get" action="/guidance-map/">
+          <div class="govuk-form-group govuk-!-margin-bottom-2">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Show</legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small app-guidance-map__filter-inline" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="kind-conflict" name="kind" type="checkbox" value="conflict" data-filter="kind" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="kind-conflict">Conflicts</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="kind-gap" name="kind" type="checkbox" value="gap" data-filter="kind" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="kind-gap">Gaps</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="kind-alignment" name="kind" type="checkbox" value="alignment" data-filter="kind">
+                  <label class="govuk-label govuk-checkboxes__label" for="kind-alignment">Alignments</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {% set moreFiltersHtml %}
+            <div class="app-guidance-map__filter-panels">
+              <div class="govuk-form-group govuk-!-margin-bottom-0">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Topic</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small app-guidance-map__filter-inline" data-module="govuk-checkboxes">
+                    {% for topic in guidanceMap.topics %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="topic-{{ topic.id }}" name="topic" type="checkbox" value="{{ topic.id }}" data-filter="topic">
+                        <label class="govuk-label govuk-checkboxes__label" for="topic-{{ topic.id }}">{{ topic.label }}</label>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              </div>
+
+              {% if guidanceMap.causes.length %}
+                <div class="govuk-form-group govuk-!-margin-bottom-0">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Conflict cause</legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small app-guidance-map__filter-inline" data-module="govuk-checkboxes">
+                      {% for cause in guidanceMap.causes %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cause-{{ cause.id }}" name="cause" type="checkbox" value="{{ cause.id }}" data-filter="cause">
+                          <label class="govuk-label govuk-checkboxes__label" for="cause-{{ cause.id }}">{{ cause.label }}</label>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+              {% endif %}
+            </div>
+          {% endset %}
+
+          {{ govukDetails({
+            summaryText: "Topic and cause filters",
+            html: moreFiltersHtml
+          }) }}
+
+          <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-filter-reset>Reset filters</button>
+        </form>
+      </div>
+
+      <section class="app-guidance-map__section" data-map-section="conflict" aria-labelledby="conflicts-heading">
+        <h2 class="govuk-heading-l" id="conflicts-heading">Conflicts board</h2>
+        <p class="govuk-body">
+          One row per curated conflict. Expand a row for summary, navigator guidance, related questions and source positions.
+        </p>
+
+        <div class="app-guidance-map__table-wrap">
+          <table class="govuk-table app-guidance-map__table app-guidance-map__table--conflicts">
+            <caption class="govuk-table__caption govuk-visually-hidden">Documented conflicts between sources</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-guidance-map__col-topic">Topic</th>
+                <th scope="col" class="govuk-table__header">Conflict</th>
+                <th scope="col" class="govuk-table__header app-guidance-map__col-cause">Cause</th>
+                <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Sources</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for row in guidanceMap.conflicts %}
+                <tr
+                  class="govuk-table__row"
+                  data-map-row
+                  data-map-id="conflict-{{ row.id }}"
+                  data-kind="conflict"
+                  data-topic="{{ row.topic_id }}"
+                  data-cause="{{ row.likely_cause or '' }}"
+                >
+                  <td class="govuk-table__cell">
+                    <span class="govuk-!-font-weight-bold">{{ row.topic_label }}</span>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">{{ row.title }}</p>
+                    {% set conflictDetailsHtml %}
+                      {{ conflictDetail(row) }}
+                    {% endset %}
+                    {{ govukDetails({
+                      summaryText: "Details and related questions",
+                      html: conflictDetailsHtml
+                    }) }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    {% if row.likely_cause_label %}
+                      {{ govukTag({
+                        text: row.likely_cause_label,
+                        classes: "govuk-tag--yellow"
+                      }) }}
+                    {% endif %}
+                  </td>
+                  <td class="govuk-table__cell">
+                    {{ sourceChips(row.sources) }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="app-guidance-map__cards">
+          {% for row in guidanceMap.conflicts %}
+            <article
+              class="app-guidance-map__card"
+              data-map-row
+              data-map-id="conflict-{{ row.id }}"
+              data-kind="conflict"
+              data-topic="{{ row.topic_id }}"
+              data-cause="{{ row.likely_cause or '' }}"
+            >
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
+              <h3 class="govuk-heading-s">{{ row.title }}</h3>
+              {% if row.likely_cause_label %}
+                <p class="govuk-!-margin-bottom-2">
+                  {{ govukTag({
+                    text: row.likely_cause_label,
+                    classes: "govuk-tag--yellow"
+                  }) }}
+                </p>
+              {% endif %}
+              <div class="govuk-!-margin-bottom-2">
+                <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1">Sources</p>
+                {{ sourceChips(row.sources) }}
+              </div>
+              {% set conflictCardDetailsHtml %}
+                {{ conflictDetail(row) }}
+              {% endset %}
+              {{ govukDetails({
+                summaryText: "Details and related questions",
+                html: conflictCardDetailsHtml
+              }) }}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="app-guidance-map__section" data-map-section="gap" aria-labelledby="gaps-heading">
+        <h2 class="govuk-heading-l" id="gaps-heading">Gaps</h2>
+        <p class="govuk-body">
+          Questions marked as gap or partial — dangerous holes in the body of guidance.
+        </p>
+
+        {% if guidanceMap.gaps.length %}
+          <div class="app-guidance-map__table-wrap">
+            <table class="govuk-table app-guidance-map__table">
+              <caption class="govuk-table__caption govuk-visually-hidden">FAQ gaps and partial answers</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header app-guidance-map__col-topic">Topic</th>
+                  <th scope="col" class="govuk-table__header">Question</th>
+                  <th scope="col" class="govuk-table__header app-guidance-map__col-cause">Status</th>
+                  <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Nearest sources</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                {% for row in guidanceMap.gaps %}
+                  <tr
+                    class="govuk-table__row"
+                    data-map-row
+                    data-map-id="gap-{{ row.id }}"
+                    data-kind="gap"
+                    data-topic="{{ row.topic_id }}"
+                    data-cause=""
+                  >
+                    <td class="govuk-table__cell">{{ row.topic_label }}</td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                      <p class="govuk-body-s govuk-!-margin-bottom-0">{{ row.summary }}</p>
+                    </td>
+                    <td class="govuk-table__cell">
+                      {{ govukTag({
+                        text: row.status | humanizeToken,
+                        classes: row.status | faqStatusTagClass
+                      }) }}
+                    </td>
+                    <td class="govuk-table__cell">
+                      {{ sourceChips(row.sources) }}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="app-guidance-map__cards">
+            {% for row in guidanceMap.gaps %}
+              <article
+                class="app-guidance-map__card"
+                data-map-row
+                data-map-id="gap-{{ row.id }}"
+                data-kind="gap"
+                data-topic="{{ row.topic_id }}"
+                data-cause=""
+              >
+                <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
+                <h3 class="govuk-heading-s">
+                  <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                </h3>
+                <p class="govuk-!-margin-bottom-2">
+                  {{ govukTag({
+                    text: row.status | humanizeToken,
+                    classes: row.status | faqStatusTagClass
+                  }) }}
+                </p>
+                <p class="govuk-body-s">{{ row.summary }}</p>
+                <h4 class="govuk-heading-s">Nearest sources</h4>
+                {{ sourceChips(row.sources) }}
+              </article>
+            {% endfor %}
+          </div>
+        {% else %}
+          {% set gapsEmpty %}
+            <p class="govuk-body">
+              No FAQ items are currently marked <code>gap</code> or <code>partial</code>.
+              When curators flag unanswered or thinly covered questions that way, they will
+              appear here as problem areas to fill.
+            </p>
+          {% endset %}
+          {{ govukInsetText({ html: gapsEmpty }) }}
+          <div
+            class="govuk-visually-hidden"
+            data-map-row
+            data-kind="gap"
+            data-topic=""
+            data-cause=""
+            data-empty-gap
+          ></div>
+        {% endif %}
+      </section>
+
+      <section class="app-guidance-map__section" data-map-section="alignment" aria-labelledby="alignment-heading">
+        <h2 class="govuk-heading-l" id="alignment-heading">Alignment overview</h2>
+        <p class="govuk-body">
+          FAQs where two or more sources cite the same question with no contrasting mark.
+          Turn on Alignments in the filters to show this section.
+        </p>
+
+        <div class="app-guidance-map__table-wrap">
+          <table class="govuk-table app-guidance-map__table app-guidance-map__table--alignments">
+            <caption class="govuk-table__caption govuk-visually-hidden">Aligned multi-source FAQs</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-guidance-map__col-topic">Topic</th>
+                <th scope="col" class="govuk-table__header">Question</th>
+                <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Aligned sources</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for row in guidanceMap.alignments %}
+                <tr
+                  class="govuk-table__row"
+                  data-map-row
+                  data-map-id="alignment-{{ row.id }}"
+                  data-kind="alignment"
+                  data-topic="{{ row.topic_id }}"
+                  data-cause=""
+                >
+                  <td class="govuk-table__cell">{{ row.topic_label }}</td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                  </td>
+                  <td class="govuk-table__cell">
+                    {{ sourceChips(row.sources) }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="app-guidance-map__cards">
+          {% for row in guidanceMap.alignments %}
+            <article
+              class="app-guidance-map__card"
+              data-map-row
+              data-map-id="alignment-{{ row.id }}"
+              data-kind="alignment"
+              data-topic="{{ row.topic_id }}"
+              data-cause=""
+            >
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
+              <h3 class="govuk-heading-s">
+                <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+              </h3>
+              <h4 class="govuk-heading-s">Aligned sources</h4>
+              {{ sourceChips(row.sources) }}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <p class="govuk-body govuk-!-margin-top-4" id="guidance-map-no-results" hidden>
+        No rows match the selected filters.
+      </p>
+    </div>
+  </div>
+
+  <script src="/assets/js/guidance-map-filters.js"></script>
+{% endblock %}
