@@ -287,25 +287,6 @@
   margin-bottom: 0;
 }
 
-.app-guidance-map__alignment-detail-panel {
-  margin-bottom: govuk-spacing(2);
-  padding: govuk-spacing(3);
-  border-left: 4px solid govuk-colour("blue");
-  background-color: govuk-colour("light-grey");
-}
-
-.app-guidance-map__alignment-detail-panel > :last-child {
-  margin-bottom: 0;
-}
-
-.app-guidance-map__alignment-faq-list > li {
-  margin-bottom: govuk-spacing(3);
-}
-
-.app-guidance-map__alignment-faq-list > li:last-child {
-  margin-bottom: 0;
-}
-
 .app-guidance-map__source-chips {
   display: flex;
   flex-wrap: wrap;

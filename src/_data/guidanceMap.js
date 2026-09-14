@@ -211,6 +211,7 @@ function buildGapRows(sourcesById) {
 
 /**
  * Strict alignment: two or more sources on the same FAQ, none marked contrasting.
+ * Primary = citation role "primary"; normative = "supporting" (and not also primary).
  */
 function buildAlignmentRows(sourcesById) {
   return faqData.items
@@ -228,13 +229,30 @@ function buildAlignmentRows(sourcesById) {
     })
     .map((item) => {
       const topic = topicFromFaq(item);
-      const sources = [];
-      const seen = new Set();
+      const rolesBySource = new Map();
       for (const citation of item.citations || []) {
-        if (!citation.source_id || seen.has(citation.source_id)) continue;
-        seen.add(citation.source_id);
-        sources.push(resolveSource(citation.source_id, sourcesById));
+        if (!citation.source_id) continue;
+        if (!rolesBySource.has(citation.source_id)) {
+          rolesBySource.set(citation.source_id, new Set());
+        }
+        rolesBySource.get(citation.source_id).add(citation.role);
       }
+
+      const primarySources = [];
+      const normativeSources = [];
+      for (const [sourceId, roles] of rolesBySource) {
+        const source = resolveSource(sourceId, sourcesById);
+        if (roles.has("primary")) {
+          primarySources.push(source);
+        } else if (roles.has("supporting")) {
+          normativeSources.push(source);
+        }
+      }
+
+      primarySources.sort((a, b) => a.short_label.localeCompare(b.short_label));
+      normativeSources.sort((a, b) => a.short_label.localeCompare(b.short_label));
+
+      const sources = [...primarySources, ...normativeSources];
 
       return {
         kind: "alignment",
@@ -248,6 +266,8 @@ function buildAlignmentRows(sourcesById) {
         likely_cause_label: null,
         user_guidance: null,
         sources,
+        primary_sources: primarySources,
+        normative_sources: normativeSources,
         related_faqs: [
           {
             id: item.id,
@@ -261,61 +281,9 @@ function buildAlignmentRows(sourcesById) {
       };
     })
     .sort((a, b) => {
-      if (b.sources_count !== a.sources_count) {
-        return b.sources_count - a.sources_count;
-      }
+      const topicCmp = a.topic_label.localeCompare(b.topic_label);
+      if (topicCmp !== 0) return topicCmp;
       return a.title.localeCompare(b.title);
-    });
-}
-
-function buildAlignmentTopics(alignmentRows) {
-  const byTopic = new Map();
-
-  for (const row of alignmentRows) {
-    const key = row.topic_id || "uncategorised";
-    if (!byTopic.has(key)) {
-      byTopic.set(key, {
-        kind: "alignment",
-        id: `topic-${key}`,
-        topic_id: row.topic_id,
-        topic_label: row.topic_label,
-        title: row.topic_label,
-        faqs: [],
-        sourcesById: new Map(),
-      });
-    }
-    const topic = byTopic.get(key);
-    topic.faqs.push(row);
-    for (const source of row.sources || []) {
-      if (!topic.sourcesById.has(source.id)) {
-        topic.sourcesById.set(source.id, source);
-      }
-    }
-  }
-
-  return [...byTopic.values()]
-    .map((topic) => {
-      const sources = [...topic.sourcesById.values()].sort((a, b) =>
-        a.short_label.localeCompare(b.short_label)
-      );
-      return {
-        kind: "alignment",
-        id: topic.id,
-        topic_id: topic.topic_id,
-        topic_label: topic.topic_label,
-        title: topic.topic_label,
-        summary: `${topic.faqs.length} question${
-          topic.faqs.length === 1 ? "" : "s"
-        } with aligned multi-source answers`,
-        faq_count: topic.faqs.length,
-        sources,
-        sources_count: sources.length,
-        faqs: topic.faqs.sort((a, b) => a.title.localeCompare(b.title)),
-      };
-    })
-    .sort((a, b) => {
-      if (b.faq_count !== a.faq_count) return b.faq_count - a.faq_count;
-      return a.topic_label.localeCompare(b.topic_label);
     });
 }
 
@@ -324,7 +292,6 @@ const faqsById = faqByIdMap();
 const conflicts = buildConflictRows(sourcesById, faqsById);
 const gaps = buildGapRows(sourcesById);
 const alignments = buildAlignmentRows(sourcesById);
-const alignmentTopics = buildAlignmentTopics(alignments);
 
 const topics = uniqueSorted(
   [...conflicts, ...gaps, ...alignments].map((row) => row.topic_label)
@@ -349,7 +316,6 @@ module.exports = {
     open_conflict_count: conflicts.filter((row) => row.status === "open").length,
     gap_count: gaps.length,
     alignment_count: alignments.length,
-    alignment_topic_count: alignmentTopics.length,
     incorporated_source_count: sourcesCatalog.items.filter(
       (source) => source.status === "incorporated"
     ).length,
@@ -359,5 +325,4 @@ module.exports = {
   conflicts,
   gaps,
   alignments,
-  alignmentTopics,
 };
