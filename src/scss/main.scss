@@ -124,21 +124,45 @@
 
 .app-guidance-map__stats > li {
   min-width: 8rem;
-  padding: govuk-spacing(3);
+  padding: 0;
   border: 1px solid $govuk-border-colour;
   background-color: govuk-colour("black", $variant: "tint-95");
+}
+
+.app-guidance-map__stat-link {
+  display: block;
+  padding: govuk-spacing(3);
+  color: inherit;
+  text-decoration: none;
+
+  &:hover .app-guidance-map__stat-value,
+  &:focus .app-guidance-map__stat-value {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 .app-guidance-map__stat-value {
   display: block;
   @include govuk-font($size: 36, $weight: bold);
   line-height: 1.1;
+  color: $govuk-link-colour;
 }
 
 .app-guidance-map__stat-label {
   display: block;
   @include govuk-font($size: 16);
   margin-top: govuk-spacing(1);
+  color: $govuk-text-colour;
+}
+
+#conflicts-heading,
+#gaps-heading,
+#alignment-heading {
+  scroll-margin-top: govuk-spacing(4);
 }
 
 .app-guidance-map__filter-bar {

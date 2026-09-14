@@ -76,11 +76,7 @@ permalink: /guidance-map/
         Curator view of how incorporated sources work together: documented tensions,
         unanswered questions, and FAQs where multiple sources agree without contrast.
       </p>
-      <p class="govuk-body">
-        Alignment is best-effort from FAQ citations (two or more sources on the same
-        question, none marked contrasting). Conflicts come from the curated conflict
-        register. Gaps are FAQ items marked <code>gap</code> or <code>partial</code>.
-      </p>
+      
     </div>
   </div>
 
@@ -88,20 +84,28 @@ permalink: /guidance-map/
     <div class="govuk-grid-column-full">
       <ul class="app-guidance-map__stats govuk-list">
         <li>
-          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.open_conflict_count }}</span>
-          <span class="app-guidance-map__stat-label">Open conflicts</span>
+          <a class="app-guidance-map__stat-link" href="#conflicts-heading">
+            <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.open_conflict_count }}</span>
+            <span class="app-guidance-map__stat-label">Open conflicts</span>
+          </a>
         </li>
         <li>
-          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.gap_count }}</span>
-          <span class="app-guidance-map__stat-label">Gaps / partial</span>
+          <a class="app-guidance-map__stat-link" href="#gaps-heading">
+            <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.gap_count }}</span>
+            <span class="app-guidance-map__stat-label">Gaps / partial</span>
+          </a>
         </li>
         <li>
-          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.alignment_count }}</span>
-          <span class="app-guidance-map__stat-label">Aligned questions</span>
+          <a class="app-guidance-map__stat-link" href="#alignment-heading">
+            <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.alignment_count }}</span>
+            <span class="app-guidance-map__stat-label">Aligned questions</span>
+          </a>
         </li>
         <li>
-          <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.incorporated_source_count }}</span>
-          <span class="app-guidance-map__stat-label">Incorporated sources</span>
+          <a class="app-guidance-map__stat-link" href="/sources/">
+            <span class="app-guidance-map__stat-value">{{ guidanceMap.summary.incorporated_source_count }}</span>
+            <span class="app-guidance-map__stat-label">Incorporated sources</span>
+          </a>
         </li>
       </ul>
 
@@ -464,6 +468,17 @@ permalink: /guidance-map/
 
       <p class="govuk-body govuk-!-margin-top-4" id="guidance-map-no-results" hidden>
         No rows match the selected filters.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <p class="govuk-body">
+        Alignment is best-effort from FAQ citations (two or more sources on the same
+        question, none marked contrasting). Conflicts come from the curated conflict
+        register. Gaps are FAQ items marked <code>gap</code> or <code>partial</code>.
       </p>
     </div>
   </div>
