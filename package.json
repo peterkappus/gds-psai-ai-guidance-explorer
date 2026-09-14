@@ -7,9 +7,9 @@
     "sass": "sass src/scss/main.scss src/assets/css/main.css --load-path=node_modules/govuk-frontend/dist",
     "sass:watch": "npm run sass -- --watch",
     "icons": "node scripts/generate-icons.mjs",
-    "build": "npm run sass && eleventy",
-    "start": "npm run sass && eleventy --serve --port=8080",
-    "dev": "npm run sass && eleventy --serve --port=8080"
+    "build": "eleventy",
+    "start": "eleventy --serve --port=8080",
+    "dev": "eleventy --serve --port=8080"
   },
   "repository": {
     "type": "git",

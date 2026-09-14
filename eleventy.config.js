@@ -1,7 +1,25 @@
 const path = require("path");
+const fs = require("fs");
+const sass = require("sass");
 const nunjucks = require("nunjucks");
 const markdownIt = require("markdown-it");
 const markdownItGovuk = require("markdown-it-govuk");
+
+function compileSass() {
+  const scssPath = path.join(__dirname, "src/scss/main.scss");
+  const cssPath = path.join(__dirname, "src/assets/css/main.css");
+  const result = sass.compile(scssPath, {
+    loadPaths: [path.join(__dirname, "node_modules/govuk-frontend/dist")],
+  });
+  const previous = fs.existsSync(cssPath)
+    ? fs.readFileSync(cssPath, "utf8")
+    : null;
+  if (previous === result.css) {
+    return;
+  }
+  fs.mkdirSync(path.dirname(cssPath), { recursive: true });
+  fs.writeFileSync(cssPath, result.css);
+}
 
 module.exports = function (eleventyConfig) {
   const njkEnv = new nunjucks.Environment(
@@ -20,6 +38,12 @@ module.exports = function (eleventyConfig) {
       typographer: true,
     }).use(markdownItGovuk)
   );
+
+  // SCSS is not passthrough-copied — watch it and compile before each build.
+  eleventyConfig.addWatchTarget("./src/scss/");
+  eleventyConfig.on("eleventy.before", () => {
+    compileSass();
+  });
 
   eleventyConfig.addPassthroughCopy({
     "node_modules/govuk-frontend/dist/govuk/assets": "assets",
