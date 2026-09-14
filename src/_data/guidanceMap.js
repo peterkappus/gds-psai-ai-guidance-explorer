@@ -293,6 +293,23 @@ const conflicts = buildConflictRows(sourcesById, faqsById);
 const gaps = buildGapRows(sourcesById);
 const alignments = buildAlignmentRows(sourcesById);
 
+const alignmentGroups = (() => {
+  const groups = [];
+  for (const row of alignments) {
+    const last = groups[groups.length - 1];
+    if (!last || last.topic_id !== row.topic_id) {
+      groups.push({
+        topic_id: row.topic_id,
+        topic_label: row.topic_label,
+        items: [row],
+      });
+    } else {
+      last.items.push(row);
+    }
+  }
+  return groups;
+})();
+
 const topics = uniqueSorted(
   [...conflicts, ...gaps, ...alignments].map((row) => row.topic_label)
 ).map((label) => {
@@ -325,4 +342,5 @@ module.exports = {
   conflicts,
   gaps,
   alignments,
+  alignmentGroups,
 };

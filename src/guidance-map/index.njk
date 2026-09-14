@@ -112,7 +112,7 @@ permalink: /guidance-map/
         </div>
 
         <form id="guidance-map-filters" method="get" action="/guidance-map/">
-          <div class="govuk-form-group govuk-!-margin-bottom-2">
+          <!--div class="govuk-form-group govuk-!-margin-bottom-2">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Show</legend>
               <div class="govuk-checkboxes govuk-checkboxes--small app-guidance-map__filter-inline" data-module="govuk-checkboxes">
@@ -130,7 +130,7 @@ permalink: /guidance-map/
                 </div>
               </div>
             </fieldset>
-          </div>
+          </div-->
 
           {% set moreFiltersHtml %}
             <div class="app-guidance-map__filter-panels">
@@ -176,7 +176,7 @@ permalink: /guidance-map/
       </div>
 
       <section class="app-guidance-map__section" data-map-section="conflict" aria-labelledby="conflicts-heading">
-        <h2 class="govuk-heading-l" id="conflicts-heading">Conflicts board</h2>
+        <h2 class="govuk-heading-l" id="conflicts-heading">Where guidance contrasts</h2>
         <p class="govuk-body">
           One row per curated conflict. Open a conflict title for summary, navigator guidance, related questions and source positions.
         </p>
@@ -388,57 +388,76 @@ permalink: /guidance-map/
             <caption class="govuk-table__caption govuk-visually-hidden">Aligned multi-source FAQs</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header app-guidance-map__col-topic">Topic</th>
                 <th scope="col" class="govuk-table__header">Question</th>
                 <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Primary source</th>
                 <th scope="col" class="govuk-table__header app-guidance-map__col-sources">Normative sources</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% for row in guidanceMap.alignments %}
+              {% for group in guidanceMap.alignmentGroups %}
                 <tr
-                  class="govuk-table__row"
-                  data-map-row
-                  data-map-id="alignment-{{ row.id }}"
+                  class="govuk-table__row app-guidance-map__topic-eyebrow"
+                  data-map-topic-eyebrow
                   data-kind="alignment"
-                  data-topic="{{ row.topic_id }}"
-                  data-cause=""
+                  data-topic="{{ group.topic_id }}"
                 >
-                  <td class="govuk-table__cell">{{ row.topic_label }}</td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                    {{ sourceChips(row.primary_sources) }}
-                  </td>
-                  <td class="govuk-table__cell">
-                    {{ sourceChips(row.normative_sources) }}
-                  </td>
+                  <th class="govuk-table__header app-guidance-map__topic-eyebrow-cell" scope="colgroup" colspan="3">
+                    {{ group.topic_label }}
+                  </th>
                 </tr>
+                {% for row in group.items %}
+                  <tr
+                    class="govuk-table__row"
+                    data-map-row
+                    data-map-id="alignment-{{ row.id }}"
+                    data-kind="alignment"
+                    data-topic="{{ row.topic_id }}"
+                    data-cause=""
+                  >
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                      {{ sourceChips(row.primary_sources) }}
+                    </td>
+                    <td class="govuk-table__cell">
+                      {{ sourceChips(row.normative_sources) }}
+                    </td>
+                  </tr>
+                {% endfor %}
               {% endfor %}
             </tbody>
           </table>
         </div>
 
         <div class="app-guidance-map__cards">
-          {% for row in guidanceMap.alignments %}
-            <article
-              class="app-guidance-map__card"
-              data-map-row
-              data-map-id="alignment-{{ row.id }}"
+          {% for group in guidanceMap.alignmentGroups %}
+            <div
+              class="app-guidance-map__topic-group"
+              data-map-topic-eyebrow
               data-kind="alignment"
-              data-topic="{{ row.topic_id }}"
-              data-cause=""
+              data-topic="{{ group.topic_id }}"
             >
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
-              <h3 class="govuk-heading-s">
-                <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
-              </h3>
-              <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1">Primary source</p>
-              {{ sourceChips(row.primary_sources) }}
-              <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1 govuk-!-margin-top-3">Normative sources</p>
-              {{ sourceChips(row.normative_sources) }}
-            </article>
+              <h3 class="govuk-heading-s app-guidance-map__topic-eyebrow-heading">{{ group.topic_label }}</h3>
+              {% for row in group.items %}
+                <article
+                  class="app-guidance-map__card"
+                  data-map-row
+                  data-map-id="alignment-{{ row.id }}"
+                  data-kind="alignment"
+                  data-topic="{{ row.topic_id }}"
+                  data-cause=""
+                >
+                  <h4 class="govuk-heading-s">
+                    <a class="govuk-link" href="{{ row.url }}">{{ row.title }}</a>
+                  </h4>
+                  <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1">Primary source</p>
+                  {{ sourceChips(row.primary_sources) }}
+                  <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-bottom-1 govuk-!-margin-top-3">Normative sources</p>
+                  {{ sourceChips(row.normative_sources) }}
+                </article>
+              {% endfor %}
+            </div>
           {% endfor %}
         </div>
       </section>

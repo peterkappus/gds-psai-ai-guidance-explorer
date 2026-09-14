@@ -47,6 +47,25 @@
     });
   }
 
+  function syncTopicEyebrows() {
+    document.querySelectorAll("[data-map-topic-eyebrow]").forEach(function (eyebrow) {
+      const kind = eyebrow.dataset.kind || "";
+      const topic = eyebrow.dataset.topic || "";
+      const kinds = selectedValues("kind");
+      const topics = selectedValues("topic");
+      const kindOk = !kinds.length || kinds.indexOf(kind) !== -1;
+      const topicOk = !topics.length || topics.indexOf(topic) !== -1;
+      const hasVisibleRows = rows.some(function (row) {
+        return (
+          !row.hidden &&
+          row.dataset.kind === kind &&
+          row.dataset.topic === topic
+        );
+      });
+      eyebrow.hidden = !(kindOk && topicOk && hasVisibleRows);
+    });
+  }
+
   function applyFilters() {
     const kinds = selectedValues("kind");
     const topics = selectedValues("topic");
@@ -67,6 +86,7 @@
     });
 
     syncDetailRows();
+    syncTopicEyebrows();
 
     const visible = Object.keys(visibleIds).length;
     const totalIds = {};
