@@ -208,6 +208,10 @@
   margin-bottom: 0;
 }
 
+.app-guidance-map__conflict-details .govuk-details__summary-text {
+  @include govuk-font($size: 19, $weight: bold);
+}
+
 .app-guidance-map__source-chips {
   display: flex;
   flex-wrap: wrap;

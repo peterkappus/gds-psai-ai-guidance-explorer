@@ -59,7 +59,7 @@ permalink: /guidance-map/
         <li class="govuk-body-s">
           <a class="govuk-link" href="{{ position.source.url }}" title="{{ position.source.title }}">{{ position.source.short_label }}</a>
           {% if position.section %}
-            <span class="govuk-hint">({{ position.section }})</span>
+            <span class="govuk-hint govuk-!-font-size-16">({{ position.section }})</span>
           {% endif %}
           — {{ position.stance }}
         </li>
@@ -178,7 +178,7 @@ permalink: /guidance-map/
       <section class="app-guidance-map__section" data-map-section="conflict" aria-labelledby="conflicts-heading">
         <h2 class="govuk-heading-l" id="conflicts-heading">Conflicts board</h2>
         <p class="govuk-body">
-          One row per curated conflict. Expand a row for summary, navigator guidance, related questions and source positions.
+          One row per curated conflict. Open a conflict title for summary, navigator guidance, related questions and source positions.
         </p>
 
         <div class="app-guidance-map__table-wrap">
@@ -206,12 +206,12 @@ permalink: /guidance-map/
                     <span class="govuk-!-font-weight-bold">{{ row.topic_label }}</span>
                   </td>
                   <td class="govuk-table__cell">
-                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">{{ row.title }}</p>
                     {% set conflictDetailsHtml %}
                       {{ conflictDetail(row) }}
                     {% endset %}
                     {{ govukDetails({
-                      summaryText: "Details and related questions",
+                      summaryText: row.title,
+                      classes: "app-guidance-map__conflict-details",
                       html: conflictDetailsHtml
                     }) }}
                   </td>
@@ -243,7 +243,6 @@ permalink: /guidance-map/
               data-cause="{{ row.likely_cause or '' }}"
             >
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ row.topic_label }}</p>
-              <h3 class="govuk-heading-s">{{ row.title }}</h3>
               {% if row.likely_cause_label %}
                 <p class="govuk-!-margin-bottom-2">
                   {{ govukTag({
@@ -260,7 +259,8 @@ permalink: /guidance-map/
                 {{ conflictDetail(row) }}
               {% endset %}
               {{ govukDetails({
-                summaryText: "Details and related questions",
+                summaryText: row.title,
+                classes: "app-guidance-map__conflict-details",
                 html: conflictCardDetailsHtml
               }) }}
             </article>
