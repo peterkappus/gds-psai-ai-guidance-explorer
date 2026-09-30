@@ -5,6 +5,21 @@
   $govuk-global-styles: true
 );
 
+// Footer always emits the crown SVG + copyright crest; hide both off GOV.UK.
+.govuk-footer__crown, .govuk-footer__copyright-logo {
+  display: none;
+}
+
+.govuk-footer__copyright-logo {
+  padding-top: 0;
+  background-image: none;
+
+  &::before {
+    content: none;
+    display: none;
+  }
+}
+
 .app-snippet {
   margin-top: govuk-spacing(4);
   margin-bottom: govuk-spacing(4);
