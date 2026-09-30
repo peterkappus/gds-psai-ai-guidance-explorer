@@ -10,7 +10,9 @@ back:
 
 # About this explorer
 
-<p class="govuk-body-l">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZqH7OM04mP8?si=DDTa9yUEp0cj08nF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p class="govuk-body-l" style="margin-top: 2rem">
 This is a prototype catalogue of UK public sector AI guidance made by <a href="https://www.peterkappus.com/?utm_source=psai-guidance-explorer">Peter Kappus</a>. It helps people browse common questions about adopting AI in government and see suggested (unofficial) answers with citations back to official publicly available guidance.
 </p>
 
