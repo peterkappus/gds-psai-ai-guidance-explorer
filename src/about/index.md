@@ -3,9 +3,6 @@ layout: layouts/page.njk
 title: About
 description: What the AI Guidance Explorer is, who it is for, and how the guidance knowledge base is maintained.
 permalink: /about/
-back:
-  href: /
-  text: Home
 ---
 
 # About this explorer
@@ -30,9 +27,10 @@ It is **not** an official GOV.UK service and does not replace organisational leg
 
 ## What you can do today
 
-- Browse FAQs grouped by theme
-- Read a short answer grounded in published guidance
-- Follow a deep link to the cited section of the source document
+- Search and read [FAQs](/)
+- See short answers grounded in published guidance
+- Use the [guidance map](/guidance-map) to see where guidance aligns and where it contrasts
+- Browse an index of [sources](/sources)
 
 ## How the knowledge base works
 
