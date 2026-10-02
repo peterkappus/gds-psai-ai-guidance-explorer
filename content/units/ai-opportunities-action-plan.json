@@ -1,0 +1,97 @@
+{
+  "source_id": "ai-opportunities-action-plan",
+  "series_url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan",
+  "extracted_on": "2026-10-02",
+  "incorporated_articles": [
+    {
+      "article_id": "ai-opportunities-action-plan",
+      "title": "AI Opportunities Action Plan",
+      "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan/ai-opportunities-action-plan"
+    },
+    {
+      "article_id": "government-response",
+      "title": "AI Opportunities Action Plan: government response",
+      "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan-government-response"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "action-plan--scan-pilot-scale",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "2.2 Adopt a “Scan → Pilot → Scale” approach in government",
+      "claim_type": "recommendation",
+      "text": "Government should generally employ a flexible “Scan → Pilot → Scale” approach.",
+      "is_quotation": true,
+      "text_start": "employ a flexible “Scan → Pilot → Scale” approach",
+      "text_end": null,
+      "themes": ["adoption", "strategy", "procurement"],
+      "related_faq_ids": ["scan-pilot-scale", "buy-or-build"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "action-plan--scan-definition",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "2.2 Adopt a “Scan → Pilot → Scale” approach in government",
+      "claim_type": "definition",
+      "text": "SCAN – investing in building a deep and continually updated understanding of AI capabilities mapped to their highest impact challenges and opportunities.",
+      "is_quotation": true,
+      "text_start": "deep and continually updated understanding of AI capabilities",
+      "text_end": "highest impact challenges and opportunities",
+      "themes": ["adoption", "strategy"],
+      "related_faq_ids": ["scan-pilot-scale"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "action-plan--mission-ai-leads",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "2.2 Adopt a “Scan → Pilot → Scale” approach in government",
+      "claim_type": "recommendation",
+      "text": "Appointing an AI lead for each mission to help identify where AI could be a solution within the mission setting, considering the user needs from the outset.",
+      "is_quotation": true,
+      "text_start": "AI lead for each mission",
+      "text_end": "considering the user needs from the outset",
+      "themes": ["governance", "adoption"],
+      "related_faq_ids": ["mission-ai-leads", "scan-pilot-scale"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "action-plan--procurement-change",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "2.2 Adopt a “Scan → Pilot → Scale” approach in government",
+      "claim_type": "recommendation",
+      "text": "Scaling these successes is essential, but will require us to think differently about procurement, especially if this activity is to support the domestic startup and innovation ecosystem.",
+      "is_quotation": true,
+      "text_start": "think differently about procurement",
+      "text_end": "domestic startup and innovation ecosystem",
+      "themes": ["procurement", "adoption"],
+      "related_faq_ids": ["action-plan-procurement", "procure-ai-route"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "action-plan--adoption-core",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "2.1 AI Adoption is core to delivering the government's missions",
+      "claim_type": "recommendation",
+      "text": "The adoption of high-performing, trustworthy AI at scale will be critical to the government fulfilling the five missions. AI should become core to how we think about delivering services, transforming citizens' experiences, and improving productivity.",
+      "is_quotation": true,
+      "text_start": "AI should become core to how we think about delivering services",
+      "text_end": "improving productivity",
+      "themes": ["adoption", "strategy"],
+      "related_faq_ids": ["scan-pilot-scale", "ai-strategy-board"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "action-plan--great-customer",
+      "article_id": "ai-opportunities-action-plan",
+      "section": "The opportunity",
+      "claim_type": "recommendation",
+      "text": "Invest in becoming a great customer: Government purchasing power can be a huge lever for improving public services, shaping new markets in AI, and boosting the domestic ecosystem. But doing this well is not easy – it will require real leadership and radical change, especially in procurement.",
+      "is_quotation": true,
+      "text_start": "Government purchasing power can be a huge lever",
+      "text_end": "radical change, especially in procurement",
+      "themes": ["procurement", "strategy"],
+      "related_faq_ids": ["action-plan-procurement"],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source_id": "ai-knowledge-hub-tools",
+  "series_url": "https://ai.gov.uk/knowledge-hub/tools",
+  "extracted_on": "2026-10-02",
+  "incorporated_articles": [
+    {
+      "article_id": "tool-library",
+      "title": "Tool library",
+      "url": "https://ai.gov.uk/knowledge-hub/tools"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "kh-tools--purpose",
+      "article_id": "tool-library",
+      "section": "Tool library",
+      "claim_type": "definition",
+      "text": "Discover how AI is making a difference across the public sector. These AI tools have been created or bought to support public sector delivery.",
+      "is_quotation": true,
+      "text_start": "These AI tools have been created or bought",
+      "text_end": "to support public sector delivery",
+      "themes": ["tools", "reuse", "adoption"],
+      "related_faq_ids": ["tool-library", "find-out", "reuse"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-tools--lifecycle-phases",
+      "article_id": "tool-library",
+      "section": "Life cycle phases",
+      "claim_type": "definition",
+      "text": "Tools are tagged by agile life-cycle phase: Discovery, Alpha, Beta, Live and Retirement — aligning with Agile Delivery in the GOV.UK Service Manual.",
+      "is_quotation": false,
+      "text_start": "Life cycle phases",
+      "text_end": "Agile Delivery in the GOV.UK Service Manual",
+      "themes": ["tools", "delivery"],
+      "related_faq_ids": ["tool-library"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-tools--time-bound",
+      "article_id": "tool-library",
+      "section": "Important",
+      "claim_type": "warning",
+      "text": "Information reflects a specific point in time and may be outdated.",
+      "is_quotation": true,
+      "text_start": "Information reflects a specific point in time",
+      "text_end": "may be outdated",
+      "themes": ["tools"],
+      "related_faq_ids": ["tool-library-endorsement"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-tools--no-endorsement",
+      "article_id": "tool-library",
+      "section": "Important",
+      "claim_type": "warning",
+      "text": "Where third-party tools are mentioned, this does not imply endorsement. Please carry out your own due diligence before use.",
+      "is_quotation": true,
+      "text_start": "this does not imply endorsement",
+      "text_end": "carry out your own due diligence before use",
+      "themes": ["tools", "procurement"],
+      "related_faq_ids": ["tool-library-endorsement", "buy-or-build"],
+      "confidence": "high"
+    }
+  ]
+}

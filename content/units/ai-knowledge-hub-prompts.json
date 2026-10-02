@@ -1,0 +1,66 @@
+{
+  "source_id": "ai-knowledge-hub-prompts",
+  "series_url": "https://ai.gov.uk/knowledge-hub/prompts",
+  "extracted_on": "2026-10-02",
+  "incorporated_articles": [
+    {
+      "article_id": "prompt-library",
+      "title": "Prompt library",
+      "url": "https://ai.gov.uk/knowledge-hub/prompts"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "kh-prompts--purpose",
+      "article_id": "prompt-library",
+      "section": "Prompt library",
+      "claim_type": "definition",
+      "text": "Use this user-submitted library of AI instructions (prompts) to support your work in government.",
+      "is_quotation": true,
+      "text_start": "user-submitted library of AI instructions (prompts)",
+      "text_end": "support your work in government",
+      "themes": ["prompts", "reuse"],
+      "related_faq_ids": ["prompt-library", "write-effective-prompts"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-prompts--verified-vs-unverified",
+      "article_id": "prompt-library",
+      "section": "Important",
+      "claim_type": "warning",
+      "text": "'Verified' prompts have been reviewed and approved by professionals in their subject. Unverified prompts have not, so use them with caution.",
+      "is_quotation": true,
+      "text_start": "Verified' prompts have been reviewed and approved",
+      "text_end": "use them with caution",
+      "themes": ["prompts", "assurance"],
+      "related_faq_ids": ["prompt-library-verified", "write-effective-prompts"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-prompts--check-accuracy",
+      "article_id": "prompt-library",
+      "section": "Important",
+      "claim_type": "requirement",
+      "text": "You must still check all prompt results for accuracy, as AI can make mistakes.",
+      "is_quotation": true,
+      "text_start": "You must still check all prompt results for accuracy",
+      "text_end": "as AI can make mistakes",
+      "themes": ["prompts", "assurance"],
+      "related_faq_ids": ["prompt-library-verified", "check-ai-outputs"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "kh-prompts--share",
+      "article_id": "prompt-library",
+      "section": "Prompt library",
+      "claim_type": "recommendation",
+      "text": "Find out how to share a prompt on the knowledge hub if you think others would find it useful.",
+      "is_quotation": true,
+      "text_start": "how to share a prompt on the knowledge hub",
+      "text_end": "others would find it useful",
+      "themes": ["prompts", "collaboration"],
+      "related_faq_ids": ["prompt-library", "reuse"],
+      "confidence": "high"
+    }
+  ]
+}

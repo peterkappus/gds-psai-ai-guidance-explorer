@@ -2,7 +2,7 @@
   "meta": {
     "title": "UK public sector AI guidance sources",
     "description": "Candidate and incorporated sources for the AI Guidance Explorer. Merged from the original backlog and potential_external_sources.md after URL/org research.",
-    "updated": "2026-08-25",
+    "updated": "2026-10-02",
     "jurisdiction": "United Kingdom",
     "source_lists": [
       "Original explorer backlog (Aug 2026)",
@@ -25,7 +25,7 @@
       },
       {
         "id": "ai-knowledge-hub-how-tos",
-        "title": "AI Knowledge Hub \u2014 How-tos and resources",
+        "title": "AI Knowledge Hub — How-tos and resources",
         "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
         "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
         "notes": "Incorporated 2026-08-07. Practical how-to guidance; preferred as primary citation when explaining how to do something. Claim units in content/units/ai-knowledge-hub-how-tos.json."
@@ -69,7 +69,7 @@
         "id": "ico-ai-data-protection",
         "title": "Guidance on AI and data protection",
         "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
-        "organisation": "Information Commissioner\u2019s Office (ICO)",
+        "organisation": "Information Commissioner’s Office (ICO)",
         "notes": "Incorporated 2026-08-13. Guidance is under review after the Data (Use and Access) Act. Claim units in content/units/ico-ai-data-protection.json."
       },
       {
@@ -104,7 +104,7 @@
         "id": "introduction-to-ai-assurance",
         "title": "Introduction to AI assurance",
         "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
-        "organisation": "Department for Science, Innovation and Technology (DSIT) \u2013 Responsible Technology Adoption Unit",
+        "organisation": "Department for Science, Innovation and Technology (DSIT) – Responsible Technology Adoption Unit",
         "notes": "Incorporated 2026-08-25. Claim units in content/units/introduction-to-ai-assurance.json."
       },
       {
@@ -113,6 +113,41 @@
         "url": "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
         "organisation": "Local Government Association (LGA), with LOTI, EHRC and ICO",
         "notes": "Incorporated 2026-08-25. Claim units in content/units/lga-responsibly-buying-ai.json."
+      },
+      {
+        "id": "service-standard",
+        "title": "Service Standard",
+        "url": "https://www.gov.uk/service-manual/service-standard",
+        "organisation": "Government Digital Service (GDS)",
+        "notes": "Incorporated 2026-10-02. Service Standard overview plus points 1, 9 and 11 (AI-relevant). Claim units in content/units/service-standard.json."
+      },
+      {
+        "id": "security-govuk-ai",
+        "title": "Artificial Intelligence (security.gov.uk policy and guidance)",
+        "url": "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/",
+        "organisation": "Government Cyber Unit / Government AI Security Team",
+        "notes": "Incorporated 2026-10-02. Hub page: secure/resilient AI expectation, Government AI Security Team, community and resource index. Claim units in content/units/security-govuk-ai.json."
+      },
+      {
+        "id": "ai-knowledge-hub-prompts",
+        "title": "AI Knowledge Hub — Prompt library",
+        "url": "https://ai.gov.uk/knowledge-hub/prompts",
+        "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+        "notes": "Incorporated 2026-10-02. Practice library — verified vs unverified; always check outputs. Prefer how-to prompting for method. Claim units in content/units/ai-knowledge-hub-prompts.json."
+      },
+      {
+        "id": "ai-knowledge-hub-tools",
+        "title": "AI Knowledge Hub — Tool library",
+        "url": "https://ai.gov.uk/knowledge-hub/tools",
+        "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+        "notes": "Incorporated 2026-10-02. Practice catalogue — not endorsement; due diligence required; time-bound. Claim units in content/units/ai-knowledge-hub-tools.json."
+      },
+      {
+        "id": "ai-opportunities-action-plan",
+        "title": "AI Opportunities Action Plan",
+        "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan/ai-opportunities-action-plan",
+        "organisation": "Department for Science, Innovation and Technology (DSIT)",
+        "notes": "Incorporated 2026-10-02. Action Plan HTML (Scan→Pilot→Scale, mission AI leads, procurement reform). Government response page remains related. Claim units in content/units/ai-opportunities-action-plan.json."
       }
     ],
     "fields": {
@@ -142,7 +177,7 @@
       "status": "incorporated",
       "audience": [
         "central government departments",
-        "in-scope arm\u2019s-length bodies",
+        "in-scope arm’s-length bodies",
         "transparency / data teams"
       ],
       "themes": [
@@ -194,7 +229,7 @@
       "id": "ico-ai-data-protection",
       "title": "Guidance on AI and data protection",
       "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
-      "organisation": "Information Commissioner\u2019s Office (ICO)",
+      "organisation": "Information Commissioner’s Office (ICO)",
       "type": "regulator_guidance",
       "status": "incorporated",
       "audience": [
@@ -249,7 +284,7 @@
           "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-fairness-in-ai/what-is-the-impact-of-article-22-of-the-uk-gdpr-on-fairness/"
         }
       ],
-      "notes": "Primary regulator guidance for personal-data FAQs. Marked as under review by the ICO following the Data (Use and Access) Act \u2014 cite current published text and check for updates."
+      "notes": "Primary regulator guidance for personal-data FAQs. Marked as under review by the ICO following the Data (Use and Access) Act — cite current published text and check for updates."
     },
     {
       "id": "ncsc-secure-ai-system-development",
@@ -351,7 +386,7 @@
       "related_urls": [
         "https://www.gov.uk/data-ethics-guidance/guidelines-for-ai-procurement"
       ],
-      "notes": "Catalogue previously pointed at an older/incorrect path; canonical document URL corrected on ingest. Crown copyright 2020 \u2014 check Knowledge Hub Procuring AI for newer route names (Procurement Act 2023 era)."
+      "notes": "Catalogue previously pointed at an older/incorrect path; canonical document URL corrected on ingest. Crown copyright 2020 — check Knowledge Hub Procuring AI for newer route names (Procurement Act 2023 era)."
     },
     {
       "id": "ai-insights",
@@ -449,11 +484,11 @@
       "aliases_from_potential_list": [
         "AI Knowledge Hub - public (ai.gov.uk/knowledge-hub)"
       ],
-      "notes": "Not a comprehensive policy source. Cite child sources. How-tos are incorporated; prompts and tools remain candidates for practice/reuse FAQs."
+      "notes": "Not a comprehensive policy source. Cite child sources. How-tos, prompts and tools are incorporated."
     },
     {
       "id": "ai-knowledge-hub-how-tos",
-      "title": "AI Knowledge Hub \u2014 How-tos and resources",
+      "title": "AI Knowledge Hub — How-tos and resources",
       "url": "https://ai.gov.uk/knowledge-hub/how-tos/",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "guidance",
@@ -557,11 +592,11 @@
     },
     {
       "id": "ai-knowledge-hub-prompts",
-      "title": "AI Knowledge Hub \u2014 Prompt library",
+      "title": "AI Knowledge Hub — Prompt library",
       "url": "https://ai.gov.uk/knowledge-hub/prompts",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "hub",
-      "status": "candidate",
+      "status": "incorporated",
       "parent_source_id": "ai-knowledge-hub",
       "audience": [
         "civil servants",
@@ -585,15 +620,17 @@
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-07",
-      "notes": "Community practice source. Cite how-to prompting guidance for method; cite individual prompts only as examples."
+      "notes": "Incorporated 2026-10-02. Practice library — verified vs unverified; always check outputs. Prefer how-to prompting for method. Claim units in content/units/ai-knowledge-hub-prompts.json.",
+      "incorporated_on": "2026-10-02",
+      "claim_units_path": "content/units/ai-knowledge-hub-prompts.json"
     },
     {
       "id": "ai-knowledge-hub-tools",
-      "title": "AI Knowledge Hub \u2014 Tool library",
+      "title": "AI Knowledge Hub — Tool library",
       "url": "https://ai.gov.uk/knowledge-hub/tools",
       "organisation": "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
       "type": "hub",
-      "status": "candidate",
+      "status": "incorporated",
       "parent_source_id": "ai-knowledge-hub",
       "audience": [
         "public sector delivery teams",
@@ -606,7 +643,7 @@
         "adoption"
       ],
       "summary": "Catalogue of AI tools created or bought to support public-sector delivery, tagged by agile life-cycle phase. Information is time-bound; third-party tools are not endorsements.",
-      "why_include": "Answers \u201cwhat are others already using?\u201d style questions. Practice catalogue rather than requirements guidance.",
+      "why_include": "Answers “what are others already using?” style questions. Practice catalogue rather than requirements guidance.",
       "related_faq_themes": [
         "collaboration",
         "buying-building",
@@ -618,7 +655,9 @@
       "priority": 2,
       "discovered_via": "potential_external_sources",
       "discovered_on": "2026-08-07",
-      "notes": "Carry out own due diligence before use. Prefer official security/procurement guidance for must/should claims."
+      "notes": "Incorporated 2026-10-02. Practice catalogue — not endorsement; due diligence required; time-bound. Claim units in content/units/ai-knowledge-hub-tools.json.",
+      "incorporated_on": "2026-10-02",
+      "claim_units_path": "content/units/ai-knowledge-hub-tools.json"
     },
     {
       "id": "secure-by-design",
@@ -680,7 +719,7 @@
       "url": "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/",
       "organisation": "Government Cyber Unit / Government AI Security Team",
       "type": "hub",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "security practitioners",
         "AI delivery teams",
@@ -705,7 +744,10 @@
       "discovered_on": "2026-08-04",
       "aliases_from_potential_list": [
         "security.gov.uk - AI policy and guidance"
-      ]
+      ],
+      "incorporated_on": "2026-10-02",
+      "claim_units_path": "content/units/security-govuk-ai.json",
+      "notes": "Incorporated 2026-10-02. Hub page: secure/resilient AI expectation, Government AI Security Team, community and resource index. Claim units in content/units/security-govuk-ai.json."
     },
     {
       "id": "data-and-ai-ethics-framework",
@@ -817,7 +859,7 @@
       "incorporated_on": "2026-08-10",
       "claim_units_path": "content/units/ai-cyber-security-code-of-practice.json",
       "related_urls": [
-        "https://www.etsi.org/ (ETSI TS 104 223 \u2014 emerging standard informed by this code; confirm exact public URL before citing)"
+        "https://www.etsi.org/ (ETSI TS 104 223 — emerging standard informed by this code; confirm exact public URL before citing)"
       ],
       "aliases_from_potential_list": [
         "DSIT AI Cyber Security Code of Practice / ETSI TS 104 223"
@@ -828,7 +870,7 @@
       "id": "introduction-to-ai-assurance",
       "title": "Introduction to AI assurance",
       "url": "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
-      "organisation": "Department for Science, Innovation and Technology (DSIT) \u2013 Responsible Technology Adoption Unit",
+      "organisation": "Department for Science, Innovation and Technology (DSIT) – Responsible Technology Adoption Unit",
       "type": "guidance",
       "status": "incorporated",
       "audience": [
@@ -864,7 +906,7 @@
       "url": "https://www.gov.uk/service-manual/service-standard",
       "organisation": "Government Digital Service (GDS)",
       "type": "standard",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "service teams",
         "SROs",
@@ -890,7 +932,10 @@
       "discovered_on": "2026-08-04",
       "aliases_from_potential_list": [
         "GOV.UK - Service Standard"
-      ]
+      ],
+      "incorporated_on": "2026-10-02",
+      "claim_units_path": "content/units/service-standard.json",
+      "notes": "Incorporated 2026-10-02. Service Standard overview plus points 1, 9 and 11 (AI-relevant). Claim units in content/units/service-standard.json."
     },
     {
       "id": "service-manual",
@@ -931,7 +976,7 @@
           "url": "https://www.gov.uk/service-manual/technology/using-artificial-intelligence-ai-in-services"
         },
         {
-          "title": "9. Create a secure service which protects users\u2019 privacy",
+          "title": "9. Create a secure service which protects users’ privacy",
           "url": "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service"
         }
       ],
@@ -1018,10 +1063,10 @@
     {
       "id": "ai-opportunities-action-plan",
       "title": "AI Opportunities Action Plan",
-      "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan-government-response",
+      "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan/ai-opportunities-action-plan",
       "organisation": "Department for Science, Innovation and Technology (DSIT)",
       "type": "action_plan",
-      "status": "candidate",
+      "status": "incorporated",
       "audience": [
         "senior leaders",
         "policy teams",
@@ -1049,7 +1094,10 @@
       ],
       "priority": 3,
       "discovered_via": "original-backlog",
-      "discovered_on": "2026-08-03"
+      "discovered_on": "2026-08-03",
+      "incorporated_on": "2026-10-02",
+      "claim_units_path": "content/units/ai-opportunities-action-plan.json",
+      "notes": "Incorporated 2026-10-02. Action Plan HTML (Scan→Pilot→Scale, mission AI leads, procurement reform). Government response page remains related. Claim units in content/units/ai-opportunities-action-plan.json."
     },
     {
       "id": "lga-responsibly-buying-ai",
@@ -1139,7 +1187,7 @@
         "adoption"
       ],
       "summary": "NHS repository and community resources for responsible AI adoption in health and care, including the AI Ambassador Network.",
-      "why_include": "Sector-specific guidance for health FAQs; may conflict with or specialise central-government general advice \u2014 flag scope carefully.",
+      "why_include": "Sector-specific guidance for health FAQs; may conflict with or specialise central-government general advice — flag scope carefully.",
       "related_faq_themes": [
         "lawful-ethical",
         "delivery-assurance",

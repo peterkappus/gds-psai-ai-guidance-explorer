@@ -294,7 +294,75 @@ const LGA = {
   url: "https://www.local.gov.uk/publications/responsible-buying-how-build-equality-data-protection-your-ai-commissioning",
 };
 
+const SERVICE_STANDARD = {
+  id: "service-standard",
+  article_id: "service-standard",
+  title: "Service Standard",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/service-standard",
+};
+
+const SERVICE_STANDARD_P1 = {
+  id: "service-standard",
+  article_id: "point-1",
+  title: "Service Standard: 1. Understand users and their needs",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/service-standard/point-1-understand-user-needs",
+};
+
+const SERVICE_STANDARD_P9 = {
+  id: "service-standard",
+  article_id: "point-9",
+  title: "Service Standard: 9. Create a secure service which protects users’ privacy",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service",
+};
+
+const SERVICE_STANDARD_P11 = {
+  id: "service-standard",
+  article_id: "point-11",
+  title: "Service Standard: 11. Choose the right tools and technology",
+  organisation: "Government Digital Service (GDS)",
+  url: "https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology",
+};
+
+const SECURITY_GOVUK_AI = {
+  id: "security-govuk-ai",
+  article_id: "security-govuk-ai",
+  title: "Artificial Intelligence (security.gov.uk)",
+  organisation: "Government Cyber Unit / Government AI Security Team",
+  url: "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/",
+};
+
+const KH_PROMPTS = {
+  id: "ai-knowledge-hub-prompts",
+  article_id: "prompt-library",
+  title: "AI Knowledge Hub: Prompt library",
+  organisation:
+    "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/prompts",
+};
+
+const KH_TOOLS = {
+  id: "ai-knowledge-hub-tools",
+  article_id: "tool-library",
+  title: "AI Knowledge Hub: Tool library",
+  organisation:
+    "Department for Science, Innovation and Technology (DSIT) / Incubator for AI (i.AI)",
+  url: "https://ai.gov.uk/knowledge-hub/tools",
+};
+
+const ACTION_PLAN = {
+  id: "ai-opportunities-action-plan",
+  article_id: "ai-opportunities-action-plan",
+  title: "AI Opportunities Action Plan",
+  organisation:
+    "Department for Science, Innovation and Technology (DSIT)",
+  url: "https://www.gov.uk/government/publications/ai-opportunities-action-plan/ai-opportunities-action-plan",
+};
+
 const { applyFaqBatch } = require("./faqBatch20260825");
+const { applyFaqBatch20261002 } = require("./faqBatch20261002");
 
 function cite(source, fields) {
   return {
@@ -3010,6 +3078,23 @@ applyFaqBatch(categories, {
   GUIDELINES_AI_PROCUREMENT,
 });
 
+applyFaqBatch20261002(categories, {
+  cite,
+  SERVICE_STANDARD,
+  SERVICE_STANDARD_P1,
+  SERVICE_STANDARD_P9,
+  SERVICE_STANDARD_P11,
+  SECURITY_GOVUK_AI,
+  KH_PROMPTS,
+  KH_TOOLS,
+  ACTION_PLAN,
+  PLAYBOOK,
+  HOW_TO_PROMPTS,
+  SERVICE_MANUAL_AI,
+  SBD,
+  TCOP,
+});
+
 /**
  * Entire question → kebab-case slug with punctuation stripped.
  * Example: "Can I use Microsoft Copilot…?" → "can-i-use-microsoft-copilot-or-similar-embedded-ai-features-at-work"
@@ -3322,6 +3407,14 @@ module.exports = {
     ADM,
     ASSURANCE,
     LGA,
+    SERVICE_STANDARD,
+    SERVICE_STANDARD_P1,
+    SERVICE_STANDARD_P9,
+    SERVICE_STANDARD_P11,
+    SECURITY_GOVUK_AI,
+    KH_PROMPTS,
+    KH_TOOLS,
+    ACTION_PLAN,
   ],
   categories: normalizedCategories,
   items,

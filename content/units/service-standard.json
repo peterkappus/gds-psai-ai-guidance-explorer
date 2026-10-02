@@ -1,0 +1,107 @@
+{
+  "source_id": "service-standard",
+  "series_url": "https://www.gov.uk/service-manual/service-standard",
+  "extracted_on": "2026-10-02",
+  "incorporated_articles": [
+    {
+      "article_id": "service-standard",
+      "title": "Service Standard",
+      "url": "https://www.gov.uk/service-manual/service-standard"
+    },
+    {
+      "article_id": "point-1",
+      "title": "1. Understand users and their needs",
+      "url": "https://www.gov.uk/service-manual/service-standard/point-1-understand-user-needs"
+    },
+    {
+      "article_id": "point-9",
+      "title": "9. Create a secure service which protects users’ privacy",
+      "url": "https://www.gov.uk/service-manual/service-standard/point-9-create-a-secure-service"
+    },
+    {
+      "article_id": "point-11",
+      "title": "11. Choose the right tools and technology",
+      "url": "https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "service-standard--purpose",
+      "article_id": "service-standard",
+      "section": "Service Standard",
+      "claim_type": "definition",
+      "text": "The Service Standard helps teams to create and run great public services.",
+      "is_quotation": true,
+      "text_start": "helps teams to create and run great public services",
+      "text_end": null,
+      "themes": ["service-standard", "delivery"],
+      "related_faq_ids": ["service-standard"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-standard--point-1-user-needs",
+      "article_id": "point-1",
+      "section": "1. Understand users and their needs",
+      "claim_type": "requirement",
+      "text": "Develop a deep understanding of users and the problem you’re trying to solve for them. Focusing on the user and the problem — rather than a particular solution — often means that you learn unexpected things about their needs.",
+      "is_quotation": true,
+      "text_start": "Develop a deep understanding of users and the problem",
+      "text_end": "rather than a particular solution",
+      "themes": ["user-needs", "service-standard"],
+      "related_faq_ids": ["right-tool-for-the-job", "service-standard-user-needs"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-standard--point-9-sbd",
+      "article_id": "point-9",
+      "section": "9. Create a secure service which protects users’ privacy",
+      "claim_type": "requirement",
+      "text": "Service teams must follow the Secure By Design principles and: ensure senior leaders who are accountable for security are aware of risks; have a plan and budget to manage security during the life of the service; perform due diligence on the security of third-party software; collect, process and store data securely and in a way which respects users’ privacy; maintain an assessment of security risks and mitigate threats with appropriate protections.",
+      "is_quotation": true,
+      "text_start": "Service teams must follow the Secure By Design principles",
+      "text_end": "mitigate threats with appropriate protections",
+      "themes": ["security", "service-standard", "privacy"],
+      "related_faq_ids": ["service-standard", "secure-by-design-mandatory"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-standard--point-11-understand-ai",
+      "article_id": "point-11",
+      "section": "11. Choose the right tools and technology",
+      "claim_type": "requirement",
+      "text": "When considering technology choices, service teams should understand how the technology they use works, including emerging technologies and artificial intelligence (AI).",
+      "is_quotation": true,
+      "text_start": "understand how the technology they use works",
+      "text_end": "including emerging technologies and artificial intelligence (AI)",
+      "themes": ["technology", "ai", "service-standard"],
+      "related_faq_ids": ["service-standard-tech-choices"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-standard--point-11-inclusion-reliability",
+      "article_id": "point-11",
+      "section": "11. Choose the right tools and technology",
+      "claim_type": "requirement",
+      "text": "Service teams should consider how the technology will impact user experience and inclusion — for example, avoid situations where your technology choices might reduce the reliability of information given to users or decisions made about them.",
+      "is_quotation": true,
+      "text_start": "consider how the technology will impact user experience and inclusion",
+      "text_end": "reliability of information given to users or decisions made about them",
+      "themes": ["inclusion", "reliability", "service-standard"],
+      "related_faq_ids": ["service-standard-tech-choices", "right-tool-for-the-job"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "service-standard--point-11-avoid-lock-in",
+      "article_id": "point-11",
+      "section": "11. Choose the right tools and technology",
+      "claim_type": "recommendation",
+      "text": "Understand total cost of ownership of the technology and preserve the ability to make different choices in future — for example, reducing the chances of getting locked into contracts for specific tools and suppliers by using open standards.",
+      "is_quotation": true,
+      "text_start": "preserve the ability to make different choices in future",
+      "text_end": "by using open standards",
+      "themes": ["procurement", "open-standards", "service-standard"],
+      "related_faq_ids": ["avoid-vendor-lock-in", "buy-or-build"],
+      "confidence": "high"
+    }
+  ]
+}

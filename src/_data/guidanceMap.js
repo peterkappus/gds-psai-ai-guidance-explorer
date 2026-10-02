@@ -78,6 +78,11 @@ const SOURCE_SHORT_LABELS = {
   "ethics-transparency-accountability-adm": "ADM framework",
   "introduction-to-ai-assurance": "AI assurance",
   "lga-responsibly-buying-ai": "LGA buying AI",
+  "service-standard": "Service Standard",
+  "security-govuk-ai": "security.gov.uk AI",
+  "ai-knowledge-hub-prompts": "Prompt library",
+  "ai-knowledge-hub-tools": "Tool library",
+  "ai-opportunities-action-plan": "Action Plan",
 };
 
 function uniqueSorted(values) {

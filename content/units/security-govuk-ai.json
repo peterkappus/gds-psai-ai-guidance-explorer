@@ -1,0 +1,74 @@
+{
+  "source_id": "security-govuk-ai",
+  "series_url": "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/",
+  "extracted_on": "2026-10-02",
+  "incorporated_articles": [
+    {
+      "article_id": "security-govuk-ai",
+      "title": "Artificial Intelligence (security.gov.uk)",
+      "url": "https://www.security.gov.uk/policy-and-guidance/artificial-intelligence/"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "security-govuk-ai--must-be-secure",
+      "section": "Using AI securely",
+      "claim_type": "requirement",
+      "text": "As set out in the AI Playbook for the UK government, all government AI technologies and services must be secure and resilient. They should comply with the Secure by Design principles and the government’s Cyber Security Standard.",
+      "is_quotation": true,
+      "text_start": "all government AI technologies and services must be secure and resilient",
+      "text_end": "Secure by Design principles and the government’s Cyber Security Standard",
+      "themes": ["security", "secure-by-design"],
+      "related_faq_ids": ["secure-by-design-mandatory", "service-standard", "gov-ai-security-team"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "security-govuk-ai--team-role",
+      "section": "Government AI Security Team",
+      "claim_type": "definition",
+      "text": "The Government AI Security Team is part of the Government Cyber Unit (GCU) and provides a holistic view of security risks and threats related to the use of Artificial Intelligence. It is a team providing governance, advice and consultancy services as well as investigating technical solutions for the UK government.",
+      "is_quotation": true,
+      "text_start": "provides a holistic view of security risks and threats",
+      "text_end": "investigating technical solutions for the UK government",
+      "themes": ["security", "governance"],
+      "related_faq_ids": ["gov-ai-security-team"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "security-govuk-ai--community",
+      "section": "Community",
+      "claim_type": "recommendation",
+      "text": "A generative artificial intelligence (AI) security community exists to share insights and practical guidance into the security risks of AI and generative AI in particular.",
+      "is_quotation": true,
+      "text_start": "security community exists to share insights and practical guidance",
+      "text_end": "security risks of AI and generative AI in particular",
+      "themes": ["security", "collaboration"],
+      "related_faq_ids": ["gov-ai-security-team", "other-departments"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "security-govuk-ai--contact",
+      "section": "Contact",
+      "claim_type": "recommendation",
+      "text": "If you have any questions about AI security, email the team at ai.security@dsit.gov.uk.",
+      "is_quotation": true,
+      "text_start": "questions about AI security, email the team",
+      "text_end": "ai.security@dsit.gov.uk",
+      "themes": ["security"],
+      "related_faq_ids": ["gov-ai-security-team"],
+      "confidence": "high"
+    },
+    {
+      "unit_id": "security-govuk-ai--resources-index",
+      "section": "Resources",
+      "claim_type": "recommendation",
+      "text": "To gain a comprehensive understanding of AI and its security implications, read Secure by Design, the Code of Practice for the Cyber Security of AI, the Artificial Intelligence Playbook for the UK Government, and NCSC Guidelines for secure AI system development (among other listed resources).",
+      "is_quotation": false,
+      "text_start": "To gain a comprehensive understanding of AI and its security implications",
+      "text_end": "NCSC – Guidelines for secure AI system development",
+      "themes": ["security"],
+      "related_faq_ids": ["gov-ai-security-team", "secure-by-design-mandatory"],
+      "confidence": "medium"
+    }
+  ]
+}
