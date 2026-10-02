@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
       html: true,
       linkify: true,
       typographer: true,
-    }).use(markdownItGovuk)
+    }).use(markdownItGovuk, { headingsStartWith: "xl" })
   );
 
   // SCSS is not passthrough-copied — watch it and compile before each build.

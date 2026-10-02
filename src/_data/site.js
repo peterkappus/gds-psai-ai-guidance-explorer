@@ -6,5 +6,5 @@ module.exports = {
   phase: "Alpha",
   // Replace with your GA4 Measurement ID (e.g. G-XXXXXXXXXX) to enable analytics.
   // Leave empty to disable the tracker script.
-  gaMeasurementId: "",
+  gaMeasurementId: "G-HNWWW5QV6C",
 };
