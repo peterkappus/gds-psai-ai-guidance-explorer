@@ -18,14 +18,16 @@ eleventyComputed:
       { text: "Home", href: "/" }
     ]
   }) }}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ category.title }}</h1>
-    </div>
-  </div>
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {% set currentCategoryId = category.id %}
+      {% include "partials/category-subnav.njk" %}
+    </div>
+
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ category.title }}</h1>
+
       {% if category.questions.length === 0 %}
         <p class="govuk-body">No questions yet.</p>
       {% else %}
