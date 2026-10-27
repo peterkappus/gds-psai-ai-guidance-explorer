@@ -10,7 +10,6 @@ eleventyComputed:
 ---
 
 {% extends "layouts/base.njk" %}
-{% from "govuk/components/tag/macro.njk" import govukTag %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {% block content %}
@@ -30,27 +29,10 @@ eleventyComputed:
       {% if category.questions.length === 0 %}
         <p class="govuk-body">No questions yet.</p>
       {% else %}
-        <ul class="govuk-list">
+        <ul class="govuk-list app-category-questions">
           {% for item in category.questions %}
-            <li class="govuk-!-margin-bottom-2">
-              <p class="govuk-body govuk-!-margin-bottom-1">
-                <a class="govuk-link" href="{{ item.url }}">{{ item.question }}</a>
-              </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-0">
-                {% if item.sourcesCount %}
-                  <span>{{ item.sourcesCount }} {% if item.sourcesCount == 1 %} source {%else%} sources{% endif %}</span>
-                {% endif %}
-                {% if item.hasContrastingAdvice %}
-                  <span class="govuk-!-margin-left-2">
-                    {{ govukTag({ text: "Contrasting", classes: "govuk-tag--orange" }) }}
-                  </span>
-                {% endif %}
-              </p>
-              {% if item.status != "answered" and not item.hasContrastingAdvice %}
-                <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">
-                  {{ govukTag({ text: item.status | humanizeToken, classes: item.status | faqStatusTagClass }) }}
-                </p>
-              {% endif %}
+            <li>
+              <a class="govuk-link" href="{{ item.url }}">{{ item.question }}</a>{% if item.hasContrastingAdvice %}<span class="app-category-questions__contrasting"> Contrasting</span>{% endif %}
             </li>
           {% endfor %}
         </ul>
@@ -58,4 +40,3 @@ eleventyComputed:
     </div>
   </div>
 {% endblock %}
-

@@ -56,6 +56,17 @@
   margin-top: govuk-spacing(6);
 }
 
+.app-category-questions > li {
+  @include govuk-responsive-margin(3, "bottom");
+}
+
+.app-category-questions__contrasting {
+  @include govuk-font($size: 16);
+  color: govuk-colour("orange");
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 .app-faq-search-empty {
   @include govuk-font($size: 16);
   display: none;
