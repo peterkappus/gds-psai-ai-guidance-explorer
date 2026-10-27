@@ -1,0 +1,15 @@
+<nav class="app-subnav" aria-label="FAQ categories">
+  <h2 class="app-subnav__theme govuk-bold">Categories</h2>
+  <ul class="app-subnav__section">
+    {% for navCategory in faq.categories %}
+      {% set isCurrent = navCategory.id == currentCategoryId %}
+      <li class="app-subnav__section-item{% if isCurrent %} app-subnav__section-item--current{% endif %}">
+        <a
+          class="govuk-link govuk-link--no-visited-state app-subnav__link"
+          href="/category/{{ navCategory.id }}/"
+          {% if isCurrent %}aria-current="page"{% endif %}
+        >{{ navCategory.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

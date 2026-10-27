@@ -96,6 +96,7 @@
         <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
       </p>
     {% endset %}
+    {% set reportProblemHref = { url: page.url } | reportProblemHref %}
     {{ govukFooter({
       navigation: [
         {
@@ -105,7 +106,8 @@
           items: [
             { href: "/", text: "Questions" },
             { href: "/sources/", text: "Sources" },
-            { href: "/guidance-map/", text: "Guidance map" }
+            { href: "/guidance-map/", text: "Guidance map" },
+            { href: "https://psaitools.peterkappus.com", text: "Visit the PSAI Tools Catalogue", target:"_blank" }
           ]
         },
         {
@@ -119,7 +121,13 @@
         }
       ],
       meta: {
-        visuallyHiddenTitle: "About this page",
+        visuallyHiddenTitle: "Support links",
+        items: [
+          {
+            href: reportProblemHref,
+            text: "Report a problem"
+          }
+        ],
         html: footerHtml
       },
       contentLicence: null

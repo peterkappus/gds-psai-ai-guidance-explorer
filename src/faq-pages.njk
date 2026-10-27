@@ -24,5 +24,17 @@ eleventyComputed:
       <h1 class="govuk-heading-xl">{{ item.question }}</h1>
       {% include "partials/faq-answer-body.njk" %}
     </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-sidebar" aria-labelledby="report-problem-heading">
+        <h2 class="govuk-heading-m" id="report-problem-heading">Help improve this answer</h2>
+        <p class="govuk-body">
+          Spot something wrong, outdated or missing?
+        </p>
+        <p class="govuk-body">
+          <a class="govuk-link" href="{{ { url: page.url, question: item.question } | reportProblemHref }}">Report a problem</a>
+        </p>
+      </aside>
+    </div>
   </div>
 {% endblock %}

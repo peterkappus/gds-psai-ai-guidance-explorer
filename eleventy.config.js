@@ -135,6 +135,33 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("reportProblemHref", function (context = {}) {
+    return "https://www.peterkappus.com/contact";
+    /*
+    const siteData = require("./src/_data/site");
+    const base =
+      siteData.reportProblemUrl ||
+      "https://github.com/peterkappus/gds-psai-ai-guidance-explorer/issues/new";
+    const title = context.question
+      ? `Problem with FAQ: ${context.question}`
+      : "Report a problem with this page";
+    const bodyParts = [
+      "## What is the problem?",
+      "",
+      "(Describe what is wrong or missing.)",
+      "",
+    ];
+    if (context.url) {
+      bodyParts.push("## Page", "", context.url, "");
+    }
+    if (context.question) {
+      bodyParts.push("## Question", "", context.question, "");
+    }
+    return `${base}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(
+      bodyParts.join("\n")
+    )}`;*/
+  });
+
   return {
     dir: {
       input: "src",

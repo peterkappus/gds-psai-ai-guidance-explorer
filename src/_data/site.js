@@ -7,4 +7,7 @@ module.exports = {
   // Replace with your GA4 Measurement ID (e.g. G-XXXXXXXXXX) to enable analytics.
   // Leave empty to disable the tracker script.
   gaMeasurementId: "G-HNWWW5QV6C",
+  // Opens a new GitHub issue; optional query params are added by the reportProblemHref filter.
+  reportProblemUrl:
+    "https://github.com/peterkappus/gds-psai-ai-guidance-explorer/issues/new",
 };
