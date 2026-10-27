@@ -56,6 +56,19 @@
   margin-top: govuk-spacing(6);
 }
 
+.app-faq-search-empty {
+  @include govuk-font($size: 16);
+  display: none;
+  margin-top: govuk-spacing(2);
+  margin-bottom: 0;
+  color: $govuk-error-colour;
+  font-weight: 400;
+}
+
+.app-faq-search-empty:not([hidden]) {
+  display: block;
+}
+
 .app-faq-suggestions {
   position: relative;
   margin-top: govuk-spacing(2);

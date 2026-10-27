@@ -1,5 +1,6 @@
 (() => {
   const input = document.getElementById("faq-search");
+  const error = document.getElementById("faq-search-error");
   const suggestions = document.getElementById("faq-suggestions");
   const list = document.getElementById("faq-suggestions-list");
   const dataEl = document.getElementById("faq-suggestion-data");
@@ -15,10 +16,17 @@
     contrasting: el.dataset.contrasting === "true",
   }));
 
-  function hide() {
+  function hideSuggestions() {
     suggestions.hidden = true;
     input.setAttribute("aria-expanded", "false");
     list.innerHTML = "";
+  }
+
+  function setError(visible) {
+    if (!error) return;
+    error.hidden = !visible;
+    if (visible) input.setAttribute("aria-describedby", "faq-search-error");
+    else input.removeAttribute("aria-describedby");
   }
 
   function show(matches) {
@@ -81,14 +89,22 @@
 
   // GOV.UK-ish behaviour: suggestions update as you type.
   input.addEventListener("input", (e) => {
-    const matches = matchItems(e.target.value);
-    if (matches.length === 0) hide();
-    else show(matches);
+    const query = e.target.value;
+    const readyToSearch = query.trim().length >= 2;
+    const matches = matchItems(query);
+
+    if (matches.length === 0) {
+      hideSuggestions();
+      setError(readyToSearch);
+    } else {
+      setError(false);
+      show(matches);
+    }
   });
 
   // Close suggestions when user leaves the input (but allow clicks).
+  // Leave any "no matches" error visible while the query is still empty of results.
   input.addEventListener("blur", () => {
-    window.setTimeout(hide, 120);
+    window.setTimeout(hideSuggestions, 120);
   });
 })();
-
